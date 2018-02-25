@@ -1,0 +1,6 @@
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.0\Lynn.DAL.deps.json
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.0\Lynn.DAL.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.0\Lynn.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.0\Lynn.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.0\Lynn.DAL.AssemblyInfoInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.0\Lynn.DAL.AssemblyInfo.cs
