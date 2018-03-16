@@ -1,0 +1,13 @@
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.BLL.deps.json
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.BLL.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.BLL.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.AssemblyInfoInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.AssemblyInfo.cs
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.DAL.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.DTO.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.DTO.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.DAL.pdb

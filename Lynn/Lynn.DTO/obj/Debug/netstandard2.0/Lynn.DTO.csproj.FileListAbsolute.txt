@@ -1,0 +1,9 @@
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.deps.json
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.csprojResolveAssemblyReference.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.AssemblyInfoInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.AssemblyInfo.cs
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.pdb

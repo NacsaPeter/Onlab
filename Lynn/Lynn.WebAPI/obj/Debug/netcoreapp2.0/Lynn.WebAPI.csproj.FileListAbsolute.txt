@@ -1,0 +1,17 @@
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.WebAPI.deps.json
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.WebAPI.runtimeconfig.json
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.WebAPI.runtimeconfig.dev.json
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.WebAPI.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.WebAPI.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\obj\Debug\netcoreapp2.0\Lynn.WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\obj\Debug\netcoreapp2.0\Lynn.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\obj\Debug\netcoreapp2.0\Lynn.WebAPI.AssemblyInfoInputs.cache
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\obj\Debug\netcoreapp2.0\Lynn.WebAPI.AssemblyInfo.cs
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\obj\Debug\netcoreapp2.0\Lynn.WebAPI.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\obj\Debug\netcoreapp2.0\Lynn.WebAPI.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.BLL.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.DAL.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.DTO.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.BLL.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.DAL.pdb
+C:\Users\Peti\git\Onlab\Lynn\Lynn.WebAPI\bin\Debug\netcoreapp2.0\Lynn.DTO.pdb

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lynn.DAL\Lynn.DAL.csproj" />
+    <ProjectReference Include="..\Lynn.DTO\Lynn.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

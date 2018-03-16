@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 namespace Lynn.DAL
 {
-    internal class LynnDb : DbContext
+    public class LynnDb : DbContext
     {
         public DbSet<DbCategory> Catergories { get; set; }
         public DbSet<DbCourse> Courses { get; set; }
@@ -23,6 +23,10 @@ namespace Lynn.DAL
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=LynnDB;Trusted_Connection=True;");
         }
+
+        public LynnDb() {}
+
+        public LynnDb(DbContextOptions<LynnDb> options) : base(options) {}
     }
 }
 

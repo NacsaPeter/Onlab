@@ -6,15 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "Lynn.DAL/1.0.0": {
+      "Lynn.BLL/1.0.0": {
         "dependencies": {
-          "Lynn.DTO": "1.0.0",
-          "Microsoft.EntityFrameworkCore.Design": "2.0.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Tools": "2.0.1"
+          "Lynn.DAL": "1.0.0",
+          "Lynn.DTO": "1.0.0"
         },
         "runtime": {
-          "Lynn.DAL.dll": {}
+          "Lynn.BLL.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {},
@@ -439,6 +437,17 @@
           "System.Runtime": "4.1.0"
         }
       },
+      "Lynn.DAL/1.0.0": {
+        "dependencies": {
+          "Lynn.DTO": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.1"
+        },
+        "runtime": {
+          "Lynn.DAL.dll": {}
+        }
+      },
       "Lynn.DTO/1.0.0": {
         "runtime": {
           "Lynn.DTO.dll": {}
@@ -447,7 +456,7 @@
     }
   },
   "libraries": {
-    "Lynn.DAL/1.0.0": {
+    "Lynn.BLL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -815,6 +824,11 @@
       "sha512": "sha512-k1S4Gc6IGwtHGT8188RSeGaX86Qw/wnrgNLshJvsdNUOPP9etMmo8S07c+UlOAx4K/xLuN9ivA1bD0LVurtIxQ==",
       "path": "system.threading.tasks/4.0.11",
       "hashPath": "system.threading.tasks.4.0.11.nupkg.sha512"
+    },
+    "Lynn.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Lynn.DTO/1.0.0": {
       "type": "project",

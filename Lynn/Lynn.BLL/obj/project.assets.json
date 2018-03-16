@@ -897,6 +897,22 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Lynn.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Lynn.DTO": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Lynn.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lynn.DAL.dll": {}
+        }
+      },
       "Lynn.DTO/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3393,6 +3409,11 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "Lynn.DAL/1.0.0": {
+      "type": "project",
+      "path": "../Lynn.DAL/Lynn.DAL.csproj",
+      "msbuildProject": "../Lynn.DAL/Lynn.DAL.csproj"
+    },
     "Lynn.DTO/1.0.0": {
       "type": "project",
       "path": "../Lynn.DTO/Lynn.DTO.csproj",
@@ -3401,10 +3422,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Lynn.DAL >= 1.0.0",
       "Lynn.DTO >= 1.0.0",
-      "Microsoft.EntityFrameworkCore.Design >= 2.0.1",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.1",
-      "Microsoft.EntityFrameworkCore.Tools >= 2.0.1",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
@@ -3419,11 +3438,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DAL\\Lynn.DAL.csproj",
-      "projectName": "Lynn.DAL",
-      "projectPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DAL\\Lynn.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.BLL\\Lynn.BLL.csproj",
+      "projectName": "Lynn.BLL",
+      "projectPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.BLL\\Lynn.BLL.csproj",
       "packagesPath": "C:\\Users\\Peti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DAL\\obj\\",
+      "outputPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -3447,6 +3466,9 @@
           "projectReferences": {
             "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj": {
               "projectPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj"
+            },
+            "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DAL\\Lynn.DAL.csproj": {
+              "projectPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DAL\\Lynn.DAL.csproj"
             }
           }
         }
@@ -3460,18 +3482,6 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": {
-            "target": "Package",
-            "version": "[2.0.1, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "[2.0.1, )"
-          },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "target": "Package",
-            "version": "[2.0.1, )"
-          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",

@@ -9,3 +9,5 @@ C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.0\Lynn.DAL.dll
 C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.0\Lynn.DAL.pdb
 C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.0\Lynn.DAL.runtimeconfig.json
 C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.0\Lynn.DAL.runtimeconfig.dev.json
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.0\Lynn.DTO.dll
+C:\Users\Peti\git\Onlab\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.0\Lynn.DTO.pdb
