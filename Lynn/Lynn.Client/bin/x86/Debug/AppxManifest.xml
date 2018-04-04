@@ -7,8 +7,8 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="B640BB22-37B1-40E7-BC69-71045EE23236" Publisher="CN=Peti" Version="1.0.0.0" ProcessorArchitecture="x86" />
-  <mp:PhoneIdentity PhoneProductId="B640BB22-37B1-40E7-BC69-71045EE23236" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="9CF6EB18-7A12-4748-BC34-AF536E8C2667" Publisher="CN=Peti" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <mp:PhoneIdentity PhoneProductId="9CF6EB18-7A12-4748-BC34-AF536E8C2667" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Lynn.Client</DisplayName>
     <PublisherDisplayName>Peti</PublisherDisplayName>
@@ -46,7 +46,7 @@
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2017" />
     <build:Item Name="OperatingSystem" Version="10.0.16299.15 (WinBuild.160101.0800)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="15.0.27128.1" />
-    <build:Item Name="ProjectGUID" Value="{DA162BB5-0446-4A7B-9929-03C171122E5E}" />
+    <build:Item Name="ProjectGUID" Value="{D06E8CF6-79A2-4722-8F9A-7E306283740A}" />
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="15.0.27128.1" />

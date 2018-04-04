@@ -8,7 +8,7 @@
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
-    <PackageIdentityName>B640BB22-37B1-40E7-BC69-71045EE23236</PackageIdentityName>
+    <PackageIdentityName>9CF6EB18-7A12-4748-BC34-AF536E8C2667</PackageIdentityName>
     <PackageIdentityPublisher>CN=Peti</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
@@ -19,10 +19,10 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>9ACBC7B980A67EAAF9AF2269CFB76A8767C8D43B2D9E0C86DB29BF1AE929816B</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>B640BB22-37B1-40E7-BC69-71045EE23236_1.0.0.0_x86__y56jaz09mxxer</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>B640BB22-37B1-40E7-BC69-71045EE23236_y56jaz09mxxer!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>B640BB22-37B1-40E7-BC69-71045EE23236</RegisteredPackageID>
+    <RegisteredManifestChecksum>482101C30C9A5276D2E29DDAFBD9AF1C42A09E1EFDB71AB0A51AF0C0332B4880</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>9CF6EB18-7A12-4748-BC34-AF536E8C2667_1.0.0.0_x86__y56jaz09mxxer</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>9CF6EB18-7A12-4748-BC34-AF536E8C2667_y56jaz09mxxer!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>9CF6EB18-7A12-4748-BC34-AF536E8C2667</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Peti</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
@@ -31,17 +31,17 @@
     <AppXManifest Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-01T16:51:26.496</Modified>
+      <Modified>2018-04-02T21:32:23.637</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.exe">
       <PackagePath>entrypoint\Lynn.Client.exe</PackagePath>
-      <Modified>2018-04-01T16:51:24.786</Modified>
+      <Modified>2018-04-02T21:32:12.379</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Peti\.nuget\packages\microsoft.aspnet.webapi.client\5.2.4\lib\netstandard2.0\System.Net.Http.Formatting.dll">
-      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
-      <Modified>2018-02-01T11:17:18.000</Modified>
+    <AppxPackagedFile Include="C:\Users\Peti\.nuget\packages\microsoft.toolkit.uwp.notifications\2.0.0\lib\uap10.0\Microsoft.Toolkit.Uwp.Notifications.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.Notifications.dll</PackagePath>
+      <Modified>2017-08-29T17:46:44.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\.nuget\packages\microsoft.xaml.behaviors.uwp.managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
       <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
@@ -51,13 +51,9 @@
       <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
       <Modified>2016-10-19T15:07:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Peti\.nuget\packages\newtonsoft.json\10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Peti\.nuget\packages\newtonsoft.json\10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2017-03-20T19:03:18.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Peti\.nuget\packages\newtonsoft.json.bson\1.0.1\lib\netstandard1.3\Newtonsoft.Json.Bson.dll">
-      <PackagePath>Newtonsoft.Json.Bson.dll</PackagePath>
-      <Modified>2017-03-22T10:01:20.000</Modified>
+      <Modified>2017-06-18T11:57:10.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.0.6\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -721,45 +717,45 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-03-19T22:39:57.327</Modified>
+      <Modified>2018-04-02T15:10:48.315</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2018-03-19T22:39:57.220</Modified>
+      <Modified>2018-04-02T15:10:48.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T22:39:57.224</Modified>
+      <Modified>2018-04-02T15:10:48.132</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T22:39:57.255</Modified>
+      <Modified>2018-04-02T15:10:48.238</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T22:39:57.259</Modified>
+      <Modified>2018-04-02T15:10:48.242</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T22:39:57.272</Modified>
+      <Modified>2018-04-02T15:10:48.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T22:39:57.275</Modified>
+      <Modified>2018-04-02T15:10:48.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-03-19T22:39:57.311</Modified>
+      <Modified>2018-04-02T15:10:48.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.xr.xml">
       <PackagePath>Lynn.Client.xr.xml</PackagePath>
-      <Modified>2018-03-21T02:00:02.943</Modified>
+      <Modified>2018-04-02T19:38:31.912</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -768,11 +764,11 @@
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-01T16:51:25.848</Modified>
+      <Modified>2018-04-02T21:32:20.165</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Peti\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\Lynn.Client.exe">
       <PackagePath>Lynn.Client.exe</PackagePath>
-      <Modified>2018-04-01T16:51:26.486</Modified>
+      <Modified>2018-04-02T21:32:23.623</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

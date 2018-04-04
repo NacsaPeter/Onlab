@@ -17,9 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Lynn.Client.Views
 {
-    public sealed partial class EnrollCourseView : UserControl
+    public sealed partial class LogInView : UserControl
     {
-        public EnrollCourseView()
+        public LogInView()
         {
             this.InitializeComponent();
         }

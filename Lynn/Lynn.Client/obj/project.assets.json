@@ -2,19 +2,6 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.16299": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -268,6 +255,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
         "type": "package",
         "compile": {
@@ -294,34 +290,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -329,19 +305,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.UWPCoreRuntimeSdk/2.1.1": {
@@ -373,7 +336,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Collections.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -426,20 +389,6 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/win8/_._": {}
-        }
-      },
-      "System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-        },
-        "compile": {
           "ref/netcore50/_._": {}
         },
         "runtime": {
@@ -483,7 +432,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Globalization.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -543,7 +492,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Linq.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Linq.dll": {}
@@ -663,7 +612,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Reflection.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -718,7 +667,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Resources.ResourceManager.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -745,7 +694,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Runtime.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -777,21 +726,6 @@
         },
         "runtime": {
           "lib/win8/_._": {}
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Runtime.Numerics.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -852,7 +786,7 @@
           "System.Text.Encoding": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.Encoding.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -869,7 +803,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.RegularExpressions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Text.RegularExpressions.dll": {}
@@ -882,7 +816,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Threading.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Threading.dll": {}
@@ -943,29 +877,6 @@
           "lib/netcore50/System.Xml.ReaderWriter.dll": {}
         }
       },
-      "System.Xml.XDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Xml.XDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Xml.XDocument.dll": {}
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -999,19 +910,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1266,6 +1164,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
         "type": "package",
         "compile": {
@@ -1292,34 +1199,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -1327,19 +1214,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -1352,15 +1226,6 @@
         },
         "runtime": {
           "lib/netcore50/System.Collections.dll": {}
-        }
-      },
-      "runtime.any.System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard/_._": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Diagnostics.Tools.dll": {}
         }
       },
       "runtime.any.System.Globalization/4.3.0": {
@@ -1744,7 +1609,7 @@
           "runtime.any.System.Collections": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Collections.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -1792,21 +1657,6 @@
           "runtime.win.System.Diagnostics.Debug": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/win8/_._": {}
-        }
-      },
-      "System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-          "runtime.any.System.Diagnostics.Tools": "4.3.0"
-        },
-        "compile": {
           "ref/netcore50/_._": {}
         },
         "runtime": {
@@ -1845,7 +1695,7 @@
           "runtime.any.System.Globalization": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Globalization.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -1907,7 +1757,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Linq.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Linq.dll": {}
@@ -2022,7 +1872,7 @@
           "runtime.any.System.Reflection.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Reflection.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -2073,7 +1923,7 @@
           "runtime.any.System.Resources.ResourceManager": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Resources.ResourceManager.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -2102,7 +1952,7 @@
           "runtime.win.System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Runtime.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -2136,21 +1986,6 @@
         },
         "runtime": {
           "lib/win8/_._": {}
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Runtime.Numerics.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -2229,7 +2064,7 @@
           "runtime.any.System.Text.Encoding.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.Encoding.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -2246,7 +2081,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.RegularExpressions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Text.RegularExpressions.dll": {}
@@ -2259,7 +2094,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Threading.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Threading.dll": {}
@@ -2333,29 +2168,6 @@
           "lib/netcore50/System.Xml.ReaderWriter.dll": {}
         }
       },
-      "System.Xml.XDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Xml.XDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Xml.XDocument.dll": {}
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2389,19 +2201,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm-aot": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2656,6 +2455,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
         "type": "package",
         "compile": {
@@ -2682,34 +2490,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -2717,19 +2505,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.aot.System.Collections/4.3.0": {
@@ -2746,15 +2521,6 @@
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Collections.dll": {}
-        }
-      },
-      "runtime.aot.System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard/_._": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Diagnostics.Tools.dll": {}
         }
       },
       "runtime.aot.System.Globalization/4.3.0": {
@@ -3165,7 +2931,7 @@
           "runtime.aot.System.Collections": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Collections.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -3211,21 +2977,6 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0",
           "runtime.win.System.Diagnostics.Debug": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/win8/_._": {}
-        }
-      },
-      "System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-          "runtime.aot.System.Diagnostics.Tools": "4.3.0"
         },
         "compile": {
           "ref/netcore50/_._": {}
@@ -3328,7 +3079,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Linq.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Linq.dll": {}
@@ -3443,7 +3194,7 @@
           "runtime.aot.System.Reflection.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Reflection.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -3477,7 +3228,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
+          "ref/netstandard1.5/_._": {}
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Reflection.TypeExtensions.dll": {}
@@ -3494,7 +3245,7 @@
           "runtime.aot.System.Resources.ResourceManager": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Resources.ResourceManager.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -3523,7 +3274,7 @@
           "runtime.win.System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Runtime.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -3557,21 +3308,6 @@
         },
         "runtime": {
           "lib/win8/_._": {}
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Runtime.Numerics.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -3667,7 +3403,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.RegularExpressions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Text.RegularExpressions.dll": {}
@@ -3754,29 +3490,6 @@
           "lib/netcore50/System.Xml.ReaderWriter.dll": {}
         }
       },
-      "System.Xml.XDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Xml.XDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Xml.XDocument.dll": {}
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3810,19 +3523,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -4077,6 +3777,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
         "type": "package",
         "compile": {
@@ -4103,34 +3812,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -4138,19 +3827,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -4163,15 +3839,6 @@
         },
         "runtime": {
           "lib/netcore50/System.Collections.dll": {}
-        }
-      },
-      "runtime.any.System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard/_._": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Diagnostics.Tools.dll": {}
         }
       },
       "runtime.any.System.Globalization/4.3.0": {
@@ -4555,7 +4222,7 @@
           "runtime.any.System.Collections": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Collections.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -4603,21 +4270,6 @@
           "runtime.win.System.Diagnostics.Debug": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/win8/_._": {}
-        }
-      },
-      "System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-          "runtime.any.System.Diagnostics.Tools": "4.3.0"
-        },
-        "compile": {
           "ref/netcore50/_._": {}
         },
         "runtime": {
@@ -4656,7 +4308,7 @@
           "runtime.any.System.Globalization": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Globalization.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -4718,7 +4370,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Linq.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Linq.dll": {}
@@ -4833,7 +4485,7 @@
           "runtime.any.System.Reflection.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Reflection.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -4884,7 +4536,7 @@
           "runtime.any.System.Resources.ResourceManager": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Resources.ResourceManager.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -4913,7 +4565,7 @@
           "runtime.win.System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Runtime.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -4947,21 +4599,6 @@
         },
         "runtime": {
           "lib/win8/_._": {}
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Runtime.Numerics.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -5040,7 +4677,7 @@
           "runtime.any.System.Text.Encoding.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.Encoding.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -5057,7 +4694,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.RegularExpressions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Text.RegularExpressions.dll": {}
@@ -5070,7 +4707,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Threading.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Threading.dll": {}
@@ -5144,29 +4781,6 @@
           "lib/netcore50/System.Xml.ReaderWriter.dll": {}
         }
       },
-      "System.Xml.XDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Xml.XDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Xml.XDocument.dll": {}
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5200,19 +4814,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64-aot": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5467,6 +5068,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
         "type": "package",
         "compile": {
@@ -5493,34 +5103,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -5528,19 +5118,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.aot.System.Collections/4.3.0": {
@@ -5557,15 +5134,6 @@
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Collections.dll": {}
-        }
-      },
-      "runtime.aot.System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard/_._": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Diagnostics.Tools.dll": {}
         }
       },
       "runtime.aot.System.Globalization/4.3.0": {
@@ -5976,7 +5544,7 @@
           "runtime.aot.System.Collections": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Collections.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -6022,21 +5590,6 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0",
           "runtime.win.System.Diagnostics.Debug": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/win8/_._": {}
-        }
-      },
-      "System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-          "runtime.aot.System.Diagnostics.Tools": "4.3.0"
         },
         "compile": {
           "ref/netcore50/_._": {}
@@ -6139,7 +5692,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Linq.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Linq.dll": {}
@@ -6254,7 +5807,7 @@
           "runtime.aot.System.Reflection.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Reflection.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -6288,7 +5841,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
+          "ref/netstandard1.5/_._": {}
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Reflection.TypeExtensions.dll": {}
@@ -6305,7 +5858,7 @@
           "runtime.aot.System.Resources.ResourceManager": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Resources.ResourceManager.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -6334,7 +5887,7 @@
           "runtime.win.System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Runtime.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -6368,21 +5921,6 @@
         },
         "runtime": {
           "lib/win8/_._": {}
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Runtime.Numerics.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -6478,7 +6016,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.RegularExpressions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Text.RegularExpressions.dll": {}
@@ -6565,29 +6103,6 @@
           "lib/netcore50/System.Xml.ReaderWriter.dll": {}
         }
       },
-      "System.Xml.XDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Xml.XDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Xml.XDocument.dll": {}
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -6621,19 +6136,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -6888,6 +6390,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
         "type": "package",
         "compile": {
@@ -6914,34 +6425,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -6949,19 +6440,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.any.System.Collections/4.3.0": {
@@ -6974,15 +6452,6 @@
         },
         "runtime": {
           "lib/netcore50/System.Collections.dll": {}
-        }
-      },
-      "runtime.any.System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard/_._": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Diagnostics.Tools.dll": {}
         }
       },
       "runtime.any.System.Globalization/4.3.0": {
@@ -7366,7 +6835,7 @@
           "runtime.any.System.Collections": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Collections.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -7414,21 +6883,6 @@
           "runtime.win.System.Diagnostics.Debug": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/win8/_._": {}
-        }
-      },
-      "System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-          "runtime.any.System.Diagnostics.Tools": "4.3.0"
-        },
-        "compile": {
           "ref/netcore50/_._": {}
         },
         "runtime": {
@@ -7467,7 +6921,7 @@
           "runtime.any.System.Globalization": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Globalization.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -7529,7 +6983,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Linq.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Linq.dll": {}
@@ -7644,7 +7098,7 @@
           "runtime.any.System.Reflection.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Reflection.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -7695,7 +7149,7 @@
           "runtime.any.System.Resources.ResourceManager": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Resources.ResourceManager.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -7724,7 +7178,7 @@
           "runtime.win.System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Runtime.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -7758,21 +7212,6 @@
         },
         "runtime": {
           "lib/win8/_._": {}
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Runtime.Numerics.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -7851,7 +7290,7 @@
           "runtime.any.System.Text.Encoding.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.Encoding.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -7868,7 +7307,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.RegularExpressions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Text.RegularExpressions.dll": {}
@@ -7881,7 +7320,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Threading.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Threading.dll": {}
@@ -7955,29 +7394,6 @@
           "lib/netcore50/System.Xml.ReaderWriter.dll": {}
         }
       },
-      "System.Xml.XDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Xml.XDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Xml.XDocument.dll": {}
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -8011,19 +7427,6 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86-aot": {
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -8278,6 +7681,15 @@
           "ref/uap10.0.15138/netstandard.dll": {}
         }
       },
+      "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
         "type": "package",
         "compile": {
@@ -8304,34 +7716,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Newtonsoft.Json/10.0.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "1.6.1",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "compile": {
@@ -8339,19 +7731,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Newtonsoft.Json.Bson/1.0.1": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "Newtonsoft.Json": "10.0.1"
-        },
-        "compile": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
       "runtime.aot.System.Collections/4.3.0": {
@@ -8368,15 +7747,6 @@
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Collections.dll": {}
-        }
-      },
-      "runtime.aot.System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard/_._": {}
-        },
-        "runtime": {
-          "runtimes/aot/lib/netcore50/System.Diagnostics.Tools.dll": {}
         }
       },
       "runtime.aot.System.Globalization/4.3.0": {
@@ -8787,7 +8157,7 @@
           "runtime.aot.System.Collections": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Collections.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -8833,21 +8203,6 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0",
           "runtime.win.System.Diagnostics.Debug": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Diagnostics.Debug.dll": {}
-        },
-        "runtime": {
-          "lib/win8/_._": {}
-        }
-      },
-      "System.Diagnostics.Tools/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-          "runtime.aot.System.Diagnostics.Tools": "4.3.0"
         },
         "compile": {
           "ref/netcore50/_._": {}
@@ -8950,7 +8305,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Linq.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Linq.dll": {}
@@ -9065,7 +8420,7 @@
           "runtime.aot.System.Reflection.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Reflection.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -9099,7 +8454,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
+          "ref/netstandard1.5/_._": {}
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Reflection.TypeExtensions.dll": {}
@@ -9116,7 +8471,7 @@
           "runtime.aot.System.Resources.ResourceManager": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Resources.ResourceManager.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -9145,7 +8500,7 @@
           "runtime.win.System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Runtime.Extensions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/win8/_._": {}
@@ -9179,21 +8534,6 @@
         },
         "runtime": {
           "lib/win8/_._": {}
-        }
-      },
-      "System.Runtime.Numerics/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Runtime.Numerics.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Runtime.Serialization.Formatters/4.3.0": {
@@ -9289,7 +8629,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netcore50/System.Text.RegularExpressions.dll": {}
+          "ref/netcore50/_._": {}
         },
         "runtime": {
           "lib/netcore50/System.Text.RegularExpressions.dll": {}
@@ -9376,29 +8716,6 @@
           "lib/netcore50/System.Xml.ReaderWriter.dll": {}
         }
       },
-      "System.Xml.XDocument/4.3.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tools": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0"
-        },
-        "compile": {
-          "ref/netcore50/System.Xml.XDocument.dll": {}
-        },
-        "runtime": {
-          "lib/netcore50/System.Xml.XDocument.dll": {}
-        }
-      },
       "System.Xml.XmlDocument/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -9433,21 +8750,6 @@
     }
   },
   "libraries": {
-    "Microsoft.AspNet.WebApi.Client/5.2.4": {
-      "sha512": "OdBVC2bQWkf9qDd7Mt07ev4SwIdu6VmLBMTWC0D5cOP/HWSXyv/77otwtXVrAo42duNjvXOjzjP5oOI9m1+DTQ==",
-      "type": "package",
-      "path": "microsoft.aspnet.webapi.client/5.2.4",
-      "files": [
-        "lib/net45/System.Net.Http.Formatting.dll",
-        "lib/net45/System.Net.Http.Formatting.xml",
-        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
-        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
-        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
-        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
-        "microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512",
-        "microsoft.aspnet.webapi.client.nuspec"
-      ]
-    },
     "Microsoft.CSharp/4.3.0": {
       "sha512": "P+MBhIM0YX+JqROuf7i306ZLJEjQYA9uUyRDE+OqwUI5sh41e2ZbPQV3LfAPh+29cmceE1pUffXsGfR4eMY3KA==",
       "type": "package",
@@ -11779,6 +11081,30 @@
         "runtime.json"
       ]
     },
+    "Microsoft.Toolkit.Uwp.Notifications/2.0.0": {
+      "sha512": "X3WFUuznplHYm/UDG5GNVHEp6uxMYwGN5rcmt9tIgIrPbTIEOOjtCZXDBJTcCsFCIVbfZ+X30KnGyxw8fleGOQ==",
+      "type": "package",
+      "path": "microsoft.toolkit.uwp.notifications/2.0.0",
+      "files": [
+        "build/native/Microsoft.Toolkit.Uwp.Notifications.targets",
+        "lib/dotnet/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/dotnet/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/dotnet/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.pri",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.winmd",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.winmd.xml",
+        "lib/native/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/portable-net40+sl50+win+wpa81+wp80/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/portable-net40+sl50+win+wpa81+wp80/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/portable-net40+sl50+win+wpa81+wp80/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.dll",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.pdb",
+        "lib/uap10.0/Microsoft.Toolkit.Uwp.Notifications.xml",
+        "microsoft.toolkit.uwp.notifications.2.0.0.nupkg.sha512",
+        "microsoft.toolkit.uwp.notifications.nuspec"
+      ]
+    },
     "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
       "sha512": "FHAMa5uwPgkMfy9u3g5sH8o3C8zZOQoLfKUznn95ejNhmNBz3Yj7Diy9pKWabYgkSiyjKzc+E5T4ZsZkwVAJkQ==",
       "type": "package",
@@ -11924,11 +11250,12 @@
         "lib/netstandard1.0/_._"
       ]
     },
-    "Newtonsoft.Json/10.0.1": {
-      "sha512": "ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
       "type": "package",
-      "path": "newtonsoft.json/10.0.1",
+      "path": "newtonsoft.json/10.0.3",
       "files": [
+        "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -11941,24 +11268,13 @@
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
-        "newtonsoft.json.10.0.1.nupkg.sha512",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
-      ]
-    },
-    "Newtonsoft.Json.Bson/1.0.1": {
-      "sha512": "5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
-      "type": "package",
-      "path": "newtonsoft.json.bson/1.0.1",
-      "files": [
-        "lib/net45/Newtonsoft.Json.Bson.dll",
-        "lib/net45/Newtonsoft.Json.Bson.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
-        "newtonsoft.json.bson.1.0.1.nupkg.sha512",
-        "newtonsoft.json.bson.nuspec"
       ]
     },
     "runtime.any.System.Collections/4.3.0": {
@@ -11983,31 +11299,6 @@
         "ref/netstandard/_._",
         "runtime.any.system.collections.4.3.0.nupkg.sha512",
         "runtime.any.system.collections.nuspec",
-        "runtimes/aot/lib/netcore50/_._"
-      ]
-    },
-    "runtime.any.System.Diagnostics.Tools/4.3.0": {
-      "sha512": "S/GPBmfPBB48ZghLxdDR7kDAJVAqgAuThyDJho3OLP5OS4tWD2ydyL8LKm8lhiBxce10OKe9X2zZ6DUjAqEbPg==",
-      "type": "package",
-      "path": "runtime.any.system.diagnostics.tools/4.3.0",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Diagnostics.Tools.dll",
-        "lib/netstandard1.3/System.Diagnostics.Tools.dll",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/netstandard/_._",
-        "runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
-        "runtime.any.system.diagnostics.tools.nuspec",
         "runtimes/aot/lib/netcore50/_._"
       ]
     },
@@ -12316,19 +11607,6 @@
         "runtime.aot.system.collections.4.3.0.nupkg.sha512",
         "runtime.aot.system.collections.nuspec",
         "runtimes/aot/lib/netcore50/System.Collections.dll"
-      ]
-    },
-    "runtime.aot.System.Diagnostics.Tools/4.3.0": {
-      "sha512": "Sry/JfiffR1IBLanHobuD+Iaf1aeNKCrmmB7ycHREnMwxDBexYaXQ0cHoxlApYze5EYKG/XXWHWFYEx3Ep2xgA==",
-      "type": "package",
-      "path": "runtime.aot.system.diagnostics.tools/4.3.0",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "ref/netstandard/_._",
-        "runtime.aot.system.diagnostics.tools.4.3.0.nupkg.sha512",
-        "runtime.aot.system.diagnostics.tools.nuspec",
-        "runtimes/aot/lib/netcore50/System.Diagnostics.Tools.dll"
       ]
     },
     "runtime.aot.System.Globalization/4.3.0": {
@@ -13964,61 +13242,6 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Diagnostics.Tools/4.3.0": {
-      "sha512": "UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
-      "type": "package",
-      "path": "system.diagnostics.tools/4.3.0",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/System.Diagnostics.Tools.dll",
-        "ref/netcore50/System.Diagnostics.Tools.xml",
-        "ref/netcore50/de/System.Diagnostics.Tools.xml",
-        "ref/netcore50/es/System.Diagnostics.Tools.xml",
-        "ref/netcore50/fr/System.Diagnostics.Tools.xml",
-        "ref/netcore50/it/System.Diagnostics.Tools.xml",
-        "ref/netcore50/ja/System.Diagnostics.Tools.xml",
-        "ref/netcore50/ko/System.Diagnostics.Tools.xml",
-        "ref/netcore50/ru/System.Diagnostics.Tools.xml",
-        "ref/netcore50/zh-hans/System.Diagnostics.Tools.xml",
-        "ref/netcore50/zh-hant/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/System.Diagnostics.Tools.dll",
-        "ref/netstandard1.0/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/de/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/es/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/fr/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/it/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/ja/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/ko/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/ru/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/zh-hans/System.Diagnostics.Tools.xml",
-        "ref/netstandard1.0/zh-hant/System.Diagnostics.Tools.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.diagnostics.tools.4.3.0.nupkg.sha512",
-        "system.diagnostics.tools.nuspec"
-      ]
-    },
     "System.Dynamic.Runtime/4.3.0": {
       "sha512": "SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
       "type": "package",
@@ -15216,61 +14439,6 @@
         "system.runtime.interopservices.nuspec"
       ]
     },
-    "System.Runtime.Numerics/4.3.0": {
-      "sha512": "yMH+MfdzHjy17l2KESnPiF2dwq7T+xLnSJar7slyimAkUh/gTrS9/UQOtv7xarskJ2/XDSNvfLGOBQPjL7PaHQ==",
-      "type": "package",
-      "path": "system.runtime.numerics/4.3.0",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Runtime.Numerics.dll",
-        "lib/netstandard1.3/System.Runtime.Numerics.dll",
-        "lib/portable-net45+win8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/System.Runtime.Numerics.dll",
-        "ref/netcore50/System.Runtime.Numerics.xml",
-        "ref/netcore50/de/System.Runtime.Numerics.xml",
-        "ref/netcore50/es/System.Runtime.Numerics.xml",
-        "ref/netcore50/fr/System.Runtime.Numerics.xml",
-        "ref/netcore50/it/System.Runtime.Numerics.xml",
-        "ref/netcore50/ja/System.Runtime.Numerics.xml",
-        "ref/netcore50/ko/System.Runtime.Numerics.xml",
-        "ref/netcore50/ru/System.Runtime.Numerics.xml",
-        "ref/netcore50/zh-hans/System.Runtime.Numerics.xml",
-        "ref/netcore50/zh-hant/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/System.Runtime.Numerics.dll",
-        "ref/netstandard1.1/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/de/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/es/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/fr/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/it/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/ja/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/ko/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/ru/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/zh-hans/System.Runtime.Numerics.xml",
-        "ref/netstandard1.1/zh-hant/System.Runtime.Numerics.xml",
-        "ref/portable-net45+win8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.runtime.numerics.4.3.0.nupkg.sha512",
-        "system.runtime.numerics.nuspec"
-      ]
-    },
     "System.Runtime.Serialization.Formatters/4.3.0": {
       "sha512": "KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
       "type": "package",
@@ -15885,74 +15053,6 @@
         "system.xml.readerwriter.nuspec"
       ]
     },
-    "System.Xml.XDocument/4.3.0": {
-      "sha512": "5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
-      "type": "package",
-      "path": "system.xml.xdocument/4.3.0",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Xml.XDocument.dll",
-        "lib/netstandard1.3/System.Xml.XDocument.dll",
-        "lib/portable-net45+win8+wp8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/System.Xml.XDocument.dll",
-        "ref/netcore50/System.Xml.XDocument.xml",
-        "ref/netcore50/de/System.Xml.XDocument.xml",
-        "ref/netcore50/es/System.Xml.XDocument.xml",
-        "ref/netcore50/fr/System.Xml.XDocument.xml",
-        "ref/netcore50/it/System.Xml.XDocument.xml",
-        "ref/netcore50/ja/System.Xml.XDocument.xml",
-        "ref/netcore50/ko/System.Xml.XDocument.xml",
-        "ref/netcore50/ru/System.Xml.XDocument.xml",
-        "ref/netcore50/zh-hans/System.Xml.XDocument.xml",
-        "ref/netcore50/zh-hant/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/System.Xml.XDocument.dll",
-        "ref/netstandard1.0/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/de/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/es/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/fr/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/it/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/ja/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/ko/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/ru/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/zh-hans/System.Xml.XDocument.xml",
-        "ref/netstandard1.0/zh-hant/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/System.Xml.XDocument.dll",
-        "ref/netstandard1.3/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/de/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/es/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/fr/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/it/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/ja/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/ko/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/ru/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/zh-hans/System.Xml.XDocument.xml",
-        "ref/netstandard1.3/zh-hant/System.Xml.XDocument.xml",
-        "ref/portable-net45+win8+wp8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.xml.xdocument.4.3.0.nupkg.sha512",
-        "system.xml.xdocument.nuspec"
-      ]
-    },
     "System.Xml.XmlDocument/4.3.0": {
       "sha512": "lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "type": "package",
@@ -15999,9 +15099,10 @@
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
       "Lynn.DTO >= 1.0.0",
-      "Microsoft.AspNet.WebApi.Client >= 5.2.4",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.0.6",
-      "Microsoft.Xaml.Behaviors.Uwp.Managed >= 2.0.0"
+      "Microsoft.Toolkit.Uwp.Notifications >= 2.0.0",
+      "Microsoft.Xaml.Behaviors.Uwp.Managed >= 2.0.0",
+      "Newtonsoft.Json >= 10.0.3"
     ]
   },
   "packageFolders": {
@@ -16052,17 +15153,21 @@
     "frameworks": {
       "uap10.0.16299": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": {
-            "target": "Package",
-            "version": "[5.2.4, )"
-          },
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
             "version": "[6.0.6, )"
           },
+          "Microsoft.Toolkit.Uwp.Notifications": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Microsoft.Xaml.Behaviors.Uwp.Managed": {
             "target": "Package",
             "version": "[2.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[10.0.3, )"
           }
         },
         "imports": [

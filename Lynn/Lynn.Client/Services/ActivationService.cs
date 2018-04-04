@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Lynn.Client.Activation;
+using Lynn.Client.Helpers;
+using Lynn.Client.Services;
 
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Core;
@@ -78,17 +80,19 @@ namespace Lynn.Client.Services
 
         private async Task InitializeAsync()
         {
+            await ThemeSelectorService.InitializeAsync();
             await Task.CompletedTask;
         }
 
         private async Task StartupAsync()
         {
+            ThemeSelectorService.SetRequestedTheme();
             await Task.CompletedTask;
         }
 
         private IEnumerable<ActivationHandler> GetActivationHandlers()
         {
-            yield break;
+            yield return Singleton<ToastNotificationsService>.Instance;
         }
 
         private bool IsInteractive(object args)

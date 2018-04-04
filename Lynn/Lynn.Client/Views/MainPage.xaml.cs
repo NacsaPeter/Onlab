@@ -15,14 +15,9 @@ namespace Lynn.Client.Views
             InitializeComponent();
         }
 
-        private void EnrolledCoursesViewControl_Loaded(object sender, RoutedEventArgs e)
+        private void LogInViewControl_Loaded(object sender, RoutedEventArgs e)
         {
-            EnrolledCoursesViewControl.DataContext = new EnrolledCoursesViewModel();
-        }
-
-        private void EnrollInCourseViewControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            EnrollInCourseViewControl.DataContext = new EnrollInCourseViewModel();
+            LogInViewControl.DataContext = new LogInViewModel();
         }
     }
 }
