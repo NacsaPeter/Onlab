@@ -124,11 +124,27 @@
     <Compile Include="Services\ToastNotificationsService.Samples.cs" />
     <Compile Include="Services\ViewLifetimeControl.cs" />
     <Compile Include="Services\WindowManagerService.cs" />
+    <Compile Include="ViewModels\CourseToEnrollInViewModel.cs" />
+    <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
+    <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
+    <Compile Include="ViewModels\LearningViewModel.cs" />
     <Compile Include="ViewModels\LoggedInViewModel.cs" />
     <Compile Include="ViewModels\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\CourseToEnrollInView.xaml.cs">
+      <DependentUpon>CourseToEnrollInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnrolledCoursesPage.xaml.cs">
+      <DependentUpon>EnrolledCoursesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EnrollInCoursePage.xaml.cs">
+      <DependentUpon>EnrollInCoursePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LearningPage.xaml.cs">
+      <DependentUpon>LearningPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoggedInPage.xaml.cs">
       <DependentUpon>LoggedInPage.xaml</DependentUpon>
     </Compile>
@@ -173,6 +189,22 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Views\CourseToEnrollInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EnrolledCoursesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EnrollInCoursePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LearningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoggedInPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -203,6 +235,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\profile.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

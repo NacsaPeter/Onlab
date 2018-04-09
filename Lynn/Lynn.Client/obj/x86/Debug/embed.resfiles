@@ -4,6 +4,10 @@ Styles\_FontSizes.xbf
 Styles\_Thickness.xbf
 Styles\Page.xbf
 Styles\TextBlock.xbf
+Views\CourseToEnrollInView.xbf
+Views\EnrolledCoursesPage.xbf
+Views\EnrollInCoursePage.xbf
+Views\LearningPage.xbf
 Views\LoggedInPage.xbf
 Views\LogInView.xbf
 Views\MainPage.xbf

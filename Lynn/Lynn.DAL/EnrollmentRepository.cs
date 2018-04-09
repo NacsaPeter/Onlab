@@ -94,5 +94,20 @@ namespace Lynn.DAL
                 return enrollmentId;
             }
         }
+
+        public IEnumerable<Course> GetCoursesByName(string coursename)
+        {
+            using (var db = getDB())
+            {
+                return db.Courses
+                    .Where(t => t.CourseName.Contains(coursename))
+                    .Select(t => new Course {
+                        CourseName = t.CourseName,
+                        ID = t.ID,
+                        KnownLanguage = t.KnownLanguage,
+                        LearningLanguage = t.LearningLanguage
+                    });
+            }
+        }
     }
 }

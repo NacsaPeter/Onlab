@@ -664,28 +664,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Peti\\.nuget\\packages\\": {},
+    "C:\\Users\\nacsa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
-    "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.ServerHost\\Lynn.ServerHost.csproj",
+      "projectUniqueName": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.ServerHost\\Lynn.ServerHost.csproj",
       "projectName": "Lynn.ServerHost",
-      "projectPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.ServerHost\\Lynn.ServerHost.csproj",
-      "packagesPath": "C:\\Users\\Peti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.ServerHost\\obj\\",
+      "projectPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.ServerHost\\Lynn.ServerHost.csproj",
+      "packagesPath": "C:\\Users\\nacsa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.ServerHost\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
-        "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Peti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nacsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -694,8 +691,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {

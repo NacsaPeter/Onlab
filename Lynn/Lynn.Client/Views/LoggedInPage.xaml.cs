@@ -13,6 +13,7 @@ namespace Lynn.Client.Views
         public LoggedInPage()
         {
             InitializeComponent();
+            DataContext = ViewModel;
         }
     }
 }

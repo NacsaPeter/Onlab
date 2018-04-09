@@ -32,5 +32,9 @@ namespace Lynn.BLL
             return repo.GetNumberOfEnrollments(userId);
         }
 
+        public IEnumerable<Course> GetCoursesByName(string coursename)
+        {
+            return repo.GetCoursesByName(coursename);
+        }
     }
 }

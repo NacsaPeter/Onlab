@@ -35,5 +35,11 @@ namespace Lynn.WebAPI.Controllers
 
             return Json(enrollmentId);
         }
+
+        [HttpGet("{coursename}")]
+        public IEnumerable<Course> GetCoursesByName(string coursename)
+        {
+            return manager.GetCoursesByName(coursename);
+        }
     }
 }

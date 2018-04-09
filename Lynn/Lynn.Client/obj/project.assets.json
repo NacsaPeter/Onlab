@@ -15106,24 +15106,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Peti\\.nuget\\packages\\": {},
+    "C:\\Users\\nacsa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
+      "projectUniqueName": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
       "projectName": "Lynn.Client",
-      "projectPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
-      "packagesPath": "C:\\Users\\Peti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.Client\\obj\\",
+      "projectPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
+      "packagesPath": "C:\\Users\\nacsa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.Client\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Peti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nacsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -15132,14 +15132,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj": {
-              "projectPath": "C:\\Users\\Peti\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj"
+            "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj": {
+              "projectPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj"
             }
           }
         }
