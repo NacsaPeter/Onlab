@@ -41,6 +41,7 @@ namespace Lynn.DAL.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("CourseName")
+                        .IsRequired()
                         .HasMaxLength(20);
 
                     b.Property<string>("Details")
@@ -80,6 +81,7 @@ namespace Lynn.DAL.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("LevelName")
+                        .IsRequired()
                         .HasMaxLength(20);
 
                     b.HasKey("ID");
@@ -92,15 +94,13 @@ namespace Lynn.DAL.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("CourseID")
-                        .IsRequired();
+                    b.Property<int>("CourseID");
 
                     b.Property<int>("Level");
 
                     b.Property<int>("Points");
 
-                    b.Property<int?>("UserID")
-                        .IsRequired();
+                    b.Property<int>("UserID");
 
                     b.HasKey("ID");
 
@@ -119,17 +119,18 @@ namespace Lynn.DAL.Migrations
                     b.Property<string>("Discriminator")
                         .IsRequired();
 
-                    b.Property<int?>("TestID")
-                        .IsRequired();
+                    b.Property<int>("TestID");
 
                     b.Property<string>("WrongAnswer1")
                         .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<string>("WrongAnswer2")
+                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<string>("WrongAnswer3")
+                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.HasKey("ID");
@@ -167,14 +168,13 @@ namespace Lynn.DAL.Migrations
 
                     b.Property<int?>("CategoryID");
 
-                    b.Property<int?>("CourseID")
-                        .IsRequired();
+                    b.Property<int>("CourseID");
 
                     b.Property<int>("Level");
 
-                    b.Property<int>("MaxPoints");
+                    b.Property<int?>("MaxPoints");
 
-                    b.Property<int>("NumberOfQuestions");
+                    b.Property<int?>("NumberOfQuestions");
 
                     b.HasKey("ID");
 
@@ -194,11 +194,9 @@ namespace Lynn.DAL.Migrations
 
                     b.Property<bool>("IsCorrect");
 
-                    b.Property<int?>("TestID")
-                        .IsRequired();
+                    b.Property<int>("TestID");
 
-                    b.Property<int?>("UserID")
-                        .IsRequired();
+                    b.Property<int>("UserID");
 
                     b.HasKey("ID");
 
@@ -283,9 +281,11 @@ namespace Lynn.DAL.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("TranslatedWrongAnswer2")
+                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<string>("TranslatedWrongAnswer3")
+                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<string>("Video")

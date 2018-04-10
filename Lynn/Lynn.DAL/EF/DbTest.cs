@@ -14,13 +14,13 @@ namespace Lynn.DAL
 
         public int Level { get; set; }
 
-        public int MaxPoints { get; set; }
+        public int? MaxPoints { get; set; }
 
-        public int NumberOfQuestions { get; set; }
+        public int? NumberOfQuestions { get; set; }
 
         [Required]
         [ForeignKey(nameof(Course))]
-        public int? CourseID { get; set; }
+        public int CourseID { get; set; }
 
         public virtual DbCourse Course { get; set; }
 

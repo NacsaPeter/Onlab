@@ -14,13 +14,13 @@ namespace Lynn.DAL
 
         [Required]
         [ForeignKey("User")]
-        public int? UserID { get; set; }
+        public int UserID { get; set; }
 
         public virtual DbUser User { get; set; }
 
         [Required]
         [ForeignKey("Course")]
-        public int? CourseID { get; set; }
+        public int CourseID { get; set; }
 
         public virtual DbCourse Course { get; set; }
 

@@ -36,9 +36,11 @@ namespace Lynn.DAL
         [StringLength(50)]
         public string TranslatedWrongAnswer1 { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string TranslatedWrongAnswer2 { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string TranslatedWrongAnswer3 { get; set; }
     }
