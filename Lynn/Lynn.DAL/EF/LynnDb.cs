@@ -15,7 +15,9 @@ namespace Lynn.DAL
         public DbSet<DbEnrollment> Enrollments { get; set; }
         public DbSet<DbExercise> Exercises { get; set; }
         public DbSet<DbGrammarExercise> GrammarExercises { get; set; }
+        public DbSet<DbLanguage> Languages { get; set; }
         public DbSet<DbRule> Rules { get; set; }
+        public DbSet<DbTerritory> Territories { get; set; }
         public DbSet<DbTest> Tests { get; set; }
         public DbSet<DbTestUser> TestTryings { get; set; }
         public DbSet<DbUser> Users { get; set; }

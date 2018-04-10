@@ -13,6 +13,9 @@ namespace Lynn.DAL
         public int ID { get; set; }
 
         [Required]
+        [StringLength(2)]
+        public string LevelCode { get; set; }
+
         [StringLength(20)]
         public string LevelName { get; set; }
 

@@ -80,8 +80,11 @@ namespace Lynn.DAL.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("LevelName")
+                    b.Property<string>("LevelCode")
                         .IsRequired()
+                        .HasMaxLength(2);
+
+                    b.Property<string>("LevelName")
                         .HasMaxLength(20);
 
                     b.HasKey("ID");
@@ -142,6 +145,24 @@ namespace Lynn.DAL.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("DbExercise");
                 });
 
+            modelBuilder.Entity("Lynn.DAL.DbLanguage", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(2);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20);
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Language");
+                });
+
             modelBuilder.Entity("Lynn.DAL.DbRule", b =>
                 {
                     b.Property<int>("ID")
@@ -159,6 +180,24 @@ namespace Lynn.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Rule");
+                });
+
+            modelBuilder.Entity("Lynn.DAL.DbTerritory", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(2);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30);
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Territory");
                 });
 
             modelBuilder.Entity("Lynn.DAL.DbTest", b =>
