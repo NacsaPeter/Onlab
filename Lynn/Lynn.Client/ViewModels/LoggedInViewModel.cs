@@ -7,24 +7,18 @@ namespace Lynn.Client.ViewModels
 {
     public class LoggedInViewModel : ViewModelBase
     {
-        private User loggedInUser;
+        private User _loggedInUser;
         public User LoggedInUser
         {
-            get { return loggedInUser; }
+            get { return _loggedInUser; }
             set
             {
-                if (loggedInUser != value)
+                if (_loggedInUser != value)
                 {
-                    loggedInUser = value;
+                    _loggedInUser = value;
                     RaisePropertyChanged(nameof(LoggedInUser));
                 }
             }
-        }
-
-        public LoggedInViewModel()
-        {
-            //query
-            LoggedInUser = new User { Username = "TestUser15", Points = 521 };
         }
     }
 }

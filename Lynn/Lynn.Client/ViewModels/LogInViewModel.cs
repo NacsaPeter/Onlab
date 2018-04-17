@@ -1,6 +1,7 @@
 ﻿using Lynn.Client.Helpers;
 using Lynn.Client.Services;
 using Lynn.Client.Views;
+using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,8 @@ namespace Lynn.Client.ViewModels
 
         private void LoggingIn()
         {
-            LoggedInPage page = new LoggedInPage();
-            NavigationService.Navigate(typeof(LoggedInPage), page);
+            User user = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 0 };
+            NavigationService.Navigate(typeof(LoggedInPage), user);
         }
     }
 }

@@ -7,8 +7,6 @@ namespace Lynn.DAL
 {
     public class LynnDb : DbContext
     {
-        private string connString = @"Server=(localdb)\mssqllocaldb;Database=LynnDB;Trusted_Connection=True;";
-
         public DbSet<DbCategory> Catergories { get; set; }
         public DbSet<DbCourse> Courses { get; set; }
         public DbSet<DbCourseLevel> CourseLevels { get; set; }
@@ -25,7 +23,7 @@ namespace Lynn.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connString);
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=LynnDB;Trusted_Connection=True;");
         }
 
         public LynnDb() {}

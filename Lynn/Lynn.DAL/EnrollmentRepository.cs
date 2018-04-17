@@ -79,7 +79,7 @@ namespace Lynn.DAL
         {
             using (var db = getDB())
             {
-                var dbenrollment = new DbEnrollment
+                var dbEnrollment = new DbEnrollment
                 {
                     CourseID = enrollment.CourseId,
                     UserID = enrollment.UserId,
@@ -87,7 +87,16 @@ namespace Lynn.DAL
                     Points = enrollment.Points
                 };
 
-                var result = db.Enrollments.Add(dbenrollment);
+                DbEnrollment existingEnrollment = db.Enrollments
+                    .Where(e => e.CourseID == dbEnrollment.CourseID && e.UserID == dbEnrollment.UserID)
+                    .SingleOrDefault();
+
+                if (existingEnrollment != null)
+                {
+                    return -1;
+                }
+
+                var result = db.Enrollments.Add(dbEnrollment);
                 db.SaveChanges();
 
                 var enrollmentId = result.GetDatabaseValues().GetValue<int>("ID");
@@ -97,17 +106,22 @@ namespace Lynn.DAL
 
         public IEnumerable<Course> GetCoursesByName(string coursename)
         {
-            using (var db = getDB())
-            {
-                return db.Courses
+            //using (var db = getDB())
+            //{
+                return getDB().Courses
                     .Where(t => t.CourseName.Contains(coursename))
                     .Select(t => new Course {
                         CourseName = t.CourseName,
                         ID = t.ID,
                         KnownLanguage = t.KnownLanguage,
-                        LearningLanguage = t.LearningLanguage
+                        LearningLanguage = t.LearningLanguage,
+                        KnownLanguageTerritory = t.KnownLanguageTerritory,
+                        LearningLanguageTerritory = t.LearningLanguageTerritory,
+                        Details = t.Details,
+                        Editor = t.User.Username,
+                        Level = t.Level.LevelCode
                     });
-            }
+            //}
         }
     }
 }

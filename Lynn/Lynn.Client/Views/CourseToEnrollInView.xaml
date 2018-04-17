@@ -7,9 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="220"
-    d:DesignWidth="190"
+    d:DesignWidth="200"
     MaxHeight="220" MinHeight="220"
-    MaxWidth="190" MinWidth="190">
+    MaxWidth="200" MinWidth="200">
 
     <Grid Margin="5">
         <Ellipse>
@@ -22,6 +22,6 @@
         </Ellipse>
         <TextBlock Text="{Binding Course.CourseName}" Margin="0,45,0,0" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
         <TextBlock Text="{Binding Course.LearningLanguage}" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <Button Name="EnrollInButton" Command="{Binding EnrollIn_Click}" Content="Feliratkozás" FontSize="16" BorderThickness="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,30"></Button>
+        <Button Name="DetailsButton" Command="{Binding Details_Click}" Content="Részletek" FontSize="16" BorderThickness="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,30"></Button>
     </Grid>
 </UserControl>

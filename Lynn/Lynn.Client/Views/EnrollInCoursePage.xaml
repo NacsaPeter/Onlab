@@ -12,17 +12,17 @@
             <StackPanel Margin="0,30,0,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Kurzus neve:" Margin="0,5,0,0"/>
-                    <TextBox Width="313" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+                    <TextBox Width="313" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0" Text="{Binding CourseName, Mode=TwoWay}"/>
                     <Button Content="Keresés név szerint" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Width="157.6" Command="{Binding SearchCourseByName_Click}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,15,0,0" HorizontalAlignment="Center">
-                    <TextBlock Text="Tanuló nyelv:" Margin="0,5,0,0"/>
-                    <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                    <TextBlock Text="Tanító nyelv:" Margin="0,5,0,0"/>
+                    <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="13,0,0,0" VerticalAlignment="Top"/>
                     <TextBlock Text="Tanulandó nyelv:" Margin="10,5,0,0"/>
                     <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                    <Button Content="Keresés nyelv szerint" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Keresés nyelv szerint" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top"/>
                 </StackPanel>
-                <VariableSizedWrapGrid Name="CoursesVariableSizedWrapGrid" Margin="0,25,0,0" Orientation="Horizontal" Width="954"></VariableSizedWrapGrid>
+                <VariableSizedWrapGrid Name="CoursesVariableSizedWrapGrid" Margin="20,25,0,0" Orientation="Horizontal"></VariableSizedWrapGrid>
             </StackPanel>
         </ScrollViewer>
         

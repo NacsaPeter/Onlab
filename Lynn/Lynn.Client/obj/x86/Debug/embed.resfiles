@@ -5,6 +5,7 @@ Styles\_Thickness.xbf
 Styles\Page.xbf
 Styles\TextBlock.xbf
 Views\CourseToEnrollInView.xbf
+Views\DetailedCourseToEnrollInView.xbf
 Views\EnrolledCoursesPage.xbf
 Views\EnrollInCoursePage.xbf
 Views\LearningPage.xbf

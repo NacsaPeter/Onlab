@@ -92,6 +92,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.4</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.6</Version>
     </PackageReference>
@@ -125,6 +128,7 @@
     <Compile Include="Services\ViewLifetimeControl.cs" />
     <Compile Include="Services\WindowManagerService.cs" />
     <Compile Include="ViewModels\CourseToEnrollInViewModel.cs" />
+    <Compile Include="ViewModels\DetailedCourseToEnrollInViewModel.cs" />
     <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
     <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
     <Compile Include="ViewModels\LearningViewModel.cs" />
@@ -135,6 +139,9 @@
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\CourseToEnrollInView.xaml.cs">
       <DependentUpon>CourseToEnrollInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailedCourseToEnrollInView.xaml.cs">
+      <DependentUpon>DetailedCourseToEnrollInView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnrolledCoursesPage.xaml.cs">
       <DependentUpon>EnrolledCoursesPage.xaml</DependentUpon>
@@ -190,6 +197,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Views\CourseToEnrollInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailedCourseToEnrollInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

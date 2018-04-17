@@ -671,3 +671,12 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Mu
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\DetailedCourseToEnrollInView.g.i.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\DetailedCourseToEnrollInView.g.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\DetailedCourseToEnrollInView.xaml
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\DetailedCourseToEnrollInView.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\DetailedCourseToEnrollInView.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\System.Net.Http.Formatting.dll
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.CommonWebApiResources.resw
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.Resources.resw

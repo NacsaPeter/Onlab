@@ -1,8 +1,10 @@
 ﻿using Lynn.Client.Helpers;
+using Lynn.Client.Views;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -12,9 +14,9 @@ namespace Lynn.Client.ViewModels
 {
     public class CourseToEnrollInViewModel: ViewModelBase
     {
-        private Button enrollInButton;
+        private Button detailsButton;
 
-        public ICommand EnrollIn_Click { get; set; }
+        public ICommand Details_Click { get; set; }
 
         private Course course;
         public Course Course
@@ -30,16 +32,17 @@ namespace Lynn.Client.ViewModels
             }
         }
 
-        public CourseToEnrollInViewModel(Button button)
+        public CourseToEnrollInViewModel(Button button, Course course)
         {
-            Course = new Course { CourseName = "Angol kezdő", LearningLanguage = "Angol" };
-            enrollInButton = button;
-            EnrollIn_Click = new RelayCommand(new Action(EnrollInCourse));
+            Course = course;
+            detailsButton = button;
+            Details_Click = new RelayCommand(new Action(ShowDetails));
         }
 
-        private void EnrollInCourse()
+        private void ShowDetails()
         {
-            //query
+            DetailedCourseToEnrollInView detailedCourse = new DetailedCourseToEnrollInView(Course);
+            var result = detailedCourse.ShowAsync();
         }
     }
 }

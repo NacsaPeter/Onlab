@@ -1,4 +1,5 @@
 ﻿using Lynn.Client.ViewModels;
+using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,10 +21,10 @@ namespace Lynn.Client.Views
     {
         public CourseToEnrollInViewModel ViewModel { get; } 
 
-        public CourseToEnrollInView()
+        public CourseToEnrollInView(Course course)
         {
             this.InitializeComponent();
-            ViewModel = new CourseToEnrollInViewModel(EnrollInButton);
+            ViewModel = new CourseToEnrollInViewModel(DetailsButton, course);
             DataContext = ViewModel;
         }
     }
