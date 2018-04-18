@@ -150,7 +150,9 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Orientation" />
     </RootType>
-    <RootType FullName="Lynn.Client.Views.EnrolledCourses" />
+    <RootType FullName="Lynn.Client.Views.EnrolledCourses">
+      <RootProperty Name="Name" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
@@ -172,7 +174,9 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Background" />
     </RootType>
-    <RootType FullName="Lynn.Client.Views.EnrollInCourse" />
+    <RootType FullName="Lynn.Client.Views.EnrollInCourse">
+      <RootProperty Name="Name" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
       <RootProperty Name="Items" />
       <RootProperty Name="Margin" />

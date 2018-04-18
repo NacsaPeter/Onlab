@@ -28,7 +28,7 @@ namespace Lynn.Client.Views
         public LearningPage()
         {
             this.InitializeComponent();
-            ViewModel = new LearningViewModel(enrollInCoursePage, enrolledCoursesPage);
+            ViewModel = new LearningViewModel();
             DataContext = ViewModel;
         }
     }

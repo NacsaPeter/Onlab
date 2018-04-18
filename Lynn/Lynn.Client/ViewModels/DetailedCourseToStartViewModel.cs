@@ -1,4 +1,6 @@
 ﻿using Lynn.Client.Helpers;
+using Lynn.Client.Services;
+using Lynn.Client.Views;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -43,6 +45,7 @@ namespace Lynn.Client.ViewModels
 
         private void Start()
         {
+            //NavigationService.Navigate(typeof(MainPage), Course);
         }
     }
 }
