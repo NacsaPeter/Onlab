@@ -21,7 +21,7 @@ namespace Lynn.Client.ViewModels
 
         public ICommand SearchCourseByName_Click { get; set; }
 
-        private VariableSizedWrapGrid coursesContainer;
+        private VariableSizedWrapGrid _coursesContainer;
 
         private string courseName;
         public string CourseName
@@ -39,7 +39,7 @@ namespace Lynn.Client.ViewModels
 
         public EnrollInCourseViewModel(VariableSizedWrapGrid coursesContainer)
         {
-            this.coursesContainer = coursesContainer;
+            _coursesContainer = coursesContainer;
 
             client.BaseAddress = new Uri("http://localhost:56750/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -50,7 +50,7 @@ namespace Lynn.Client.ViewModels
 
         private void SearchCourseByName()
         {
-            coursesContainer.Children.Clear();
+            _coursesContainer.Children.Clear();
             var searchedCourses = ProcessCoursesByName(CourseName);
         }
 
@@ -63,7 +63,7 @@ namespace Lynn.Client.ViewModels
 
             foreach (var course in searchedCourses)
             {
-                coursesContainer.Children.Add(new CourseToEnrollInView(course));
+                _coursesContainer.Children.Add(new CourseToEnrollInView(course));
             }
             return searchedCourses;
         }

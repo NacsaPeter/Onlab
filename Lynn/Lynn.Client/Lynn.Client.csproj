@@ -128,7 +128,9 @@
     <Compile Include="Services\ViewLifetimeControl.cs" />
     <Compile Include="Services\WindowManagerService.cs" />
     <Compile Include="ViewModels\CourseToEnrollInViewModel.cs" />
+    <Compile Include="ViewModels\CourseToStartViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToEnrollInViewModel.cs" />
+    <Compile Include="ViewModels\DetailedCourseToStartViewModel.cs" />
     <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
     <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
     <Compile Include="ViewModels\LearningViewModel.cs" />
@@ -140,8 +142,14 @@
     <Compile Include="Views\CourseToEnrollInView.xaml.cs">
       <DependentUpon>CourseToEnrollInView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CourseToStartView.xaml.cs">
+      <DependentUpon>CourseToStartView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DetailedCourseToEnrollInView.xaml.cs">
       <DependentUpon>DetailedCourseToEnrollInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DetailedCourseToStartView.xaml.cs">
+      <DependentUpon>DetailedCourseToStartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnrolledCoursesPage.xaml.cs">
       <DependentUpon>EnrolledCoursesPage.xaml</DependentUpon>
@@ -200,7 +208,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CourseToStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DetailedCourseToEnrollInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DetailedCourseToStartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

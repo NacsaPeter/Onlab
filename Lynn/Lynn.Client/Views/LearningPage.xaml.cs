@@ -23,11 +23,12 @@ namespace Lynn.Client.Views
     /// </summary>
     public sealed partial class LearningPage : Page
     {
-        public LearningViewModel ViewModel { get; } = new LearningViewModel();
+        public LearningViewModel ViewModel { get; } 
 
         public LearningPage()
         {
             this.InitializeComponent();
+            ViewModel = new LearningViewModel(enrollInCoursePage, enrolledCoursesPage);
             DataContext = ViewModel;
         }
     }

@@ -8,7 +8,9 @@
     mc:Ignorable="d">
 
     <Grid>
-        
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+            <VariableSizedWrapGrid x:ConnectionId='1' Name="CoursesVariableSizedWrapGrid" Margin="20,25,0,0" Orientation="Horizontal"></VariableSizedWrapGrid>
+        </ScrollViewer>
     </Grid>
 </Page>
 

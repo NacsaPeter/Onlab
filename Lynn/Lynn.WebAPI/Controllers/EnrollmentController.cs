@@ -17,12 +17,6 @@ namespace Lynn.WebAPI.Controllers
             manager = new EnrollmentManager();
         }
 
-        [HttpGet("{id}", Name = "GetEnrollments")]
-        public IEnumerable<Course> GetEnrollmentsByUserId(int id)
-        {
-            return manager.GetEnrolledCourses(id);
-        }
-
         [HttpPost]
         public IActionResult EnrollCourse([FromBody] Enrollment enrollment)
         {
@@ -37,7 +31,7 @@ namespace Lynn.WebAPI.Controllers
             //return Created();
         }
 
-        [HttpGet("{coursename}", Name = "GetCourses")]
+        [HttpGet("{coursename}", Name = "GetCoursesByName")]
         public IEnumerable<Course> GetCoursesByName(string coursename)
         {
             return manager.GetCoursesByName(coursename);

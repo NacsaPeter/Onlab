@@ -7,34 +7,23 @@ namespace Lynn.BLL
 {
     public class EnrollmentManager
     {
-        private readonly IEnrollmentRepository repo;
+        private readonly IEnrollmentRepository _repo;
 
         public EnrollmentManager(IEnrollmentRepository repo)
         {
-            this.repo = repo;
+            _repo = repo;
         }
 
         public EnrollmentManager() : this(new EnrollmentRepository()) {}
 
         public int EnrollCourse(Enrollment enrollment)
         {
-            return repo.EnrollCourse(enrollment);
-        }
-
-        public IEnumerable<Course> GetEnrolledCourses(int userId)
-        {
-            var user = repo.GetUserByID(userId);
-            return repo.GetEnrolledCourses(user);
-        }
-
-        public int GetNumberOfEnrollments(int userId)
-        {
-            return repo.GetNumberOfEnrollments(userId);
+            return _repo.EnrollCourse(enrollment);
         }
 
         public IEnumerable<Course> GetCoursesByName(string coursename)
         {
-            return repo.GetCoursesByName(coursename);
+            return _repo.GetCoursesByName(coursename);
         }
     }
 }

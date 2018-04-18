@@ -14,19 +14,19 @@ namespace Lynn.Client.ViewModels
 {
     public class CourseToEnrollInViewModel: ViewModelBase
     {
-        private Button detailsButton;
+        private Button _detailsButton;
 
         public ICommand Details_Click { get; set; }
 
-        private Course course;
+        private Course _course;
         public Course Course
         {
-            get { return course; }
+            get { return _course; }
             set
             {
-                if (course != value)
+                if (_course != value)
                 {
-                    course = value;
+                    _course = value;
                     RaisePropertyChanged(nameof(Course));
                 }
             }
@@ -35,7 +35,7 @@ namespace Lynn.Client.ViewModels
         public CourseToEnrollInViewModel(Button button, Course course)
         {
             Course = course;
-            detailsButton = button;
+            _detailsButton = button;
             Details_Click = new RelayCommand(new Action(ShowDetails));
         }
 
@@ -44,5 +44,6 @@ namespace Lynn.Client.ViewModels
             DetailedCourseToEnrollInView detailedCourse = new DetailedCourseToEnrollInView(Course);
             var result = detailedCourse.ShowAsync();
         }
+
     }
 }

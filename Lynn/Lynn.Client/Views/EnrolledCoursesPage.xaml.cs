@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lynn.Client.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,13 @@ namespace Lynn.Client.Views
     /// </summary>
     public sealed partial class EnrolledCourses : Page
     {
+        public EnrolledCoursesViewModel ViewModel { get; }
+
         public EnrolledCourses()
         {
             this.InitializeComponent();
+            ViewModel = new EnrolledCoursesViewModel(CoursesVariableSizedWrapGrid);
+            DataContext = ViewModel;
         }
     }
 }

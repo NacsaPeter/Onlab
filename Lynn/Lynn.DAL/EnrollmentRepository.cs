@@ -13,39 +13,27 @@ namespace Lynn.DAL
             return new LynnDb();
         }
 
-        public Enrollment GetEnrollmentById(int enrollmentId)
-        {
-            using (var db = getDB())
-            {
-                return (from t in db.Enrollments.Where(t => t.ID == enrollmentId)
-                       select new Enrollment
-                       {
-                           ID = t.ID,
-                           CourseId = t.CourseID,
-                           UserId = t.UserID,
-                           Level = t.Level,
-                           Points = t.Points
-                       })
-                       .Single();
-            }
-        }
-
         public IEnumerable<Course> GetEnrolledCourses(User user)
         {
             using (var db = getDB())
             {
-                return (from t1 in db.Enrollments
-                       join t2 in db.Courses on t1.CourseID equals t2.ID
-                       where t1.UserID == user.ID
-                       select new Course
-                       {
-                           ID = t2.ID,
-                           CourseName = t2.CourseName,
-                           KnownLanguage = t2.KnownLanguage,
-                           LearningLanguage = t2.LearningLanguage
-                       })
-                       .ToList();
-
+                return db.Enrollments
+                    .Join(db.Courses, e => e.CourseID, c => c.ID, (e, c) => new { e, c })
+                    .Where(t => t.e.UserID == user.ID)
+                    .Select(t => new Course
+                    {
+                        CourseName = t.c.CourseName,
+                        ID = t.c.ID,
+                        KnownLanguage = t.c.KnownLanguage,
+                        LearningLanguage = t.c.LearningLanguage,
+                        KnownLanguageTerritory = t.c.KnownLanguageTerritory,
+                        LearningLanguageTerritory = t.c.LearningLanguageTerritory,
+                        Details = t.c.Details,
+                        Editor = t.c.User.Username,
+                        Level = t.c.Level.LevelCode
+                    })
+                    .ToList();
+                
             }
         }
 
@@ -53,9 +41,9 @@ namespace Lynn.DAL
         {
             using (var db = getDB())
             {
-                return (from t in db.Users
-                        where t.ID == id
-                        select new User
+                return db.Users
+                        .Where(t => t.ID == id)
+                        .Select(t => new User
                         {
                             ID = t.ID,
                             Email = t.Email,
@@ -64,14 +52,6 @@ namespace Lynn.DAL
                             Username = t.Username
                         })
                         .Single();
-            }
-        }
-
-        public int GetNumberOfEnrollments(int userId)
-        {
-            using (var db = getDB())
-            {
-                return db.Enrollments.Count(x => x.UserID == userId);
             }
         }
 
@@ -106,22 +86,20 @@ namespace Lynn.DAL
 
         public IEnumerable<Course> GetCoursesByName(string coursename)
         {
-            //using (var db = getDB())
-            //{
-                return getDB().Courses
-                    .Where(t => t.CourseName.Contains(coursename))
-                    .Select(t => new Course {
-                        CourseName = t.CourseName,
-                        ID = t.ID,
-                        KnownLanguage = t.KnownLanguage,
-                        LearningLanguage = t.LearningLanguage,
-                        KnownLanguageTerritory = t.KnownLanguageTerritory,
-                        LearningLanguageTerritory = t.LearningLanguageTerritory,
-                        Details = t.Details,
-                        Editor = t.User.Username,
-                        Level = t.Level.LevelCode
-                    });
-            //}
+            return getDB().Courses
+                .Where(t => t.CourseName.Contains(coursename))
+                .Select(t => new Course
+                {
+                    CourseName = t.CourseName,
+                    ID = t.ID,
+                    KnownLanguage = t.KnownLanguage,
+                    LearningLanguage = t.LearningLanguage,
+                    KnownLanguageTerritory = t.KnownLanguageTerritory,
+                    LearningLanguageTerritory = t.LearningLanguageTerritory,
+                    Details = t.Details,
+                    Editor = t.User.Username,
+                    Level = t.Level.LevelCode
+                });
         }
     }
 }

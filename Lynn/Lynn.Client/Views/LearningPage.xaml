@@ -11,10 +11,10 @@
 
         <Pivot>
             <PivotItem Header="Kurzus felvétel">
-                <local:EnrollInCourse></local:EnrollInCourse>
+                <local:EnrollInCourse Name="enrollInCoursePage"></local:EnrollInCourse>
             </PivotItem>
             <PivotItem Header="Felvett kurzusok">
-                <local:EnrolledCourses></local:EnrolledCourses>
+                <local:EnrolledCourses Name="enrolledCoursesPage"></local:EnrolledCourses>
             </PivotItem>
         </Pivot>
         

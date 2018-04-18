@@ -8,10 +8,13 @@
     <RootPropertyPathName Name="Course" />
     <RootPropertyPathName Name="LearningLanguage" />
     <RootPropertyPathName Name="CourseName" />
+    <RootPropertyPathName Name="EnrollIn_Click" />
+    <RootPropertyPathName Name="Cancel_Click" />
     <RootPropertyPathName Name="Details" />
     <RootPropertyPathName Name="Editor" />
     <RootPropertyPathName Name="Level" />
     <RootPropertyPathName Name="KnownLanguage" />
+    <RootPropertyPathName Name="Start_Click" />
     <RootPropertyPathName Name="SearchCourseByName_Click" />
     <RootPropertyPathName Name="LoggedInUser" />
     <RootPropertyPathName Name="Points" />
@@ -120,13 +123,14 @@
       <RootProperty Name="Offset" />
     </RootType>
     <RootType FullName="Lynn.Client.Views.CourseToEnrollInView" />
+    <RootType FullName="Lynn.Client.Views.CourseToStartView" />
     <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
       <RootProperty Name="Title" />
       <RootProperty Name="PrimaryButtonText" />
       <RootProperty Name="SecondaryButtonText" />
+      <RootProperty Name="PrimaryButtonCommand" />
+      <RootProperty Name="SecondaryButtonCommand" />
       <RootProperty Name="Content" />
-      <RootEvent Name="PrimaryButtonClick" />
-      <RootEvent Name="SecondaryButtonClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
@@ -135,22 +139,23 @@
       <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Lynn.Client.Views.DetailedCourseToEnrollInView" />
-    <RootType FullName="Lynn.Client.Views.EnrolledCourses" />
+    <RootType FullName="Lynn.Client.Views.DetailedCourseToStartView" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="VerticalScrollBarVisibility" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.VariableSizedWrapGrid">
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Orientation" />
+    </RootType>
+    <RootType FullName="Lynn.Client.Views.EnrolledCourses" />
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="PlaceholderText" />

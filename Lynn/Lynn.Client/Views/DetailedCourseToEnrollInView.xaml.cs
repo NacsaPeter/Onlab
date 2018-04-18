@@ -29,14 +29,5 @@ namespace Lynn.Client.Views
             ViewModel = new DetailedCourseToEnrollInViewModel(course);
             DataContext = ViewModel;
         }
-
-        private void EnrollIn_Click(ContentDialog sender, ContentDialogButtonClickEventArgs args)
-        {
-            var result = ViewModel.EnrollInAsync();
-        }
-
-        private void Cancel_Click(ContentDialog sender, ContentDialogButtonClickEventArgs args)
-        {
-        }
     }
 }
