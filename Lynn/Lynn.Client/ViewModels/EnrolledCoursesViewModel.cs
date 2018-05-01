@@ -26,11 +26,9 @@ namespace Lynn.Client.ViewModels
             client.BaseAddress = new Uri("http://localhost:56750/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrolledcourses"));
-
-            RefreshEnrolledCourses();
         }
 
-        private void RefreshEnrolledCourses()
+        public void RefreshEnrolledCourses(Object sender, SelectionChangedEventArgs args)
         {
             _coursesContainer.Children.Clear();
             User loggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 0 };

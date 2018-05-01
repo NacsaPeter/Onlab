@@ -9,13 +9,7 @@
 
     <Grid>
 
-        <Pivot>
-            <PivotItem Header="Kurzus felvétel">
-                <local:EnrollInCourse Name="enrollInCoursePage"></local:EnrollInCourse>
-            </PivotItem>
-            <PivotItem Header="Felvett kurzusok">
-                <local:EnrolledCourses Name="enrolledCoursesPage"></local:EnrolledCourses>
-            </PivotItem>
+        <Pivot x:ConnectionId='1' Name="CoursesPivot">
         </Pivot>
         
     </Grid>

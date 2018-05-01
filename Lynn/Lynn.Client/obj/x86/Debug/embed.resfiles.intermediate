@@ -4,10 +4,12 @@ Styles\_FontSizes.xbf
 Styles\_Thickness.xbf
 Styles\Page.xbf
 Styles\TextBlock.xbf
+Views\ChooseOneExerciseView.xbf
 Views\CourseToEnrollInView.xbf
 Views\CourseToStartView.xbf
 Views\DetailedCourseToEnrollInView.xbf
 Views\DetailedCourseToStartView.xbf
+Views\DoExercisesPage.xbf
 Views\EnrolledCoursesPage.xbf
 Views\EnrollInCoursePage.xbf
 Views\LearningPage.xbf
@@ -15,3 +17,5 @@ Views\LoggedInPage.xbf
 Views\LogInView.xbf
 Views\MainPage.xbf
 Views\SettingsPage.xbf
+Views\TestsPage.xbf
+Views\TestToStartView.xbf

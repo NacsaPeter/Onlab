@@ -22,7 +22,7 @@ namespace Lynn.Client.ViewModels
 
         private void LoggingIn()
         {
-            User user = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 0 };
+            User user = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 24 };
             NavigationService.Navigate(typeof(LoggedInPage), user);
         }
     }

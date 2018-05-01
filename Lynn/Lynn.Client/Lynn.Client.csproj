@@ -127,10 +127,12 @@
     <Compile Include="Services\ToastNotificationsService.Samples.cs" />
     <Compile Include="Services\ViewLifetimeControl.cs" />
     <Compile Include="Services\WindowManagerService.cs" />
+    <Compile Include="ViewModels\ChooseOneExerciseViewModel.cs" />
     <Compile Include="ViewModels\CourseToEnrollInViewModel.cs" />
     <Compile Include="ViewModels\CourseToStartViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToEnrollInViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToStartViewModel.cs" />
+    <Compile Include="ViewModels\DoExercisesViewModel.cs" />
     <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
     <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
     <Compile Include="ViewModels\LearningViewModel.cs" />
@@ -138,7 +140,12 @@
     <Compile Include="ViewModels\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\TestsViewModel.cs" />
+    <Compile Include="ViewModels\TestToStartViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\ChooseOneExerciseView.xaml.cs">
+      <DependentUpon>ChooseOneExerciseView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CourseToEnrollInView.xaml.cs">
       <DependentUpon>CourseToEnrollInView.xaml</DependentUpon>
     </Compile>
@@ -150,6 +157,9 @@
     </Compile>
     <Compile Include="Views\DetailedCourseToStartView.xaml.cs">
       <DependentUpon>DetailedCourseToStartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoExercisesPage.xaml.cs">
+      <DependentUpon>DoExercisesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnrolledCoursesPage.xaml.cs">
       <DependentUpon>EnrolledCoursesPage.xaml</DependentUpon>
@@ -171,6 +181,12 @@
     </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestsPage.xaml.cs">
+      <DependentUpon>TestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestToStartView.xaml.cs">
+      <DependentUpon>TestToStartView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Views\ChooseOneExerciseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CourseToEnrollInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,6 +237,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DetailedCourseToStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoExercisesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -247,6 +271,14 @@
     <Page Include="Views\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestToStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using Microsoft.EntityFrameworkCore.ValueGeneration;
 using System;
 
 namespace Lynn.DAL.Migrations
@@ -114,13 +113,20 @@ namespace Lynn.DAL.Migrations
                     b.ToTable("Enrollment");
                 });
 
-            modelBuilder.Entity("Lynn.DAL.DbExercise", b =>
+            modelBuilder.Entity("Lynn.DAL.DbGrammarExercise", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
+                    b.Property<string>("CorrectAnswer")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("RuleID");
 
                     b.Property<int>("TestID");
 
@@ -138,11 +144,11 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("RuleID");
+
                     b.HasIndex("TestID");
 
-                    b.ToTable("Exercises");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("DbExercise");
+                    b.ToTable("GrammarExercise");
                 });
 
             modelBuilder.Entity("Lynn.DAL.DbLanguage", b =>
@@ -270,30 +276,10 @@ namespace Lynn.DAL.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("Lynn.DAL.DbGrammarExercise", b =>
-                {
-                    b.HasBaseType("Lynn.DAL.DbExercise");
-
-                    b.Property<string>("CorrectAnswer")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.Property<string>("Question")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<int?>("RuleID");
-
-                    b.HasIndex("RuleID");
-
-                    b.ToTable("GrammarExercise");
-
-                    b.HasDiscriminator().HasValue("DbGrammarExercise");
-                });
-
             modelBuilder.Entity("Lynn.DAL.DbVocabularyExercise", b =>
                 {
-                    b.HasBaseType("Lynn.DAL.DbExercise");
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Audio")
                         .HasMaxLength(100);
@@ -307,6 +293,8 @@ namespace Lynn.DAL.Migrations
 
                     b.Property<string>("Sentence")
                         .HasMaxLength(100);
+
+                    b.Property<int>("TestID");
 
                     b.Property<string>("TranslatedExpression")
                         .IsRequired()
@@ -330,9 +318,23 @@ namespace Lynn.DAL.Migrations
                     b.Property<string>("Video")
                         .HasMaxLength(100);
 
-                    b.ToTable("VocabularyExercise");
+                    b.Property<string>("WrongAnswer1")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
-                    b.HasDiscriminator().HasValue("DbVocabularyExercise");
+                    b.Property<string>("WrongAnswer2")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("WrongAnswer3")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("TestID");
+
+                    b.ToTable("VocabularyExercise");
                 });
 
             modelBuilder.Entity("Lynn.DAL.DbCourse", b =>
@@ -359,10 +361,14 @@ namespace Lynn.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Lynn.DAL.DbExercise", b =>
+            modelBuilder.Entity("Lynn.DAL.DbGrammarExercise", b =>
                 {
+                    b.HasOne("Lynn.DAL.DbRule", "Rule")
+                        .WithMany("GrammarExercises")
+                        .HasForeignKey("RuleID");
+
                     b.HasOne("Lynn.DAL.DbTest", "Test")
-                        .WithMany("Exercises")
+                        .WithMany("GrammarExercises")
                         .HasForeignKey("TestID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -392,11 +398,12 @@ namespace Lynn.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Lynn.DAL.DbGrammarExercise", b =>
+            modelBuilder.Entity("Lynn.DAL.DbVocabularyExercise", b =>
                 {
-                    b.HasOne("Lynn.DAL.DbRule", "Rule")
-                        .WithMany("GrammarExercises")
-                        .HasForeignKey("RuleID");
+                    b.HasOne("Lynn.DAL.DbTest", "Test")
+                        .WithMany("VocabularyExercises")
+                        .HasForeignKey("TestID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

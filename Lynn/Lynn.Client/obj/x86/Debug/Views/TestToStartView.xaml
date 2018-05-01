@@ -1,0 +1,38 @@
+﻿<UserControl
+    x:Class="Lynn.Client.Views.TestToStartView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lynn.Client.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="250"
+    d:DesignWidth="200"
+    MinHeight="250" MaxHeight="250"
+    MinWidth="200" MaxWidth="200">
+
+    <Grid Margin="10">
+        <Rectangle StrokeThickness="10">
+            <Rectangle.Stroke>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" Opacity="0.8">
+                    <GradientStop Color="Green" Offset="1" />
+                    <GradientStop Color="Red" Offset="0.5" />
+                    <GradientStop Color="Green" Offset="0" />
+                </LinearGradientBrush>
+            </Rectangle.Stroke>
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                    <GradientStop Color="Bisque" Offset="0.0" />
+                    <GradientStop Color="Goldenrod" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock Text="{Binding Test.CategoryName}" Margin="0,45,0,0" FontSize="24" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="{Binding Test.Level}"></TextBlock>
+            <TextBlock Text=". szint"></TextBlock>
+        </StackPanel>
+        <Button x:ConnectionId='1' Name="StartButton" Command="{Binding Start_Click}" Content="Indít" FontSize="16" BorderThickness="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,30" Width="90"></Button>
+    </Grid>
+</UserControl>
+

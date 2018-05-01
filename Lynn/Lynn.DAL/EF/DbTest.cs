@@ -29,7 +29,9 @@ namespace Lynn.DAL
 
         public virtual DbCategory Category { get; set; }
 
-        public virtual ICollection<DbExercise> Exercises { get; set; }
+        public virtual ICollection<DbVocabularyExercise> VocabularyExercises { get; set; }
+
+        public virtual ICollection<DbGrammarExercise> GrammarExercises { get; set; }
 
         public virtual ICollection<DbTestUser> UserTests { get; set; }
     }

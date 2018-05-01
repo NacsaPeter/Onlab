@@ -45,7 +45,7 @@ namespace Lynn.Client.ViewModels
 
         private void Start()
         {
-            //NavigationService.Navigate(typeof(MainPage), Course);
+            NavigationService.Navigate(typeof(TestsPage), Course);
         }
     }
 }

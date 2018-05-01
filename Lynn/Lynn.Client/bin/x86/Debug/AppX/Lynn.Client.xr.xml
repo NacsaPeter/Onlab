@@ -4,6 +4,15 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="AnswerFour" />
+    <RootPropertyPathName Name="AnswerFour_Click" />
+    <RootPropertyPathName Name="AnswerThree" />
+    <RootPropertyPathName Name="AnswerThree_Click" />
+    <RootPropertyPathName Name="AnswerTwo" />
+    <RootPropertyPathName Name="AnswerTwo_Click" />
+    <RootPropertyPathName Name="AnswerOne" />
+    <RootPropertyPathName Name="AnswerOne_Click" />
+    <RootPropertyPathName Name="Expression" />
     <RootPropertyPathName Name="Details_Click" />
     <RootPropertyPathName Name="Course" />
     <RootPropertyPathName Name="LearningLanguage" />
@@ -20,6 +29,8 @@
     <RootPropertyPathName Name="Points" />
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="LogIn_Click" />
+    <RootPropertyPathName Name="Test" />
+    <RootPropertyPathName Name="CategoryName" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -78,45 +89,61 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+      <RootProperty Name="Content" />
       <RootProperty Name="MaxHeight" />
       <RootProperty Name="MinHeight" />
       <RootProperty Name="MaxWidth" />
       <RootProperty Name="MinWidth" />
-      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Width" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="BorderBrush" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
       <RootProperty Name="Height" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
-      <RootProperty Name="Fill" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Name" />
-      <RootProperty Name="Command" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="BorderThickness" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Command" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="BorderBrush" />
       <RootProperty Name="Background" />
+      <RootProperty Name="BorderBrush" />
+    </RootType>
+    <RootType FullName="Lynn.Client.Views.ChooseOneExerciseView" />
+    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
+      <RootProperty Name="Fill" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.LinearGradientBrush">
       <RootProperty Name="StartPoint" />
       <RootProperty Name="EndPoint" />
       <RootProperty Name="GradientStops" />
+      <RootProperty Name="Opacity" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.GradientStop">
       <RootProperty Name="Color" />
@@ -132,14 +159,9 @@
       <RootProperty Name="SecondaryButtonCommand" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
-      <RootProperty Name="Width" />
-    </RootType>
     <RootType FullName="Lynn.Client.Views.DetailedCourseToEnrollInView" />
     <RootType FullName="Lynn.Client.Views.DetailedCourseToStartView" />
+    <RootType FullName="Lynn.Client.Views.DoExercisesPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="VerticalScrollBarVisibility" />
       <RootProperty Name="Content" />
@@ -150,14 +172,13 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Orientation" />
     </RootType>
-    <RootType FullName="Lynn.Client.Views.EnrolledCourses">
-      <RootProperty Name="Name" />
-    </RootType>
+    <RootType FullName="Lynn.Client.Views.EnrolledCourses" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="PlaceholderText" />
@@ -174,21 +195,20 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Background" />
     </RootType>
-    <RootType FullName="Lynn.Client.Views.EnrollInCourse">
-      <RootProperty Name="Name" />
-    </RootType>
+    <RootType FullName="Lynn.Client.Views.EnrollInCourse" />
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
-      <RootProperty Name="Items" />
+      <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HeaderTemplate" />
       <RootProperty Name="LeftHeader" />
+      <RootProperty Name="Items" />
       <RootProperty Name="RightHeader" />
     </RootType>
+    <RootType FullName="Lynn.Client.Views.LearningPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.PivotItem">
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Lynn.Client.Views.LearningPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Height" />
@@ -227,5 +247,12 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ElementTheme" />
     <RootType FullName="Lynn.Client.Views.SettingsPage" />
+    <RootType FullName="Lynn.Client.Views.TestsPage" />
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
+      <RootProperty Name="StrokeThickness" />
+      <RootProperty Name="Stroke" />
+      <RootProperty Name="Fill" />
+    </RootType>
+    <RootType FullName="Lynn.Client.Views.TestToStartView" />
   </Roots.RootTypes>
 </Roots>
