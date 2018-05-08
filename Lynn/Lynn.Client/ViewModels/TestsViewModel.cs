@@ -22,6 +22,7 @@ namespace Lynn.Client.ViewModels
         public TestsViewModel(VariableSizedWrapGrid testsVariableSizedWrapGrid)
         {
             _testsVariableSizedWrapGrid = testsVariableSizedWrapGrid;
+            LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 24 };
 
             client.BaseAddress = new Uri("http://localhost:56750/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -38,6 +39,20 @@ namespace Lynn.Client.ViewModels
                 {
                     _course = value;
                     RaisePropertyChanged(nameof(Course));
+                }
+            }
+        }
+
+        private User _loggedInUser;
+        public User LoggedInUser
+        {
+            get { return _loggedInUser; }
+            set
+            {
+                if (_loggedInUser != value)
+                {
+                    _loggedInUser = value;
+                    RaisePropertyChanged(nameof(LoggedInUser));
                 }
             }
         }

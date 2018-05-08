@@ -29,8 +29,9 @@ namespace Lynn.Client.Views
         public DoExercisesPage()
         {
             this.InitializeComponent();
-            ViewModel = new DoExercisesViewModel(Page);
+            ViewModel = new DoExercisesViewModel(GridOfTest);
             DataContext = ViewModel;
+            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

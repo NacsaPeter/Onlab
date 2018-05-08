@@ -1,4 +1,5 @@
-﻿using Lynn.Client.ViewModels;
+﻿using Lynn.Client.Interfaces;
+using Lynn.Client.ViewModels;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Lynn.Client.Views
 {
-    public sealed partial class ChooseOneExerciseView : UserControl
+    public sealed partial class ChooseOneExerciseView : UserControl, IExerciseView
     {
         public ChooseOneExerciseViewModel ViewModel { get; }
 
@@ -28,6 +29,21 @@ namespace Lynn.Client.Views
             this.InitializeComponent();
             ViewModel = new ChooseOneExerciseViewModel(vocabularyExercise);
             DataContext = ViewModel;
+        }
+
+        public bool CheckIsCorrect()
+        {
+            return ViewModel.IsCorrect;
+        }
+
+        public ContentDialog GetResultContentDialog()
+        {
+            return ViewModel.ResultContentDialog;
+        }
+
+        public UIElement GetUIElement()
+        {
+            return this;
         }
     }
 }

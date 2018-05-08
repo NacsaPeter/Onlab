@@ -37,5 +37,11 @@ namespace Lynn.DTO
 
         [DataMember(Name = "translatedWrongAnswer3")]
         public string TranslatedWrongAnswer3 { get; set; }
+
+        [DataMember(Name ="sentence")]
+        public string Sentence { get; set; }
+
+        [DataMember(Name = "translatedSentence")]
+        public string TranslatedSentence { get; set; }
     }
 }

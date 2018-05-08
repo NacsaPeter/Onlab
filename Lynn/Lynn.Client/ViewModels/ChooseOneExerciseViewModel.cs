@@ -17,9 +17,12 @@ namespace Lynn.Client.ViewModels
 {
     public class ChooseOneExerciseViewModel : ViewModelBase
     {
-        public string Expression { get; set; }
-        public ContentDialog ResultContentDialog { get; }
+        public string Expression { get; private set; }
+        public ContentDialog ResultContentDialog { get; private set; }
         public bool IsCorrect { get; private set; }
+
+        private string _translatedExpression;
+        private bool _isKnownToLearnig;
 
         private List<string> _answers;
         public string AnswerOne
@@ -65,19 +68,19 @@ namespace Lynn.Client.ViewModels
         public ChooseOneExerciseViewModel(VocabularyExercise vocabularyExercise)
         {
             Exercise = vocabularyExercise;
-            Expression = Exercise.Expression;
+            SetExerciseType();
             SetAnswersRandom();
             ResultContentDialog = new ContentDialog { CloseButtonText = "Tovább" };
-            AnswerOne_Click = new RelayCommand(new Action(CheckAnswer1));
-            AnswerTwo_Click = new RelayCommand(new Action(CheckAnswer2));
-            AnswerThree_Click = new RelayCommand(new Action(CheckAnswer3));
-            AnswerFour_Click = new RelayCommand(new Action(CheckAnswer4));
+            AnswerOne_Click = new RelayCommand(new Action(CheckAnswerOne));
+            AnswerTwo_Click = new RelayCommand(new Action(CheckAnswerTwo));
+            AnswerThree_Click = new RelayCommand(new Action(CheckAnswerThree));
+            AnswerFour_Click = new RelayCommand(new Action(CheckAnswerFour));
         }
 
-        private void CheckAnswer1() { CheckAnswer(0); }
-        private void CheckAnswer2() { CheckAnswer(1); }
-        private void CheckAnswer3() { CheckAnswer(2); }
-        private void CheckAnswer4() { CheckAnswer(3); }
+        private void CheckAnswerOne() => CheckAnswer(0); 
+        private void CheckAnswerTwo() => CheckAnswer(1);
+        private void CheckAnswerThree() => CheckAnswer(2);
+        private void CheckAnswerFour() => CheckAnswer(3);
 
         private void CheckAnswer(int chosen)
         {
@@ -88,7 +91,7 @@ namespace Lynn.Client.ViewModels
                 VerticalAlignment = VerticalAlignment.Center,
                 FontWeight = FontWeights.Bold
             };
-            if (Exercise.TranslatedExpression == _answers[chosen])
+            if (_translatedExpression == _answers[chosen])
             {
                 IsCorrect = true;
                 text.Text = "A válasz helyes.";
@@ -98,7 +101,7 @@ namespace Lynn.Client.ViewModels
             else
             {
                 IsCorrect = false;
-                text.Text = $"A helyes válasz: { Exercise.TranslatedExpression }";
+                text.Text = $"A helyes válasz: { _translatedExpression }";
                 text.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
                 ResultContentDialog.Content = text;
                 ResultContentDialog.Background = new SolidColorBrush(Colors.Red);
@@ -106,14 +109,13 @@ namespace Lynn.Client.ViewModels
             ResultContentDialog.ShowAsync();
         }
 
-
         private void SetAnswersRandom()
         {
             _answers = new List<string>();
-            _answers.Add(Exercise.TranslatedExpression);
-            _answers.Add(Exercise.TranslatedWrongAnswer1);
-            _answers.Add(Exercise.TranslatedWrongAnswer2);
-            _answers.Add(Exercise.TranslatedWrongAnswer3);
+            _answers.Add(_translatedExpression);
+            _answers.Add(_isKnownToLearnig ? Exercise.WrongAnswer1 : Exercise.TranslatedWrongAnswer1);
+            _answers.Add(_isKnownToLearnig ? Exercise.WrongAnswer2 : Exercise.TranslatedWrongAnswer2);
+            _answers.Add(_isKnownToLearnig ? Exercise.WrongAnswer3 : Exercise.TranslatedWrongAnswer3);
 
             Random random = new Random();
             int n = _answers.Count;
@@ -125,6 +127,15 @@ namespace Lynn.Client.ViewModels
                 _answers[k] = _answers[n];
                 _answers[n] = value;
             }
+        }
+
+        private void SetExerciseType()
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(2);
+            _isKnownToLearnig = (randomNumber == 0) ? true : false;
+            Expression = _isKnownToLearnig ? Exercise.TranslatedExpression : Exercise.Expression;
+            _translatedExpression = _isKnownToLearnig ? Exercise.Expression : Exercise.TranslatedExpression;
         }
     }
 }

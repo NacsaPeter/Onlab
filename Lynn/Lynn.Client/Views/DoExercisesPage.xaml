@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Name="Page" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Name="GridOfTest" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Button Name="StartButton" Command="{Binding Start_Click}" Height="200" Width="300" Background="LightGreen" Content="Indít" FontSize="60" BorderThickness="5" BorderBrush="Black"/>
     </Grid>
 </Page>

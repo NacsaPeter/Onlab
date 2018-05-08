@@ -31,6 +31,8 @@
     <RootPropertyPathName Name="LogIn_Click" />
     <RootPropertyPathName Name="Test" />
     <RootPropertyPathName Name="CategoryName" />
+    <RootPropertyPathName Name="Translation" />
+    <RootPropertyPathName Name="Sentence" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -62,6 +64,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
@@ -194,6 +197,9 @@
       <RootProperty Name="Text" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="TextWrapping" />
+      <RootEvent Name="KeyDown" />
     </RootType>
     <RootType FullName="Lynn.Client.Views.EnrollInCourse" />
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
@@ -254,5 +260,6 @@
       <RootProperty Name="Fill" />
     </RootType>
     <RootType FullName="Lynn.Client.Views.TestToStartView" />
+    <RootType FullName="Lynn.Client.Views.TranslationExerciseView" />
   </Roots.RootTypes>
 </Roots>

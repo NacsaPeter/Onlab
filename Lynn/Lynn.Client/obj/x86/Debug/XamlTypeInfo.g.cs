@@ -180,7 +180,7 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[39];
+            _typeNameTable = new string[41];
             _typeNameTable[0] = "Lynn.Client.Views.ChooseOneExerciseView";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "Lynn.Client.ViewModels.ChooseOneExerciseViewModel";
@@ -220,8 +220,10 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
             _typeNameTable[36] = "Lynn.Client.ViewModels.TestsViewModel";
             _typeNameTable[37] = "Lynn.Client.Views.TestToStartView";
             _typeNameTable[38] = "Lynn.Client.ViewModels.TestToStartViewModel";
+            _typeNameTable[39] = "Lynn.Client.Views.TranslationExerciseView";
+            _typeNameTable[40] = "Lynn.Client.ViewModels.TranslationExerciseViewModel";
 
-            _typeTable = new global::System.Type[39];
+            _typeTable = new global::System.Type[41];
             _typeTable[0] = typeof(global::Lynn.Client.Views.ChooseOneExerciseView);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::Lynn.Client.ViewModels.ChooseOneExerciseViewModel);
@@ -261,6 +263,8 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
             _typeTable[36] = typeof(global::Lynn.Client.ViewModels.TestsViewModel);
             _typeTable[37] = typeof(global::Lynn.Client.Views.TestToStartView);
             _typeTable[38] = typeof(global::Lynn.Client.ViewModels.TestToStartViewModel);
+            _typeTable[39] = typeof(global::Lynn.Client.Views.TranslationExerciseView);
+            _typeTable[40] = typeof(global::Lynn.Client.ViewModels.TranslationExerciseViewModel);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -582,6 +586,20 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
+
+            case 39:   //  Lynn.Client.Views.TranslationExerciseView
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.AddMemberName("ViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 40:   //  Lynn.Client.ViewModels.TranslationExerciseViewModel
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
             }
             return xamlType;
         }
@@ -665,6 +683,11 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
         private object get_14_TestToStartView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.TestToStartView)instance;
+            return that.ViewModel;
+        }
+        private object get_15_TranslationExerciseView_ViewModel(object instance)
+        {
+            var that = (global::Lynn.Client.Views.TranslationExerciseView)instance;
             return that.ViewModel;
         }
 
@@ -763,6 +786,12 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.TestToStartView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.TestToStartViewModel");
                 xamlMember.Getter = get_14_TestToStartView_ViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Lynn.Client.Views.TranslationExerciseView.ViewModel":
+                userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.TranslationExerciseView");
+                xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.TranslationExerciseViewModel");
+                xamlMember.Getter = get_15_TranslationExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }

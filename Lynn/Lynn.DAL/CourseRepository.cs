@@ -49,7 +49,9 @@ namespace Lynn.DAL
                         WrongAnswer3 = t.WrongAnswer3,
                         TranslatedWrongAnswer1 = t.TranslatedWrongAnswer1,
                         TranslatedWrongAnswer2 = t.TranslatedWrongAnswer2,
-                        TranslatedWrongAnswer3 = t.TranslatedWrongAnswer3
+                        TranslatedWrongAnswer3 = t.TranslatedWrongAnswer3,
+                        Sentence = t.Sentence,
+                        TranslatedSentence = t.TranslatedSentence
                     })
                     .ToList();
             }

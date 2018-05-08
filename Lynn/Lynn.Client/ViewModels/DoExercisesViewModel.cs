@@ -1,4 +1,5 @@
 ﻿using Lynn.Client.Helpers;
+using Lynn.Client.Interfaces;
 using Lynn.Client.Views;
 using Lynn.DTO;
 using System;
@@ -22,10 +23,11 @@ namespace Lynn.Client.ViewModels
 
         public ICommand Start_Click { get; set; }
 
-        public DoExercisesViewModel(Grid page)
+        public DoExercisesViewModel(Grid gridOfTest)
         {
-            _page = page;
+            _gridOfTest = gridOfTest;
             _correctAnswers = 0;
+            _currentExercise = 0;
 
             client.BaseAddress = new Uri("http://localhost:56750/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -48,9 +50,11 @@ namespace Lynn.Client.ViewModels
             }
         }
 
-        private Grid _page;
+        private Grid _gridOfTest;
         private ObservableCollection<VocabularyExercise> _vocabularyExercises;
+        private int _currentExercise;
         private int _correctAnswers;
+        public int Points { get; private set; }
 
         private void DoExercises()
         {
@@ -65,30 +69,44 @@ namespace Lynn.Client.ViewModels
             var searchedExercises = serializer.ReadObject(await streamTask) as ObservableCollection<VocabularyExercise>;
 
             _vocabularyExercises = searchedExercises;
-            _page.Children.Clear();
-            if (_vocabularyExercises.Count != 0)
+            _gridOfTest.Children.Clear();
+            if (_vocabularyExercises.Count != _currentExercise)
             {
-                var exercise = _vocabularyExercises[0];
-                var exerciseView = new ChooseOneExerciseView(exercise);
-                exerciseView.ViewModel.ResultContentDialog.CloseButtonClick += NextExercise;
-                _page.Children.Add(exerciseView);
-                _vocabularyExercises.RemoveAt(0);
+                var exercise = _vocabularyExercises[_currentExercise];
+                IExerciseView exerciseView = SetExerciseType(exercise);
+                exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                _gridOfTest.Children.Add(exerciseView.GetUIElement());
+                _currentExercise++;
             }
 
             return searchedExercises;
         }
 
+        private IExerciseView SetExerciseType(VocabularyExercise exercise)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(2);
+            if (randomNumber == 0)
+            {
+                return new ChooseOneExerciseView(exercise);
+            }
+            else
+            {
+                return new TranslationExerciseView(exercise);
+            }              
+        }
+
         private void NextExercise(object sender, ContentDialogButtonClickEventArgs args)
         {
-            if (((ChooseOneExerciseView)_page.Children[0]).ViewModel.IsCorrect) _correctAnswers++;
-            _page.Children.Clear();
-            if (_vocabularyExercises.Count != 0)
+            if (((IExerciseView)_gridOfTest.Children[0]).CheckIsCorrect()) _correctAnswers++;
+            _gridOfTest.Children.Clear();
+            if (_vocabularyExercises.Count != _currentExercise)
             { 
-                var exercise = _vocabularyExercises[0];
-                var exerciseView = new ChooseOneExerciseView(exercise);
-                exerciseView.ViewModel.ResultContentDialog.CloseButtonClick += NextExercise;
-                _page.Children.Add(exerciseView);
-                _vocabularyExercises.RemoveAt(0);
+                var exercise = _vocabularyExercises[_currentExercise];
+                IExerciseView exerciseView = SetExerciseType(exercise);
+                exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                _gridOfTest.Children.Add(exerciseView.GetUIElement());
+                _currentExercise++;
             }
             else
             {
@@ -106,16 +124,17 @@ namespace Lynn.Client.ViewModels
                     HorizontalAlignment = HorizontalAlignment.Center,
                     Margin = new Thickness { Bottom = 60 }
                 };
+                Points = (int)((float)_correctAnswers / (float)Test.NumberOfQuestions * (float)Test.MaxPoints);
                 TextBlock pointsTextBlock = new TextBlock
                 {
-                    Text = $"Pontszáma: {(int)((float)_correctAnswers / (float)Test.NumberOfQuestions * (float)Test.MaxPoints)}/{Test.MaxPoints}",
+                    Text = $"Pontszáma: {Points}/{Test.MaxPoints}",
                     FontSize = 24,
                     VerticalAlignment = VerticalAlignment.Center,
                     HorizontalAlignment = HorizontalAlignment.Center
                 };
                 stackPanel.Children.Add(endTextBlock);
                 stackPanel.Children.Add(pointsTextBlock);
-                _page.Children.Add(stackPanel);
+                _gridOfTest.Children.Add(stackPanel);
             }
         }
     }

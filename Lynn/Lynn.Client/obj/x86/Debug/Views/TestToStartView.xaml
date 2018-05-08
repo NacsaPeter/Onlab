@@ -11,28 +11,30 @@
     MinHeight="250" MaxHeight="250"
     MinWidth="200" MaxWidth="200">
 
-    <Grid Margin="10">
-        <Rectangle StrokeThickness="10">
-            <Rectangle.Stroke>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" Opacity="0.8">
-                    <GradientStop Color="Green" Offset="1" />
-                    <GradientStop Color="Red" Offset="0.5" />
-                    <GradientStop Color="Green" Offset="0" />
-                </LinearGradientBrush>
-            </Rectangle.Stroke>
-            <Rectangle.Fill>
-                <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
-                    <GradientStop Color="Bisque" Offset="0.0" />
-                    <GradientStop Color="Goldenrod" Offset="1.0" />
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <TextBlock Text="{Binding Test.CategoryName}" Margin="0,45,0,0" FontSize="24" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
-            <TextBlock Text="{Binding Test.Level}"></TextBlock>
-            <TextBlock Text=". szint"></TextBlock>
-        </StackPanel>
-        <Button x:ConnectionId='1' Name="StartButton" Command="{Binding Start_Click}" Content="Indít" FontSize="16" BorderThickness="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,30" Width="90"></Button>
-    </Grid>
+    <Button x:ConnectionId='1' Name="StartButton" Command="{Binding Start_Click}" Background="White" BorderThickness="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid Height="240" Width="180">
+            <Rectangle StrokeThickness="10">
+                <Rectangle.Stroke>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" Opacity="0.8">
+                        <GradientStop Color="Green" Offset="1" />
+                        <GradientStop Color="Red" Offset="0.5" />
+                        <GradientStop Color="Green" Offset="0" />
+                    </LinearGradientBrush>
+                </Rectangle.Stroke>
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                        <GradientStop Color="Bisque" Offset="0.0" />
+                        <GradientStop Color="Goldenrod" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <TextBlock Text="{Binding Test.CategoryName}" Margin="0,65,0,0" FontSize="24" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBlock>
+            <StackPanel Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="{Binding Test.Level}"></TextBlock>
+                <TextBlock Text=". szint"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Button>
 </UserControl>
 

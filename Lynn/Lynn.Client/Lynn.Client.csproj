@@ -119,6 +119,7 @@
     <Compile Include="Helpers\Observable.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
+    <Compile Include="Interfaces\IExerciseView.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Services\NavigationService.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\TestsViewModel.cs" />
     <Compile Include="ViewModels\TestToStartViewModel.cs" />
+    <Compile Include="ViewModels\TranslationExerciseViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\ChooseOneExerciseView.xaml.cs">
       <DependentUpon>ChooseOneExerciseView.xaml</DependentUpon>
@@ -187,6 +189,9 @@
     </Compile>
     <Compile Include="Views\TestToStartView.xaml.cs">
       <DependentUpon>TestToStartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TranslationExerciseView.xaml.cs">
+      <DependentUpon>TranslationExerciseView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TestToStartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TranslationExerciseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
