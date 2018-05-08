@@ -715,3 +715,8 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Vi
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\TranslationExerciseView.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\TranslationExerciseView.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\TranslationExerciseView.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\PictureExerciseView.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\PictureExerciseView.g.i.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\PictureExerciseView.g.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\PictureExerciseView.xaml
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\PictureExerciseView.xbf

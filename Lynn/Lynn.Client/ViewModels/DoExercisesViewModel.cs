@@ -85,10 +85,14 @@ namespace Lynn.Client.ViewModels
         private IExerciseView SetExerciseType(VocabularyExercise exercise)
         {
             Random random = new Random();
-            int randomNumber = random.Next(2);
+            int randomNumber = random.Next(3);
             if (randomNumber == 0)
             {
                 return new ChooseOneExerciseView(exercise);
+            }
+            else if (randomNumber == 1)
+            {
+                return new PictureExerciseView(exercise);
             }
             else
             {

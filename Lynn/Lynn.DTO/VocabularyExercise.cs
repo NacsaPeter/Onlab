@@ -43,5 +43,8 @@ namespace Lynn.DTO
 
         [DataMember(Name = "translatedSentence")]
         public string TranslatedSentence { get; set; }
+
+        [DataMember(Name = "picture")]
+        public string Picture { get; set; }
     }
 }

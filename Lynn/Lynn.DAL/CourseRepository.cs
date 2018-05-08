@@ -51,7 +51,8 @@ namespace Lynn.DAL
                         TranslatedWrongAnswer2 = t.TranslatedWrongAnswer2,
                         TranslatedWrongAnswer3 = t.TranslatedWrongAnswer3,
                         Sentence = t.Sentence,
-                        TranslatedSentence = t.TranslatedSentence
+                        TranslatedSentence = t.TranslatedSentence,
+                        Picture = t.Picture
                     })
                     .ToList();
             }

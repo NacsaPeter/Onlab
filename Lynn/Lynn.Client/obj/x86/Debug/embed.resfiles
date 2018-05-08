@@ -16,6 +16,7 @@ Views\LearningPage.xbf
 Views\LoggedInPage.xbf
 Views\LogInView.xbf
 Views\MainPage.xbf
+Views\PictureExerciseView.xbf
 Views\SettingsPage.xbf
 Views\TestsPage.xbf
 Views\TestToStartView.xbf

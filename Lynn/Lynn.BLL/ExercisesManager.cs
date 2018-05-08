@@ -17,9 +17,9 @@ namespace Lynn.BLL
 
         public ExercisesManager() : this(new CourseRepository()) { }
 
-        public IEnumerable<VocabularyExercise> GetVocabularyExercises(int id)
+        public IEnumerable<VocabularyExercise> GetVocabularyExercises(int testId)
         {
-            return _repo.GetVocabularyExercisesByTestId(id);
+            return _repo.GetVocabularyExercisesByTestId(testId);
         }
     }
 }
