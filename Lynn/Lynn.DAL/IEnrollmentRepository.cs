@@ -10,5 +10,6 @@ namespace Lynn.DAL
         int EnrollCourse(Enrollment enrollment);
         User GetUserByID(int id);
         IEnumerable<Course> GetCoursesByName(string coursename);
+        Enrollment GetEnrollmentById(int enrollmentId);
     }
 }

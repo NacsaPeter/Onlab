@@ -9,19 +9,32 @@ namespace Lynn.Client.Views
 {
     public sealed partial class LoggedInPage : Page
     {
-        public LoggedInViewModel ViewModel { get; }
-
         public LoggedInPage()
         {
             InitializeComponent();
-            ViewModel = new LoggedInViewModel();
-            DataContext = ViewModel;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e); 
-            ViewModel.LoggedInUser = (User)e.Parameter;
+            base.OnNavigatedTo(e);            
+            ViewModel.OnNavigatedTo(e.Parameter);
+        }
+
+        private void HamburgerButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            HamburgerMenuButton.IsPaneOpen = !HamburgerMenuButton.IsPaneOpen;
+        }
+
+        private void LearningButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            LearningPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            SettingsPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void SettingsButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            LearningPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            SettingsPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
     }
 }

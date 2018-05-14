@@ -559,8 +559,44 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\profile.jpg">
       <PackagePath>Assets\profile.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\de.png">
+      <PackagePath>Assets\flags\de.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\en.png">
+      <PackagePath>Assets\flags\en.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\en\GB.png">
+      <PackagePath>Assets\flags\en\GB.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\en\US.png">
+      <PackagePath>Assets\flags\en\US.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\es.png">
+      <PackagePath>Assets\flags\es.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\es\ES.png">
+      <PackagePath>Assets\flags\es\ES.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\es\MX.png">
+      <PackagePath>Assets\flags\es\MX.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\fr.png">
+      <PackagePath>Assets\flags\fr.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\fr\FR.png">
+      <PackagePath>Assets\flags\fr\FR.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\hu.png">
+      <PackagePath>Assets\flags\hu.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\hu\HU.png">
+      <PackagePath>Assets\flags\hu\HU.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\it.png">
+      <PackagePath>Assets\flags\it.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\it\IT.png">
+      <PackagePath>Assets\flags\it\IT.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -588,6 +624,9 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.xr.xml">
       <PackagePath>Lynn.Client.xr.xml</PackagePath>

@@ -330,12 +330,10 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\St
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_FontSizes.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_Thickness.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\TextBlock.xbf
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\CourseToEnrollInView.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EnrolledCoursesPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EnrollInCoursePage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\LearningPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\LoggedInPage.xbf
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\LogInView.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\MainPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\SettingsPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.xr.xml
@@ -520,8 +518,6 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Ly
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Lynn.Client.csprojResolveAssemblyReference.cache
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\App.g.i.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\App.g.cs
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\CourseToEnrollInView.g.i.cs
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\CourseToEnrollInView.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrolledCoursesPage.g.i.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrolledCoursesPage.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrollInCoursePage.g.i.cs
@@ -530,8 +526,6 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Vi
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LearningPage.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LoggedInPage.g.i.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LoggedInPage.g.cs
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LogInView.g.i.cs
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LogInView.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\MainPage.g.i.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\MainPage.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\SettingsPage.g.i.cs
@@ -543,12 +537,10 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\St
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_FontSizes.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_Thickness.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\TextBlock.xaml
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\CourseToEnrollInView.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrolledCoursesPage.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrollInCoursePage.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LearningPage.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LoggedInPage.xaml
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LogInView.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\MainPage.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\SettingsPage.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\App.xbf
@@ -557,12 +549,10 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\St
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_FontSizes.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_Thickness.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\TextBlock.xbf
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\CourseToEnrollInView.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrolledCoursesPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrollInCoursePage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LearningPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LoggedInPage.xbf
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LogInView.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\MainPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\SettingsPage.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\XamlSaveStateFile.xml
@@ -720,3 +710,6 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Vi
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\PictureExerciseView.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\PictureExerciseView.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\PictureExerciseView.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_Pivot.xaml
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_Pivot.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_Pivot.xbf

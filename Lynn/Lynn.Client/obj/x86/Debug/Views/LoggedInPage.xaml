@@ -5,32 +5,43 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views = "using:Lynn.Client.Views"
+    xmlns:vm ="using:Lynn.Client.ViewModels"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <vm:LoggedInViewModel x:ConnectionId='1' x:Name="ViewModel"/>
+    </Page.DataContext>
+
     <Grid>
-        <Pivot Margin="0,20,0,0" HeaderTemplate="{StaticResource PivotHeaderTemplate}">
 
-            <Pivot.LeftHeader>
-                <TextBlock Text="Lynn" FontSize="60" Margin="20,-14,50,20" FontWeight="Bold" />
-            </Pivot.LeftHeader>
+        <views:LearningPage x:ConnectionId='2' x:Name="LearningPage" Visibility="Visible"/>
+        <views:SettingsPage x:ConnectionId='3' x:Name="SettingsPage" Visibility="Collapsed"/>
 
-            <PivotItem Header="Tanulás">
-                <views:LearningPage></views:LearningPage>
-            </PivotItem>
-
-            <PivotItem Header="Tanítás">
-                <Grid Background="Red">
-                </Grid>
-            </PivotItem>
-
-            <Pivot.RightHeader>
-                <StackPanel Margin="0,0,20,0" Orientation="Horizontal">
-                    <Image Source="ms-appx:///Assets/profile.jpg" Height="40" Margin="0,-10,0,0"/>
-                    <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="40" Margin="20,7,10,10"/>
-                    <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="40" Margin="20,7,10,10"/>
+        <SplitView x:ConnectionId='4' x:Name="HamburgerMenuButton" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="180">
+            <SplitView.Pane>
+                <StackPanel Background="LightGray">
+                    <Button x:ConnectionId='5' x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                        Width="50" Height="50" Background="Transparent"                              />
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='8' x:Name="LearningButton" FontFamily="Segoe MDL2 Assets" Content="&#xE8F2;"
+                             Width="50" Height="50" Background="Transparent"                             />
+                        <TextBlock Text="Tanulás" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='7' x:Name="TeachingButton" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;"
+                            Width="50" Height="50" Background="Transparent"/>
+                        <TextBlock Text="Tanítás" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='6' x:Name="SettingsButton" FontFamily="Segoe MDL2 Assets" Content="&#xE713;"
+                            Width="50" Height="50" Background="Transparent"                             />
+                        <TextBlock Text="Beállítások" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
                 </StackPanel>
-            </Pivot.RightHeader>
-        </Pivot>
+            </SplitView.Pane>
+
+        </SplitView>
     </Grid>
 </Page>
 

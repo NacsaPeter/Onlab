@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>C4CFA83322E51187B338CD072F3C680B528A0145746C89B109ACAA8C3FA513BB</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>6576F2C9A2A081D4915133C94B22D23D15538557CE5403EF02732682761408D4</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>9CF6EB18-7A12-4748-BC34-AF536E8C2667_1.0.0.0_x86__y56jaz09mxxer</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>9CF6EB18-7A12-4748-BC34-AF536E8C2667_y56jaz09mxxer!App</RegisteredUserModeAppID>
     <RegisteredPackageID>9CF6EB18-7A12-4748-BC34-AF536E8C2667</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-08T23:47:52.595</Modified>
+      <Modified>2018-05-14T19:02:11.219</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.exe">
       <PackagePath>entrypoint\Lynn.Client.exe</PackagePath>
-      <Modified>2018-05-08T23:47:50.161</Modified>
+      <Modified>2018-05-14T19:02:08.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\.nuget\packages\microsoft.aspnet.webapi.client\5.2.4\lib\netstandard2.0\System.Net.Http.Formatting.dll">
       <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
@@ -721,7 +721,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.dll">
       <PackagePath>Lynn.DTO.dll</PackagePath>
-      <Modified>2018-05-08T23:32:57.236</Modified>
+      <Modified>2018-05-13T20:04:42.243</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\apple.jpg">
       <PackagePath>Assets\apple.jpg</PackagePath>
@@ -747,9 +747,57 @@
       <PackagePath>Assets\profile.jpg</PackagePath>
       <Modified>2018-04-05T18:57:57.751</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-04-05T14:50:46.897</Modified>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\de.png">
+      <PackagePath>Assets\flags\de.png</PackagePath>
+      <Modified>2018-05-13T13:08:22.034</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\en.png">
+      <PackagePath>Assets\flags\en.png</PackagePath>
+      <Modified>2018-05-13T13:07:42.170</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\en\GB.png">
+      <PackagePath>Assets\flags\en\GB.png</PackagePath>
+      <Modified>2018-05-13T13:07:42.170</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\en\US.png">
+      <PackagePath>Assets\flags\en\US.png</PackagePath>
+      <Modified>2018-05-13T13:07:57.835</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\es.png">
+      <PackagePath>Assets\flags\es.png</PackagePath>
+      <Modified>2018-05-13T13:12:30.745</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\es\ES.png">
+      <PackagePath>Assets\flags\es\ES.png</PackagePath>
+      <Modified>2018-05-13T13:12:30.745</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\es\MX.png">
+      <PackagePath>Assets\flags\es\MX.png</PackagePath>
+      <Modified>2018-05-13T13:12:18.289</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\fr.png">
+      <PackagePath>Assets\flags\fr.png</PackagePath>
+      <Modified>2018-05-13T13:08:16.836</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\fr\FR.png">
+      <PackagePath>Assets\flags\fr\FR.png</PackagePath>
+      <Modified>2018-05-13T13:08:16.836</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\hu.png">
+      <PackagePath>Assets\flags\hu.png</PackagePath>
+      <Modified>2018-05-13T13:08:40.261</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\hu\HU.png">
+      <PackagePath>Assets\flags\hu\HU.png</PackagePath>
+      <Modified>2018-05-13T13:08:40.261</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\it.png">
+      <PackagePath>Assets\flags\it.png</PackagePath>
+      <Modified>2018-05-13T13:07:14.360</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\it\IT.png">
+      <PackagePath>Assets\flags\it\IT.png</PackagePath>
+      <Modified>2018-05-13T13:07:14.360</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -785,9 +833,13 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-04-05T14:50:46.889</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2018-04-05T14:50:46.897</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.xr.xml">
       <PackagePath>Lynn.Client.xr.xml</PackagePath>
-      <Modified>2018-05-08T23:40:14.321</Modified>
+      <Modified>2018-05-14T19:02:08.136</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -796,11 +848,11 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-08T23:47:50.912</Modified>
+      <Modified>2018-05-14T19:02:09.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\Lynn.Client.exe">
       <PackagePath>Lynn.Client.exe</PackagePath>
-      <Modified>2018-05-08T23:47:52.586</Modified>
+      <Modified>2018-05-14T19:02:11.212</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

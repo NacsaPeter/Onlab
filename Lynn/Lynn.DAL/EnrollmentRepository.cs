@@ -101,5 +101,23 @@ namespace Lynn.DAL
                     Level = t.Level.LevelCode
                 });
         }
+
+        public Enrollment GetEnrollmentById(int enrollmentId)
+        {
+            using (var db = getDB())
+            {
+                return db.Enrollments
+                    .Where(t => t.ID == enrollmentId)
+                    .Select(t => new Enrollment
+                    {
+                        ID = t.ID,
+                        CourseId = t.CourseID,
+                        Level = t.Level,
+                        Points = t.Points,
+                        UserId = t.UserID
+                    })
+                    .Single();
+            }
+        }
     }
 }

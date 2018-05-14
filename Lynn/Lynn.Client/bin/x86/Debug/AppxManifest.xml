@@ -20,6 +20,11 @@
   </Dependencies>
   <Resources>
     <Resource Language="EN-US" />
+    <Resource Language="EN" />
+    <Resource Language="ES" />
+    <Resource Language="FR" />
+    <Resource Language="HU" />
+    <Resource Language="IT" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="Lynn.Client.exe" EntryPoint="Lynn.Client.App">

@@ -9,5 +9,7 @@ namespace Lynn.DAL
     {
         IEnumerable<Test> GetTestsByCourseId(int id);
         IEnumerable<VocabularyExercise> GetVocabularyExercisesByTestId(int id);
+        Dictionary<string, string> GetLanguageCodeDictionary();
+        Dictionary<string, string> GetTerritoryCodeDictionary();
     }
 }

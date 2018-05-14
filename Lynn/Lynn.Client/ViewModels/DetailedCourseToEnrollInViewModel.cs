@@ -1,34 +1,29 @@
 ﻿using Lynn.Client.Helpers;
+using Lynn.Client.Services;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml.Serialization;
 using Windows.UI.Popups;
 
 namespace Lynn.Client.ViewModels
 {
-    public class DetailedCourseToEnrollInViewModel : ViewModelBase
+    public class DetailedCourseToEnrollInViewModel : Observable
     {
-        private readonly HttpClient client = new HttpClient();
-
         public ICommand EnrollIn_Click { get; set; }
         public ICommand Cancel_Click { get; set; }
-
-        //  public event EventHandler NewEnrollmentEventHandler;
 
         public DetailedCourseToEnrollInViewModel(Course course)
         {
             Course = course;
-
-            client.BaseAddress = new Uri("http://localhost:56750/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));
-
             EnrollIn_Click = new RelayCommand(new Action(EnrollIn));
             Cancel_Click = new RelayCommand(new Action(Cancel));
         }
@@ -37,45 +32,19 @@ namespace Lynn.Client.ViewModels
         public Course Course
         {
             get { return _course; }
-            set
-            {
-                if (_course != value)
-                {
-                    _course = value;
-                    RaisePropertyChanged(nameof(Course));
-                }
-            }
+            set { Set(ref _course, value, nameof(Course)); }
         }
 
-        private void Cancel()
-        {
-        }
+        private void Cancel() {}
 
-        private void EnrollIn()
-        {
-            var result = EnrollInAsync();
-            //if (result.IsCompletedSuccessfully)
-            //{
-                //NewEnrollmentEventHandler?.Invoke(this, new EventArgs());
-                //Success();
-            //}
-        }
+        private void EnrollIn() => EnrollInAsync();
 
-        private async Task<Uri> EnrollInAsync()
+        private async Task EnrollInAsync()
         {
             User loggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 0 };
-            Enrollment enrollment = new Enrollment { CourseId = Course.ID, UserId = loggedInUser.ID, Points = 0, Level = 1 };
-            HttpResponseMessage response = await client.PostAsJsonAsync("api/enrollment", enrollment);
-            response.EnsureSuccessStatusCode();
-
-            return response.Headers.Location;
+            var service = new EnrollmentService();
+            await service.EnrollInAsync(loggedInUser, Course);
         }
 
-        private async Task Success()
-        {
-            MessageDialog dialog = new MessageDialog("Sikeresen jelentkezett a kurzusra!");
-            dialog.Commands.Add(new UICommand("OK", null));
-            var cmd = await dialog.ShowAsync();
-        }
     }
 }

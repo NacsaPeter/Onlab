@@ -57,5 +57,37 @@ namespace Lynn.DAL
                     .ToList();
             }
         }
+
+        public Dictionary<string, string> GetLanguageCodeDictionary()
+        {
+            using (var db = getDB())
+            {
+                var dictionary = new Dictionary<string, string>();
+                var results = db.Languages
+                    .Select(t => new { Key = t.Code, Value = t.Name })
+                    .ToList();
+                foreach (var item in results)
+                {
+                    dictionary.Add(item.Key, item.Value);
+                }
+                return dictionary;
+            }
+        }
+
+        public Dictionary<string, string> GetTerritoryCodeDictionary()
+        {
+            using (var db = getDB())
+            {
+                var dictionary = new Dictionary<string, string>();
+                var results = db.Territories
+                    .Select(t => new { Key = t.Code, Value = t.Name })
+                    .ToList();
+                foreach (var item in results)
+                {
+                    dictionary.Add(item.Key, item.Value);
+                }
+                return dictionary;
+            }
+        }
     }
 }

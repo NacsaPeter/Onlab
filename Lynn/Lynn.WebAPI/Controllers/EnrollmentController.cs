@@ -26,15 +26,17 @@ namespace Lynn.WebAPI.Controllers
             }
 
             int enrollmentId = manager.EnrollCourse(enrollment);
+            Uri url = new Uri($"http://localhost:56750/api/enrollment/{enrollmentId}");
 
-            return Json(enrollmentId);
-            //return Created();
+            return Created(url, enrollmentId);
         }
 
-        [HttpGet("{coursename}", Name = "GetCoursesByName")]
-        public IEnumerable<Course> GetCoursesByName(string coursename)
+        [HttpGet("{id}", Name = "GetEnrollmentById")]
+        public Enrollment GetEnrollmentById(int id)
         {
-            return manager.GetCoursesByName(coursename);
+            return manager.GetEnrollmentById(id);
         }
+
+
     }
 }

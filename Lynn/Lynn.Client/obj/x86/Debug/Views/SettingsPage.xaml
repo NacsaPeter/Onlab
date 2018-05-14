@@ -12,7 +12,7 @@
         <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
     </Page.Resources>
 
-    <Grid>
+    <Grid Margin="60,0,0,0">
         <Grid Margin="{StaticResource MediumLeftRightMargin}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48"/>

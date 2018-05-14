@@ -25,5 +25,10 @@ namespace Lynn.BLL
         {
             return _repo.GetCoursesByName(coursename);
         }
+
+        public Enrollment GetEnrollmentById(int enrollmentId)
+        {
+            return _repo.GetEnrollmentById(enrollmentId);
+        }
     }
 }

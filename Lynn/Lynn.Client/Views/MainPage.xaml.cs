@@ -8,16 +8,9 @@ namespace Lynn.Client.Views
 {
     public sealed partial class MainPage : Page
     {
-        public MainViewModel ViewModel { get; } = new MainViewModel();
-
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void LogInViewControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            LogInViewControl.DataContext = new LogInViewModel();
         }
     }
 }

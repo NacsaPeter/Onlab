@@ -1,4 +1,6 @@
 ﻿using Lynn.Client.Helpers;
+using Lynn.Client.Models;
+using Lynn.Client.Services;
 using Lynn.Client.Views;
 using Lynn.DTO;
 using System;
@@ -15,57 +17,45 @@ using Windows.UI.Xaml.Controls;
 
 namespace Lynn.Client.ViewModels
 {
-    public class EnrollInCourseViewModel : ViewModelBase
+    public class EnrollInCourseViewModel : Observable
     {
-        private readonly HttpClient client = new HttpClient();
-
         public ICommand SearchCourseByName_Click { get; set; }
 
-        private VariableSizedWrapGrid _coursesContainer;
-
-        private string courseName;
-        public string CourseName
+        private ObservableCollection<CoursePresenter> _courses;
+        public ObservableCollection<CoursePresenter> Courses
         {
-            get { return courseName; }
-            set
-            {
-                if (courseName != value)
-                {
-                    courseName = value;
-                    RaisePropertyChanged(nameof(CourseName));
-                }
-            }
+            get { return _courses;  }
+            set { Set(ref _courses, value, nameof(Courses)); }
         }
 
-        public EnrollInCourseViewModel(VariableSizedWrapGrid coursesContainer)
+        private string _courseName;
+        public string CourseName
         {
-            _coursesContainer = coursesContainer;
+            get { return _courseName; }
+            set { Set(ref _courseName, value, nameof(CourseName)); }
+        }
 
-            client.BaseAddress = new Uri("http://localhost:56750/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));
-
+        public EnrollInCourseViewModel()
+        {
             SearchCourseByName_Click = new RelayCommand(new Action(SearchCourseByName));
         }
 
         private void SearchCourseByName()
         {
-            _coursesContainer.Children.Clear();
-            var searchedCourses = ProcessCoursesByName(CourseName);
+            ProcessCoursesByName(CourseName);
         }
 
-        private async Task<ObservableCollection<Course>> ProcessCoursesByName(string name)
+        private async Task ProcessCoursesByName(string name)
         {
-            var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
+            var service = new EnrollmentService();
+            var results = await service.GetCoursesByNameAsync(name);
+            Courses = CoursePresenter.GetCoursePresenters(results);
+        }
 
-            var streamTask = client.GetStreamAsync($"http://localhost:56750/api/enrollment/{name}");
-            var searchedCourses = serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
-
-            foreach (var course in searchedCourses)
-            {
-                _coursesContainer.Children.Add(new CourseToEnrollInView(course));
-            }
-            return searchedCourses;
+        public void ShowCourseDetails(Course course)
+        {
+            DetailedCourseToEnrollInView detailedCourse = new DetailedCourseToEnrollInView(course);
+            detailedCourse.ShowAsync();
         }
     }
 }

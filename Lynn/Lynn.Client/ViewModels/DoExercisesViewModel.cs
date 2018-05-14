@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml;
@@ -55,6 +56,8 @@ namespace Lynn.Client.ViewModels
         private int _currentExercise;
         private int _correctAnswers;
         public int Points { get; private set; }
+
+        public event EventHandler TestFinished;
 
         private void DoExercises()
         {
@@ -139,6 +142,8 @@ namespace Lynn.Client.ViewModels
                 stackPanel.Children.Add(endTextBlock);
                 stackPanel.Children.Add(pointsTextBlock);
                 _gridOfTest.Children.Add(stackPanel);
+                //Thread.Sleep(2000);
+                //TestFinished?.Invoke(this, new EventArgs());
             }
         }
     }
