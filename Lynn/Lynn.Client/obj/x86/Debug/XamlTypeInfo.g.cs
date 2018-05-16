@@ -180,93 +180,85 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[42];
+            _typeNameTable = new string[38];
             _typeNameTable[0] = "Lynn.Client.Views.ChooseOneExerciseView";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "Lynn.Client.ViewModels.ChooseOneExerciseViewModel";
             _typeNameTable[3] = "Lynn.Client.ViewModels.ViewModelBase";
             _typeNameTable[4] = "Object";
-            _typeNameTable[5] = "Lynn.Client.Views.CourseToStartView";
-            _typeNameTable[6] = "Lynn.Client.ViewModels.CourseToStartViewModel";
-            _typeNameTable[7] = "Lynn.Client.Views.DetailedCourseToEnrollInView";
-            _typeNameTable[8] = "Windows.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[9] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[10] = "Lynn.Client.ViewModels.DetailedCourseToEnrollInViewModel";
-            _typeNameTable[11] = "Lynn.Client.Helpers.Observable";
-            _typeNameTable[12] = "Lynn.Client.Views.DetailedCourseToStartView";
-            _typeNameTable[13] = "Lynn.Client.ViewModels.DetailedCourseToStartViewModel";
-            _typeNameTable[14] = "Lynn.Client.Views.DoExercisesPage";
-            _typeNameTable[15] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[16] = "Lynn.Client.ViewModels.DoExercisesViewModel";
-            _typeNameTable[17] = "Lynn.Client.Views.EnrolledCourses";
-            _typeNameTable[18] = "Lynn.Client.ViewModels.EnrolledCoursesViewModel";
-            _typeNameTable[19] = "Lynn.Client.Views.EnrollInCourse";
-            _typeNameTable[20] = "Lynn.Client.ViewModels.EnrollInCourseViewModel";
-            _typeNameTable[21] = "Lynn.Client.Views.LearningPage";
-            _typeNameTable[22] = "Lynn.Client.ViewModels.LearningViewModel";
-            _typeNameTable[23] = "Lynn.Client.ViewModels.LoggedInViewModel";
-            _typeNameTable[24] = "Lynn.DTO.User";
-            _typeNameTable[25] = "Lynn.Client.Views.SettingsPage";
-            _typeNameTable[26] = "Lynn.Client.ViewModels.SettingsViewModel";
-            _typeNameTable[27] = "Lynn.Client.Views.LoggedInPage";
-            _typeNameTable[28] = "Lynn.Client.ViewModels.MainViewModel";
-            _typeNameTable[29] = "System.Windows.Input.ICommand";
-            _typeNameTable[30] = "Lynn.Client.Views.MainPage";
-            _typeNameTable[31] = "Lynn.Client.Views.PictureExerciseView";
-            _typeNameTable[32] = "Lynn.Client.ViewModels.PictureExerciseViewModel";
-            _typeNameTable[33] = "Lynn.Client.Helpers.EnumToBooleanConverter";
-            _typeNameTable[34] = "System.Type";
-            _typeNameTable[35] = "System.Reflection.MemberInfo";
-            _typeNameTable[36] = "Lynn.Client.Views.TestsPage";
-            _typeNameTable[37] = "Lynn.Client.ViewModels.TestsViewModel";
-            _typeNameTable[38] = "Lynn.Client.Views.TestToStartView";
-            _typeNameTable[39] = "Lynn.Client.ViewModels.TestToStartViewModel";
-            _typeNameTable[40] = "Lynn.Client.Views.TranslationExerciseView";
-            _typeNameTable[41] = "Lynn.Client.ViewModels.TranslationExerciseViewModel";
+            _typeNameTable[5] = "Lynn.Client.Views.DetailedCourseToEnrollInView";
+            _typeNameTable[6] = "Windows.UI.Xaml.Controls.ContentDialog";
+            _typeNameTable[7] = "Windows.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[8] = "Lynn.Client.ViewModels.DetailedCourseToEnrollInViewModel";
+            _typeNameTable[9] = "Lynn.Client.Helpers.Observable";
+            _typeNameTable[10] = "Lynn.Client.Views.DetailedCourseToStartView";
+            _typeNameTable[11] = "Lynn.Client.ViewModels.DetailedCourseToStartViewModel";
+            _typeNameTable[12] = "Lynn.Client.Views.DoExercisesPage";
+            _typeNameTable[13] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[14] = "Lynn.Client.ViewModels.DoExercisesViewModel";
+            _typeNameTable[15] = "Lynn.Client.Views.EnrolledCourses";
+            _typeNameTable[16] = "Lynn.Client.ViewModels.EnrolledCoursesViewModel";
+            _typeNameTable[17] = "Lynn.Client.Views.EnrollInCourse";
+            _typeNameTable[18] = "Lynn.Client.ViewModels.EnrollInCourseViewModel";
+            _typeNameTable[19] = "Lynn.Client.Views.LearningPage";
+            _typeNameTable[20] = "Lynn.Client.ViewModels.LearningViewModel";
+            _typeNameTable[21] = "Lynn.Client.ViewModels.LoggedInViewModel";
+            _typeNameTable[22] = "Lynn.DTO.User";
+            _typeNameTable[23] = "Lynn.Client.Views.SettingsPage";
+            _typeNameTable[24] = "Lynn.Client.ViewModels.SettingsViewModel";
+            _typeNameTable[25] = "Lynn.Client.Views.LoggedInPage";
+            _typeNameTable[26] = "Lynn.Client.ViewModels.MainViewModel";
+            _typeNameTable[27] = "System.Windows.Input.ICommand";
+            _typeNameTable[28] = "Lynn.Client.Views.MainPage";
+            _typeNameTable[29] = "Lynn.Client.Views.PictureExerciseView";
+            _typeNameTable[30] = "Lynn.Client.ViewModels.PictureExerciseViewModel";
+            _typeNameTable[31] = "Lynn.Client.Helpers.EnumToBooleanConverter";
+            _typeNameTable[32] = "System.Type";
+            _typeNameTable[33] = "System.Reflection.MemberInfo";
+            _typeNameTable[34] = "Lynn.Client.Views.TestsPage";
+            _typeNameTable[35] = "Lynn.Client.ViewModels.TestsViewModel";
+            _typeNameTable[36] = "Lynn.Client.Views.TranslationExerciseView";
+            _typeNameTable[37] = "Lynn.Client.ViewModels.TranslationExerciseViewModel";
 
-            _typeTable = new global::System.Type[42];
+            _typeTable = new global::System.Type[38];
             _typeTable[0] = typeof(global::Lynn.Client.Views.ChooseOneExerciseView);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::Lynn.Client.ViewModels.ChooseOneExerciseViewModel);
             _typeTable[3] = typeof(global::Lynn.Client.ViewModels.ViewModelBase);
             _typeTable[4] = typeof(global::System.Object);
-            _typeTable[5] = typeof(global::Lynn.Client.Views.CourseToStartView);
-            _typeTable[6] = typeof(global::Lynn.Client.ViewModels.CourseToStartViewModel);
-            _typeTable[7] = typeof(global::Lynn.Client.Views.DetailedCourseToEnrollInView);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
-            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[10] = typeof(global::Lynn.Client.ViewModels.DetailedCourseToEnrollInViewModel);
-            _typeTable[11] = typeof(global::Lynn.Client.Helpers.Observable);
-            _typeTable[12] = typeof(global::Lynn.Client.Views.DetailedCourseToStartView);
-            _typeTable[13] = typeof(global::Lynn.Client.ViewModels.DetailedCourseToStartViewModel);
-            _typeTable[14] = typeof(global::Lynn.Client.Views.DoExercisesPage);
-            _typeTable[15] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[16] = typeof(global::Lynn.Client.ViewModels.DoExercisesViewModel);
-            _typeTable[17] = typeof(global::Lynn.Client.Views.EnrolledCourses);
-            _typeTable[18] = typeof(global::Lynn.Client.ViewModels.EnrolledCoursesViewModel);
-            _typeTable[19] = typeof(global::Lynn.Client.Views.EnrollInCourse);
-            _typeTable[20] = typeof(global::Lynn.Client.ViewModels.EnrollInCourseViewModel);
-            _typeTable[21] = typeof(global::Lynn.Client.Views.LearningPage);
-            _typeTable[22] = typeof(global::Lynn.Client.ViewModels.LearningViewModel);
-            _typeTable[23] = typeof(global::Lynn.Client.ViewModels.LoggedInViewModel);
-            _typeTable[24] = typeof(global::Lynn.DTO.User);
-            _typeTable[25] = typeof(global::Lynn.Client.Views.SettingsPage);
-            _typeTable[26] = typeof(global::Lynn.Client.ViewModels.SettingsViewModel);
-            _typeTable[27] = typeof(global::Lynn.Client.Views.LoggedInPage);
-            _typeTable[28] = typeof(global::Lynn.Client.ViewModels.MainViewModel);
-            _typeTable[29] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[30] = typeof(global::Lynn.Client.Views.MainPage);
-            _typeTable[31] = typeof(global::Lynn.Client.Views.PictureExerciseView);
-            _typeTable[32] = typeof(global::Lynn.Client.ViewModels.PictureExerciseViewModel);
-            _typeTable[33] = typeof(global::Lynn.Client.Helpers.EnumToBooleanConverter);
-            _typeTable[34] = typeof(global::System.Type);
-            _typeTable[35] = typeof(global::System.Reflection.MemberInfo);
-            _typeTable[36] = typeof(global::Lynn.Client.Views.TestsPage);
-            _typeTable[37] = typeof(global::Lynn.Client.ViewModels.TestsViewModel);
-            _typeTable[38] = typeof(global::Lynn.Client.Views.TestToStartView);
-            _typeTable[39] = typeof(global::Lynn.Client.ViewModels.TestToStartViewModel);
-            _typeTable[40] = typeof(global::Lynn.Client.Views.TranslationExerciseView);
-            _typeTable[41] = typeof(global::Lynn.Client.ViewModels.TranslationExerciseViewModel);
+            _typeTable[5] = typeof(global::Lynn.Client.Views.DetailedCourseToEnrollInView);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
+            _typeTable[8] = typeof(global::Lynn.Client.ViewModels.DetailedCourseToEnrollInViewModel);
+            _typeTable[9] = typeof(global::Lynn.Client.Helpers.Observable);
+            _typeTable[10] = typeof(global::Lynn.Client.Views.DetailedCourseToStartView);
+            _typeTable[11] = typeof(global::Lynn.Client.ViewModels.DetailedCourseToStartViewModel);
+            _typeTable[12] = typeof(global::Lynn.Client.Views.DoExercisesPage);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[14] = typeof(global::Lynn.Client.ViewModels.DoExercisesViewModel);
+            _typeTable[15] = typeof(global::Lynn.Client.Views.EnrolledCourses);
+            _typeTable[16] = typeof(global::Lynn.Client.ViewModels.EnrolledCoursesViewModel);
+            _typeTable[17] = typeof(global::Lynn.Client.Views.EnrollInCourse);
+            _typeTable[18] = typeof(global::Lynn.Client.ViewModels.EnrollInCourseViewModel);
+            _typeTable[19] = typeof(global::Lynn.Client.Views.LearningPage);
+            _typeTable[20] = typeof(global::Lynn.Client.ViewModels.LearningViewModel);
+            _typeTable[21] = typeof(global::Lynn.Client.ViewModels.LoggedInViewModel);
+            _typeTable[22] = typeof(global::Lynn.DTO.User);
+            _typeTable[23] = typeof(global::Lynn.Client.Views.SettingsPage);
+            _typeTable[24] = typeof(global::Lynn.Client.ViewModels.SettingsViewModel);
+            _typeTable[25] = typeof(global::Lynn.Client.Views.LoggedInPage);
+            _typeTable[26] = typeof(global::Lynn.Client.ViewModels.MainViewModel);
+            _typeTable[27] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[28] = typeof(global::Lynn.Client.Views.MainPage);
+            _typeTable[29] = typeof(global::Lynn.Client.Views.PictureExerciseView);
+            _typeTable[30] = typeof(global::Lynn.Client.ViewModels.PictureExerciseViewModel);
+            _typeTable[31] = typeof(global::Lynn.Client.Helpers.EnumToBooleanConverter);
+            _typeTable[32] = typeof(global::System.Type);
+            _typeTable[33] = typeof(global::System.Reflection.MemberInfo);
+            _typeTable[34] = typeof(global::Lynn.Client.Views.TestsPage);
+            _typeTable[35] = typeof(global::Lynn.Client.ViewModels.TestsViewModel);
+            _typeTable[36] = typeof(global::Lynn.Client.Views.TranslationExerciseView);
+            _typeTable[37] = typeof(global::Lynn.Client.ViewModels.TranslationExerciseViewModel);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -301,21 +293,23 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_11_Observable() { return new global::Lynn.Client.Helpers.Observable(); }
-        private object Activate_14_DoExercisesPage() { return new global::Lynn.Client.Views.DoExercisesPage(); }
-        private object Activate_17_EnrolledCourses() { return new global::Lynn.Client.Views.EnrolledCourses(); }
-        private object Activate_19_EnrollInCourse() { return new global::Lynn.Client.Views.EnrollInCourse(); }
-        private object Activate_20_EnrollInCourseViewModel() { return new global::Lynn.Client.ViewModels.EnrollInCourseViewModel(); }
-        private object Activate_21_LearningPage() { return new global::Lynn.Client.Views.LearningPage(); }
-        private object Activate_23_LoggedInViewModel() { return new global::Lynn.Client.ViewModels.LoggedInViewModel(); }
-        private object Activate_24_User() { return new global::Lynn.DTO.User(); }
-        private object Activate_25_SettingsPage() { return new global::Lynn.Client.Views.SettingsPage(); }
-        private object Activate_26_SettingsViewModel() { return new global::Lynn.Client.ViewModels.SettingsViewModel(); }
-        private object Activate_27_LoggedInPage() { return new global::Lynn.Client.Views.LoggedInPage(); }
-        private object Activate_28_MainViewModel() { return new global::Lynn.Client.ViewModels.MainViewModel(); }
-        private object Activate_30_MainPage() { return new global::Lynn.Client.Views.MainPage(); }
-        private object Activate_33_EnumToBooleanConverter() { return new global::Lynn.Client.Helpers.EnumToBooleanConverter(); }
-        private object Activate_36_TestsPage() { return new global::Lynn.Client.Views.TestsPage(); }
+        private object Activate_9_Observable() { return new global::Lynn.Client.Helpers.Observable(); }
+        private object Activate_12_DoExercisesPage() { return new global::Lynn.Client.Views.DoExercisesPage(); }
+        private object Activate_15_EnrolledCourses() { return new global::Lynn.Client.Views.EnrolledCourses(); }
+        private object Activate_16_EnrolledCoursesViewModel() { return new global::Lynn.Client.ViewModels.EnrolledCoursesViewModel(); }
+        private object Activate_17_EnrollInCourse() { return new global::Lynn.Client.Views.EnrollInCourse(); }
+        private object Activate_18_EnrollInCourseViewModel() { return new global::Lynn.Client.ViewModels.EnrollInCourseViewModel(); }
+        private object Activate_19_LearningPage() { return new global::Lynn.Client.Views.LearningPage(); }
+        private object Activate_21_LoggedInViewModel() { return new global::Lynn.Client.ViewModels.LoggedInViewModel(); }
+        private object Activate_22_User() { return new global::Lynn.DTO.User(); }
+        private object Activate_23_SettingsPage() { return new global::Lynn.Client.Views.SettingsPage(); }
+        private object Activate_24_SettingsViewModel() { return new global::Lynn.Client.ViewModels.SettingsViewModel(); }
+        private object Activate_25_LoggedInPage() { return new global::Lynn.Client.Views.LoggedInPage(); }
+        private object Activate_26_MainViewModel() { return new global::Lynn.Client.ViewModels.MainViewModel(); }
+        private object Activate_28_MainPage() { return new global::Lynn.Client.Views.MainPage(); }
+        private object Activate_31_EnumToBooleanConverter() { return new global::Lynn.Client.Helpers.EnumToBooleanConverter(); }
+        private object Activate_34_TestsPage() { return new global::Lynn.Client.Views.TestsPage(); }
+        private object Activate_35_TestsViewModel() { return new global::Lynn.Client.ViewModels.TestsViewModel(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -355,255 +349,227 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 xamlType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Lynn.Client.Views.CourseToStartView
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.AddMemberName("ViewModel");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 6:   //  Lynn.Client.ViewModels.CourseToStartViewModel
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 7:   //  Lynn.Client.Views.DetailedCourseToEnrollInView
+            case 5:   //  Lynn.Client.Views.DetailedCourseToEnrollInView
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Windows.UI.Xaml.Controls.ContentDialog
+            case 6:   //  Windows.UI.Xaml.Controls.ContentDialog
                 xamlType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Windows.UI.Xaml.Controls.ContentControl
+            case 7:   //  Windows.UI.Xaml.Controls.ContentControl
                 xamlType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  Lynn.Client.ViewModels.DetailedCourseToEnrollInViewModel
+            case 8:   //  Lynn.Client.ViewModels.DetailedCourseToEnrollInViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  Lynn.Client.Helpers.Observable
+            case 9:   //  Lynn.Client.Helpers.Observable
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_11_Observable;
+                userType.Activator = Activate_9_Observable;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Lynn.Client.Views.DetailedCourseToStartView
+            case 10:   //  Lynn.Client.Views.DetailedCourseToStartView
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Lynn.Client.ViewModels.DetailedCourseToStartViewModel
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
+            case 11:   //  Lynn.Client.ViewModels.DetailedCourseToStartViewModel
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  Lynn.Client.Views.DoExercisesPage
+            case 12:   //  Lynn.Client.Views.DoExercisesPage
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_DoExercisesPage;
+                userType.Activator = Activate_12_DoExercisesPage;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Windows.UI.Xaml.Controls.Page
+            case 13:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Lynn.Client.ViewModels.DoExercisesViewModel
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 17:   //  Lynn.Client.Views.EnrolledCourses
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_EnrolledCourses;
-                userType.AddMemberName("ViewModel");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 18:   //  Lynn.Client.ViewModels.EnrolledCoursesViewModel
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 19:   //  Lynn.Client.Views.EnrollInCourse
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_EnrollInCourse;
-                userType.AddMemberName("ViewModel");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 20:   //  Lynn.Client.ViewModels.EnrollInCourseViewModel
+            case 14:   //  Lynn.Client.ViewModels.DoExercisesViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  Lynn.Client.Views.LearningPage
+            case 15:   //  Lynn.Client.Views.EnrolledCourses
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_21_LearningPage;
+                userType.Activator = Activate_15_EnrolledCourses;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 22:   //  Lynn.Client.ViewModels.LearningViewModel
+            case 16:   //  Lynn.Client.ViewModels.EnrolledCoursesViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 23:   //  Lynn.Client.ViewModels.LoggedInViewModel
+            case 17:   //  Lynn.Client.Views.EnrollInCourse
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_17_EnrollInCourse;
+                userType.AddMemberName("ViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 18:   //  Lynn.Client.ViewModels.EnrollInCourseViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
-                userType.Activator = Activate_23_LoggedInViewModel;
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 19:   //  Lynn.Client.Views.LearningPage
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_19_LearningPage;
+                userType.AddMemberName("ViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 20:   //  Lynn.Client.ViewModels.LearningViewModel
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 21:   //  Lynn.Client.ViewModels.LoggedInViewModel
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
+                userType.Activator = Activate_21_LoggedInViewModel;
                 userType.AddMemberName("LoggedInUser");
                 userType.AddMemberName("CurrentPage");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 24:   //  Lynn.DTO.User
+            case 22:   //  Lynn.DTO.User
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 25:   //  Lynn.Client.Views.SettingsPage
+            case 23:   //  Lynn.Client.Views.SettingsPage
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_25_SettingsPage;
+                userType.Activator = Activate_23_SettingsPage;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 26:   //  Lynn.Client.ViewModels.SettingsViewModel
+            case 24:   //  Lynn.Client.ViewModels.SettingsViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 27:   //  Lynn.Client.Views.LoggedInPage
+            case 25:   //  Lynn.Client.Views.LoggedInPage
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_27_LoggedInPage;
+                userType.Activator = Activate_25_LoggedInPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 28:   //  Lynn.Client.ViewModels.MainViewModel
+            case 26:   //  Lynn.Client.ViewModels.MainViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
-                userType.Activator = Activate_28_MainViewModel;
+                userType.Activator = Activate_26_MainViewModel;
                 userType.AddMemberName("LogIn_Click");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 29:   //  System.Windows.Input.ICommand
+            case 27:   //  System.Windows.Input.ICommand
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 30:   //  Lynn.Client.Views.MainPage
+            case 28:   //  Lynn.Client.Views.MainPage
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_30_MainPage;
+                userType.Activator = Activate_28_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 31:   //  Lynn.Client.Views.PictureExerciseView
+            case 29:   //  Lynn.Client.Views.PictureExerciseView
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 32:   //  Lynn.Client.ViewModels.PictureExerciseViewModel
+            case 30:   //  Lynn.Client.ViewModels.PictureExerciseViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 33:   //  Lynn.Client.Helpers.EnumToBooleanConverter
+            case 31:   //  Lynn.Client.Helpers.EnumToBooleanConverter
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_33_EnumToBooleanConverter;
+                userType.Activator = Activate_31_EnumToBooleanConverter;
                 userType.AddMemberName("EnumType");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 34:   //  System.Type
+            case 32:   //  System.Type
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Reflection.MemberInfo"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 35:   //  System.Reflection.MemberInfo
+            case 33:   //  System.Reflection.MemberInfo
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 36:   //  Lynn.Client.Views.TestsPage
+            case 34:   //  Lynn.Client.Views.TestsPage
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_36_TestsPage;
+                userType.Activator = Activate_34_TestsPage;
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 37:   //  Lynn.Client.ViewModels.TestsViewModel
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
+            case 35:   //  Lynn.Client.ViewModels.TestsViewModel
+                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.Helpers.Observable"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 38:   //  Lynn.Client.Views.TestToStartView
+            case 36:   //  Lynn.Client.Views.TranslationExerciseView
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.AddMemberName("ViewModel");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 39:   //  Lynn.Client.ViewModels.TestToStartViewModel
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 40:   //  Lynn.Client.Views.TranslationExerciseView
-                userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.AddMemberName("ViewModel");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 41:   //  Lynn.Client.ViewModels.TranslationExerciseViewModel
+            case 37:   //  Lynn.Client.ViewModels.TranslationExerciseViewModel
                 userType = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Lynn.Client.ViewModels.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -619,102 +585,92 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
             var that = (global::Lynn.Client.Views.ChooseOneExerciseView)instance;
             return that.ViewModel;
         }
-        private object get_1_CourseToStartView_ViewModel(object instance)
-        {
-            var that = (global::Lynn.Client.Views.CourseToStartView)instance;
-            return that.ViewModel;
-        }
-        private object get_2_DetailedCourseToEnrollInView_ViewModel(object instance)
+        private object get_1_DetailedCourseToEnrollInView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.DetailedCourseToEnrollInView)instance;
             return that.ViewModel;
         }
-        private object get_3_DetailedCourseToStartView_ViewModel(object instance)
+        private object get_2_DetailedCourseToStartView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.DetailedCourseToStartView)instance;
             return that.ViewModel;
         }
-        private object get_4_DoExercisesPage_ViewModel(object instance)
+        private object get_3_DoExercisesPage_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.DoExercisesPage)instance;
             return that.ViewModel;
         }
-        private object get_5_EnrolledCourses_ViewModel(object instance)
+        private object get_4_EnrolledCourses_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.EnrolledCourses)instance;
             return that.ViewModel;
         }
-        private object get_6_EnrollInCourse_ViewModel(object instance)
+        private object get_5_EnrollInCourse_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.EnrollInCourse)instance;
             return that.ViewModel;
         }
-        private object get_7_LearningPage_ViewModel(object instance)
+        private object get_6_LearningPage_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.LearningPage)instance;
             return that.ViewModel;
         }
-        private object get_8_LoggedInViewModel_LoggedInUser(object instance)
+        private object get_7_LoggedInViewModel_LoggedInUser(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LoggedInViewModel)instance;
             return that.LoggedInUser;
         }
-        private void set_8_LoggedInViewModel_LoggedInUser(object instance, object Value)
+        private void set_7_LoggedInViewModel_LoggedInUser(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LoggedInViewModel)instance;
             that.LoggedInUser = (global::Lynn.DTO.User)Value;
         }
-        private object get_9_LoggedInViewModel_CurrentPage(object instance)
+        private object get_8_LoggedInViewModel_CurrentPage(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LoggedInViewModel)instance;
             return that.CurrentPage;
         }
-        private void set_9_LoggedInViewModel_CurrentPage(object instance, object Value)
+        private void set_8_LoggedInViewModel_CurrentPage(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LoggedInViewModel)instance;
             that.CurrentPage = (global::Windows.UI.Xaml.Controls.Page)Value;
         }
-        private object get_10_SettingsPage_ViewModel(object instance)
+        private object get_9_SettingsPage_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.SettingsPage)instance;
             return that.ViewModel;
         }
-        private object get_11_MainViewModel_LogIn_Click(object instance)
+        private object get_10_MainViewModel_LogIn_Click(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             return that.LogIn_Click;
         }
-        private void set_11_MainViewModel_LogIn_Click(object instance, object Value)
+        private void set_10_MainViewModel_LogIn_Click(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             that.LogIn_Click = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_12_PictureExerciseView_ViewModel(object instance)
+        private object get_11_PictureExerciseView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.PictureExerciseView)instance;
             return that.ViewModel;
         }
-        private object get_13_EnumToBooleanConverter_EnumType(object instance)
+        private object get_12_EnumToBooleanConverter_EnumType(object instance)
         {
             var that = (global::Lynn.Client.Helpers.EnumToBooleanConverter)instance;
             return that.EnumType;
         }
-        private void set_13_EnumToBooleanConverter_EnumType(object instance, object Value)
+        private void set_12_EnumToBooleanConverter_EnumType(object instance, object Value)
         {
             var that = (global::Lynn.Client.Helpers.EnumToBooleanConverter)instance;
             that.EnumType = (global::System.Type)Value;
         }
-        private object get_14_TestsPage_ViewModel(object instance)
+        private object get_13_TestsPage_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.TestsPage)instance;
             return that.ViewModel;
         }
-        private object get_15_TestToStartView_ViewModel(object instance)
-        {
-            var that = (global::Lynn.Client.Views.TestToStartView)instance;
-            return that.ViewModel;
-        }
-        private object get_16_TranslationExerciseView_ViewModel(object instance)
+        private object get_14_TranslationExerciseView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.TranslationExerciseView)instance;
             return that.ViewModel;
@@ -733,100 +689,88 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 xamlMember.Getter = get_0_ChooseOneExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "Lynn.Client.Views.CourseToStartView.ViewModel":
-                userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.CourseToStartView");
-                xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.CourseToStartViewModel");
-                xamlMember.Getter = get_1_CourseToStartView_ViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
             case "Lynn.Client.Views.DetailedCourseToEnrollInView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.DetailedCourseToEnrollInView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.DetailedCourseToEnrollInViewModel");
-                xamlMember.Getter = get_2_DetailedCourseToEnrollInView_ViewModel;
+                xamlMember.Getter = get_1_DetailedCourseToEnrollInView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.Views.DetailedCourseToStartView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.DetailedCourseToStartView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.DetailedCourseToStartViewModel");
-                xamlMember.Getter = get_3_DetailedCourseToStartView_ViewModel;
+                xamlMember.Getter = get_2_DetailedCourseToStartView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.Views.DoExercisesPage.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.DoExercisesPage");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.DoExercisesViewModel");
-                xamlMember.Getter = get_4_DoExercisesPage_ViewModel;
+                xamlMember.Getter = get_3_DoExercisesPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.Views.EnrolledCourses.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.EnrolledCourses");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.EnrolledCoursesViewModel");
-                xamlMember.Getter = get_5_EnrolledCourses_ViewModel;
+                xamlMember.Getter = get_4_EnrolledCourses_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.Views.EnrollInCourse.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.EnrollInCourse");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.EnrollInCourseViewModel");
-                xamlMember.Getter = get_6_EnrollInCourse_ViewModel;
+                xamlMember.Getter = get_5_EnrollInCourse_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.Views.LearningPage.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.LearningPage");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.LearningViewModel");
-                xamlMember.Getter = get_7_LearningPage_ViewModel;
+                xamlMember.Getter = get_6_LearningPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.ViewModels.LoggedInViewModel.LoggedInUser":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LoggedInViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LoggedInUser", "Lynn.DTO.User");
-                xamlMember.Getter = get_8_LoggedInViewModel_LoggedInUser;
-                xamlMember.Setter = set_8_LoggedInViewModel_LoggedInUser;
+                xamlMember.Getter = get_7_LoggedInViewModel_LoggedInUser;
+                xamlMember.Setter = set_7_LoggedInViewModel_LoggedInUser;
                 break;
             case "Lynn.Client.ViewModels.LoggedInViewModel.CurrentPage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LoggedInViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "CurrentPage", "Windows.UI.Xaml.Controls.Page");
-                xamlMember.Getter = get_9_LoggedInViewModel_CurrentPage;
-                xamlMember.Setter = set_9_LoggedInViewModel_CurrentPage;
+                xamlMember.Getter = get_8_LoggedInViewModel_CurrentPage;
+                xamlMember.Setter = set_8_LoggedInViewModel_CurrentPage;
                 break;
             case "Lynn.Client.Views.SettingsPage.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.SettingsPage");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.SettingsViewModel");
-                xamlMember.Getter = get_10_SettingsPage_ViewModel;
+                xamlMember.Getter = get_9_SettingsPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.ViewModels.MainViewModel.LogIn_Click":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.MainViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LogIn_Click", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_11_MainViewModel_LogIn_Click;
-                xamlMember.Setter = set_11_MainViewModel_LogIn_Click;
+                xamlMember.Getter = get_10_MainViewModel_LogIn_Click;
+                xamlMember.Setter = set_10_MainViewModel_LogIn_Click;
                 break;
             case "Lynn.Client.Views.PictureExerciseView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.PictureExerciseView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.PictureExerciseViewModel");
-                xamlMember.Getter = get_12_PictureExerciseView_ViewModel;
+                xamlMember.Getter = get_11_PictureExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.Helpers.EnumToBooleanConverter.EnumType":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Helpers.EnumToBooleanConverter");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "EnumType", "System.Type");
-                xamlMember.Getter = get_13_EnumToBooleanConverter_EnumType;
-                xamlMember.Setter = set_13_EnumToBooleanConverter_EnumType;
+                xamlMember.Getter = get_12_EnumToBooleanConverter_EnumType;
+                xamlMember.Setter = set_12_EnumToBooleanConverter_EnumType;
                 break;
             case "Lynn.Client.Views.TestsPage.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.TestsPage");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.TestsViewModel");
-                xamlMember.Getter = get_14_TestsPage_ViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Lynn.Client.Views.TestToStartView.ViewModel":
-                userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.TestToStartView");
-                xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.TestToStartViewModel");
-                xamlMember.Getter = get_15_TestToStartView_ViewModel;
+                xamlMember.Getter = get_13_TestsPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.Views.TranslationExerciseView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.TranslationExerciseView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.TranslationExerciseViewModel");
-                xamlMember.Getter = get_16_TranslationExerciseView_ViewModel;
+                xamlMember.Getter = get_14_TranslationExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }

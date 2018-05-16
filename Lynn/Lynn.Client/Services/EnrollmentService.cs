@@ -12,21 +12,8 @@ using System.Threading.Tasks;
 
 namespace Lynn.Client.Services
 {
-    public class EnrollmentService
+    public class EnrollmentService : BaseHttpService
     {
-        private readonly Uri serverUrl = new Uri("http://localhost:56750/");
-
-        private async Task<T> GetAsync<T>(Uri uri)
-        {
-            using (var client = new HttpClient())
-            {
-                var response = await client.GetAsync(uri);
-                var json = await response.Content.ReadAsStringAsync();
-                T result = JsonConvert.DeserializeObject<T>(json);
-                return result;
-            }
-        }
-
         public async Task<ObservableCollection<Course>> GetCoursesByNameAsync(string name)
         {
             using (var client = new HttpClient())
@@ -50,12 +37,15 @@ namespace Lynn.Client.Services
             }
         }
 
-        private void InitializeClient(HttpClient client)
+        public async Task<ObservableCollection<Course>> GetEnrolledCourses(User user)
         {
-            client.BaseAddress = serverUrl;
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollincourses"));
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
+                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/enrolledcourses/{user.ID}");
+                return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
+            }
         }
 
     }

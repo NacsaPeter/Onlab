@@ -1,4 +1,7 @@
-﻿using Lynn.Client.Views;
+﻿using Lynn.Client.Helpers;
+using Lynn.Client.Models;
+using Lynn.Client.Services;
+using Lynn.Client.Views;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,68 +16,49 @@ using Windows.UI.Xaml.Controls;
 
 namespace Lynn.Client.ViewModels
 {
-    public class TestsViewModel : ViewModelBase
+    public class TestsViewModel : Observable
     {
-        private readonly HttpClient client = new HttpClient();
-
-        private VariableSizedWrapGrid _testsVariableSizedWrapGrid;
-
-        public TestsViewModel(VariableSizedWrapGrid testsVariableSizedWrapGrid)
+        public TestsViewModel()
         {
-            _testsVariableSizedWrapGrid = testsVariableSizedWrapGrid;
             LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 24 };
-
-            client.BaseAddress = new Uri("http://localhost:56750/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
         }
 
         private Course _course;
         public Course Course
         {
             get { return _course; }
-            set
-            {
-                if (_course != value)
-                {
-                    _course = value;
-                    RaisePropertyChanged(nameof(Course));
-                }
-            }
+            set { Set(ref _course, value, nameof(Course)); }
         }
 
         private User _loggedInUser;
         public User LoggedInUser
         {
             get { return _loggedInUser; }
-            set
-            {
-                if (_loggedInUser != value)
-                {
-                    _loggedInUser = value;
-                    RaisePropertyChanged(nameof(LoggedInUser));
-                }
-            }
+            set { Set(ref _loggedInUser, value, nameof(LoggedInUser)); }
+        }
+
+        private ObservableCollection<TestPresenter> _tests;
+        public ObservableCollection<TestPresenter> Tests
+        {
+            get { return _tests; }
+            set { Set(ref _tests, value, nameof(Tests)); }
         }
 
         public void RefreshTests()
         {
-            _testsVariableSizedWrapGrid.Children.Clear();
-            var result = ProcessTestsByCourseID(Course.ID);
+            ProcessTestsByCourseID(Course.ID);
         }
 
-        private async Task<ObservableCollection<Test>> ProcessTestsByCourseID(int courseID)
+        private async Task ProcessTestsByCourseID(int courseID)
         {
-            var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Test>));
+            var service = new CourseService();
+            var result = await service.GetTestsByCourseID(courseID);
+            Tests = TestPresenter.GetTestPresenters(result);
+        }
 
-            var streamTask = client.GetStreamAsync($"http://localhost:56750/api/tests/{courseID}");
-            var searchedTests = serializer.ReadObject(await streamTask) as ObservableCollection<Test>;
-            
-            foreach (var test in searchedTests)
-            {
-                _testsVariableSizedWrapGrid.Children.Add(new TestToStartView(test));
-            }
-            return searchedTests;
+        public void StartTest(Test test)
+        {
+            NavigationService.Navigate(typeof(DoExercisesPage), test);
         }
     }
 }

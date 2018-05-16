@@ -9,17 +9,8 @@ using System.Threading.Tasks;
 
 namespace Lynn.Client.Services
 {
-    public class LanguageService
+    public class LanguageService : BaseHttpService
     {
-        private readonly Uri serverUrl = new Uri("http://localhost:56750/");
-
-        private void InitializeClient(HttpClient client)
-        {
-            client.BaseAddress = serverUrl;
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/language"));
-        }
-
         public async Task<Dictionary<string, string>> GetLanguageCodesDictionary()
         {
             using (var client = new HttpClient())

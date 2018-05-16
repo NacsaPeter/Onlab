@@ -7,7 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="308"
-    d:DesignWidth="408">
+    d:DesignWidth="408"
+    MaxHeight="308" MinHeight="308"
+    MaxWidth="408" MinWidth="408">
 
     <Grid BorderThickness="2" BorderBrush="Black">
         <Grid.RowDefinitions>

@@ -6,7 +6,6 @@ Styles\_Thickness.xbf
 Styles\Page.xbf
 Styles\TextBlock.xbf
 Views\ChooseOneExerciseView.xbf
-Views\CourseToStartView.xbf
 Views\DetailedCourseToEnrollInView.xbf
 Views\DetailedCourseToStartView.xbf
 Views\DoExercisesPage.xbf
@@ -18,5 +17,4 @@ Views\MainPage.xbf
 Views\PictureExerciseView.xbf
 Views\SettingsPage.xbf
 Views\TestsPage.xbf
-Views\TestToStartView.xbf
 Views\TranslationExerciseView.xbf

@@ -121,8 +121,12 @@
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Interfaces\IExerciseView.cs" />
     <Compile Include="Models\CoursePresenter.cs" />
+    <Compile Include="Models\TestPresenter.cs" />
+    <Compile Include="Models\VocabularyExercisePresenter.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
+    <Compile Include="Services\BaseHttpService.cs" />
+    <Compile Include="Services\CourseService.cs" />
     <Compile Include="Services\EnrollmentService.cs" />
     <Compile Include="Services\LanguageService.cs" />
     <Compile Include="Services\NavigationService.cs" />
@@ -132,7 +136,6 @@
     <Compile Include="Services\ViewLifetimeControl.cs" />
     <Compile Include="Services\WindowManagerService.cs" />
     <Compile Include="ViewModels\ChooseOneExerciseViewModel.cs" />
-    <Compile Include="ViewModels\CourseToStartViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToEnrollInViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToStartViewModel.cs" />
     <Compile Include="ViewModels\DoExercisesViewModel.cs" />
@@ -144,14 +147,10 @@
     <Compile Include="ViewModels\PictureExerciseViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\TestsViewModel.cs" />
-    <Compile Include="ViewModels\TestToStartViewModel.cs" />
     <Compile Include="ViewModels\TranslationExerciseViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\ChooseOneExerciseView.xaml.cs">
       <DependentUpon>ChooseOneExerciseView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CourseToStartView.xaml.cs">
-      <DependentUpon>CourseToStartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailedCourseToEnrollInView.xaml.cs">
       <DependentUpon>DetailedCourseToEnrollInView.xaml</DependentUpon>
@@ -185,9 +184,6 @@
     </Compile>
     <Compile Include="Views\TestsPage.xaml.cs">
       <DependentUpon>TestsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TestToStartView.xaml.cs">
-      <DependentUpon>TestToStartView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TranslationExerciseView.xaml.cs">
       <DependentUpon>TranslationExerciseView.xaml</DependentUpon>
@@ -229,10 +225,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Views\ChooseOneExerciseView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CourseToStartView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -280,10 +272,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TestToStartView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\TranslationExerciseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -301,6 +289,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\apple.jpg" />
+    <Content Include="Assets\categories\Gyümölcsök.png" />
     <Content Include="Assets\cherry.jpg" />
     <Content Include="Assets\flags\de.png" />
     <Content Include="Assets\flags\en.png" />

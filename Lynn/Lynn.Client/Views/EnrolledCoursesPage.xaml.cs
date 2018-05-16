@@ -1,4 +1,5 @@
-﻿using Lynn.Client.ViewModels;
+﻿using Lynn.Client.Models;
+using Lynn.Client.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,8 +29,14 @@ namespace Lynn.Client.Views
         public EnrolledCourses()
         {
             this.InitializeComponent();
-            ViewModel = new EnrolledCoursesViewModel(CoursesVariableSizedWrapGrid);
+            ViewModel = new EnrolledCoursesViewModel();
             DataContext = ViewModel;
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var coursePresenter = (CoursePresenter)e.ClickedItem;
+            ViewModel.ShowCourseDetails(coursePresenter.Course);
         }
     }
 }

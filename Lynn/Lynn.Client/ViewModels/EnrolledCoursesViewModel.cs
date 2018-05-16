@@ -1,4 +1,7 @@
-﻿using Lynn.Client.Views;
+﻿using Lynn.Client.Helpers;
+using Lynn.Client.Models;
+using Lynn.Client.Services;
+using Lynn.Client.Views;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,40 +16,32 @@ using Windows.UI.Xaml.Controls;
 
 namespace Lynn.Client.ViewModels
 {
-    public class EnrolledCoursesViewModel : ViewModelBase
+    public class EnrolledCoursesViewModel : Observable
     {
-        private readonly HttpClient client = new HttpClient();
-
-        private VariableSizedWrapGrid _coursesContainer;
-
-        public EnrolledCoursesViewModel(VariableSizedWrapGrid coursesContainer)
+        private ObservableCollection<CoursePresenter> _courses;
+        public ObservableCollection<CoursePresenter> Courses
         {
-            _coursesContainer = coursesContainer;
-
-            client.BaseAddress = new Uri("http://localhost:56750/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrolledcourses"));
+            get { return _courses; }
+            set { Set(ref _courses, value, nameof(Courses)); }
         }
 
         public void RefreshEnrolledCourses(Object sender, SelectionChangedEventArgs args)
         {
-            _coursesContainer.Children.Clear();
             User loggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 0 };
-            var result = ProcessEnrolledCourses(loggedInUser);
+            ProcessEnrolledCourses(loggedInUser);
         }
 
-        private async Task<ObservableCollection<Course>> ProcessEnrolledCourses(User user)
+        private async Task ProcessEnrolledCourses(User user)
         {
-            var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
+            var service = new EnrollmentService();
+            var results = await service.GetEnrolledCourses(user);
+            Courses = CoursePresenter.GetCoursePresenters(results);
+        }
 
-            var streamTask = client.GetStreamAsync($"http://localhost:56750/api/enrolledcourses/{user.ID}");
-            var searchedCourses = serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
-
-            foreach (var course in searchedCourses)
-            {
-                _coursesContainer.Children.Add(new CourseToStartView(course));
-            }
-            return searchedCourses;
+        internal void ShowCourseDetails(Course course)
+        {
+            DetailedCourseToStartView detailedCourse = new DetailedCourseToStartView(course);
+            detailedCourse.ShowAsync();
         }
     }
 }

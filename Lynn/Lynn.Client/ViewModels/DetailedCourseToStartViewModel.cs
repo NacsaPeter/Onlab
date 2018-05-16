@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace Lynn.Client.ViewModels
 {
-    public class DetailedCourseToStartViewModel : ViewModelBase
+    public class DetailedCourseToStartViewModel : Observable
     {
         public ICommand Start_Click { get; set; }
         public ICommand Cancel_Click { get; set; }
@@ -20,7 +20,6 @@ namespace Lynn.Client.ViewModels
         public DetailedCourseToStartViewModel(Course course)
         {
             Course = course;
-
             Start_Click = new RelayCommand(new Action(Start));
             Cancel_Click = new RelayCommand(new Action(Cancel));
         }
@@ -29,23 +28,11 @@ namespace Lynn.Client.ViewModels
         public Course Course
         {
             get { return _course; }
-            set
-            {
-                if (_course != value)
-                {
-                    _course = value;
-                    RaisePropertyChanged(nameof(Course));
-                }
-            }
+            set { Set(ref _course, value, nameof(Course)); }
         }
 
-        private void Cancel()
-        {
-        }
+        private void Cancel() {}
 
-        private void Start()
-        {
-            NavigationService.Navigate(typeof(TestsPage), Course);
-        }
+        private void Start() => NavigationService.Navigate(typeof(TestsPage), Course);
     }
 }

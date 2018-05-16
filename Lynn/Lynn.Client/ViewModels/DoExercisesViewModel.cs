@@ -1,5 +1,7 @@
 ﻿using Lynn.Client.Helpers;
 using Lynn.Client.Interfaces;
+using Lynn.Client.Models;
+using Lynn.Client.Services;
 using Lynn.Client.Views;
 using Lynn.DTO;
 using System;
@@ -18,22 +20,14 @@ using Windows.UI.Xaml.Controls;
 
 namespace Lynn.Client.ViewModels
 {
-    public class DoExercisesViewModel : ViewModelBase
+    public class DoExercisesViewModel : Observable
     {
-        private readonly HttpClient client = new HttpClient();
-
         public ICommand Start_Click { get; set; }
 
         public DoExercisesViewModel(Grid gridOfTest)
         {
             _gridOfTest = gridOfTest;
-            _correctAnswers = 0;
-            _currentExercise = 0;
-
-            client.BaseAddress = new Uri("http://localhost:56750/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/exercises"));         
-
+            LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 24 };
             Start_Click = new RelayCommand(new Action(DoExercises));
         }
 
@@ -41,48 +35,61 @@ namespace Lynn.Client.ViewModels
         public Test Test
         {
             get { return _test; }
-            set
-            {
-                if (_test != value)
-                {
-                    _test = value;
-                    RaisePropertyChanged(nameof(Test));
-                }
-            }
+            set { Set(ref _test, value, nameof(Test)); }
+        }
+
+        private User _loggedInUser;
+        public User LoggedInUser
+        {
+            get { return _loggedInUser; }
+            set { Set(ref _loggedInUser, value, nameof(LoggedInUser)); }
+        }
+
+        private ObservableCollection<VocabularyExercisePresenter> _vocabularyExercises;
+        public ObservableCollection<VocabularyExercisePresenter> VocabularyExercises
+        {
+            get { return _vocabularyExercises; }
+            set { Set(ref _vocabularyExercises, value, nameof(VocabularyExercises)); }
+        }
+
+        private VocabularyExercisePresenter _currentExercise;
+        public VocabularyExercisePresenter CurrentExercise
+        {
+            get { return _currentExercise; }
+            set { Set(ref _currentExercise, value, nameof(CurrentExercise)); }
         }
 
         private Grid _gridOfTest;
-        private ObservableCollection<VocabularyExercise> _vocabularyExercises;
-        private int _currentExercise;
-        private int _correctAnswers;
+        private int _currentExerciseNum = 0;
+        private int _correctAnswers = 0;
         public int Points { get; private set; }
-
-        public event EventHandler TestFinished;
 
         private void DoExercises()
         {
-            var result = ProcessExercises(_test);          
-        }
-
-        private async Task<ObservableCollection<VocabularyExercise>> ProcessExercises(Test test)
-        {
-            var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<VocabularyExercise>));
-
-            var streamTask = client.GetStreamAsync($"http://localhost:56750/api/exercises/{test.ID}");
-            var searchedExercises = serializer.ReadObject(await streamTask) as ObservableCollection<VocabularyExercise>;
-
-            _vocabularyExercises = searchedExercises;
             _gridOfTest.Children.Clear();
-            if (_vocabularyExercises.Count != _currentExercise)
+            _gridOfTest.RowDefinitions.Clear();
+            _gridOfTest.ColumnDefinitions.Clear();
+            if (VocabularyExercises.Count != _currentExerciseNum)
             {
-                var exercise = _vocabularyExercises[_currentExercise];
-                IExerciseView exerciseView = SetExerciseType(exercise);
+                var exercise = VocabularyExercises[_currentExerciseNum];
+                IExerciseView exerciseView = SetExerciseType(exercise.Exercise);
                 exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
                 _gridOfTest.Children.Add(exerciseView.GetUIElement());
-                _currentExercise++;
+                _currentExerciseNum++;
             }
+        }
 
-            return searchedExercises;
+        public void ProcessExercises()
+        {
+            ProcessExercisesAsync(Test);
+        }
+
+        private async Task ProcessExercisesAsync(Test test)
+        {
+            var service = new CourseService();
+            var result = await service.GetVocabularyExercises(test);
+            VocabularyExercises = VocabularyExercisePresenter.GetVocabularyExercisePresenters(result);
+            CurrentExercise = VocabularyExercises[0];
         }
 
         private IExerciseView SetExerciseType(VocabularyExercise exercise)
@@ -107,13 +114,13 @@ namespace Lynn.Client.ViewModels
         {
             if (((IExerciseView)_gridOfTest.Children[0]).CheckIsCorrect()) _correctAnswers++;
             _gridOfTest.Children.Clear();
-            if (_vocabularyExercises.Count != _currentExercise)
+            if (_vocabularyExercises.Count != _currentExerciseNum)
             { 
-                var exercise = _vocabularyExercises[_currentExercise];
-                IExerciseView exerciseView = SetExerciseType(exercise);
+                var exercise = _vocabularyExercises[_currentExerciseNum];
+                IExerciseView exerciseView = SetExerciseType(exercise.Exercise);
                 exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
                 _gridOfTest.Children.Add(exerciseView.GetUIElement());
-                _currentExercise++;
+                _currentExerciseNum++;
             }
             else
             {
@@ -142,8 +149,6 @@ namespace Lynn.Client.ViewModels
                 stackPanel.Children.Add(endTextBlock);
                 stackPanel.Children.Add(pointsTextBlock);
                 _gridOfTest.Children.Add(stackPanel);
-                //Thread.Sleep(2000);
-                //TestFinished?.Invoke(this, new EventArgs());
             }
         }
     }

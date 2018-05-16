@@ -1,4 +1,5 @@
-﻿using Lynn.Client.ViewModels;
+﻿using Lynn.Client.Models;
+using Lynn.Client.ViewModels;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -31,18 +32,18 @@ namespace Lynn.Client.Views
             this.InitializeComponent();
             ViewModel = new DoExercisesViewModel(GridOfTest);
             DataContext = ViewModel;
-            ViewModel.TestFinished += TestFinished;
-        }
-
-        private void TestFinished(object sender, EventArgs e)
-        {
-            Frame.BackStack.RemoveAt(Frame.BackStack.Count-1);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             ViewModel.Test = (Test)e.Parameter;
+            ViewModel.ProcessExercises();
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ViewModel.CurrentExercise = (VocabularyExercisePresenter)e.ClickedItem;
         }
     }
 }

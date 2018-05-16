@@ -1,4 +1,5 @@
-﻿using Lynn.Client.ViewModels;
+﻿using Lynn.Client.Models;
+using Lynn.Client.ViewModels;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace Lynn.Client.Views
         public TestsPage()
         {
             this.InitializeComponent();
-            ViewModel = new TestsViewModel(TestsVariableSizedWrapGrid);
+            ViewModel = new TestsViewModel();
             DataContext = ViewModel;
         }
 
@@ -38,6 +39,12 @@ namespace Lynn.Client.Views
             base.OnNavigatedTo(e);
             ViewModel.Course = (Course)e.Parameter;
             ViewModel.RefreshTests();
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            TestPresenter test = (TestPresenter)e.ClickedItem;
+            ViewModel.StartTest(test.Test);
         }
     }
 }
