@@ -31,7 +31,7 @@
     <AppXManifest Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-16T01:43:13.155</Modified>
+      <Modified>2018-05-16T06:47:11.365</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -852,11 +852,11 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-16T01:43:11.307</Modified>
+      <Modified>2018-05-16T06:47:09.051</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\Lynn.Client.exe">
       <PackagePath>Lynn.Client.exe</PackagePath>
-      <Modified>2018-05-16T01:43:13.144</Modified>
+      <Modified>2018-05-16T06:47:11.353</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
