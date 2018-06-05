@@ -8,11 +8,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <vm:EnrolledCoursesViewModel x:ConnectionId='1' x:Name="ViewModel"/>
+    </Page.DataContext>
+
     <Page.Resources>
         <CollectionViewSource x:Key="CoursesViewSource" IsSourceGrouped="False" Source="{Binding Courses}"/>
     </Page.Resources>
 
-    <GridView x:ConnectionId='1' Padding="18" ItemsSource="{Binding Source={StaticResource CoursesViewSource}}"
+    <GridView x:ConnectionId='2' Padding="18" ItemsSource="{Binding Source={StaticResource CoursesViewSource}}"
                   IsItemClickEnabled="True"                                Background="WhiteSmoke">
         <GridView.ItemTemplate>
             <DataTemplate>

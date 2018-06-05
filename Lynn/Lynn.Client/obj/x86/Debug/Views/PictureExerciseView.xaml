@@ -23,10 +23,10 @@
         </Grid.ColumnDefinitions>
 
         <Image Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding PictureLocation}" Width="150" Height="100"/>
-        <Button Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding AnswerOne}" Command="{Binding AnswerOne_Click}" Margin="15,15,7.5,7.5"></Button>
-        <Button Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding AnswerTwo}" Command="{Binding AnswerTwo_Click}" Margin="7.5,15,15,7.5"></Button>
-        <Button Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding AnswerThree}" Command="{Binding AnswerThree_Click}" Margin="15,7.5,7.5,15"></Button>
-        <Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding AnswerFour}" Command="{Binding AnswerFour_Click}" Margin="7.5,7.5,15,15"></Button>
+        <Button Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[0]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[0]}" Margin="15,15,7.5,7.5"></Button>
+        <Button Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[1]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[1]}" Margin="7.5,15,15,7.5"></Button>
+        <Button Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[2]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[2]}" Margin="15,7.5,7.5,15"></Button>
+        <Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[3]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[3]}" Margin="7.5,7.5,15,15"></Button>
     </Grid>
 </UserControl>
 

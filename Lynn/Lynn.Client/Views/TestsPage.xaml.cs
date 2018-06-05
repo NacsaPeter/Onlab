@@ -25,13 +25,9 @@ namespace Lynn.Client.Views
     /// </summary>
     public sealed partial class TestsPage : Page
     {
-        public TestsViewModel ViewModel { get; }
-
         public TestsPage()
         {
             this.InitializeComponent();
-            ViewModel = new TestsViewModel();
-            DataContext = ViewModel;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

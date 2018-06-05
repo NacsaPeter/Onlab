@@ -24,19 +24,20 @@ namespace Lynn.Client.Views
     /// </summary>
     public sealed partial class EnrolledCourses : Page
     {
-        public EnrolledCoursesViewModel ViewModel { get; }
-
         public EnrolledCourses()
         {
             this.InitializeComponent();
-            ViewModel = new EnrolledCoursesViewModel();
-            DataContext = ViewModel;
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var coursePresenter = (CoursePresenter)e.ClickedItem;
             ViewModel.ShowCourseDetails(coursePresenter.Course);
+        }
+
+        public void RefreshEnrolledCourses(object sender, SelectionChangedEventArgs args)
+        {
+            ViewModel.RefreshEnrolledCourses(sender, args);
         }
     }
 }

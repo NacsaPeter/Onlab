@@ -25,7 +25,7 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _courses, value, nameof(Courses)); }
         }
 
-        public void RefreshEnrolledCourses(Object sender, SelectionChangedEventArgs args)
+        public void RefreshEnrolledCourses(object sender, SelectionChangedEventArgs args)
         {
             User loggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 0 };
             ProcessEnrolledCourses(loggedInUser);

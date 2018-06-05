@@ -51,7 +51,7 @@ namespace Lynn.DAL
                             Points = t.Points,
                             Username = t.Username
                         })
-                        .Single();
+                        .SingleOrDefault();
             }
         }
 
@@ -116,7 +116,7 @@ namespace Lynn.DAL
                         Points = t.Points,
                         UserId = t.UserID
                     })
-                    .Single();
+                    .SingleOrDefault();
             }
         }
     }

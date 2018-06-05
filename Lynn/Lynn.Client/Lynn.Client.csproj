@@ -136,11 +136,13 @@
     <Compile Include="Services\ViewLifetimeControl.cs" />
     <Compile Include="Services\WindowManagerService.cs" />
     <Compile Include="ViewModels\ChooseOneExerciseViewModel.cs" />
+    <Compile Include="ViewModels\ChoosingExerciseBaseViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToEnrollInViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToStartViewModel.cs" />
     <Compile Include="ViewModels\DoExercisesViewModel.cs" />
     <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
     <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
+    <Compile Include="ViewModels\ExerciseBaseViewModel.cs" />
     <Compile Include="ViewModels\LearningViewModel.cs" />
     <Compile Include="ViewModels\LoggedInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -290,7 +292,19 @@
   <ItemGroup>
     <Content Include="Assets\apple.jpg" />
     <Content Include="Assets\categories\Gyümölcsök.png" />
+    <Content Include="Assets\categories\Színek.png" />
+    <Content Include="Assets\categories\Állatok.png" />
     <Content Include="Assets\cherry.jpg" />
+    <Content Include="Assets\colors\black.png" />
+    <Content Include="Assets\colors\blue.png" />
+    <Content Include="Assets\colors\brown.png" />
+    <Content Include="Assets\colors\green.png" />
+    <Content Include="Assets\colors\orange.png" />
+    <Content Include="Assets\colors\pink.png" />
+    <Content Include="Assets\colors\purple.png" />
+    <Content Include="Assets\colors\red.png" />
+    <Content Include="Assets\colors\white.png" />
+    <Content Include="Assets\colors\yellow.png" />
     <Content Include="Assets\flags\de.png" />
     <Content Include="Assets\flags\en.png" />
     <Content Include="Assets\flags\en\GB.png" />

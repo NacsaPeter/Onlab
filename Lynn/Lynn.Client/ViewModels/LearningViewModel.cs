@@ -27,7 +27,7 @@ namespace Lynn.Client.ViewModels
             PivotItem enrolledCoursesPivotItem = new PivotItem();
             enrolledCoursesPivotItem.Header = "Felvett kurzusok";
             EnrolledCourses enrolledCoursesPage = new EnrolledCourses();
-            _coursesPivot.SelectionChanged += enrolledCoursesPage.ViewModel.RefreshEnrolledCourses;
+            _coursesPivot.SelectionChanged += enrolledCoursesPage.RefreshEnrolledCourses;
             enrolledCoursesPivotItem.Content = enrolledCoursesPage;
             _coursesPivot.Items.Add(enrolledCoursesPivotItem);
         }

@@ -16,7 +16,7 @@ namespace Lynn.Client.Models
         public string TranslatedExpression { get { return _exercise.TranslatedExpression; } }
         public string Sentence { get { return _exercise.Sentence; } }
         public string TranslatedSentence { get { return _exercise.TranslatedSentence; } }
-        public string Picture { get { return $"/Assets/{_exercise.Expression}.jpg"; } }
+        public string Picture { get { return $"/Assets/{_exercise.Picture}"; } }
 
         public VocabularyExercisePresenter(VocabularyExercise exercise)
         {

@@ -8,6 +8,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <vm:TestsViewModel x:Name="ViewModel"/>
+    </Page.DataContext>
+
     <Page.Resources>
         <CollectionViewSource x:Key="CoursesViewSource" IsSourceGrouped="False" Source="{Binding Tests}"/>
     </Page.Resources>

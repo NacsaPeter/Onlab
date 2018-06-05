@@ -24,13 +24,9 @@ namespace Lynn.Client.Views
     /// </summary>
     public sealed partial class EnrollInCourse : Page
     {
-        public EnrollInCourseViewModel ViewModel { get; }
-
         public EnrollInCourse()
         {
             this.InitializeComponent();
-            ViewModel = new EnrollInCourseViewModel();
-            DataContext = ViewModel;
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)

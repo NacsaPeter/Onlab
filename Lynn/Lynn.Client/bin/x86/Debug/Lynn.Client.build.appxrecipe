@@ -562,6 +562,42 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\categories\Gyümölcsök.png">
       <PackagePath>Assets\categories\Gyümölcsök.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\categories\Színek.png">
+      <PackagePath>Assets\categories\Színek.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\categories\Állatok.png">
+      <PackagePath>Assets\categories\Állatok.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\black.png">
+      <PackagePath>Assets\colors\black.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\blue.png">
+      <PackagePath>Assets\colors\blue.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\brown.png">
+      <PackagePath>Assets\colors\brown.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\green.png">
+      <PackagePath>Assets\colors\green.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\orange.png">
+      <PackagePath>Assets\colors\orange.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\pink.png">
+      <PackagePath>Assets\colors\pink.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\purple.png">
+      <PackagePath>Assets\colors\purple.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\red.png">
+      <PackagePath>Assets\colors\red.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\white.png">
+      <PackagePath>Assets\colors\white.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\colors\yellow.png">
+      <PackagePath>Assets\colors\yellow.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\flags\de.png">
       <PackagePath>Assets\flags\de.png</PackagePath>
     </AppxPackagedFile>
