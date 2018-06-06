@@ -18,10 +18,10 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreap
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.DTO.dll
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.DAL.pdb
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Lynn.DTO.pdb
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.csprojResolveAssemblyReference.cache
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.csproj.CoreCompileInputs.cache
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.AssemblyInfoInputs.cache
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.AssemblyInfo.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.csproj.CopyComplete
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.dll
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.pdb
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.csprojAssemblyReference.cache

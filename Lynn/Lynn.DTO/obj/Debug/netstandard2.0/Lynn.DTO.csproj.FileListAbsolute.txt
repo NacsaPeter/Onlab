@@ -15,4 +15,4 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstanda
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.AssemblyInfo.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.dll
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.pdb
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.csprojResolveAssemblyReference.cache
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.csprojAssemblyReference.cache

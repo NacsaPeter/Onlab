@@ -1,0 +1,13 @@
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\bin\Debug\tools\install.ps1
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\bin\Debug\tools\uninstall.ps1
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\bin\Debug\Analyzer.vsix
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\bin\Debug\extension.vsixmanifest
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\bin\Debug\Analyzer.dll
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\bin\Debug\System.Collections.Immutable.dll
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\bin\Debug\Analyzer.pdb
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\obj\Debug\Analyzer.Vsix.csprojAssemblyReference.cache
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\obj\Debug\Analyzer.Vsix.csproj.CoreCompileInputs.cache
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\obj\Debug\Analyzer.Vsix.csproj.CopyComplete
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\obj\Debug\Analyzer.dll
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\obj\Debug\Analyzer.pdb
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Analyzer\Analyzer\Analyzer.Vsix\obj\Debug\extension.vsixmanifest
