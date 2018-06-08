@@ -10,11 +10,11 @@ namespace Lynn.WebAPI.Controllers
     [Route("api/[controller]")]
     public class EnrollmentController : Controller
     {
-        private readonly EnrollmentManager manager;
+        private readonly EnrollmentManager _manager;
 
-        public EnrollmentController()
+        public EnrollmentController(EnrollmentManager manager)
         {
-            manager = new EnrollmentManager();
+            _manager = manager;
         }
 
         [HttpPost]
@@ -25,7 +25,7 @@ namespace Lynn.WebAPI.Controllers
                 return BadRequest();
             }
 
-            int enrollmentId = manager.EnrollCourse(enrollment);
+            int enrollmentId = _manager.EnrollCourse(enrollment);
             Uri url = new Uri($"http://localhost:56750/api/enrollment/{enrollmentId}");
 
             return Created(url, enrollmentId);
@@ -34,7 +34,7 @@ namespace Lynn.WebAPI.Controllers
         [HttpGet("{id}", Name = "GetEnrollmentById")]
         public Enrollment GetEnrollmentById(int id)
         {
-            return manager.GetEnrollmentById(id);
+            return _manager.GetEnrollmentById(id);
         }
 
 

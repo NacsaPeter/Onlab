@@ -14,8 +14,6 @@ namespace Lynn.BLL
             _repo = repo;
         }
 
-        public LanguageManager() : this(new CourseRepository()) { }
-
         public Dictionary<string, string> GetLanguageCodeDictionary()
         {
             return _repo.GetLanguageCodeDictionary();

@@ -8,85 +8,77 @@ namespace Lynn.DAL
 {
     public class EnrollmentRepository : IEnrollmentRepository
     {
-        private LynnDb getDB()
+        private readonly LynnDb _context;
+
+        public EnrollmentRepository(LynnDb context)
         {
-            return new LynnDb();
+            _context = context;
         }
 
         public IEnumerable<Course> GetEnrolledCourses(User user)
         {
-            using (var db = getDB())
-            {
-                return db.Enrollments
-                    .Join(db.Courses, e => e.CourseID, c => c.ID, (e, c) => new { e, c })
-                    .Where(t => t.e.UserID == user.ID)
-                    .Select(t => new Course
-                    {
-                        CourseName = t.c.CourseName,
-                        ID = t.c.ID,
-                        KnownLanguage = t.c.KnownLanguage,
-                        LearningLanguage = t.c.LearningLanguage,
-                        KnownLanguageTerritory = t.c.KnownLanguageTerritory,
-                        LearningLanguageTerritory = t.c.LearningLanguageTerritory,
-                        Details = t.c.Details,
-                        Editor = t.c.User.Username,
-                        Level = t.c.Level.LevelCode
-                    })
-                    .ToList();
-                
-            }
+            return _context.Enrollments
+                .Join(_context.Courses, e => e.CourseID, c => c.ID, (e, c) => new { e, c })
+                .Where(t => t.e.UserID == user.ID)
+                .Select(t => new Course
+                {
+                    CourseName = t.c.CourseName,
+                    ID = t.c.ID,
+                    KnownLanguage = t.c.KnownLanguage,
+                    LearningLanguage = t.c.LearningLanguage,
+                    KnownLanguageTerritory = t.c.KnownLanguageTerritory,
+                    LearningLanguageTerritory = t.c.LearningLanguageTerritory,
+                    Details = t.c.Details,
+                    Editor = t.c.User.Username,
+                    Level = t.c.Level.LevelCode
+                })
+                .ToList();
         }
 
         public User GetUserByID(int id)
         {
-            using (var db = getDB())
-            {
-                return db.Users
-                        .Where(t => t.ID == id)
-                        .Select(t => new User
-                        {
-                            ID = t.ID,
-                            Email = t.Email,
-                            PasswordHash = t.PasswordHash,
-                            Points = t.Points,
-                            Username = t.Username
-                        })
-                        .SingleOrDefault();
-            }
+            return _context.Users
+                    .Where(t => t.ID == id)
+                    .Select(t => new User
+                    {
+                        ID = t.ID,
+                        Email = t.Email,
+                        PasswordHash = t.PasswordHash,
+                        Points = t.Points,
+                        Username = t.Username
+                    })
+                    .SingleOrDefault();
         }
 
         public int EnrollCourse(Enrollment enrollment)
         {
-            using (var db = getDB())
+            var dbEnrollment = new DbEnrollment
             {
-                var dbEnrollment = new DbEnrollment
-                {
-                    CourseID = enrollment.CourseId,
-                    UserID = enrollment.UserId,
-                    Level = enrollment.Level,
-                    Points = enrollment.Points
-                };
+                CourseID = enrollment.CourseId,
+                UserID = enrollment.UserId,
+                Level = enrollment.Level,
+                Points = enrollment.Points
+            };
 
-                DbEnrollment existingEnrollment = db.Enrollments
-                    .Where(e => e.CourseID == dbEnrollment.CourseID && e.UserID == dbEnrollment.UserID)
-                    .SingleOrDefault();
+            DbEnrollment existingEnrollment = _context.Enrollments
+                .Where(e => e.CourseID == dbEnrollment.CourseID && e.UserID == dbEnrollment.UserID)
+                .SingleOrDefault();
 
-                if (existingEnrollment != null)
-                {
-                    return -1;
-                }
-
-                var result = db.Enrollments.Add(dbEnrollment);
-                db.SaveChanges();
-
-                var enrollmentId = result.GetDatabaseValues().GetValue<int>("ID");
-                return enrollmentId;
+            if (existingEnrollment != null)
+            {
+                return -1;
             }
+
+            var result = _context.Enrollments.Add(dbEnrollment);
+            _context.SaveChanges();
+
+            var enrollmentId = result.GetDatabaseValues().GetValue<int>("ID");
+            return enrollmentId;
         }
 
         public IEnumerable<Course> GetCoursesByName(string coursename)
         {
-            return getDB().Courses
+            return _context.Courses
                 .Where(t => t.CourseName.Contains(coursename))
                 .Select(t => new Course
                 {
@@ -104,20 +96,17 @@ namespace Lynn.DAL
 
         public Enrollment GetEnrollmentById(int enrollmentId)
         {
-            using (var db = getDB())
-            {
-                return db.Enrollments
-                    .Where(t => t.ID == enrollmentId)
-                    .Select(t => new Enrollment
-                    {
-                        ID = t.ID,
-                        CourseId = t.CourseID,
-                        Level = t.Level,
-                        Points = t.Points,
-                        UserId = t.UserID
-                    })
-                    .SingleOrDefault();
-            }
+            return _context.Enrollments
+                .Where(t => t.ID == enrollmentId)
+                .Select(t => new Enrollment
+                {
+                    ID = t.ID,
+                    CourseId = t.CourseID,
+                    Level = t.Level,
+                    Points = t.Points,
+                    UserId = t.UserID
+                })
+                .SingleOrDefault();
         }
     }
 }

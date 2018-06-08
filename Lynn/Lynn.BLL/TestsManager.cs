@@ -15,8 +15,6 @@ namespace Lynn.BLL
             _repo = repo;
         }
 
-        public TestsManager() : this(new CourseRepository()) { }
-
         public IEnumerable<Test> GetTests(int id)
         {
             return _repo.GetTestsByCourseId(id);

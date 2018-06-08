@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lynn.BLL;
 using Lynn.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,9 +16,26 @@ namespace Lynn.WebAPI
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LynnDb>(opt => opt.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=LynnDB;Trusted_Connection=True;"));
+            services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
+            services.AddTransient<ICourseRepository, CourseRepository>();
+            services.AddTransient<EnrolledCoursesManager>();
+            services.AddTransient<EnrollmentManager>();
+            services.AddTransient<ExercisesManager>();
+            services.AddTransient<LanguageManager>();
+            services.AddTransient<TestsManager>();
+
+            services.AddDbContext<LynnDb>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddMvc();
         }
 

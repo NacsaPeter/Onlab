@@ -13,9 +13,9 @@ namespace Lynn.WebAPI.Controllers
     {
         private readonly ExercisesManager _manager;
 
-        public ExercisesController()
+        public ExercisesController(ExercisesManager manager)
         {
-            _manager = new ExercisesManager();
+            _manager = manager;
         }
 
         [HttpGet("{id}", Name = "GetExercisesByTestId")]

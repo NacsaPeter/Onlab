@@ -515,7 +515,6 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\ms
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\netstandard.dll
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.DTO.dll
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.DTO.pdb
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Lynn.Client.csprojResolveAssemblyReference.cache
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\App.g.i.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\App.g.cs
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\EnrolledCoursesPage.g.i.cs
@@ -703,3 +702,4 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Vi
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_Pivot.xaml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Styles\_Pivot.xbf
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_Pivot.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Lynn.Client.csprojAssemblyReference.cache

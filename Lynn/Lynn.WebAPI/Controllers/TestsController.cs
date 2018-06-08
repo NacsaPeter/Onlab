@@ -13,9 +13,9 @@ namespace Lynn.WebAPI.Controllers
     {
         private readonly TestsManager _manager;
 
-        public TestsController()
+        public TestsController(TestsManager manager)
         {
-            _manager = new TestsManager();
+            _manager = manager;
         }
 
         [HttpGet("{id}", Name = "GetTestsByCourseId")]

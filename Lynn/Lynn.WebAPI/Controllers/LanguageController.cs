@@ -12,9 +12,9 @@ namespace Lynn.WebAPI.Controllers
     {
         private readonly LanguageManager _manager;
 
-        public LanguageController()
+        public LanguageController(LanguageManager manager)
         {
-            _manager = new LanguageManager();
+            _manager = manager;
         }
 
         [HttpGet]

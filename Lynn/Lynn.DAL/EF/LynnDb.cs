@@ -20,13 +20,6 @@ namespace Lynn.DAL
         public DbSet<DbUser> Users { get; set; }
         public DbSet<DbVocabularyExercise> VocabularyExercises { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=LynnDB;Trusted_Connection=True;");
-        }
-
-        public LynnDb() {}
-
         public LynnDb(DbContextOptions<LynnDb> options) : base(options) {}
     }
 }

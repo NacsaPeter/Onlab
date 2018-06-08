@@ -15,8 +15,6 @@ namespace Lynn.BLL
             _repo = repo;
         }
 
-        public EnrolledCoursesManager() : this(new EnrollmentRepository()) { }
-
         public IEnumerable<Course> GetEnrolledCourses(int userId)
         {
             var user = _repo.GetUserByID(userId);

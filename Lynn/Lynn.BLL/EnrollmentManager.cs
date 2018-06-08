@@ -14,8 +14,6 @@ namespace Lynn.BLL
             _repo = repo;
         }
 
-        public EnrollmentManager() : this(new EnrollmentRepository()) {}
-
         public int EnrollCourse(Enrollment enrollment)
         {
             return _repo.EnrollCourse(enrollment);

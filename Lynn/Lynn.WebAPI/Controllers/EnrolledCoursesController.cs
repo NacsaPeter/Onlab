@@ -13,9 +13,9 @@ namespace Lynn.WebAPI.Controllers
     {
         private readonly EnrolledCoursesManager _manager;
 
-        public EnrolledCoursesController()
+        public EnrolledCoursesController(EnrolledCoursesManager manager)
         {
-            _manager = new EnrolledCoursesManager();
+            _manager = manager;
         }
 
         [HttpGet("{id}", Name = "GetEnrolledCoursesByUserId")]
