@@ -50,7 +50,8 @@ namespace Lynn.DAL
                     .SingleOrDefault();
         }
 
-        public int EnrollCourse(Enrollment enrollment)
+        // Todo: refactor
+        public Enrollment EnrollCourse(Enrollment enrollment)
         {
             var dbEnrollment = new DbEnrollment
             {
@@ -64,16 +65,24 @@ namespace Lynn.DAL
                 .Where(e => e.CourseID == dbEnrollment.CourseID && e.UserID == dbEnrollment.UserID)
                 .SingleOrDefault();
 
+            // Todo: throw exception
             if (existingEnrollment != null)
             {
-                return -1;
+                return null;
             }
 
             var result = _context.Enrollments.Add(dbEnrollment);
             _context.SaveChanges();
 
-            var enrollmentId = result.GetDatabaseValues().GetValue<int>("ID");
-            return enrollmentId;
+            var newEnrollment = result.Entity;
+            return new Enrollment
+            {
+                CourseId = newEnrollment.CourseID,
+                ID = newEnrollment.ID,
+                Level = newEnrollment.Level,
+                Points = newEnrollment.Points,
+                UserId = newEnrollment.UserID
+            };
         }
 
         public IEnumerable<Course> GetCoursesByName(string coursename)

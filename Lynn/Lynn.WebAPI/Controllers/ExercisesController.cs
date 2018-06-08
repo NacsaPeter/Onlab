@@ -19,9 +19,9 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet("{id}", Name = "GetExercisesByTestId")]
-        public IEnumerable<VocabularyExercise> GetExercisesByTestId(int id)
+        public IActionResult GetExercisesByTestId(int id)
         {
-            return _manager.GetVocabularyExercises(id);
+            return Ok(_manager.GetVocabularyExercises(id));
         }
     }
 }

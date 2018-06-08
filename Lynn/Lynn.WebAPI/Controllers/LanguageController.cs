@@ -18,16 +18,16 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet]
-        public Dictionary<string, string> GetLanguageCodeDictionary()
+        public IActionResult GetLanguageCodeDictionary()
         {
-            return _manager.GetLanguageCodeDictionary();
+            return Ok(_manager.GetLanguageCodeDictionary());
         }
 
         [HttpGet]
         [Route("territory")]
-        public Dictionary<string, string> GetTerritoryCodeDictionary()
+        public IActionResult GetTerritoryCodeDictionary()
         {
-            return _manager.GetTerritoryCodeDictionary();
+            return Ok(_manager.GetTerritoryCodeDictionary());
         }
     }
 }

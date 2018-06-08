@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Lynn.WebAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class EnrollInCoursesController
+    public class EnrollInCoursesController : Controller
     {
         private readonly EnrollmentManager _manager;
 
@@ -18,10 +18,10 @@ namespace Lynn.WebAPI.Controllers
             _manager = manager;
         }
 
-        [HttpGet("{coursename}", Name = "GetCoursesByName")]
-        public IEnumerable<Course> GetCoursesByName(string coursename)
+        [HttpGet("{coursename:string}", Name = "GetCoursesByName")]
+        public IActionResult GetCoursesByName(string coursename)
         {
-            return _manager.GetCoursesByName(coursename);
+            return Ok(_manager.GetCoursesByName(coursename));
         }
     }
 }

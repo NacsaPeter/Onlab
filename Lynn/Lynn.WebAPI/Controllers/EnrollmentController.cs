@@ -25,16 +25,20 @@ namespace Lynn.WebAPI.Controllers
                 return BadRequest();
             }
 
-            int enrollmentId = _manager.EnrollCourse(enrollment);
-            Uri url = new Uri($"http://localhost:56750/api/enrollment/{enrollmentId}");
+            var created = _manager.EnrollCourse(enrollment);
 
-            return Created(url, enrollmentId);
+            if (created == null)
+            {
+                return BadRequest();
+            }
+
+            return CreatedAtAction(nameof(GetEnrollmentById), new { created.ID }, created);
         }
 
         [HttpGet("{id}", Name = "GetEnrollmentById")]
-        public Enrollment GetEnrollmentById(int id)
+        public IActionResult GetEnrollmentById(int id)
         {
-            return _manager.GetEnrollmentById(id);
+            return Ok(_manager.GetEnrollmentById(id));
         }
 
 

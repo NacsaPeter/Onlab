@@ -18,10 +18,10 @@ namespace Lynn.WebAPI.Controllers
             _manager = manager;
         }
 
-        [HttpGet("{id}", Name = "GetEnrolledCoursesByUserId")]
-        public IEnumerable<Course> GetEnrolledCoursesByUserId(int id)
+        [HttpGet("{id:int}", Name = "GetEnrolledCoursesByUserId")]
+        public IActionResult GetEnrolledCoursesByUserId(int id)
         {
-            return _manager.GetEnrolledCourses(id);
+            return Ok(_manager.GetEnrolledCourses(id));
         }
     }
 }

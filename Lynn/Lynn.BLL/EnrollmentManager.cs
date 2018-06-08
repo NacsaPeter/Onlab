@@ -14,7 +14,7 @@ namespace Lynn.BLL
             _repo = repo;
         }
 
-        public int EnrollCourse(Enrollment enrollment)
+        public Enrollment EnrollCourse(Enrollment enrollment)
         {
             return _repo.EnrollCourse(enrollment);
         }

@@ -19,9 +19,9 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet("{id}", Name = "GetTestsByCourseId")]
-        public IEnumerable<Test> GetTestsByCourseId(int id)
+        public IActionResult GetTestsByCourseId(int id)
         {
-            return _manager.GetTests(id);
+            return Ok(_manager.GetTests(id));
         }
     }
 }
