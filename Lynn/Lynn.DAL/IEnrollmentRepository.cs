@@ -6,10 +6,12 @@ namespace Lynn.DAL
 {
     public interface IEnrollmentRepository
     {
-        IEnumerable<Course> GetEnrolledCourses(User user);
-        Enrollment EnrollCourse(Enrollment enrollment);
-        User GetUserByID(int id);
-        IEnumerable<Course> GetCoursesByName(string coursename);
-        Enrollment GetEnrollmentById(int enrollmentId);
+        IEnumerable<DbCourse> GetEnrolledCourses(DbUser user);
+        DbEnrollment EnrollCourse(DbEnrollment enrollment);
+        DbUser GetUserByID(int id);
+        IEnumerable<DbCourse> GetCoursesByName(string coursename);
+        DbEnrollment GetEnrollmentById(int enrollmentId);
+        DbUser GetEditorByCourseId(int courseId);
+        DbCourseLevel GetCourseLevelByCourseId(int courseId);
     }
 }

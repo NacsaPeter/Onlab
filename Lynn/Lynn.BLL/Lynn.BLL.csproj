@@ -9,4 +9,8 @@
     <ProjectReference Include="..\Lynn.DTO\Lynn.DTO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0" />
+  </ItemGroup>
+
 </Project>

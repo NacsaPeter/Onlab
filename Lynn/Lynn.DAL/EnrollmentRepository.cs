@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Lynn.DTO;
+using AutoMapper;
 
 namespace Lynn.DAL
 {
@@ -15,54 +16,26 @@ namespace Lynn.DAL
             _context = context;
         }
 
-        public IEnumerable<Course> GetEnrolledCourses(User user)
+        public IEnumerable<DbCourse> GetEnrolledCourses(DbUser user)
         {
             return _context.Enrollments
                 .Join(_context.Courses, e => e.CourseID, c => c.ID, (e, c) => new { e, c })
                 .Where(t => t.e.UserID == user.ID)
-                .Select(t => new Course
-                {
-                    CourseName = t.c.CourseName,
-                    ID = t.c.ID,
-                    KnownLanguage = t.c.KnownLanguage,
-                    LearningLanguage = t.c.LearningLanguage,
-                    KnownLanguageTerritory = t.c.KnownLanguageTerritory,
-                    LearningLanguageTerritory = t.c.LearningLanguageTerritory,
-                    Details = t.c.Details,
-                    Editor = t.c.User.Username,
-                    Level = t.c.Level.LevelCode
-                })
-                .ToList();
+                .Select(t => t.e.Course);
         }
 
-        public User GetUserByID(int id)
+        public DbUser GetUserByID(int id)
         {
             return _context.Users
                     .Where(t => t.ID == id)
-                    .Select(t => new User
-                    {
-                        ID = t.ID,
-                        Email = t.Email,
-                        PasswordHash = t.PasswordHash,
-                        Points = t.Points,
-                        Username = t.Username
-                    })
                     .SingleOrDefault();
         }
 
         // Todo: refactor
-        public Enrollment EnrollCourse(Enrollment enrollment)
+        public DbEnrollment EnrollCourse(DbEnrollment enrollment)
         {
-            var dbEnrollment = new DbEnrollment
-            {
-                CourseID = enrollment.CourseId,
-                UserID = enrollment.UserId,
-                Level = enrollment.Level,
-                Points = enrollment.Points
-            };
-
             DbEnrollment existingEnrollment = _context.Enrollments
-                .Where(e => e.CourseID == dbEnrollment.CourseID && e.UserID == dbEnrollment.UserID)
+                .Where(e => e.CourseID == enrollment.CourseID && e.UserID == enrollment.UserID)
                 .SingleOrDefault();
 
             // Todo: throw exception
@@ -71,50 +44,38 @@ namespace Lynn.DAL
                 return null;
             }
 
-            var result = _context.Enrollments.Add(dbEnrollment);
+            var result = _context.Enrollments.Add(enrollment);
             _context.SaveChanges();
 
-            var newEnrollment = result.Entity;
-            return new Enrollment
-            {
-                CourseId = newEnrollment.CourseID,
-                ID = newEnrollment.ID,
-                Level = newEnrollment.Level,
-                Points = newEnrollment.Points,
-                UserId = newEnrollment.UserID
-            };
+            return result.Entity;
         }
 
-        public IEnumerable<Course> GetCoursesByName(string coursename)
+        public IEnumerable<DbCourse> GetCoursesByName(string coursename)
         {
             return _context.Courses
-                .Where(t => t.CourseName.Contains(coursename))
-                .Select(t => new Course
-                {
-                    CourseName = t.CourseName,
-                    ID = t.ID,
-                    KnownLanguage = t.KnownLanguage,
-                    LearningLanguage = t.LearningLanguage,
-                    KnownLanguageTerritory = t.KnownLanguageTerritory,
-                    LearningLanguageTerritory = t.LearningLanguageTerritory,
-                    Details = t.Details,
-                    Editor = t.User.Username,
-                    Level = t.Level.LevelCode
-                });
+                .Where(t => t.CourseName.Contains(coursename));
         }
 
-        public Enrollment GetEnrollmentById(int enrollmentId)
+        public DbEnrollment GetEnrollmentById(int enrollmentId)
         {
             return _context.Enrollments
                 .Where(t => t.ID == enrollmentId)
-                .Select(t => new Enrollment
-                {
-                    ID = t.ID,
-                    CourseId = t.CourseID,
-                    Level = t.Level,
-                    Points = t.Points,
-                    UserId = t.UserID
-                })
+                .SingleOrDefault();
+        }
+
+        public DbUser GetEditorByCourseId(int courseId)
+        {
+            return _context.Courses
+                .Where(c => c.ID == courseId)
+                .Select(c => c.User)
+                .SingleOrDefault();
+        }
+
+        public DbCourseLevel GetCourseLevelByCourseId(int courseId)
+        {
+            return _context.Courses
+                .Where(c => c.ID == courseId)
+                .Select(c => c.Level)
                 .SingleOrDefault();
         }
     }

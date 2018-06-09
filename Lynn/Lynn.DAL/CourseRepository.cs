@@ -15,42 +15,25 @@ namespace Lynn.DAL
             _context = context;
         }
 
-        public IEnumerable<Test> GetTestsByCourseId(int id)
+        public IEnumerable<DbTest> GetTestsByCourseId(int id)
         {
             return _context.Tests
                 .Where(t => t.CourseID == id)
-                .Select(t => new Test
-                {
-                    ID = t.ID,
-                    CategoryName = t.Category.Name,
-                    CourseID = t.CourseID,
-                    Level = t.Level,
-                    MaxPoints = t.MaxPoints,
-                    NumberOfQuestions = t.NumberOfQuestions
-                })
                 .ToList();
         }
 
-        public IEnumerable<VocabularyExercise> GetVocabularyExercisesByTestId(int id)
+        public DbCategory GetCategoryByTestId(int testId)
+        {
+            return _context.Tests
+                .Where(t => t.ID == testId)
+                .Select(t => t.Category)
+                .SingleOrDefault();
+        }
+
+        public IEnumerable<DbVocabularyExercise> GetVocabularyExercisesByTestId(int id)
         {
             return _context.VocabularyExercises
                 .Where(t => t.TestID == id)
-                .Select(t => new VocabularyExercise
-                {
-                    ID = t.ID,
-                    TestID = t.TestID,
-                    Expression = t.Expression,
-                    TranslatedExpression = t.TranslatedExpression,
-                    WrongAnswer1 = t.WrongAnswer1,
-                    WrongAnswer2 = t.WrongAnswer2,
-                    WrongAnswer3 = t.WrongAnswer3,
-                    TranslatedWrongAnswer1 = t.TranslatedWrongAnswer1,
-                    TranslatedWrongAnswer2 = t.TranslatedWrongAnswer2,
-                    TranslatedWrongAnswer3 = t.TranslatedWrongAnswer3,
-                    Sentence = t.Sentence,
-                    TranslatedSentence = t.TranslatedSentence,
-                    Picture = t.Picture
-                })
                 .ToList();
         }
 

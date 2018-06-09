@@ -29,7 +29,7 @@ namespace Lynn.Client.Services
         {
             using (var client = new HttpClient())
             {
-                Enrollment enrollment = new Enrollment { CourseId = course.ID, UserId = user.ID, Points = 0, Level = 1 };
+                Enrollment enrollment = new Enrollment { CourseID = course.ID, UserID = user.ID, Points = 0, Level = 1 };
                 InitializeClient(client);
                 HttpResponseMessage response = await client.PostAsJsonAsync("api/enrollment", enrollment);
                 response.EnsureSuccessStatusCode();

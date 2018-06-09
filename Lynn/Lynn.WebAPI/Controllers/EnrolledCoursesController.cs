@@ -11,9 +11,9 @@ namespace Lynn.WebAPI.Controllers
     [Route("api/[controller]")]
     public class EnrolledCoursesController : Controller
     {
-        private readonly EnrolledCoursesManager _manager;
+        private readonly EnrollmentManager _manager;
 
-        public EnrolledCoursesController(EnrolledCoursesManager manager)
+        public EnrolledCoursesController(EnrollmentManager manager)
         {
             _manager = manager;
         }

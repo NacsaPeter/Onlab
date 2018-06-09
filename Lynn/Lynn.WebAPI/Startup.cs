@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Lynn.BLL;
+using Lynn.BLL.Mapping;
 using Lynn.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,11 +29,11 @@ namespace Lynn.WebAPI
         {
             services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
-            services.AddTransient<EnrolledCoursesManager>();
             services.AddTransient<EnrollmentManager>();
             services.AddTransient<ExercisesManager>();
             services.AddTransient<LanguageManager>();
             services.AddTransient<TestsManager>();
+            services.AddSingleton<IMapper>(MapperConfig.Configure());
 
             services.AddDbContext<LynnDb>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

@@ -7,8 +7,9 @@ namespace Lynn.DAL
 {
     public interface ICourseRepository
     {
-        IEnumerable<Test> GetTestsByCourseId(int id);
-        IEnumerable<VocabularyExercise> GetVocabularyExercisesByTestId(int id);
+        IEnumerable<DbTest> GetTestsByCourseId(int id);
+        IEnumerable<DbVocabularyExercise> GetVocabularyExercisesByTestId(int id);
+        DbCategory GetCategoryByTestId(int testId);
         Dictionary<string, string> GetLanguageCodeDictionary();
         Dictionary<string, string> GetTerritoryCodeDictionary();
     }
