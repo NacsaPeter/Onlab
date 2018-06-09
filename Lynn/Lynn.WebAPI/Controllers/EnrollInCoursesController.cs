@@ -18,7 +18,7 @@ namespace Lynn.WebAPI.Controllers
             _manager = manager;
         }
 
-        [HttpGet("{coursename:string}", Name = "GetCoursesByName")]
+        [HttpGet("{coursename}", Name = "GetCoursesByName")]
         public IActionResult GetCoursesByName(string coursename)
         {
             return Ok(_manager.GetCoursesByName(coursename));
