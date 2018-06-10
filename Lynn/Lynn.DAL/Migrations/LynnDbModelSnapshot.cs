@@ -31,6 +31,8 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("Name");
+
                     b.ToTable("Category");
                 });
 
@@ -89,6 +91,8 @@ namespace Lynn.DAL.Migrations
                     b.HasKey("ID");
 
                     b.HasAlternateKey("LevelCode");
+
+                    b.HasIndex("LevelName");
 
                     b.ToTable("CourseLevel");
                 });
@@ -189,6 +193,8 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("Name");
+
                     b.ToTable("Rule");
                 });
 
@@ -280,6 +286,8 @@ namespace Lynn.DAL.Migrations
                     b.HasKey("ID");
 
                     b.HasAlternateKey("Username");
+
+                    b.HasIndex("Email");
 
                     b.ToTable("User");
                 });

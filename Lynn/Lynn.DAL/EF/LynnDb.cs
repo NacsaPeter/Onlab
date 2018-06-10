@@ -31,6 +31,11 @@ namespace Lynn.DAL
             modelBuilder.Entity<DbEnrollment>().HasAlternateKey(e => new { e.UserID, e.CourseID });
             modelBuilder.Entity<DbTerritory>().HasAlternateKey(t => t.Code);
             modelBuilder.Entity<DbCourseLevel>().HasAlternateKey(l => l.LevelCode);
+
+            modelBuilder.Entity<DbUser>().HasIndex(u => u.Email);
+            modelBuilder.Entity<DbCategory>().HasIndex(c => c.Name);
+            modelBuilder.Entity<DbCourseLevel>().HasIndex(l => l.LevelName);
+            modelBuilder.Entity<DbRule>().HasIndex(r => r.Name);
         }
     }
 }
