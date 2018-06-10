@@ -1085,6 +1085,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.TagHelpers.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Mvc.Versioning/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -5302,6 +5314,7 @@
           "Lynn.BLL": "1.0.0",
           "Lynn.DAL": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.Versioning": "2.3.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
         "compile": {
@@ -6060,6 +6073,18 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.TagHelpers.xml",
         "microsoft.aspnetcore.mvc.taghelpers.2.0.0.nupkg.sha512",
         "microsoft.aspnetcore.mvc.taghelpers.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/2.3.0": {
+      "sha512": "fWGeQmLVLmKi4yaScHAQz/tSeLKbYifaNo9et2ljZEV535ysFzgJVw+ZGi2B/6aEDQNPn7yRLfJgXAmy7TipQA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.versioning/2.3.0",
+      "files": [
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Versioning.xml",
+        "microsoft.aspnetcore.mvc.versioning.2.3.0.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.versioning.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.0": {

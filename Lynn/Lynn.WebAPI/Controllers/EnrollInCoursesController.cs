@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Lynn.WebAPI.Controllers
 {
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [Route("api/[controller]")]
     public class EnrollInCoursesController : Controller
     {
@@ -18,10 +21,23 @@ namespace Lynn.WebAPI.Controllers
             _manager = manager;
         }
 
-        [HttpGet("{coursename}", Name = "GetCoursesByName")]
+        [HttpGet("{coursename}")]
         public IActionResult GetCoursesByName(string coursename)
         {
             return Ok(_manager.GetCoursesByName(coursename));
+        }
+
+        [HttpGet("{coursename}")]
+        [MapToApiVersion("2.0")]
+        public IActionResult GetCoursesByNameV2(string coursename)
+        {
+            var courses = _manager.GetCoursesByName(coursename);
+            int count = 0;
+            foreach (var item in courses)
+            {
+                count++;
+            }
+            return Ok(new { count, courses });
         }
     }
 }

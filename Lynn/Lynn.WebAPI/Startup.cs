@@ -8,6 +8,8 @@ using Lynn.BLL.Mapping;
 using Lynn.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,6 +39,14 @@ namespace Lynn.WebAPI
 
             services.AddDbContext<LynnDb>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddApiVersioning(o =>
+            {
+                o.ApiVersionReader = new UrlSegmentApiVersionReader();
+                o.DefaultApiVersion = new ApiVersion(1, 0);
+                o.AssumeDefaultVersionWhenUnspecified = true;
+                o.ReportApiVersions = true;
+            });
 
             services.AddMvc();
         }
