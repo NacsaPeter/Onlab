@@ -44,10 +44,14 @@ namespace Lynn.DAL
                 return null;
             }
 
-            var result = _context.Enrollments.Add(enrollment);
+            _context.Enrollments.Add(enrollment);
             _context.SaveChanges();
 
-            return result.Entity;
+            DbEnrollment newEnrollment = _context.Enrollments
+                .Where(e => e.CourseID == enrollment.CourseID && e.UserID == enrollment.UserID)
+                .SingleOrDefault();
+
+            return newEnrollment;
         }
 
         public IEnumerable<DbCourse> GetCoursesByName(string coursename)
