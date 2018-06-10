@@ -88,6 +88,8 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasAlternateKey("LevelCode");
+
                     b.ToTable("CourseLevel");
                 });
 
@@ -106,9 +108,9 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CourseID");
+                    b.HasAlternateKey("UserID", "CourseID");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("CourseID");
 
                     b.ToTable("Enrollment");
                 });
@@ -166,6 +168,8 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasAlternateKey("Code");
+
                     b.ToTable("Language");
                 });
 
@@ -202,6 +206,8 @@ namespace Lynn.DAL.Migrations
                         .HasMaxLength(30);
 
                     b.HasKey("ID");
+
+                    b.HasAlternateKey("Code");
 
                     b.ToTable("Territory");
                 });
@@ -245,7 +251,7 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("TestID");
+                    b.HasAlternateKey("TestID", "UserID");
 
                     b.HasIndex("UserID");
 
@@ -272,6 +278,8 @@ namespace Lynn.DAL.Migrations
                         .HasMaxLength(50);
 
                     b.HasKey("ID");
+
+                    b.HasAlternateKey("Username");
 
                     b.ToTable("User");
                 });

@@ -21,6 +21,17 @@ namespace Lynn.DAL
         public DbSet<DbVocabularyExercise> VocabularyExercises { get; set; }
 
         public LynnDb(DbContextOptions<LynnDb> options) : base(options) {}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DbUser>().HasAlternateKey(u => u.Username);
+            modelBuilder.Entity<DbTestUser>().HasAlternateKey(t => new { t.TestID, t.UserID });
+            modelBuilder.Entity<DbTerritory>().HasAlternateKey(t => t.Code);
+            modelBuilder.Entity<DbLanguage>().HasAlternateKey(l => l.Code);
+            modelBuilder.Entity<DbEnrollment>().HasAlternateKey(e => new { e.UserID, e.CourseID });
+            modelBuilder.Entity<DbTerritory>().HasAlternateKey(t => t.Code);
+            modelBuilder.Entity<DbCourseLevel>().HasAlternateKey(l => l.LevelCode);
+        }
     }
 }
 
