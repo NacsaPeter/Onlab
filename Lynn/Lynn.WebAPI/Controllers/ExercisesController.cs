@@ -28,15 +28,11 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        [MapToApiVersion("2.0")]        public IActionResult GetExercisesByTestIdV2(int id)
+        [MapToApiVersion("2.0")]
+        public IActionResult GetExercisesByTestIdV2(int id)
         {
             var exercises = _manager.GetVocabularyExercises(id);
-            int count = 0;
-            foreach (var item in exercises)
-            {
-                count++;
-            }
-            return Ok(new { count, exercises});
+            return Ok(new { exercises.Count, exercises});
         }
     }
 }

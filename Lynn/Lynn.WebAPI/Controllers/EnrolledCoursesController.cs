@@ -32,12 +32,7 @@ namespace Lynn.WebAPI.Controllers
         public IActionResult GetEnrolledCoursesByUserIdV2(int id)
         {
             var courses = _manager.GetEnrolledCourses(id);
-            int count = 0;
-            foreach (var item in courses)
-            {
-                count++;
-            }
-            return Ok(new { count, courses });
+            return Ok(new { courses.Count, courses });
         }
     }
 }

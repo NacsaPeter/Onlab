@@ -16,12 +16,13 @@ namespace Lynn.DAL
             _context = context;
         }
 
-        public IEnumerable<DbCourse> GetEnrolledCourses(DbUser user)
+        public ICollection<DbCourse> GetEnrolledCourses(DbUser user)
         {
             return _context.Enrollments
                 .Join(_context.Courses, e => e.CourseID, c => c.ID, (e, c) => new { e, c })
                 .Where(t => t.e.UserID == user.ID)
-                .Select(t => t.e.Course);
+                .Select(t => t.e.Course)
+                .ToList();
         }
 
         public DbUser GetUserByID(int id)
@@ -54,10 +55,11 @@ namespace Lynn.DAL
             return newEnrollment;
         }
 
-        public IEnumerable<DbCourse> GetCoursesByName(string coursename)
+        public ICollection<DbCourse> GetCoursesByName(string coursename)
         {
             return _context.Courses
-                .Where(t => t.CourseName.Contains(coursename));
+                .Where(t => t.CourseName.Contains(coursename))
+                .ToList();
         }
 
         public DbEnrollment GetEnrollmentById(int enrollmentId)

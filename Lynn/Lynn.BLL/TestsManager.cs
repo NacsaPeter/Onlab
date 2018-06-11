@@ -18,9 +18,9 @@ namespace Lynn.BLL
             _mapper = mapper;
         }
 
-        public IEnumerable<Test> GetTests(int courseId)
+        public ICollection<Test> GetTests(int courseId)
         {
-            var tests = _mapper.Map<IEnumerable<Test>>(_repo.GetTestsByCourseId(courseId));
+            var tests = _mapper.Map<ICollection<Test>>(_repo.GetTestsByCourseId(courseId));
             foreach (var test in tests)
             {
                 test.CategoryName = _repo.GetCategoryByTestId(test.ID).Name;

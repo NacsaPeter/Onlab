@@ -18,9 +18,9 @@ namespace Lynn.BLL
             _mapper = mapper;
         }
 
-        public IEnumerable<VocabularyExercise> GetVocabularyExercises(int testId)
+        public ICollection<VocabularyExercise> GetVocabularyExercises(int testId)
         {
-            return _mapper.Map<IEnumerable<VocabularyExercise>>(_repo.GetVocabularyExercisesByTestId(testId));
+            return _mapper.Map<ICollection<VocabularyExercise>>(_repo.GetVocabularyExercisesByTestId(testId));
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Lynn.DAL
             _context = context;
         }
 
-        public IEnumerable<DbTest> GetTestsByCourseId(int id)
+        public ICollection<DbTest> GetTestsByCourseId(int id)
         {
             return _context.Tests
                 .Where(t => t.CourseID == id)
@@ -30,7 +30,7 @@ namespace Lynn.DAL
                 .SingleOrDefault();
         }
 
-        public IEnumerable<DbVocabularyExercise> GetVocabularyExercisesByTestId(int id)
+        public ICollection<DbVocabularyExercise> GetVocabularyExercisesByTestId(int id)
         {
             return _context.VocabularyExercises
                 .Where(t => t.TestID == id)

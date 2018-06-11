@@ -23,13 +23,13 @@ namespace Lynn.BLL
             return _mapper.Map<Enrollment>(_repo.EnrollCourse(dbEnrollment));
         }
 
-        public IEnumerable<Course> GetCoursesByName(string coursename)
+        public ICollection<Course> GetCoursesByName(string coursename)
         {
-            var courses = _mapper.Map<IEnumerable<Course>>(_repo.GetCoursesByName(coursename));
+            var courses = _mapper.Map<ICollection<Course>>(_repo.GetCoursesByName(coursename));
             return SetCoursesEditorAndLevel(courses);
         }
 
-        private IEnumerable<Course> SetCoursesEditorAndLevel(IEnumerable<Course> courses)
+        private ICollection<Course> SetCoursesEditorAndLevel(ICollection<Course> courses)
         {
             foreach (var course in courses)
             {
@@ -44,10 +44,10 @@ namespace Lynn.BLL
             return _mapper.Map<Enrollment>(_repo.GetEnrollmentById(enrollmentId));
         }
 
-        public IEnumerable<Course> GetEnrolledCourses(int userId)
+        public ICollection<Course> GetEnrolledCourses(int userId)
         {
             var user = _repo.GetUserByID(userId);
-            var courses = _mapper.Map<IEnumerable<Course>>(_repo.GetEnrolledCourses(user));
+            var courses = _mapper.Map<ICollection<Course>>(_repo.GetEnrolledCourses(user));
             return SetCoursesEditorAndLevel(courses);
         }
     }

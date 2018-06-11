@@ -32,12 +32,7 @@ namespace Lynn.WebAPI.Controllers
         public IActionResult GetTestsByCourseIdV2(int id)
         {
             var tests = _manager.GetTests(id);
-            int count = 0;
-            foreach (var item in tests)
-            {
-                count++;
-            }
-            return Ok(new { count, tests });
+            return Ok(new { tests.Count, tests });
         }
     }
 }
