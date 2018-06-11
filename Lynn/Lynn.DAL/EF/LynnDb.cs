@@ -32,6 +32,11 @@ namespace Lynn.DAL
             modelBuilder.Entity<DbTerritory>().HasAlternateKey(t => t.Code);
             modelBuilder.Entity<DbCourseLevel>().HasAlternateKey(l => l.LevelCode);
 
+            modelBuilder.Entity<DbCourse>().HasOne(c => c.KnownLanguageFull).WithMany(l => l.CoursesAsKnown);
+            modelBuilder.Entity<DbCourse>().HasOne(c => c.KnownLanguageTerritoryFull).WithMany(t => t.CoursesAsKnown);
+            modelBuilder.Entity<DbCourse>().HasOne(c => c.LearningLanguageFull).WithMany(l => l.CoursesAsLearning);
+            modelBuilder.Entity<DbCourse>().HasOne(c => c.LearnigLanguageTerritoryFull).WithMany(t => t.CoursesAsLearning);
+
             modelBuilder.Entity<DbUser>().HasIndex(u => u.Email);
             modelBuilder.Entity<DbCategory>().HasIndex(c => c.Name);
             modelBuilder.Entity<DbCourseLevel>().HasIndex(l => l.LevelName);

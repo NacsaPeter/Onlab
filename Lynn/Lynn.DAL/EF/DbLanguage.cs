@@ -16,6 +16,9 @@ namespace Lynn.DAL
         [StringLength(2)]
         public string Code { get; set; }
 
+        public virtual ICollection<DbCourse> CoursesAsKnown { get; set; }
+        public virtual ICollection<DbCourse> CoursesAsLearning { get; set; }
+
         [Required]
         [StringLength(20)]
         public string Name { get; set; }

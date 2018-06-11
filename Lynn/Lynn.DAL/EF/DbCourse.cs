@@ -23,15 +23,23 @@ namespace Lynn.DAL
         [StringLength(2)]
         public string KnownLanguage { get; set; }
 
+        public virtual DbLanguage KnownLanguageFull { get; set; }
+
         [StringLength(2)]
         public string KnownLanguageTerritory { get; set; }
+
+        public virtual DbTerritory KnownLanguageTerritoryFull { get; set; }
 
         [Required]
         [StringLength(2)]
         public string LearningLanguage { get; set; }
 
+        public virtual DbLanguage LearningLanguageFull { get; set; }
+
         [StringLength(2)]
         public string LearningLanguageTerritory { get; set; }
+
+        public virtual DbTerritory LearnigLanguageTerritoryFull { get; set; }
 
         [ForeignKey(nameof(Level))]
         public int? LevelID { get; set; }

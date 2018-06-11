@@ -52,12 +52,20 @@ namespace Lynn.DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(2);
 
+                    b.Property<int?>("KnownLanguageFullID");
+
                     b.Property<string>("KnownLanguageTerritory")
                         .HasMaxLength(2);
+
+                    b.Property<int?>("KnownLanguageTerritoryFullID");
+
+                    b.Property<int?>("LearnigLanguageTerritoryFullID");
 
                     b.Property<string>("LearningLanguage")
                         .IsRequired()
                         .HasMaxLength(2);
+
+                    b.Property<int?>("LearningLanguageFullID");
 
                     b.Property<string>("LearningLanguageTerritory")
                         .HasMaxLength(2);
@@ -68,6 +76,14 @@ namespace Lynn.DAL.Migrations
                         .HasColumnName("Editor");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("KnownLanguageFullID");
+
+                    b.HasIndex("KnownLanguageTerritoryFullID");
+
+                    b.HasIndex("LearnigLanguageTerritoryFullID");
+
+                    b.HasIndex("LearningLanguageFullID");
 
                     b.HasIndex("LevelID");
 
@@ -355,6 +371,22 @@ namespace Lynn.DAL.Migrations
 
             modelBuilder.Entity("Lynn.DAL.DbCourse", b =>
                 {
+                    b.HasOne("Lynn.DAL.DbLanguage", "KnownLanguageFull")
+                        .WithMany("CoursesAsKnown")
+                        .HasForeignKey("KnownLanguageFullID");
+
+                    b.HasOne("Lynn.DAL.DbTerritory", "KnownLanguageTerritoryFull")
+                        .WithMany("CoursesAsKnown")
+                        .HasForeignKey("KnownLanguageTerritoryFullID");
+
+                    b.HasOne("Lynn.DAL.DbTerritory", "LearnigLanguageTerritoryFull")
+                        .WithMany("CoursesAsLearning")
+                        .HasForeignKey("LearnigLanguageTerritoryFullID");
+
+                    b.HasOne("Lynn.DAL.DbLanguage", "LearningLanguageFull")
+                        .WithMany("CoursesAsLearning")
+                        .HasForeignKey("LearningLanguageFullID");
+
                     b.HasOne("Lynn.DAL.DbCourseLevel", "Level")
                         .WithMany("Courses")
                         .HasForeignKey("LevelID");
