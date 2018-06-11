@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Lynn.BLL.Services;
 using Lynn.DAL;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Lynn.BLL
 {
@@ -23,10 +25,22 @@ namespace Lynn.BLL
             return _mapper.Map<Enrollment>(_repo.EnrollCourse(dbEnrollment));
         }
 
-        public ICollection<Course> GetCoursesByName(string coursename)
+        public async Task<ICollection<Course>> GetCoursesByName(string coursename)
         {
             var courses = _mapper.Map<ICollection<Course>>(_repo.GetCoursesByName(coursename));
+            courses = await SetLanguageNames(courses);
             return SetCoursesEditorAndLevel(courses);
+        }
+
+        private async Task<ICollection<Course>> SetLanguageNames(ICollection<Course> courses)
+        {
+            var service = new CountriesService();
+            foreach (var course in courses)
+            {
+                course.KnownLanguageName = (await service.GetLanguageByLanguageCode(course.KnownLanguage)).Name;
+                course.LearningLanguageName = (await service.GetLanguageByLanguageCode(course.LearningLanguage)).Name;
+            }
+            return courses;
         }
 
         private ICollection<Course> SetCoursesEditorAndLevel(ICollection<Course> courses)
@@ -44,10 +58,11 @@ namespace Lynn.BLL
             return _mapper.Map<Enrollment>(_repo.GetEnrollmentById(enrollmentId));
         }
 
-        public ICollection<Course> GetEnrolledCourses(int userId)
+        public async Task<ICollection<Course>> GetEnrolledCourses(int userId)
         {
             var user = _repo.GetUserByID(userId);
             var courses = _mapper.Map<ICollection<Course>>(_repo.GetEnrolledCourses(user));
+            courses = await SetLanguageNames(courses);
             return SetCoursesEditorAndLevel(courses);
         }
     }

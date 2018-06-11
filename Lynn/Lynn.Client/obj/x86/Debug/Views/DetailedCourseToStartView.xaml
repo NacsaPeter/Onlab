@@ -33,8 +33,8 @@
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Szerkesztő:" VerticalAlignment="Center"></TextBlock>
         <TextBlock Grid.Row="5" Grid.Column="0" Text="Leírás:" VerticalAlignment="Top" Margin="0, 6"></TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Course.CourseName}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Course.LearningLanguage}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Course.KnownLanguage}" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Course.LearningLanguageName}" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Course.KnownLanguageName}" VerticalAlignment="Center"></TextBlock>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Course.Level}" VerticalAlignment="Center"></TextBlock>
         <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Course.Editor}" VerticalAlignment="Center"></TextBlock>
         <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Course.Details}" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>

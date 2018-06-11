@@ -49,12 +49,7 @@ namespace Lynn.Tests
             }
 
             var courses = _repo.GetCoursesByName("a");
-            int count = 0;
-            foreach (var course in courses)
-            {
-                count++;
-            }
-            Assert.Equal(2, count);
+            Assert.Equal(2, courses.Count);
         }
 
         [Fact]

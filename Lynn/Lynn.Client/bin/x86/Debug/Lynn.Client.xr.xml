@@ -13,8 +13,8 @@
     <RootPropertyPathName Name="Details" />
     <RootPropertyPathName Name="Editor" />
     <RootPropertyPathName Name="Level" />
-    <RootPropertyPathName Name="KnownLanguage" />
-    <RootPropertyPathName Name="LearningLanguage" />
+    <RootPropertyPathName Name="KnownLanguageName" />
+    <RootPropertyPathName Name="LearningLanguageName" />
     <RootPropertyPathName Name="CourseName" />
     <RootPropertyPathName Name="Start_Click" />
     <RootPropertyPathName Name="VocabularyExercises" />

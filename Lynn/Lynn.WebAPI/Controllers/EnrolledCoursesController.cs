@@ -22,16 +22,16 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public IActionResult GetEnrolledCoursesByUserId(int id)
+        public async Task<IActionResult> GetEnrolledCoursesByUserId(int id)
         {
-            return Ok(_manager.GetEnrolledCourses(id));
+            return Ok(await _manager.GetEnrolledCourses(id));
         }
 
         [HttpGet("{id:int}")]
         [MapToApiVersion("2.0")]
-        public IActionResult GetEnrolledCoursesByUserIdV2(int id)
+        public async Task<IActionResult> GetEnrolledCoursesByUserIdV2(int id)
         {
-            var courses = _manager.GetEnrolledCourses(id);
+            var courses = await _manager.GetEnrolledCourses(id);
             return Ok(new { courses.Count, courses });
         }
     }

@@ -25,3 +25,5 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreap
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.dll
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.pdb
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\obj\Debug\netcoreapp2.0\Lynn.BLL.csprojAssemblyReference.cache
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Newtonsoft.Json.dll
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.BLL\bin\Debug\netcoreapp2.0\Newtonsoft.Json.xml

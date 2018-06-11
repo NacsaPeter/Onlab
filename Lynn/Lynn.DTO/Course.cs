@@ -17,11 +17,17 @@ namespace Lynn.DTO
         [DataMember(Name = "knownLanguage")]
         public string KnownLanguage { get; set; }
 
+        [DataMember(Name = "knownLanguageName")]
+        public string KnownLanguageName { get; set; }
+
         [DataMember(Name = "knownLanguageTerritory")]
         public string KnownLanguageTerritory { get; set; }
 
         [DataMember(Name = "learningLanguage")]
         public string LearningLanguage { get; set; }
+
+        [DataMember(Name = "learningLanguageName")]
+        public string LearningLanguageName { get; set; }
 
         [DataMember(Name = "learningLanguageTerritory")]
         public string LearningLanguageTerritory { get; set; }

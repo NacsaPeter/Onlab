@@ -33,12 +33,7 @@ namespace Lynn.Tests
             }
 
             var tests = _repo.GetTestsByCourseId(31);
-            int count = 0;
-            foreach (var test in tests)
-            {
-                count++;
-            }
-            Assert.Equal(2, count);
+            Assert.Equal(2, tests.Count);
         }
 
         [Fact]
@@ -67,12 +62,7 @@ namespace Lynn.Tests
             }
 
             var exercises = _repo.GetVocabularyExercisesByTestId(85);
-            int count = 0;
-            foreach (var exercise in exercises)
-            {
-                count++;
-            }
-            Assert.Equal(1, count);
+            Assert.Equal(1, exercises.Count);
         }
     }
 }

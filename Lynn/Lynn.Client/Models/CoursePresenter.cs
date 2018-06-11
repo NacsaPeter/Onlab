@@ -23,10 +23,8 @@ namespace Lynn.Client.Models
         public string Details { get { return _course.Details; } }
         public string Flag { get { return $"/Assets/flags/{_course.LearningLanguage}.png"; } }
         public Course Course { get { return _course; } }
-        public string KnownLanguageFull { get; private set; }
-        public string KnownLanguageTerritoryFull { get; private set; }
-        public string LearningLanguageFull { get; private set; }
-        public string LearningLanguageTerritoryFull { get; private set; }
+        public string KnownLanguageName { get { return _course.KnownLanguageName; } }
+        public string LearningLanguageName { get { return _course.LearningLanguageName; } }
 
         public CoursePresenter(Course course)
         {
@@ -41,17 +39,6 @@ namespace Lynn.Client.Models
                 coursePresenters.Add(new CoursePresenter(item));
             }
             return coursePresenters;
-        }
-
-        private async Task TurnCodesToNames()
-        {
-            var service = new LanguageService();
-            var languageDictionary = await service.GetLanguageCodesDictionary();
-            var territoryDictionary = await service.GetTerritoryCodesDictionary();
-            KnownLanguageFull = languageDictionary[KnownLanguage];
-            KnownLanguageTerritoryFull = territoryDictionary[KnownLanguageTerritory];
-            LearningLanguageFull = languageDictionary[LearningLanguage];
-            LearningLanguageTerritoryFull = territoryDictionary[LearningLanguageTerritory];
         }
     }
 }

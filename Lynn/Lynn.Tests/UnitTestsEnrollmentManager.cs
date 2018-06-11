@@ -37,25 +37,20 @@ namespace Lynn.Tests
         }
 
         [Fact]
-        public void TestGetCoursesByName()
+        public async void TestGetCoursesByName()
         {
             using (var context = new LynnDb(_options))
             {
                 context.Users.Add(new DbUser { ID = 71, Username = "Test" });
                 context.CourseLevels.Add(new DbCourseLevel { ID = 1, LevelCode = "A1" });
-                context.Courses.Add(new DbCourse { CourseName = "x", UserID = 71, LevelID = 1 });
-                context.Courses.Add(new DbCourse { CourseName = "xy", UserID = 71, LevelID = 1 });
-                context.Courses.Add(new DbCourse { CourseName = "y", UserID = 71, LevelID = 1 });
+                context.Courses.Add(new DbCourse { CourseName = "x", UserID = 71, LevelID = 1, KnownLanguage = "hu", LearningLanguage = "it" });
+                context.Courses.Add(new DbCourse { CourseName = "xy", UserID = 71, LevelID = 1, KnownLanguage = "hu", LearningLanguage = "it" });
+                context.Courses.Add(new DbCourse { CourseName = "y", UserID = 71, LevelID = 1, KnownLanguage = "hu", LearningLanguage = "it" });
                 context.SaveChanges();
             }
 
-            var courses = _manager.GetCoursesByName("x");
-            int count = 0;
-            foreach (var course in courses)
-            {
-                count++;
-            }
-            Assert.Equal(2, count);
+            var courses = await _manager.GetCoursesByName("x");
+            Assert.Equal(2, courses.Count);
         }
     }
 }
