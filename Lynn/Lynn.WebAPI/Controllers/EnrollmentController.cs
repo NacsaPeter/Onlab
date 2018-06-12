@@ -38,7 +38,12 @@ namespace Lynn.WebAPI.Controllers
         [HttpGet("{id}", Name = "GetEnrollmentById")]
         public IActionResult GetEnrollmentById(int id)
         {
-            return Ok(_manager.GetEnrollmentById(id));
+            var enrollment = _manager.GetEnrollmentById(id);
+            if (enrollment == null)
+            {
+                return NotFound();
+            }
+            return Ok(enrollment);
         }
 
 
