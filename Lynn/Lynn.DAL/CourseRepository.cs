@@ -36,31 +36,5 @@ namespace Lynn.DAL
                 .Where(t => t.TestID == id)
                 .ToList();
         }
-
-        public Dictionary<string, string> GetLanguageCodeDictionary()
-        {
-            var dictionary = new Dictionary<string, string>();
-            var results = _context.Languages
-                .Select(t => new { Key = t.Code, Value = t.Name })
-                .ToList();
-            foreach (var item in results)
-            {
-                dictionary.Add(item.Key, item.Value);
-            }
-            return dictionary;
-        }
-
-        public Dictionary<string, string> GetTerritoryCodeDictionary()
-        {
-            var dictionary = new Dictionary<string, string>();
-            var results = _context.Territories
-                .Select(t => new { Key = t.Code, Value = t.Name })
-                .ToList();
-            foreach (var item in results)
-            {
-                dictionary.Add(item.Key, item.Value);
-            }
-            return dictionary;
-        }
     }
 }

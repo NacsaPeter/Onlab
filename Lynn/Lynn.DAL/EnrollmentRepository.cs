@@ -84,5 +84,29 @@ namespace Lynn.DAL
                 .Select(c => c.Level)
                 .SingleOrDefault();
         }
+
+        public ICollection<DbCourse> GetCoursesByLanguageCode(string known, string learning)
+        {
+            if (known == "" && learning != "")
+            {
+                return _context.Languages
+                    .Where(l => l.Code == learning)
+                    .SingleOrDefault()
+                    .CoursesAsLearning;
+            }
+            else if (known != "" && learning == "")
+            {
+                return _context.Languages
+                    .Where(l => l.Code == known)
+                    .SingleOrDefault()
+                    .CoursesAsKnown;
+            }
+            else
+            {
+                return _context.Courses
+                    .Where(l => l.KnownLanguage == known && l.LearningLanguage == learning)
+                    .ToList();
+            }
+        }
     }
 }

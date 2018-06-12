@@ -31,6 +31,11 @@
     <RootPropertyPathName Name="CategoryName" />
     <RootPropertyPathName Name="Courses" />
     <RootPropertyPathName Name="Flag" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="Languages" />
+    <RootPropertyPathName Name="SearchCourseByLanguage_Click" />
+    <RootPropertyPathName Name="LearningLanguage" />
+    <RootPropertyPathName Name="KnownLanguage" />
     <RootPropertyPathName Name="SearchCourseByName_Click" />
     <RootPropertyPathName Name="LogIn_Click" />
     <RootPropertyPathName Name="PictureLocation" />
@@ -209,6 +214,10 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="SelectedItem" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Width" />

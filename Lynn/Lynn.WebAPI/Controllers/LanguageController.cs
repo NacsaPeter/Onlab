@@ -10,24 +10,26 @@ namespace Lynn.WebAPI.Controllers
     [Route("api/[controller]")]
     public class LanguageController : Controller
     {
-        private readonly LanguageManager _manager;
+        private readonly LanguageManager _languageManager;
+        private readonly EnrollmentManager _enrollmentManager;
 
-        public LanguageController(LanguageManager manager)
+        public LanguageController(LanguageManager languageManager, EnrollmentManager enrollmentManager)
         {
-            _manager = manager;
+            _languageManager = languageManager;
+            _enrollmentManager = enrollmentManager;
         }
 
         [HttpGet]
-        public IActionResult GetLanguageCodeDictionary()
+        public IActionResult GetLanguages()
         {
-            return Ok(_manager.GetLanguageCodeDictionary());
+            return Ok(_languageManager.GetLanguages());
         }
 
         [HttpGet]
-        [Route("territory")]
-        public IActionResult GetTerritoryCodeDictionary()
+        [Route("{known}/{learning}")]
+        public async Task<IActionResult> GetCoursesByLanguageCode(string known, string learning)
         {
-            return Ok(_manager.GetTerritoryCodeDictionary());
+            return Ok(await _enrollmentManager.GetCoursesByLanguageCode(known, learning));
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Lynn.WebAPI
         {
             services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
+            services.AddTransient<ILanguageRepository, LanguageRepository>();
             services.AddTransient<EnrollmentManager>();
             services.AddTransient<ExercisesManager>();
             services.AddTransient<LanguageManager>();

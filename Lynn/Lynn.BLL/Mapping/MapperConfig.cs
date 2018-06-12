@@ -27,6 +27,9 @@ namespace Lynn.BLL.Mapping
 
                 cfg.CreateMap<DbCourse, Course>();
                 cfg.CreateMap<Course, DbCourse>();
+
+                cfg.CreateMap<DbLanguage, Language>();
+                cfg.CreateMap<Language, DbLanguage>();
             });
 
             return config.CreateMapper();

@@ -65,5 +65,12 @@ namespace Lynn.BLL
             courses = await SetLanguageNames(courses);
             return SetCoursesEditorAndLevel(courses);
         }
+
+        public async Task<ICollection<Course>> GetCoursesByLanguageCode(string known, string learning)
+        {
+            var courses = _mapper.Map<ICollection<Course>>(_repo.GetCoursesByLanguageCode(known, learning));
+            courses = await SetLanguageNames(courses);
+            return SetCoursesEditorAndLevel(courses);
+        }
     }
 }

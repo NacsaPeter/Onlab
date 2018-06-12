@@ -14,6 +14,11 @@
 
     <Page.Resources>
         <CollectionViewSource x:Key="CoursesViewSource" IsSourceGrouped="False" Source="{Binding Courses}"/>
+        <CollectionViewSource x:Key="KnownLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
+        <CollectionViewSource x:Key="LearningLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
+        <DataTemplate x:Key="ComboBoxItemDataTemplate">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
     </Page.Resources>
 
     <Grid>
@@ -31,10 +36,16 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,15,0,30" HorizontalAlignment="Center">
                 <TextBlock Text="Tanító nyelv:" Margin="0,5,0,0"/>
-                <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="13,0,0,0" VerticalAlignment="Top"/>
+                <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="13,0,0,0" VerticalAlignment="Top"
+                          ItemsSource="{Binding Source={StaticResource KnownLanguagesViewSource}}" Width="92"
+                          ItemTemplate="{Binding Source={StaticResource ComboBoxItemDataTemplate}}"
+                          SelectedItem="{Binding KnownLanguage, Mode=TwoWay}"/>
                 <TextBlock Text="Tanulandó nyelv:" Margin="10,5,0,0"/>
-                <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
-                <Button Content="Keresés nyelv szerint" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top"/>
+                <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"
+                          ItemsSource="{Binding Source={StaticResource LearningLanguagesViewSource}}" Width="92"
+                          ItemTemplate="{Binding Source={StaticResource ComboBoxItemDataTemplate}}"
+                          SelectedItem="{Binding LearningLanguage, Mode=TwoWay}"/>
+                <Button Content="Keresés nyelv szerint" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Command="{Binding SearchCourseByLanguage_Click}"/>
             </StackPanel>
         </StackPanel>
 

@@ -1,27 +1,28 @@
-﻿using Lynn.DAL;
+﻿using AutoMapper;
+using Lynn.BLL.Services;
+using Lynn.DAL;
+using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Lynn.BLL
 {
     public class LanguageManager
     {
-        private readonly ICourseRepository _repo;
+        private readonly ILanguageRepository _repo;
+        private readonly IMapper _mapper;
 
-        public LanguageManager(ICourseRepository repo)
+        public LanguageManager(ILanguageRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
-        public Dictionary<string, string> GetLanguageCodeDictionary()
+        public ICollection<DTO.Language> GetLanguages()
         {
-            return _repo.GetLanguageCodeDictionary();
-        }
-
-        public Dictionary<string, string> GetTerritoryCodeDictionary()
-        {
-            return _repo.GetTerritoryCodeDictionary();
+            return _mapper.Map<ICollection<DTO.Language>>(_repo.GetLanguages());
         }
     }
 }

@@ -13,5 +13,6 @@ namespace Lynn.DAL
         DbEnrollment GetEnrollmentById(int enrollmentId);
         DbUser GetEditorByCourseId(int courseId);
         DbCourseLevel GetCourseLevelByCourseId(int courseId);
+        ICollection<DbCourse> GetCoursesByLanguageCode(string known, string learning);
     }
 }

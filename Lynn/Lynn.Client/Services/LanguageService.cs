@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Lynn.DTO;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -11,25 +13,25 @@ namespace Lynn.Client.Services
 {
     public class LanguageService : BaseHttpService
     {
-        public async Task<Dictionary<string, string>> GetLanguageCodesDictionary()
+        public async Task<ObservableCollection<Language>> GetLanguages()
         {
             using (var client = new HttpClient())
             {
                 InitializeClient(client);
-                var serializer = new DataContractJsonSerializer(typeof(Dictionary<string, string>));
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Language>));
                 var streamTask = client.GetStreamAsync($"http://localhost:56750/api/language");
-                return serializer.ReadObject(await streamTask) as Dictionary<string, string>;
+                return serializer.ReadObject(await streamTask) as ObservableCollection<Language>;
             }
         }
 
-        public async Task<Dictionary<string, string>> GetTerritoryCodesDictionary()
+        public async Task<ObservableCollection<Course>> GetCoursesByLanguageCode(string knownCode, string learningCode)
         {
             using (var client = new HttpClient())
             {
                 InitializeClient(client);
-                var serializer = new DataContractJsonSerializer(typeof(Dictionary<string, string>));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/language/territory");
-                return serializer.ReadObject(await streamTask) as Dictionary<string, string>;
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
+                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/language/{knownCode}/{learningCode}");
+                return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
     }

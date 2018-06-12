@@ -10,7 +10,5 @@ namespace Lynn.DAL
         ICollection<DbTest> GetTestsByCourseId(int id);
         ICollection<DbVocabularyExercise> GetVocabularyExercisesByTestId(int id);
         DbCategory GetCategoryByTestId(int testId);
-        Dictionary<string, string> GetLanguageCodeDictionary();
-        Dictionary<string, string> GetTerritoryCodeDictionary();
     }
 }
