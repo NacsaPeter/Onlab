@@ -77,6 +77,8 @@ namespace Lynn.DAL.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("CourseName");
+
                     b.HasIndex("KnownLanguageFullID");
 
                     b.HasIndex("KnownLanguageTerritoryFullID");
@@ -444,6 +446,42 @@ namespace Lynn.DAL.Migrations
                         .WithMany("TestTryings")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.OwnsOne("Lynn.DAL.DbTestResult", "BestResult", b1 =>
+                        {
+                            b1.Property<int>("DbTestUserID");
+
+                            b1.Property<int>("Points");
+
+                            b1.Property<int>("RightAnswers");
+
+                            b1.Property<int>("WrongAnswers");
+
+                            b1.ToTable("Tryings");
+
+                            b1.HasOne("Lynn.DAL.DbTestUser")
+                                .WithOne("BestResult")
+                                .HasForeignKey("Lynn.DAL.DbTestResult", "DbTestUserID")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
+
+                    b.OwnsOne("Lynn.DAL.DbTestResult", "LastResult", b1 =>
+                        {
+                            b1.Property<int?>("DbTestUserID");
+
+                            b1.Property<int>("Points");
+
+                            b1.Property<int>("RightAnswers");
+
+                            b1.Property<int>("WrongAnswers");
+
+                            b1.ToTable("Tryings");
+
+                            b1.HasOne("Lynn.DAL.DbTestUser")
+                                .WithOne("LastResult")
+                                .HasForeignKey("Lynn.DAL.DbTestResult", "DbTestUserID")
+                                .OnDelete(DeleteBehavior.Cascade);
+                        });
                 });
 
             modelBuilder.Entity("Lynn.DAL.DbVocabularyExercise", b =>

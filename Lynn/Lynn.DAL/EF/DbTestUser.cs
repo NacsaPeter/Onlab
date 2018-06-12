@@ -27,5 +27,8 @@ namespace Lynn.DAL
         public int Attempts { get; set; }
 
         public bool IsCorrect { get; set; }
+
+        public DbTestResult BestResult { get; set; }
+        public DbTestResult LastResult { get; set; }
     }
 }

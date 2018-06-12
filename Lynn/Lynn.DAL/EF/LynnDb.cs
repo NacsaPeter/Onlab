@@ -41,6 +41,13 @@ namespace Lynn.DAL
             modelBuilder.Entity<DbCategory>().HasIndex(c => c.Name);
             modelBuilder.Entity<DbCourseLevel>().HasIndex(l => l.LevelName);
             modelBuilder.Entity<DbRule>().HasIndex(r => r.Name);
+            modelBuilder.Entity<DbCourse>().HasIndex(c => c.CourseName);
+
+            modelBuilder.Entity<DbTestUser>(t =>
+            {
+                t.OwnsOne(x => x.BestResult);
+                t.OwnsOne(x => x.LastResult);
+            });
         }
     }
 }
