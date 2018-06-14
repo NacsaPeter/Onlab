@@ -41,7 +41,7 @@ namespace Lynn.Client.ViewModels
 
         private async Task EnrollInAsync()
         {
-            User loggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", Password = "TestPassword123.", Points = 0 };
+            User loggedInUser = MainViewModel.LoggedInUser;
             var service = new EnrollmentService();
             await service.EnrollInAsync(loggedInUser, Course);
         }

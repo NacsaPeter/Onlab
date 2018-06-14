@@ -42,9 +42,9 @@
 
                     <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10, 20, 10, 10" FontSize="35" FontFamily="Arial" Foreground="Black" Text="Bejelentkezés" />
                     <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" Margin="60, 10, 10, 5" FontSize="20" FontFamily="Arial" Foreground="Black" Text="Felhasználónév" />
-                    <TextBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="60, 5, 60, 10" FontSize="15" Background="White"/>
+                    <TextBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="60, 5, 60, 10" FontSize="15" Background="White" IsSpellCheckEnabled="False" Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" Margin="60, 10, 10, 5" FontSize="20" FontFamily="Arial" Foreground="Black" Text="Jelszó"/>
-                    <TextBox Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="60, 5, 60, 10" FontSize="15" Background="White"/>
+                    <PasswordBox Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="60, 5, 60, 10" FontSize="15" Background="White" PasswordChar="*" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Button Grid.Row="5" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Bejelentkezés" Margin="10, 15, 10, 10" FontSize="15" BorderThickness="1" BorderBrush="Black" Background="#338D8787" Command="{Binding LogIn_Click}"/>
                     <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10, 5, 10, 10" FontSize="13" Text="Elfelejtett jelszó" />
                     <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10, 0, 10, 10" FontSize="13" Text="Regisztráció" />

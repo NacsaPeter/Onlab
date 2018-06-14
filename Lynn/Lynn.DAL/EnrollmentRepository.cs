@@ -32,6 +32,13 @@ namespace Lynn.DAL
                     .SingleOrDefault();
         }
 
+        public DbUser GetUserByName(string username)
+        {
+            return _context.Users
+                    .Where(t => t.Username == username)
+                    .SingleOrDefault();
+        }
+
         // Todo: refactor
         public DbEnrollment EnrollCourse(DbEnrollment enrollment)
         {

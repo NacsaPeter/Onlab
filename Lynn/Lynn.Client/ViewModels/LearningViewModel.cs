@@ -17,15 +17,19 @@ namespace Lynn.Client.ViewModels
 
         public LearningViewModel(Pivot coursesPivot)
         {
-            LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", Password = "TestPassword123.", Points = 24 };
+            LoggedInUser = MainViewModel.LoggedInUser;
 
             _coursesPivot = coursesPivot;
-            PivotItem enrollInCoursePivotItem = new PivotItem();
-            enrollInCoursePivotItem.Header = "Kurzus felvétel";
-            enrollInCoursePivotItem.Content = new EnrollInCourse();
+            PivotItem enrollInCoursePivotItem = new PivotItem
+            {
+                Header = "Kurzus felvétel",
+                Content = new EnrollInCourse()
+            };
             _coursesPivot.Items.Add(enrollInCoursePivotItem);
-            PivotItem enrolledCoursesPivotItem = new PivotItem();
-            enrolledCoursesPivotItem.Header = "Felvett kurzusok";
+            PivotItem enrolledCoursesPivotItem = new PivotItem
+            {
+                Header = "Felvett kurzusok"
+            };
             EnrolledCourses enrolledCoursesPage = new EnrolledCourses();
             _coursesPivot.SelectionChanged += enrolledCoursesPage.RefreshEnrolledCourses;
             enrolledCoursesPivotItem.Content = enrolledCoursesPage;

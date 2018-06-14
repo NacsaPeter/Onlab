@@ -72,5 +72,10 @@ namespace Lynn.BLL
             courses = await SetLanguageNames(courses);
             return SetCoursesEditorAndLevel(courses);
         }
+
+        public User GetUserByName(string username)
+        {
+            return _mapper.Map<User>(_repo.GetUserByName(username));
+        }
     }
 }

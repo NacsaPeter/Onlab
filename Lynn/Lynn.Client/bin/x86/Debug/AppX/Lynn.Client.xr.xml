@@ -38,6 +38,8 @@
     <RootPropertyPathName Name="KnownLanguage" />
     <RootPropertyPathName Name="SearchCourseByName_Click" />
     <RootPropertyPathName Name="LogIn_Click" />
+    <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="UserName" />
     <RootPropertyPathName Name="PictureLocation" />
     <RootPropertyPathName Name="Tests" />
     <RootPropertyPathName Name="Translation" />
@@ -264,6 +266,14 @@
     <RootType FullName="Windows.UI.Xaml.Media.GradientStop">
       <RootProperty Name="Color" />
       <RootProperty Name="Offset" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="PasswordChar" />
+      <RootProperty Name="Password" />
     </RootType>
     <RootType FullName="Lynn.Client.Views.MainPage" />
     <RootType FullName="Lynn.Client.Views.PictureExerciseView" />

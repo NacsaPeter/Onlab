@@ -9,6 +9,7 @@ namespace Lynn.DAL
         ICollection<DbCourse> GetEnrolledCourses(DbUser user);
         DbEnrollment EnrollCourse(DbEnrollment enrollment);
         DbUser GetUserByID(int id);
+        DbUser GetUserByName(string username);
         ICollection<DbCourse> GetCoursesByName(string coursename);
         DbEnrollment GetEnrollmentById(int enrollmentId);
         DbUser GetEditorByCourseId(int courseId);

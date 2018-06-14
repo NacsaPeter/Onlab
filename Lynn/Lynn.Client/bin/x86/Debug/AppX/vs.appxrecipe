@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-06-13T20:57:31.184</Modified>
+      <Modified>2018-06-14T12:51:21.119</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.exe">
       <PackagePath>entrypoint\Lynn.Client.exe</PackagePath>
-      <Modified>2018-06-13T20:57:30.274</Modified>
+      <Modified>2018-06-14T12:51:19.772</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\.nuget\packages\identitymodel\3.7.0\lib\netstandard2.0\IdentityModel.dll">
       <PackagePath>IdentityModel.dll</PackagePath>
@@ -877,7 +877,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.dll">
       <PackagePath>Lynn.DTO.dll</PackagePath>
-      <Modified>2018-06-13T19:26:00.584</Modified>
+      <Modified>2018-06-14T12:50:25.602</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\apple.jpg">
       <PackagePath>Assets\apple.jpg</PackagePath>
@@ -1047,87 +1047,87 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Lynn.Client.xr.xml">
       <PackagePath>Lynn.Client.xr.xml</PackagePath>
-      <Modified>2018-06-12T21:04:35.341</Modified>
+      <Modified>2018-06-14T11:53:21.370</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.896</Modified>
+      <Modified>2018-06-14T12:51:19.345</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\Page.xbf">
       <PackagePath>Styles\Page.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.895</Modified>
+      <Modified>2018-06-14T12:51:19.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_Pivot.xbf">
       <PackagePath>Styles\_Pivot.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.895</Modified>
+      <Modified>2018-06-14T12:51:19.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_Colors.xbf">
       <PackagePath>Styles\_Colors.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.895</Modified>
+      <Modified>2018-06-14T12:51:19.343</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_FontSizes.xbf">
       <PackagePath>Styles\_FontSizes.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.896</Modified>
+      <Modified>2018-06-14T12:51:19.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\_Thickness.xbf">
       <PackagePath>Styles\_Thickness.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.896</Modified>
+      <Modified>2018-06-14T12:51:19.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Styles\TextBlock.xbf">
       <PackagePath>Styles\TextBlock.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.896</Modified>
+      <Modified>2018-06-14T12:51:19.345</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\ChooseOneExerciseView.xbf">
       <PackagePath>Views\ChooseOneExerciseView.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.897</Modified>
+      <Modified>2018-06-14T12:51:19.345</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\DetailedCourseToEnrollInView.xbf">
       <PackagePath>Views\DetailedCourseToEnrollInView.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.897</Modified>
+      <Modified>2018-06-14T12:51:19.347</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\DetailedCourseToStartView.xbf">
       <PackagePath>Views\DetailedCourseToStartView.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.897</Modified>
+      <Modified>2018-06-14T12:51:19.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\DoExercisesPage.xbf">
       <PackagePath>Views\DoExercisesPage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.897</Modified>
+      <Modified>2018-06-14T12:51:19.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EnrolledCoursesPage.xbf">
       <PackagePath>Views\EnrolledCoursesPage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.897</Modified>
+      <Modified>2018-06-14T12:51:19.349</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EnrollInCoursePage.xbf">
       <PackagePath>Views\EnrollInCoursePage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.898</Modified>
+      <Modified>2018-06-14T12:51:19.349</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\LearningPage.xbf">
       <PackagePath>Views\LearningPage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.898</Modified>
+      <Modified>2018-06-14T12:51:19.350</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\LoggedInPage.xbf">
       <PackagePath>Views\LoggedInPage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.898</Modified>
+      <Modified>2018-06-14T12:51:19.350</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.898</Modified>
+      <Modified>2018-06-14T12:51:19.350</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\PictureExerciseView.xbf">
       <PackagePath>Views\PictureExerciseView.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.899</Modified>
+      <Modified>2018-06-14T12:51:19.351</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\SettingsPage.xbf">
       <PackagePath>Views\SettingsPage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.899</Modified>
+      <Modified>2018-06-14T12:51:19.351</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\TestsPage.xbf">
       <PackagePath>Views\TestsPage.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.899</Modified>
+      <Modified>2018-06-14T12:51:19.352</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\TranslationExerciseView.xbf">
       <PackagePath>Views\TranslationExerciseView.xbf</PackagePath>
-      <Modified>2018-06-13T20:57:29.899</Modified>
+      <Modified>2018-06-14T12:51:19.352</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1136,11 +1136,11 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-06-13T18:51:53.998</Modified>
+      <Modified>2018-06-14T12:32:57.339</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Core\Lynn.Client.exe">
       <PackagePath>Lynn.Client.exe</PackagePath>
-      <Modified>2018-06-13T20:57:31.177</Modified>
+      <Modified>2018-06-14T12:51:21.108</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
