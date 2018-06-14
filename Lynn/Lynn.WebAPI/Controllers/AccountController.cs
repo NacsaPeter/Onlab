@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Lynn.DTO;
 using Lynn.WebAPI.Entities;
@@ -22,10 +23,13 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]User registerUserDTO)
+        public async Task<IActionResult> Post([FromBody]RegisterUserDTO registerUserDTO)
         {
-            var user = new ApplicationUser { UserName = registerUserDTO.Username, Email = registerUserDTO.Email };
+            var user = new ApplicationUser { UserName = registerUserDTO.UserName, Email = registerUserDTO.Email };
             var result = await _userManager.CreateAsync(user, registerUserDTO.Password);
+            if (!string.IsNullOrEmpty(registerUserDTO.Level))
+                await _userManager.AddClaimAsync(user,
+                new Claim(nameof(registerUserDTO.Level), registerUserDTO.Level));
             return Ok();
         }
     }

@@ -67,7 +67,8 @@ namespace Lynn.WebAPI
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
-                .AddAspNetIdentity<ApplicationUser>();
+                .AddAspNetIdentity<ApplicationUser>()
+                .AddProfileService<ProfileService>();
 
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
@@ -76,6 +77,11 @@ namespace Lynn.WebAPI
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "api1";
                 });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("GuruOnly", policy => policy.RequireClaim("Level", "Guru"));
+            });
         }
 
         public void Configure(IApplicationBuilder app)

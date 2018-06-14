@@ -21,6 +21,7 @@ namespace Lynn.WebAPI.Controllers
             _enrollmentManager = enrollmentManager;
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer", Policy = "GuruOnly")]
         [HttpGet]
         public IActionResult GetLanguages()
         {
