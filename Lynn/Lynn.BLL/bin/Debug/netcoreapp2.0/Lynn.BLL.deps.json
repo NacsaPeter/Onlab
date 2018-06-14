@@ -10,7 +10,8 @@
         "dependencies": {
           "AutoMapper": "7.0.0",
           "Lynn.DAL": "1.0.0",
-          "Lynn.DTO": "1.0.0"
+          "Lynn.DTO": "1.0.0",
+          "Newtonsoft.Json": "10.0.0.0"
         },
         "runtime": {
           "Lynn.BLL.dll": {}
@@ -463,6 +464,11 @@
         "runtime": {
           "Lynn.DTO.dll": {}
         }
+      },
+      "Newtonsoft.Json/10.0.0.0": {
+        "runtime": {
+          "Newtonsoft.Json.dll": {}
+        }
       }
     }
   },
@@ -850,6 +856,11 @@
     },
     "Lynn.DTO/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json/10.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

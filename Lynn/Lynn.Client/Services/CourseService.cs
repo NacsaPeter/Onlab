@@ -1,4 +1,5 @@
-﻿using Lynn.DTO;
+﻿using Lynn.Client.ViewModels;
+using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

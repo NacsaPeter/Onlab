@@ -6,8 +6,11 @@ using AutoMapper;
 using Lynn.BLL;
 using Lynn.BLL.Mapping;
 using Lynn.DAL;
+using Lynn.WebAPI.Entities;
+using Lynn.WebAPI.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +44,13 @@ namespace Lynn.WebAPI
             services.AddDbContext<LynnDb>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("AuthenticationConnection")));
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddApiVersioning(o =>
             {
                 o.ApiVersionReader = new UrlSegmentApiVersionReader();
@@ -50,10 +60,27 @@ namespace Lynn.WebAPI
             });
 
             services.AddMvc();
+
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
+                .AddInMemoryPersistedGrants()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients())
+                .AddAspNetIdentity<ApplicationUser>();
+
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost:56750";
+                    options.RequireHttpsMetadata = false;
+                    options.ApiName = "api1";
+                });
         }
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseIdentityServer();
             app.UseMvc();
         }
     }

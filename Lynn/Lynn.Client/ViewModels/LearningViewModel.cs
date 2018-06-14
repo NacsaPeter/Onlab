@@ -17,7 +17,7 @@ namespace Lynn.Client.ViewModels
 
         public LearningViewModel(Pivot coursesPivot)
         {
-            LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 24 };
+            LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", Password = "TestPassword123.", Points = 24 };
 
             _coursesPivot = coursesPivot;
             PivotItem enrollInCoursePivotItem = new PivotItem();

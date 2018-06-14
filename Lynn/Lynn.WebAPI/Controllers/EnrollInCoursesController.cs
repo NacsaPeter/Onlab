@@ -1,5 +1,6 @@
 ﻿using Lynn.BLL;
 using Lynn.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Lynn.WebAPI.Controllers
     [ApiVersion("2.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class EnrollInCoursesController : Controller
     {
         private readonly EnrollmentManager _manager;

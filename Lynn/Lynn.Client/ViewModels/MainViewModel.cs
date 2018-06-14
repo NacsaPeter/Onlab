@@ -11,6 +11,8 @@ namespace Lynn.Client.ViewModels
 {
     public class MainViewModel : Observable
     {
+        public static string AccessToken { get; private set; }
+
         public ICommand LogIn_Click { get; set; }
 
         public MainViewModel()
@@ -20,7 +22,13 @@ namespace Lynn.Client.ViewModels
 
         private void LoggingIn()
         {
-            User user = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 24 };
+            User user = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", Password = "TestPassword123.", Points = 24 };
+            LoggingInAsync(user);
+        }
+
+        private async Task LoggingInAsync(User user)
+        {
+            AccessToken = await LogInService.LogIn(user);
             NavigationService.Navigate(typeof(LoggedInPage), user);
         }
     }

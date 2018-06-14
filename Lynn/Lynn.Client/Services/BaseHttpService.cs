@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Lynn.Client.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Lynn.Client.Services
         protected void InitializeClient(HttpClient client)
         {
             client.BaseAddress = serverUrl;
+            client.SetBearerToken(MainViewModel.AccessToken);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));

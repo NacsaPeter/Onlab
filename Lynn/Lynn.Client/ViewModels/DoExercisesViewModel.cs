@@ -27,7 +27,7 @@ namespace Lynn.Client.ViewModels
         public DoExercisesViewModel(Grid gridOfTest)
         {
             _gridOfTest = gridOfTest;
-            LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", PasswordHash = "lukztthrgh34hb", Points = 24 };
+            LoggedInUser = new User { ID = 6, Username = "TestUser15", Email = "testuser@lynn.com", Password = "TestPassword123.", Points = 24 };
             Start_Click = new RelayCommand(new Action(DoExercises));
         }
 
