@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Lynn.BLL.Services;
 using Lynn.DAL;
 using Lynn.DTO;
 using System;
@@ -19,63 +18,53 @@ namespace Lynn.BLL
             _mapper = mapper;
         }
 
-        public Enrollment EnrollCourse(Enrollment enrollment)
+        public async Task<Enrollment> EnrollCourseAsync(Enrollment enrollment)
         {
             DbEnrollment dbEnrollment = _mapper.Map<DbEnrollment>(enrollment);
-            return _mapper.Map<Enrollment>(_repo.EnrollCourse(dbEnrollment));
+            return _mapper.Map<Enrollment>(await _repo.EnrollCourseAsync(dbEnrollment));
         }
 
-        public async Task<ICollection<Course>> GetCoursesByName(string coursename)
+        public async Task<ICollection<Course>> GetCoursesByNameAsync(string coursename)
         {
-            var courses = _mapper.Map<ICollection<Course>>(_repo.GetCoursesByName(coursename));
-            courses = await SetLanguageNames(courses);
-            return SetCoursesEditorAndLevel(courses);
-        }
-
-        private async Task<ICollection<Course>> SetLanguageNames(ICollection<Course> courses)
-        {
-            var service = new CountriesService();
-            foreach (var course in courses)
-            {
-                course.KnownLanguageName = (await service.GetLanguageByLanguageCode(course.KnownLanguage)).Name;
-                course.LearningLanguageName = (await service.GetLanguageByLanguageCode(course.LearningLanguage)).Name;
-            }
+            var courses = _mapper.Map<ICollection<Course>>(await _repo.GetCoursesByNameAsync(coursename));
+            //return await SetLanguageNamesAsync(courses);
             return courses;
         }
 
-        private ICollection<Course> SetCoursesEditorAndLevel(ICollection<Course> courses)
+        //private async Task<ICollection<Course>> SetLanguageNamesAsync(ICollection<Course> courses)
+        //{
+        //    var service = new CountriesService();
+        //    foreach (var course in courses)
+        //    {
+        //        course.KnownLanguageName = (await service.GetLanguageByLanguageCode(course.KnownLanguage)).Name;
+        //        course.LearningLanguageName = (await service.GetLanguageByLanguageCode(course.LearningLanguage)).Name;
+        //    }
+        //    return courses;
+        //}
+
+        public async Task<Enrollment> GetEnrollmentByIdAsync(int enrollmentId)
         {
-            foreach (var course in courses)
-            {
-                course.Editor = _repo.GetEditorByCourseId(course.ID).Username;
-                course.Level = _repo.GetCourseLevelByCourseId(course.ID).LevelCode;
-            }
+            return _mapper.Map<Enrollment>(await _repo.GetEnrollmentByIdAsync(enrollmentId));
+        }
+
+        public async Task<ICollection<Course>> GetEnrolledCoursesAsync(int userId)
+        {
+            var user = await _repo.GetUserByIDAsync(userId);
+            var courses = _mapper.Map<ICollection<Course>>(await _repo.GetEnrolledCoursesAsync(user));
+            //return await SetLanguageNamesAsync(courses);
             return courses;
         }
 
-        public Enrollment GetEnrollmentById(int enrollmentId)
+        public async Task<ICollection<Course>> GetCoursesByLanguageCodeAsync(string known, string learning)
         {
-            return _mapper.Map<Enrollment>(_repo.GetEnrollmentById(enrollmentId));
+            var courses = _mapper.Map<ICollection<Course>>(await _repo.GetCoursesByLanguageCodeAsync(known, learning));
+            //return await SetLanguageNamesAsync(courses);
+            return courses;
         }
 
-        public async Task<ICollection<Course>> GetEnrolledCourses(int userId)
+        public async Task<User> GetUserByNameAsync(string username)
         {
-            var user = _repo.GetUserByID(userId);
-            var courses = _mapper.Map<ICollection<Course>>(_repo.GetEnrolledCourses(user));
-            courses = await SetLanguageNames(courses);
-            return SetCoursesEditorAndLevel(courses);
-        }
-
-        public async Task<ICollection<Course>> GetCoursesByLanguageCode(string known, string learning)
-        {
-            var courses = _mapper.Map<ICollection<Course>>(_repo.GetCoursesByLanguageCode(known, learning));
-            courses = await SetLanguageNames(courses);
-            return SetCoursesEditorAndLevel(courses);
-        }
-
-        public User GetUserByName(string username)
-        {
-            return _mapper.Map<User>(_repo.GetUserByName(username));
+            return _mapper.Map<User>(await _repo.GetUserByNameAsync(username));
         }
     }
 }

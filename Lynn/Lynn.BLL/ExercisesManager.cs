@@ -4,6 +4,7 @@ using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Lynn.BLL
 {
@@ -18,9 +19,9 @@ namespace Lynn.BLL
             _mapper = mapper;
         }
 
-        public ICollection<VocabularyExercise> GetVocabularyExercises(int testId)
+        public async Task<ICollection<VocabularyExercise>> GetVocabularyExercisesAsync(int testId)
         {
-            return _mapper.Map<ICollection<VocabularyExercise>>(_repo.GetVocabularyExercisesByTestId(testId));
+            return _mapper.Map<ICollection<VocabularyExercise>>(await _repo.GetVocabularyExercisesByTestIdAsync(testId));
         }
     }
 }

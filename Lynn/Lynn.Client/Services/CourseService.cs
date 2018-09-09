@@ -14,7 +14,7 @@ namespace Lynn.Client.Services
 {
     public class CourseService : BaseHttpService
     {
-        private readonly Uri serverUrl = new Uri("http://localhost:56750/");
+        private readonly Uri serverUrl = new Uri("http://localhost:44344/");
 
         public async Task<ObservableCollection<Test>> GetTestsByCourseID(int courseID)
         {
@@ -22,7 +22,7 @@ namespace Lynn.Client.Services
             {
                 InitializeClient(client);
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Test>));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/tests/{courseID}");
+                var streamTask = client.GetStreamAsync($"http://localhost:44344/api/tests/{courseID}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Test>;
             }
         }
@@ -33,7 +33,7 @@ namespace Lynn.Client.Services
             {
                 InitializeClient(client);
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<VocabularyExercise>));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/exercises/{test.ID}");
+                var streamTask = client.GetStreamAsync($"http://localhost:44344/api/exercises/{test.ID}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<VocabularyExercise>;
             }
         }

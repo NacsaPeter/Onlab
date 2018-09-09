@@ -6,13 +6,13 @@ using AutoMapper;
 using Lynn.BLL;
 using Lynn.BLL.Mapping;
 using Lynn.DAL;
-using Lynn.WebAPI.Entities;
+using Lynn.DAL.Identity;
 using Lynn.WebAPI.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,20 +44,11 @@ namespace Lynn.WebAPI
             services.AddDbContext<LynnDb>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("AuthenticationConnection")));
-
             services.AddIdentity<ApplicationUser, ApplicationRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<LynnDb>()
                 .AddDefaultTokenProviders();
 
-            services.AddApiVersioning(o =>
-            {
-                o.ApiVersionReader = new UrlSegmentApiVersionReader();
-                o.DefaultApiVersion = new ApiVersion(1, 0);
-                o.AssumeDefaultVersionWhenUnspecified = true;
-                o.ReportApiVersions = true;
-            });
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddMvc();
 
@@ -81,12 +72,21 @@ namespace Lynn.WebAPI
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("GuruOnly", policy => policy.RequireClaim("Level", "Guru"));
-            });
+            });
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseIdentityServer();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

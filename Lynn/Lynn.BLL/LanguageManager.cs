@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Lynn.BLL.Services;
 using Lynn.DAL;
 using Lynn.DTO;
 using System;
@@ -20,9 +19,9 @@ namespace Lynn.BLL
             _mapper = mapper;
         }
 
-        public ICollection<DTO.Language> GetLanguages()
+        public async Task<ICollection<DTO.Language>> GetLanguages()
         {
-            return _mapper.Map<ICollection<DTO.Language>>(_repo.GetLanguages());
+            return _mapper.Map<ICollection<DTO.Language>>(await _repo.GetLanguagesAsync());
         }
     }
 }

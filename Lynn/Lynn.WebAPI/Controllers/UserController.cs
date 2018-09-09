@@ -20,9 +20,9 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet("{username}")]
-        public IActionResult GetUser(string username)
+        public async Task<IActionResult> GetUser(string username)
         {
-            return Ok(_manager.GetUserByName(username));
+            return Ok(await _manager.GetUserByNameAsync(username));
         }
     }
 }

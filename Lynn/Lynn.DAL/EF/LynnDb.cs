@@ -3,9 +3,13 @@ using System.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Lynn.DAL.Identity;
+using Lynn.DAL.Configuration;
+
 namespace Lynn.DAL
 {
-    public class LynnDb : DbContext
+    public class LynnDb : IdentityDbContext<ApplicationUser, ApplicationRole, int>
     {
         public DbSet<DbCategory> Catergories { get; set; }
         public DbSet<DbCourse> Courses { get; set; }
@@ -17,37 +21,24 @@ namespace Lynn.DAL
         public DbSet<DbTerritory> Territories { get; set; }
         public DbSet<DbTest> Tests { get; set; }
         public DbSet<DbTestUser> TestTryings { get; set; }
-        public DbSet<DbUser> Users { get; set; }
         public DbSet<DbVocabularyExercise> VocabularyExercises { get; set; }
 
         public LynnDb(DbContextOptions<LynnDb> options) : base(options) {}
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            modelBuilder.Entity<DbUser>().HasAlternateKey(u => u.Username);
-            modelBuilder.Entity<DbTestUser>().HasAlternateKey(t => new { t.TestID, t.UserID });
-            modelBuilder.Entity<DbTerritory>().HasAlternateKey(t => t.Code);
-            modelBuilder.Entity<DbLanguage>().HasAlternateKey(l => l.Code);
-            modelBuilder.Entity<DbEnrollment>().HasAlternateKey(e => new { e.UserID, e.CourseID });
-            modelBuilder.Entity<DbTerritory>().HasAlternateKey(t => t.Code);
-            modelBuilder.Entity<DbCourseLevel>().HasAlternateKey(l => l.LevelCode);
+            base.OnModelCreating(builder);
 
-            modelBuilder.Entity<DbCourse>().HasOne(c => c.KnownLanguageFull).WithMany(l => l.CoursesAsKnown);
-            modelBuilder.Entity<DbCourse>().HasOne(c => c.KnownLanguageTerritoryFull).WithMany(t => t.CoursesAsKnown);
-            modelBuilder.Entity<DbCourse>().HasOne(c => c.LearningLanguageFull).WithMany(l => l.CoursesAsLearning);
-            modelBuilder.Entity<DbCourse>().HasOne(c => c.LearnigLanguageTerritoryFull).WithMany(t => t.CoursesAsLearning);
-
-            modelBuilder.Entity<DbUser>().HasIndex(u => u.Email);
-            modelBuilder.Entity<DbCategory>().HasIndex(c => c.Name);
-            modelBuilder.Entity<DbCourseLevel>().HasIndex(l => l.LevelName);
-            modelBuilder.Entity<DbRule>().HasIndex(r => r.Name);
-            modelBuilder.Entity<DbCourse>().HasIndex(c => c.CourseName);
-
-            modelBuilder.Entity<DbTestUser>(t =>
-            {
-                t.OwnsOne(x => x.BestResult);
-                t.OwnsOne(x => x.LastResult);
-            });
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new CourseConfiguration());
+            builder.ApplyConfiguration(new CourseLevelConfiguration());
+            builder.ApplyConfiguration(new EnrollmentConfiguration());
+            builder.ApplyConfiguration(new GrammarExerciseConfiguration());
+            builder.ApplyConfiguration(new LanguageConfiguration());
+            builder.ApplyConfiguration(new RuleConfiguration());
+            builder.ApplyConfiguration(new TerritoryConfiguration());
+            builder.ApplyConfiguration(new TestUserConfiguration());
+            builder.ApplyConfiguration(new VocabularyExerciseConfiguration());
         }
     }
 }

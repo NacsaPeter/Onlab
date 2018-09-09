@@ -12,7 +12,7 @@ namespace Lynn.Client.Services
 {
     public abstract class BaseHttpService
     {
-        private readonly Uri serverUrl = new Uri("http://localhost:56750/");
+        private readonly Uri serverUrl = new Uri("http://localhost:44344/");
 
         protected void InitializeClient(HttpClient client)
         {

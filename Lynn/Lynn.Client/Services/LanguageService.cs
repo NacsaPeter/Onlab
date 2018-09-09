@@ -19,7 +19,7 @@ namespace Lynn.Client.Services
             {
                 InitializeClient(client);
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Language>));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/language");
+                var streamTask = client.GetStreamAsync($"http://localhost:44344/api/language");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Language>;
             }
         }
@@ -30,7 +30,7 @@ namespace Lynn.Client.Services
             {
                 InitializeClient(client);
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/language/{knownCode}/{learningCode}");
+                var streamTask = client.GetStreamAsync($"http://localhost:44344/api/language/{knownCode}/{learningCode}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }

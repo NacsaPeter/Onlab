@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 
 namespace Lynn.WebAPI.Controllers
 {
-    [ApiVersion("1.0")]
-    [ApiVersion("2.0")]
-    [Route("api/v{version:apiVersion}/[controller]")]
     [Route("api/[controller]")]
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class EnrolledCoursesController : Controller
@@ -26,15 +23,7 @@ namespace Lynn.WebAPI.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetEnrolledCoursesByUserId(int id)
         {
-            return Ok(await _manager.GetEnrolledCourses(id));
-        }
-
-        [HttpGet("{id:int}")]
-        [MapToApiVersion("2.0")]
-        public async Task<IActionResult> GetEnrolledCoursesByUserIdV2(int id)
-        {
-            var courses = await _manager.GetEnrolledCourses(id);
-            return Ok(new { courses.Count, courses });
+            return Ok(await _manager.GetEnrolledCoursesAsync(id));
         }
     }
 }

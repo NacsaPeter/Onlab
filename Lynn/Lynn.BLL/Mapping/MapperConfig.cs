@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Lynn.DAL;
+using Lynn.DAL.Identity;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,8 @@ namespace Lynn.BLL.Mapping
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<DbUser, User>();
-                cfg.CreateMap<User, DbUser>();
+                cfg.CreateMap<ApplicationUser, User>();
+                cfg.CreateMap<User, ApplicationUser>();
 
                 cfg.CreateMap<DbEnrollment, Enrollment>();
                 cfg.CreateMap<Enrollment, DbEnrollment>();

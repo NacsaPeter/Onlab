@@ -20,14 +20,14 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult EnrollCourse([FromBody] Enrollment enrollment)
+        public async Task<IActionResult> EnrollCourse([FromBody] Enrollment enrollment)
         {
             if (enrollment == null)
             {
                 return BadRequest();
             }
 
-            var created = _manager.EnrollCourse(enrollment);
+            var created = await _manager.EnrollCourseAsync(enrollment);
 
             if (created == null)
             {
@@ -38,9 +38,9 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet("{id}", Name = "GetEnrollmentById")]
-        public IActionResult GetEnrollmentById(int id)
+        public async Task<IActionResult> GetEnrollmentById(int id)
         {
-            var enrollment = _manager.GetEnrollmentById(id);
+            var enrollment = await _manager.GetEnrollmentByIdAsync(id);
             if (enrollment == null)
             {
                 return NotFound();

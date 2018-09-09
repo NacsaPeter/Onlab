@@ -25266,11 +25266,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
+      "projectUniqueName": "C:\\Users\\nacsa\\source\\repos\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
       "projectName": "Lynn.Client",
-      "projectPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
+      "projectPath": "C:\\Users\\nacsa\\source\\repos\\Lynn\\Lynn.Client\\Lynn.Client.csproj",
       "packagesPath": "C:\\Users\\nacsa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.Client\\obj\\",
+      "outputPath": "C:\\Users\\nacsa\\source\\repos\\Lynn\\Lynn.Client\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -25290,8 +25290,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj": {
-              "projectPath": "C:\\Users\\nacsa\\OneDrive\\Dokumentumok\\git\\Onlab\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj"
+            "C:\\Users\\nacsa\\source\\repos\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj": {
+              "projectPath": "C:\\Users\\nacsa\\source\\repos\\Lynn\\Lynn.DTO\\Lynn.DTO.csproj"
             }
           }
         }

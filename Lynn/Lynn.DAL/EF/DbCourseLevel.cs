@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lynn.DAL.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,17 +7,11 @@ using System.Text;
 
 namespace Lynn.DAL
 {
-    [Table("CourseLevel")]
-    public class DbCourseLevel
+    [Table("CourseLevels")]
+    public class DbCourseLevel : IDbEntry
     {
-        [Key]
-        public int ID { get; set; }
-
-        [Required]
-        [StringLength(2)]
+        public int Id { get; set; }
         public string LevelCode { get; set; }
-
-        [StringLength(20)]
         public string LevelName { get; set; }
 
         public virtual ICollection<DbCourse> Courses { get; set; }

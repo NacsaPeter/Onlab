@@ -1,1 +1,1 @@
-C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Lynn.Client.csproj;x86
+C:\Users\nacsa\source\repos\Lynn\Lynn.Client\Lynn.Client.csproj;x86

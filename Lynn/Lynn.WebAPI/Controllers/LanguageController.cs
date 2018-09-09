@@ -23,16 +23,16 @@ namespace Lynn.WebAPI.Controllers
 
         [Authorize(AuthenticationSchemes = "Bearer", Policy = "GuruOnly")]
         [HttpGet]
-        public IActionResult GetLanguages()
+        public async Task<IActionResult> GetLanguages()
         {
-            return Ok(_languageManager.GetLanguages());
+            return Ok(await _languageManager.GetLanguages());
         }
 
         [HttpGet]
         [Route("{known}/{learning}")]
         public async Task<IActionResult> GetCoursesByLanguageCode(string known, string learning)
         {
-            return Ok(await _enrollmentManager.GetCoursesByLanguageCode(known, learning));
+            return Ok(await _enrollmentManager.GetCoursesByLanguageCodeAsync(known, learning));
         }
     }
 }

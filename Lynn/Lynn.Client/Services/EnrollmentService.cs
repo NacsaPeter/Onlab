@@ -20,7 +20,7 @@ namespace Lynn.Client.Services
             {
                 InitializeClient(client);
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/enrollincourses/{name}");
+                var streamTask = client.GetStreamAsync($"http://localhost:44344/api/enrollincourses/{name}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
@@ -43,7 +43,7 @@ namespace Lynn.Client.Services
             {
                 InitializeClient(client);
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/enrolledcourses/{user.ID}");
+                var streamTask = client.GetStreamAsync($"http://localhost:44344/api/enrolledcourses/{user.ID}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }

@@ -17,7 +17,7 @@ namespace Lynn.Client.Services
             {
                 InitializeClient(client);
                 var serializer = new DataContractJsonSerializer(typeof(User));
-                var streamTask = client.GetStreamAsync($"http://localhost:56750/api/user/{username}");
+                var streamTask = client.GetStreamAsync($"http://localhost:44344/api/user/{username}");
                 return serializer.ReadObject(await streamTask) as User;
             }
         }

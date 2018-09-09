@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Lynn.DAL.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Lynn.DAL
 {
-    [Table("Category")]
-    public class DbCategory
+    [Table("Categories")]
+    public class DbCategory : IDbEntry
     {
-        [Key]
-        public int ID { get; set; }
-
-        [Required]
-        [StringLength(30)]
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public virtual ICollection<DbTest> Tests { get; set; }

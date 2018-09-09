@@ -1,0 +1,14 @@
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.1\Lynn.DAL.deps.json
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.1\Lynn.DAL.dll
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.1\Lynn.DAL.csprojAssemblyReference.cache
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.1\Lynn.DAL.csproj.CoreCompileInputs.cache
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.1\Lynn.DAL.AssemblyInfoInputs.cache
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.1\Lynn.DAL.AssemblyInfo.cs
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.1\Lynn.DAL.csproj.CopyComplete
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.1\Lynn.DAL.runtimeconfig.json
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.1\Lynn.DAL.runtimeconfig.dev.json
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\bin\Debug\netcoreapp2.1\Lynn.DAL.pdb
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.1\Lynn.DAL.dll
+C:\Users\nacsa\source\repos\Lynn\Lynn.DAL\obj\Debug\netcoreapp2.1\Lynn.DAL.pdb

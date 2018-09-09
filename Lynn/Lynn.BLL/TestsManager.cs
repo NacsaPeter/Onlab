@@ -4,6 +4,7 @@ using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Lynn.BLL
 {
@@ -18,12 +19,12 @@ namespace Lynn.BLL
             _mapper = mapper;
         }
 
-        public ICollection<Test> GetTests(int courseId)
+        public async Task<ICollection<Test>> GetTestsAsync(int courseId)
         {
-            var tests = _mapper.Map<ICollection<Test>>(_repo.GetTestsByCourseId(courseId));
+            var tests = _mapper.Map<ICollection<Test>>(await _repo.GetTestsByCourseIdAsync(courseId));
             foreach (var test in tests)
             {
-                test.CategoryName = _repo.GetCategoryByTestId(test.ID).Name;
+                test.CategoryName = (await _repo.GetCategoryByTestIdAsync(test.ID)).Name;
             }
             return tests;
         }

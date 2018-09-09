@@ -2,7 +2,7 @@
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
-using Lynn.WebAPI.Entities;
+using Lynn.DAL.Identity;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
