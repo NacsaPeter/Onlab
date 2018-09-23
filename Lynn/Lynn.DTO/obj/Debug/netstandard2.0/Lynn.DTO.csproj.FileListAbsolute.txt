@@ -1,9 +1,0 @@
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.csprojAssemblyReference.cache
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.csproj.CoreCompileInputs.cache
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.AssemblyInfoInputs.cache
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.AssemblyInfo.cs
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.deps.json
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.dll
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\bin\Debug\netstandard2.0\Lynn.DTO.pdb
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.dll
-C:\Users\nacsa\source\repos\Lynn\Lynn.DTO\obj\Debug\netstandard2.0\Lynn.DTO.pdb

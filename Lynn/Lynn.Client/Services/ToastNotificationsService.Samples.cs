@@ -11,7 +11,7 @@ namespace Lynn.Client.Services
             // Create the toast content
             var content = new ToastContent()
             {
-                // More about the Launch property at https://developer.microsoft.com/en-us/windows/uwp-community-toolkit/api/microsoft_toolkit_uwp_notifications_toastcontent
+                // More about the Launch property at https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastcontent
                 Launch = "ToastContentActivationParams",
 
                 Visual = new ToastVisual()
@@ -37,7 +37,7 @@ namespace Lynn.Client.Services
                 {
                     Buttons =
                     {
-                        // More about Toast Buttons at https://developer.microsoft.com/en-us/windows/uwp-community-toolkit/api/microsoft_toolkit_uwp_notifications_toastbutton
+                        // More about Toast Buttons at https://docs.microsoft.com/dotnet/api/microsoft.toolkit.uwp.notifications.toastbutton
                         new ToastButton("OK", "ToastButtonActivationArguments")
                         {
                             ActivationType = ToastActivationType.Foreground
@@ -52,7 +52,7 @@ namespace Lynn.Client.Services
             var toast = new ToastNotification(content.GetXml())
             {
                 // TODO WTS: Set a unique identifier for this notification within the notification group. (optional)
-                // More details at https://docs.microsoft.com/en-gb/uwp/api/windows.ui.notifications.toastnotification#Windows_UI_Notifications_ToastNotification_Tag
+                // More details at https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification.tag
                 Tag = "ToastTag"
             };
 

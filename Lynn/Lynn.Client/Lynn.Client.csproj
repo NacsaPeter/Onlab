@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{D06E8CF6-79A2-4722-8F9A-7E306283740A}</ProjectGuid>
+    <ProjectGuid>{11B82F22-E917-4852-A898-0F6567E6DC94}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lynn.Client</RootNamespace>
     <AssemblyName>Lynn.Client</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -92,24 +92,15 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="IdentityModel">
-      <Version>3.7.0</Version>
-    </PackageReference>
-    <PackageReference Include="IdentityServer4.AccessTokenValidation">
-      <Version>2.6.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
-      <Version>5.2.4</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.6</Version>
+      <Version>6.1.5</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.0</Version>
     </PackageReference>
     <!-- Nuget package references -->
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
-      <Version>2.0.0</Version>
+      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
@@ -125,77 +116,19 @@
     <Compile Include="Helpers\Observable.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
-    <Compile Include="Interfaces\IExerciseView.cs" />
-    <Compile Include="Models\CoursePresenter.cs" />
-    <Compile Include="Models\TestPresenter.cs" />
-    <Compile Include="Models\VocabularyExercisePresenter.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
-    <Compile Include="Services\BaseHttpService.cs" />
-    <Compile Include="Services\CourseService.cs" />
-    <Compile Include="Services\EnrollmentService.cs" />
-    <Compile Include="Services\LanguageService.cs" />
-    <Compile Include="Services\LogInService.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ThemeSelectorService.cs" />
     <Compile Include="Services\ToastNotificationsService.cs" />
     <Compile Include="Services\ToastNotificationsService.Samples.cs" />
-    <Compile Include="Services\UserService.cs" />
-    <Compile Include="Services\ViewLifetimeControl.cs" />
-    <Compile Include="Services\WindowManagerService.cs" />
-    <Compile Include="ViewModels\ChooseOneExerciseViewModel.cs" />
-    <Compile Include="ViewModels\ChoosingExerciseBaseViewModel.cs" />
-    <Compile Include="ViewModels\DetailedCourseToEnrollInViewModel.cs" />
-    <Compile Include="ViewModels\DetailedCourseToStartViewModel.cs" />
-    <Compile Include="ViewModels\DoExercisesViewModel.cs" />
-    <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
-    <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
-    <Compile Include="ViewModels\ExerciseBaseViewModel.cs" />
-    <Compile Include="ViewModels\LearningViewModel.cs" />
-    <Compile Include="ViewModels\LoggedInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\PictureExerciseViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\TestsViewModel.cs" />
-    <Compile Include="ViewModels\TranslationExerciseViewModel.cs" />
-    <Compile Include="Views\ChooseOneExerciseView.xaml.cs">
-      <DependentUpon>ChooseOneExerciseView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DetailedCourseToEnrollInView.xaml.cs">
-      <DependentUpon>DetailedCourseToEnrollInView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DetailedCourseToStartView.xaml.cs">
-      <DependentUpon>DetailedCourseToStartView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DoExercisesPage.xaml.cs">
-      <DependentUpon>DoExercisesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EnrolledCoursesPage.xaml.cs">
-      <DependentUpon>EnrolledCoursesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EnrollInCoursePage.xaml.cs">
-      <DependentUpon>EnrollInCoursePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LearningPage.xaml.cs">
-      <DependentUpon>LearningPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LoggedInPage.xaml.cs">
-      <DependentUpon>LoggedInPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PictureExerciseView.xaml.cs">
-      <DependentUpon>PictureExerciseView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TestsPage.xaml.cs">
-      <DependentUpon>TestsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TranslationExerciseView.xaml.cs">
-      <DependentUpon>TranslationExerciseView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -209,81 +142,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\_Pivot.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Styles\_Colors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Styles\_FontSizes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Styles\_Thickness.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Styles\TextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
-    <Page Include="Views\ChooseOneExerciseView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DetailedCourseToEnrollInView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DetailedCourseToStartView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DoExercisesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\EnrolledCoursesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\EnrollInCoursePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\LearningPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\LoggedInPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\PictureExerciseView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\TestsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TranslationExerciseView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -295,40 +176,10 @@
     <Compile Include="Helpers\ResourceExtensions.cs" />
     <Compile Include="Helpers\Singleton.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Assets\apple.jpg" />
-    <Content Include="Assets\categories\Gyümölcsök.png" />
-    <Content Include="Assets\categories\Színek.png" />
-    <Content Include="Assets\categories\Állatok.png" />
-    <Content Include="Assets\cherry.jpg" />
-    <Content Include="Assets\colors\black.png" />
-    <Content Include="Assets\colors\blue.png" />
-    <Content Include="Assets\colors\brown.png" />
-    <Content Include="Assets\colors\green.png" />
-    <Content Include="Assets\colors\orange.png" />
-    <Content Include="Assets\colors\pink.png" />
-    <Content Include="Assets\colors\purple.png" />
-    <Content Include="Assets\colors\red.png" />
-    <Content Include="Assets\colors\white.png" />
-    <Content Include="Assets\colors\yellow.png" />
-    <Content Include="Assets\flags\de.png" />
-    <Content Include="Assets\flags\en.png" />
-    <Content Include="Assets\flags\en\GB.png" />
-    <Content Include="Assets\flags\en\US.png" />
-    <Content Include="Assets\flags\es.png" />
-    <Content Include="Assets\flags\es\ES.png" />
-    <Content Include="Assets\flags\es\MX.png" />
-    <Content Include="Assets\flags\fr.png" />
-    <Content Include="Assets\flags\fr\FR.png" />
-    <Content Include="Assets\flags\hu.png" />
-    <Content Include="Assets\flags\hu\HU.png" />
-    <Content Include="Assets\flags\it.png" />
-    <Content Include="Assets\flags\it\IT.png" />
-    <Content Include="Assets\lemon.jpg" />
-    <Content Include="Assets\orange.jpg" />
-    <Content Include="Assets\pear.jpg" />
-    <Content Include="Assets\profile.jpg" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -347,12 +198,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Lynn.DTO\Lynn.DTO.csproj">
-      <Project>{A0022190-7CEA-4C4D-843B-AE4E8F24C9E9}</Project>
-      <Name>Lynn.DTO</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
