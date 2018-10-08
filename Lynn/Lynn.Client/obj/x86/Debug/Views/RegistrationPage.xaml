@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="Lynn.Client.Views.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lynn.Client.Views"
+    xmlns:vm="using:Lynn.Client.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vm:RegistrationViewModel x:ConnectionId='1' x:Name="ViewModel"/>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="0.15*"></RowDefinition>
+
+            <RowDefinition Height="0.85*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="Gainsboro">
+
+            <TextBlock x:ConnectionId='4' Name="Reg" Text="Regisztráció"  
+            TextAlignment="Center" VerticalAlignment="Center"  
+            FontSize="30" FontWeight="Black" FontStyle="Italic"></TextBlock>
+
+        </Border>
+
+        <StackPanel Grid.Row="1">
+
+            <TextBox PlaceholderText="Felhasználónév" Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Width="300" Margin="0,50,0,0"></TextBox>
+
+            <TextBox PlaceholderText="Email cím" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Width="300" Margin="0,10,0,0"></TextBox>
+
+            <TextBox PlaceholderText="Jelszó" Width="300" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Margin="0,10,0,0"></TextBox>
+
+            <TextBox PlaceholderText="Jelszó megerősítése" Text="{Binding ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            Width="300" Margin="0,10,0,0"></TextBox>
+
+            <RelativePanel x:ConnectionId='2' x:Name="inside" Grid.Row="1"  
+            HorizontalAlignment="Center" Margin="0,20,0,0">
+
+                <Button x:ConnectionId='3' x:Name="savebtn" Content="Küld" Height="50"  
+                    Width="70" Command="{Binding Register_Click}"></Button>
+
+            </RelativePanel>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
+

@@ -117,21 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppDisplayName" xml:space="preserve">
-    <value>Lynn.Client</value>
-    <comment>Application display name</comment>
-  </data>
-  <data name="AppDescription" xml:space="preserve">
-    <value>Lynn.Client</value>
-    <comment>Application description</comment>
-  </data>
   <data name="Main_Title.Text" xml:space="preserve">
     <value>Main</value>
-    <comment>Page title for MainPage</comment>
+    <comment>Page title for Main</comment>
+  </data>
+  <data name="LoggedIn_Pivot.Text" xml:space="preserve">  
+    <value>LoggedIn</value>
+    <comment>Page title for LoggedIn</comment>
+  </data>
+  <data name="LoggedIn_PivotItem1.Header" xml:space="preserve">  
+    <value>Item 1</value>
+    <comment>First Pivot item title for LoggedIn</comment>
+  </data>
+  <data name="LoggedIn_PivotItem2.Header" xml:space="preserve">
+    <value>Item 2</value>
+    <comment>Second Pivot item title for LoggedIn</comment>
   </data>
   <data name="ExceptionSettingsStorageExtensionsFileNameIsNullOrEmpty" xml:space="preserve">
     <value>File name is null or empty. Specify a valid file name</value>
     <comment>File name is null or empty to save file in settings storage extensions</comment>
+  </data>
+  <data name="Settings_Title.Text" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Page title for Settings</comment>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
     <value>Choose Theme</value>
@@ -177,8 +185,9 @@
     <value>parameter must be an Enum name!</value>
     <comment>Parameter must be an Enum name in enum to boolean converter</comment>
   </data>
-  <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Settings</value>
-    <comment>Page title for SettingsPage</comment>
+  NavigateUri
+  <data name="ExceptionViewLifeTimeControlViewDisposal" xml:space="preserve">
+    <value>This view is being disposed.</value>
+    <comment>View disposed</comment>
   </data>
 </root>

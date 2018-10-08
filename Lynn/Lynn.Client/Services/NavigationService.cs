@@ -14,7 +14,6 @@ namespace Lynn.Client.Services
         public static event NavigationFailedEventHandler NavigationFailed;
 
         private static Frame _frame;
-        private static object _lastParamUsed;
 
         public static Frame Frame
         {
@@ -41,31 +40,16 @@ namespace Lynn.Client.Services
 
         public static bool CanGoForward => Frame.CanGoForward;
 
-        public static bool GoBack()
-        {
-            if (CanGoBack)
-            {
-                Frame.GoBack();
-                return true;
-            }
-
-            return false;
-        }
+        public static void GoBack() => Frame.GoBack();
 
         public static void GoForward() => Frame.GoForward();
 
         public static bool Navigate(Type pageType, object parameter = null, NavigationTransitionInfo infoOverride = null)
         {
             // Don't open the same page multiple times
-            if (Frame.Content?.GetType() != pageType || (parameter != null && !parameter.Equals(_lastParamUsed)))
+            if (Frame.Content?.GetType() != pageType)
             {
-                var navigationResult = Frame.Navigate(pageType, parameter, infoOverride);
-                if (navigationResult)
-                {
-                    _lastParamUsed = parameter;
-                }
-
-                return navigationResult;
+                return Frame.Navigate(pageType, parameter, infoOverride);
             }
             else
             {

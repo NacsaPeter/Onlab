@@ -4,25 +4,65 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Style="{StaticResource PageStyle}"
-    mc:Ignorable="d">
-    <Grid
-        x:Name="ContentArea"
-        Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    xmlns:views = "using:Lynn.Client.Views"
+    xmlns:vm = "using:Lynn.Client.ViewModels"
+    mc:Ignorable="d"
+    MinWidth="800" MinHeight="600">
 
-        <TextBlock
-            Grid.Row="0"
-            x:Uid="Main_Title"
-            Style="{StaticResource PageTitleStyle}" />
-        <Grid
-            Grid.Row="1" 
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
+    <Page.DataContext>
+        <vm:MainViewModel x:Name="ViewModel"/>
+    </Page.DataContext>
+
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="1,0" EndPoint="1,1">
+                <GradientStop Color="White" Offset="0.0" />
+                <GradientStop Color="Blue" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid Width="420" Height="500">
+            <Border Background="AliceBlue" BorderBrush="Black" BorderThickness="2" CornerRadius="30">
+                <Grid>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140"></RowDefinition>
+                        <RowDefinition Height="45"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition Height="65"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Margin="10, 20, 10, 10" FontSize="35" FontFamily="Arial" Foreground="Black" Text="Bejelentkezés" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" Margin="60, 10, 10, 5"
+                               FontSize="20" FontFamily="Arial" Foreground="Black" Text="Felhasználónév" />
+                    <TextBox Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="60, 5, 60, 10" FontSize="15" Background="White"
+                             IsSpellCheckEnabled="False" Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" Margin="60, 10, 10, 5" FontSize="20"
+                               FontFamily="Arial" Foreground="Black" Text="Jelszó"/>
+                    <PasswordBox Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="60, 5, 60, 10" FontSize="15"
+                                 Background="White" PasswordChar="*" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Row="5" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Bejelentkezés"
+                            Margin="10, 15, 10, 10" FontSize="15" BorderThickness="1" BorderBrush="Black" Background="#338D8787" Command="{Binding LogIn_Click}"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10, 5, 10, 10"
+                               FontSize="13" Text="Elfelejtett jelszó" />
+                    <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10, 0, 10, 10"
+                               FontSize="13">
+                        <Hyperlink Click="ViewModel.NavigateToRegistrationPage" UnderlineStyle="None">Regisztráció</Hyperlink>
+                    </TextBlock>
+
+                </Grid>
+            </Border>
         </Grid>
+
     </Grid>
+
 </Page>

@@ -8,11 +8,9 @@ using Lynn.Client.Helpers;
 using Lynn.Client.Services;
 
 using Windows.ApplicationModel.Activation;
-using Windows.System;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 
 namespace Lynn.Client.Services
@@ -23,10 +21,6 @@ namespace Lynn.Client.Services
         private readonly App _app;
         private readonly Lazy<UIElement> _shell;
         private readonly Type _defaultNavItem;
-
-        public static readonly KeyboardAccelerator AltLeftKeyboardAccelerator = BuildKeyboardAccelerator(VirtualKey.Left, VirtualKeyModifiers.Menu);
-
-        public static readonly KeyboardAccelerator BackKeyboardAccelerator = BuildKeyboardAccelerator(VirtualKey.GoBack);
 
         public ActivationService(App app, Type defaultNavItem, Lazy<UIElement> shell = null)
         {
@@ -87,6 +81,7 @@ namespace Lynn.Client.Services
         private async Task InitializeAsync()
         {
             await ThemeSelectorService.InitializeAsync();
+            await Task.CompletedTask;
         }
 
         private async Task StartupAsync()
@@ -111,29 +106,13 @@ namespace Lynn.Client.Services
                 AppViewBackButtonVisibility.Visible : AppViewBackButtonVisibility.Collapsed;
         }
 
-        private static KeyboardAccelerator BuildKeyboardAccelerator(VirtualKey key, VirtualKeyModifiers? modifiers = null)
-        {
-            var keyboardAccelerator = new KeyboardAccelerator() { Key = key };
-            if (modifiers.HasValue)
-            {
-                keyboardAccelerator.Modifiers = modifiers.Value;
-            }
-
-            ToolTipService.SetToolTip(keyboardAccelerator, string.Empty);
-            keyboardAccelerator.Invoked += OnKeyboardAcceleratorInvoked;
-            return keyboardAccelerator;
-        }
-
-        private static void OnKeyboardAcceleratorInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
-        {
-            var result = NavigationService.GoBack();
-            args.Handled = result;
-        }
-
         private void ActivationService_BackRequested(object sender, BackRequestedEventArgs e)
         {
-            var result = NavigationService.GoBack();
-            e.Handled = result;
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+                e.Handled = true;
+            }
         }
     }
 }

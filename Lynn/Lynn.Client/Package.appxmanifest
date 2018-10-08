@@ -8,11 +8,11 @@
   IgnorableNamespaces="uap mp genTemplate">
 
   <Identity
-    Name="57ED0326-18A7-402B-A58C-C69FEB17C867"
+    Name="9CF6EB18-7A12-4748-BC34-AF536E8C2667"
     Publisher="CN=Peti"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="57ED0326-18A7-402B-A58C-C69FEB17C867" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="9CF6EB18-7A12-4748-BC34-AF536E8C2667" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Lynn.Client</DisplayName>
@@ -33,10 +33,10 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="Lynn.Client.App">
       <uap:VisualElements
-        DisplayName="ms-resource:AppDisplayName"
+        DisplayName="Lynn.Client"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="ms-resource:AppDescription"
+        Description="Lynn.Client"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
@@ -53,10 +53,9 @@
 
   <genTemplate:Metadata>
     <genTemplate:Item Name="generator" Value="Windows Template Studio"/>
-    <genTemplate:Item Name="wizardVersion" Version="v2.3.18212.1" />
-    <genTemplate:Item Name="templatesVersion" Version="v2.3.18212.1" />
+    <genTemplate:Item Name="wizardVersion" Version="v1.7.18030.1" />
+    <genTemplate:Item Name="templatesVersion" Version="v1.7.18037.1" />
     <genTemplate:Item Name="projectType" Value="Blank" />
     <genTemplate:Item Name="framework" Value="MVVMBasic" />
-    <genTemplate:Item Name="platform" Value="Uwp" />
   </genTemplate:Metadata>
 </Package>

@@ -2,9 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RuntimeFrameworkVersion>2.1.0-preview2-25624-02</RuntimeFrameworkVersion>
-    <NETStandardImplicitPackageVersion>2.1.0-preview2-25624-02</NETStandardImplicitPackageVersion>
-    
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,11 +9,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.0-preview1-26751" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.1.0-preview1-26751" />
+    <ProjectReference Include="..\Lynn.BLL\Lynn.BLL.csproj" />
+    <ProjectReference Include="..\Lynn.DAL\Lynn.DAL.csproj" />
   </ItemGroup>
 
 </Project>

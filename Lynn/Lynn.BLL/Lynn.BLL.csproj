@@ -2,12 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RuntimeFrameworkVersion>2.1.0-preview2-25624-02</RuntimeFrameworkVersion>
-    <NETStandardImplicitPackageVersion>2.1.0-preview2-25624-02</NETStandardImplicitPackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lynn.DAL\Lynn.DAL.csproj" />
+    <ProjectReference Include="..\Lynn.DTO\Lynn.DTO.csproj" />
   </ItemGroup>
 
 </Project>

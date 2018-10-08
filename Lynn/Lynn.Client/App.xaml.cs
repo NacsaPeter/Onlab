@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Net;
 using Lynn.Client.Services;
 
 using Windows.ApplicationModel.Activation;
