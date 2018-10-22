@@ -334,6 +334,7 @@
     <Content Include="Assets\flags\hu\HU.png" />
     <Content Include="Assets\flags\it.png" />
     <Content Include="Assets\flags\it\IT.png" />
+    <Content Include="Assets\international-flags.jpg" />
     <Content Include="Assets\lemon.jpg" />
     <Content Include="Assets\orange.jpg" />
     <Content Include="Assets\pear.jpg" />

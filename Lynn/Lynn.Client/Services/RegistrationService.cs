@@ -1,4 +1,5 @@
 ﻿using Lynn.DTO;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,18 @@ namespace Lynn.Client.Services
         {
             using (var client = new HttpClient())
             {
-                RegisterUserDTO registerUser = new RegisterUserDTO { UserName = userName, Email = email, Password = password };
+                RegisterUserDTO registerUser = new RegisterUserDTO
+                {
+                    UserName = userName,
+                    Email = email,
+                    Password = password
+                };
+                
                 InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpContent _Body = new StringContent("{\"UserName\": \"" + userName +
-                    "\",\"Email\": \"" + email + "\",\"Password\": \"" + password + "\"}");
-                _Body.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                HttpResponseMessage response = await client.PostAsync("http://localhost:57770/api/account", _Body);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/account"));
+
+                var content = new StringContent(JsonConvert.SerializeObject(registerUser), Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await client.PostAsync($"{BaseUrl}/api/account", content);
                 response.EnsureSuccessStatusCode();
                 return response.Headers.Location;
             }

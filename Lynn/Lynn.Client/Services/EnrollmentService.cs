@@ -19,8 +19,10 @@ namespace Lynn.Client.Services
             using (var client = new HttpClient())
             {
                 InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollincourses"));
+
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"http://localhost:57770/api/enrollincourses/{name}");
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/enrollincourses/{name}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
@@ -29,8 +31,17 @@ namespace Lynn.Client.Services
         {
             using (var client = new HttpClient())
             {
-                Enrollment enrollment = new Enrollment { CourseID = course.ID, UserID = user.ID, Points = 0, Level = 1 };
+                Enrollment enrollment = new Enrollment
+                {
+                    CourseID = course.ID,
+                    UserID = user.ID,
+                    Points = 0,
+                    Level = 1
+                };
+
                 InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));
+
                 HttpResponseMessage response = await client.PostAsJsonAsync("api/enrollment", enrollment);
                 response.EnsureSuccessStatusCode();
                 return response.Headers.Location;
@@ -42,8 +53,10 @@ namespace Lynn.Client.Services
             using (var client = new HttpClient())
             {
                 InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrolledcourses"));
+            
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"http://localhost:57770/api/enrolledcourses/{user.ID}");
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/enrolledcourses/{user.ID}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }

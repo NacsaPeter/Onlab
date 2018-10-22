@@ -12,21 +12,15 @@ namespace Lynn.Client.Services
 {
     public abstract class BaseHttpService
     {
-        private readonly Uri serverUrl = new Uri("http://localhost:57770/");
+        public static string BaseUrl { get; } = "http://localhost:57770";
+
+        private readonly Uri serverUrl = new Uri(BaseUrl);
 
         protected void InitializeClient(HttpClient client)
         {
             client.BaseAddress = serverUrl;
             client.SetBearerToken(MainViewModel.AccessToken);
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollincourses"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrolledcourses"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/language"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/exercises"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/user"));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/account"));
         }
 
         protected async Task<T> GetAsync<T>(Uri uri)

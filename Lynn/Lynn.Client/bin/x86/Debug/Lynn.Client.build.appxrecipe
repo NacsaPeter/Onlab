@@ -664,6 +664,9 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\cherry.jpg">
       <PackagePath>Assets\cherry.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\international-flags.jpg">
+      <PackagePath>Assets\international-flags.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\lemon.jpg">
       <PackagePath>Assets\lemon.jpg</PackagePath>
     </AppxPackagedFile>

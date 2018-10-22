@@ -13,47 +13,52 @@
         <vm:RegistrationViewModel x:Name="ViewModel"/>
     </Page.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
 
-        <Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/international-flags.jpg" Opacity="0.3"/>
+        </Grid.Background>
 
-            <RowDefinition Height="0.15*"></RowDefinition>
+        <Grid BorderBrush="Black" BorderThickness="2"
+              Width="420" Height="500" CornerRadius="5"
+              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-            <RowDefinition Height="0.85*"></RowDefinition>
 
-        </Grid.RowDefinitions>
+            <StackPanel Background="AliceBlue">
 
-        <Border Grid.Row="0" Background="Gainsboro">
+                <TextBlock Name="Reg" Text="Regisztráció"  
+                           TextAlignment="Center" VerticalAlignment="Center"  
+                           FontSize="35" Margin="0,60,0,0">
+                </TextBlock>
 
-            <TextBlock Name="Reg" Text="Regisztráció"  
-            TextAlignment="Center" VerticalAlignment="Center"  
-            FontSize="30" FontWeight="Black" FontStyle="Italic"></TextBlock>
+                <TextBox PlaceholderText="Felhasználónév" Width="300" Background="White"
+                         Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,50,0,0" IsSpellCheckEnabled="False">
+                </TextBox>
 
-        </Border>
+                <TextBox PlaceholderText="Email cím" Width="300" Background="White"
+                         Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,15,0,0" IsSpellCheckEnabled="False">
+                </TextBox>
 
-        <StackPanel Grid.Row="1">
+                <PasswordBox PlaceholderText="Jelszó" Width="300" Background="White"
+                         Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,15,0,0" PasswordChar="*">
+                </PasswordBox>
 
-            <TextBox PlaceholderText="Felhasználónév" Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            Width="300" Margin="0,50,0,0"></TextBox>
+                <PasswordBox PlaceholderText="Jelszó megerősítése" Width="300" Background="White"
+                         Password="{Binding ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Margin="0,15,0,0" PasswordChar="*">
+                </PasswordBox>
 
-            <TextBox PlaceholderText="Email cím" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            Width="300" Margin="0,10,0,0"></TextBox>
+                <Button Content="Küld" HorizontalAlignment="Center" Background="#338D8787"
+                            Command="{Binding Register_Click}" BorderBrush="Black" FontSize="15"
+                            BorderThickness="1" Width="80" Margin="0,65,0,0">
+                </Button>
 
-            <TextBox PlaceholderText="Jelszó" Width="300" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            Margin="0,10,0,0"></TextBox>
+            </StackPanel>
 
-            <TextBox PlaceholderText="Jelszó megerősítése" Text="{Binding ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            Width="300" Margin="0,10,0,0"></TextBox>
-
-            <RelativePanel x:Name="inside" Grid.Row="1"  
-            HorizontalAlignment="Center" Margin="0,20,0,0">
-
-                <Button x:Name="savebtn" Content="Küld" Height="50"  
-                    Width="70" Command="{Binding Register_Click}"></Button>
-
-            </RelativePanel>
-
-        </StackPanel>
-
+        </Grid>
     </Grid>
+
 </Page>

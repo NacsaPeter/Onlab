@@ -75,7 +75,6 @@
       <RootProperty Name="Inlines" />
       <RootProperty Name="Name" />
       <RootProperty Name="TextAlignment" />
-      <RootProperty Name="FontStyle" />
       <RootProperty Name="Style" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
@@ -130,6 +129,7 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="Opacity" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
@@ -267,14 +267,9 @@
     </RootType>
     <RootType FullName="Lynn.Client.Views.LoggedInPage" />
     <RootType FullName="Lynn.Client.ViewModels.MainViewModel" />
-    <RootType FullName="Windows.UI.Xaml.Media.LinearGradientBrush">
-      <RootProperty Name="StartPoint" />
-      <RootProperty Name="EndPoint" />
-      <RootProperty Name="GradientStops" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.GradientStop">
-      <RootProperty Name="Color" />
-      <RootProperty Name="Offset" />
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="ImageSource" />
+      <RootProperty Name="Opacity" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="VerticalAlignment" />
@@ -283,6 +278,8 @@
       <RootProperty Name="Background" />
       <RootProperty Name="PasswordChar" />
       <RootProperty Name="Password" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Hyperlink">
       <RootProperty Name="UnderlineStyle" />
@@ -292,11 +289,6 @@
     <RootType FullName="Lynn.Client.Views.MainPage" />
     <RootType FullName="Lynn.Client.Views.PictureExerciseView" />
     <RootType FullName="Lynn.Client.ViewModels.RegistrationViewModel" />
-    <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Children" />
-    </RootType>
     <RootType FullName="Lynn.Client.Views.RegistrationPage" />
     <RootType FullName="Lynn.Client.Helpers.EnumToBooleanConverter">
       <RootProperty Name="EnumType" />
