@@ -304,7 +304,6 @@
     <Compile Include="Helpers\ResourceExtensions.cs" />
     <Compile Include="Helpers\Singleton.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\apple.jpg" />
     <Content Include="Assets\categories\Gyümölcsök.png" />

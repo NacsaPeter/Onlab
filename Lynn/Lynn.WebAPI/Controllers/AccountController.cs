@@ -25,12 +25,31 @@ namespace Lynn.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]RegisterUserDTO registerUserDTO)
         {
-            var user = new ApplicationUser { UserName = registerUserDTO.UserName, Email = registerUserDTO.Email };
+            var user = new ApplicationUser
+            {
+                UserName = registerUserDTO.UserName,
+                Email = registerUserDTO.Email
+            };
+
             var result = await _userManager.CreateAsync(user, registerUserDTO.Password);
+
             if (!string.IsNullOrEmpty(registerUserDTO.Level))
-                await _userManager.AddClaimAsync(user,
-                new Claim(nameof(registerUserDTO.Level), registerUserDTO.Level));
-            return Ok();
+            {
+                await _userManager.AddClaimAsync(
+                        user,
+                        new Claim(nameof(registerUserDTO.Level), 
+                        registerUserDTO.Level)
+                    );
+            }
+
+            if (result.Succeeded)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

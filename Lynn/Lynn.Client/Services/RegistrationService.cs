@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Lynn.Client.Services
 {
     public class RegistrationService : BaseHttpService
     {
-        public async Task<Uri> Register(string userName, string email, string password)
+        public async Task<bool> Register(string userName, string email, string password)
         {
             using (var client = new HttpClient())
             {
@@ -28,8 +29,15 @@ namespace Lynn.Client.Services
 
                 var content = new StringContent(JsonConvert.SerializeObject(registerUser), Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await client.PostAsync($"{BaseUrl}/api/account", content);
-                response.EnsureSuccessStatusCode();
-                return response.Headers.Location;
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }

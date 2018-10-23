@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
 
 namespace Lynn.Client.ViewModels
 {
@@ -46,13 +47,39 @@ namespace Lynn.Client.ViewModels
             Register_Click = new RelayCommand(new Action(SendRegistration));
         }
 
-        public void SendRegistration()
+        public async void SendRegistration()
         {
-            if (Password == ConfirmPassword)
+            ContentDialog contentDialog = new ContentDialog();
+
+            if (string.IsNullOrEmpty(UserName) ||
+                string.IsNullOrEmpty(Email) ||
+                string.IsNullOrEmpty(Password) ||
+                string.IsNullOrEmpty(ConfirmPassword))
+            {
+                contentDialog.Content = "Minden mező kitöltése kötelező";
+            }
+            else if (Password == ConfirmPassword)
             {
                 var service = new RegistrationService();
-                service.Register(UserName, Email, Password);
+                var result = await service.Register(UserName, Email, Password);
+
+                if (result)
+                {
+                    contentDialog.Content = "A regisztráció sikeres volt";
+                }
+                else
+                {
+                    contentDialog.Content = "A regisztráció sikertelen volt";
+                }
             }
+            else
+            {
+                contentDialog.Content = "A jelszó nem egyezik";
+            }
+
+            contentDialog.CloseButtonText = "Ok";
+            await contentDialog.ShowAsync();
+            return;
         }
     }
 }

@@ -37,10 +37,14 @@ namespace Lynn.Client.ViewModels
             LogIn_Click = new RelayCommand(new Action(LoggingIn));
         }
 
-        private void LoggingIn()
+        private async void LoggingIn()
         {
-            LoggedInUser = new User { Username = UserName, Password = Password };
-            LoggingInAsync(LoggedInUser);
+            LoggedInUser = new User
+            {
+                Username = UserName,
+                Password = Password
+            };
+            await LoggingInAsync(LoggedInUser);
         }
 
         private async Task LoggingInAsync(User user)
@@ -53,11 +57,13 @@ namespace Lynn.Client.ViewModels
                     Content = "A bejelentkezés sikertelen volt",
                     CloseButtonText = "Ok"
                 };
-                contentDialog.ShowAsync();
+                await contentDialog.ShowAsync();
                 return;
             }
+
             var userService = new UserService();
             LoggedInUser = await userService.GetUserByName(user.Username);
+
             NavigationService.Navigate(typeof(LoggedInPage), LoggedInUser);
         }
 
