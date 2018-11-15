@@ -21,9 +21,9 @@ namespace Lynn.DTO
         public int Level { get; set; }
 
         [DataMember(Name = "maxPoints")]
-        public int? MaxPoints { get; set; }
+        public int MaxPoints { get; set; }
 
         [DataMember(Name = "numberOfQuestions")]
-        public int? NumberOfQuestions { get; set; }
+        public int NumberOfQuestions { get; set; }
     }
 }

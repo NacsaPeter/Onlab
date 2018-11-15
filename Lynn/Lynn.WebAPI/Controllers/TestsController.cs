@@ -31,5 +31,12 @@ namespace Lynn.WebAPI.Controllers
         {
             return Ok(await _manager.GetTestTryingAsync(userId, testId));
         }
+
+        [HttpPost("result/{userId}/{testId}")]
+        public async Task<IActionResult> AddTestResult([FromBody]TestResultDto testResult, int userId, int testId)
+        {
+            var user = await _manager.AddTestResult(testResult, userId, testId);
+            return Ok(user.Points);
+        }
     }
 }

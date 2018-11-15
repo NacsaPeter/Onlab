@@ -28,7 +28,10 @@
         <StackPanel Margin="19,0" Orientation="Horizontal" HorizontalAlignment="Right">
             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;" Width="40" Height="40" Margin="0,5,0,0"/>
             <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,24,10,10"/>
-            <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,24,10,8"/>
+            <StackPanel Orientation="Horizontal" Margin="18,24,10,10">
+                <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" />
+                <TextBlock Text="pont" FontSize="{StaticResource MediumFontSize}" Margin="5,0,0,0" />
+            </StackPanel>
         </StackPanel>
 
         <GridView Grid.Row="1" Padding="18" ItemsSource="{Binding Source={StaticResource CoursesViewSource}}"

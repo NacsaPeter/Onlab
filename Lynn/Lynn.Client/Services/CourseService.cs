@@ -52,5 +52,21 @@ namespace Lynn.Client.Services
                 return serializer.ReadObject(await streamTask) as ObservableCollection<VocabularyExercise>;
             }
         }
+
+        public async Task<int> PostTestResult(User user, Test test, TestResultDto testResult)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
+
+                HttpResponseMessage response = await client
+                    .PostAsJsonAsync($"api/tests/result/{user.ID}/{test.ID}", testResult);
+                response.EnsureSuccessStatusCode();
+
+                var serializer = new DataContractJsonSerializer(typeof(int));
+                return (int)serializer.ReadObject(await response.Content.ReadAsStreamAsync());
+            }
+        }
     }
 }

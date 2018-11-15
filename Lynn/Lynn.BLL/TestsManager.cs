@@ -37,5 +37,11 @@ namespace Lynn.BLL
             trying.BestResult = _mapper.Map<TestResultDto>(dbTestUser.BestResult);
             return trying;
         }
+
+        public async Task<User> AddTestResult(TestResultDto testResult, int userId, int testId)
+        {
+            var dbTestResult = _mapper.Map<DbTestResult>(testResult);
+            return _mapper.Map<User>(await _repo.AddTestResultAsync(dbTestResult, userId, testId));
+        }
     }
 }

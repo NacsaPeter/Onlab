@@ -129,7 +129,7 @@ namespace Lynn.Client.ViewModels
             }              
         }
 
-        private void NextExercise(object sender, ContentDialogButtonClickEventArgs args)
+        private async void NextExercise(object sender, ContentDialogButtonClickEventArgs args)
         {
             var result = new ResultPresenter
             {
@@ -156,8 +156,17 @@ namespace Lynn.Client.ViewModels
             }
             else
             {
-                Points = (int)(CorrectAnswers / (float)Test.NumberOfQuestions * (float)Test.MaxPoints);
+                Points = (int)(CorrectAnswers / (float)Test.NumberOfQuestions * Test.MaxPoints);
                 End = true;
+                var courseService = new CourseService();
+                var testResult = new TestResultDto
+                {
+                    RightAnswers = CorrectAnswers,
+                    WrongAnswers = Test.NumberOfQuestions - CorrectAnswers,
+                    Points = Points
+                };
+                var userPoints = await courseService.PostTestResult(LoggedInUser, Test, testResult);
+                LoggedInUser.Points = userPoints;
             }
         }
     }
