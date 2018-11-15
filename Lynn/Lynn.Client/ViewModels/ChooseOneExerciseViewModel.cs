@@ -58,8 +58,8 @@ namespace Lynn.Client.ViewModels
             Random random = new Random();
             int randomNumber = random.Next(2);
             _isKnownToLearnig = (randomNumber == 0) ? true : false;
-            Expression = _isKnownToLearnig ? Exercise.TranslatedExpression : Exercise.Expression;
-            _translatedExpression = _isKnownToLearnig ? Exercise.Expression : Exercise.TranslatedExpression;
+            Expression = _isKnownToLearnig ? Exercise.TranslatedCorrectAnswer : Exercise.CorrectAnswer;
+            _translatedExpression = _isKnownToLearnig ? Exercise.CorrectAnswer : Exercise.TranslatedCorrectAnswer;
         }
     }
 }

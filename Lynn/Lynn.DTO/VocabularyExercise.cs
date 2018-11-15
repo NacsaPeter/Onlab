@@ -14,11 +14,11 @@ namespace Lynn.DTO
         [DataMember(Name = "testID")]
         public int TestID { get; set; }
 
-        [DataMember(Name = "expression")]
-        public string Expression { get; set; }
+        [DataMember(Name = "correctAnswer")]
+        public string CorrectAnswer { get; set; }
 
-        [DataMember(Name = "translatedExpression")]
-        public string TranslatedExpression { get; set; }
+        [DataMember(Name = "translatedCorrectAnswer")]
+        public string TranslatedCorrectAnswer { get; set; }
 
         [DataMember(Name = "wrongAnswer1")]
         public string WrongAnswer1 { get; set; }

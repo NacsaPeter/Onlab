@@ -28,8 +28,10 @@ Assets\flags\hu\HU.png
 Assets\flags\it.png
 Assets\flags\it\IT.png
 Assets\international-flags.jpg
+Assets\learning.png
 Assets\lemon.jpg
 Assets\LockScreenLogo.scale-200.png
+Assets\new-course.png
 Assets\orange.jpg
 Assets\pear.jpg
 Assets\profile.jpg
@@ -38,6 +40,7 @@ Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png
 Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
+Assets\test.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
 Lynn.Client.xr.xml
@@ -48,11 +51,14 @@ Styles\_Thickness.xbf
 Styles\Page.xbf
 Styles\TextBlock.xbf
 Views\ChooseOneExerciseView.xbf
+Views\CreateCoursesPage.xbf
 Views\DetailedCourseToEnrollInView.xbf
-Views\DetailedCourseToStartView.xbf
+Views\DetailedTestPage.xbf
 Views\DoExercisesPage.xbf
+Views\EditCoursePage.xbf
 Views\EnrolledCoursesPage.xbf
 Views\EnrollInCoursePage.xbf
+Views\LearnExpressionsPage.xbf
 Views\LearningPage.xbf
 Views\LoggedInPage.xbf
 Views\MainPage.xbf

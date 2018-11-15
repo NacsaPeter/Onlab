@@ -1,0 +1,143 @@
+﻿<Page
+    x:Class="Lynn.Client.Views.DetailedTestPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lynn.Client.Views"
+    xmlns:vm="using:Lynn.Client.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Lynn.Client.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vm:DetailedTestViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Background="AliceBlue" Grid.ColumnSpan="2">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
+            <TextBlock Text="{Binding Test.CategoryName}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;" Width="40" Height="40"/>
+                <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+                <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Background="LightGoldenrodYellow">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <Border CornerRadius="5" Margin="0,65,0,0"
+                    Width="237" Height="178" HorizontalAlignment="Center" Grid.Row="0">
+                <Image Source="{Binding Test.Picture}" Stretch="Fill" />
+            </Border>
+            
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,35,0,0"
+                        HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBlock Text="{Binding Test.Level}" FontSize="25" FontWeight="SemiBold" VerticalAlignment="Center" />
+                <TextBlock Text=". szint" FontSize="25" FontWeight="SemiBold" VerticalAlignment="Center" />
+                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE73E;" Foreground="Green" FontSize="45" Margin="20,0,0,0"
+                           Visibility="{Binding TestTrying.IsCorrect, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <TextBlock Text="Kifejezések száma:" />
+                <TextBlock Text="{Binding Test.Test.NumberOfQuestions}" Margin="8,0,0,0"/>
+                <TextBlock Text="-" Margin="10,0"/>
+                <TextBlock Text="Maximális pontszám:" />
+                <TextBlock Text="{Binding Test.Test.MaxPoints}" Margin="8,0,0,0"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Row="3" Text="Legutóbbi eredmény:" Margin="0,55,0,0" HorizontalAlignment="Center" FontSize="20"/>
+            
+            <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,20,0,0" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding TestTrying.LastResult.RightAnswers}" FontSize="15"/>
+                <TextBlock Text="helyes válasz" Margin="5,0,0,0" FontSize="15"/>
+                <TextBlock Text="-" Margin="10,0" />
+                <TextBlock Text="{Binding TestTrying.LastResult.Points}" FontSize="15"/>
+                <TextBlock Text="pont" Margin="5,0,0,0" FontSize="15"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Row="5" Text="Legjobb eredmény:" Margin="0,50,0,0" HorizontalAlignment="Center" FontSize="20"/>
+            
+            <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="0,20,0,0" 
+                        VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding TestTrying.BestResult.RightAnswers}" FontSize="15"/>
+                <TextBlock Text="helyes válasz" Margin="5,0,0,0" FontSize="15"/>
+                <TextBlock Text="-" Margin="10,0" />
+                <TextBlock Text="{Binding TestTrying.BestResult.Points}" FontSize="15"/>
+                <TextBlock Text="pont" Margin="5,0,0,0" FontSize="15"/>
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Background="LightCyan">
+            <Border Grid.Row="1" CornerRadius="5" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,60"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Button Height="220" Width="350" Background="White" Command="{Binding LearnExpressions_Click}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="190"/>
+                            <ColumnDefinition Width="160"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Margin="20" CornerRadius="5">
+                            <Image Source="/Assets/learning.png" Stretch="Uniform"/>
+                        </Border>
+
+                        <TextBlock Grid.Column="1" Text="Kifejezések tanulása" FontSize="25" Width="150" LineHeight="50"
+                                   TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0" Background="LightCyan">
+            <Border CornerRadius="5" BorderBrush="Black" BorderThickness="1" Margin="0,17,0,0"
+                    VerticalAlignment="Top" HorizontalAlignment="Center">
+                <Button Height="220" Width="350" Background="White" Command="{Binding DoTest_Click}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="190"/>
+                            <ColumnDefinition Width="160"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Margin="20" CornerRadius="5">
+                            <Image Source="/Assets/test.png" Stretch="Fill"/>
+                        </Border>
+
+                        <TextBlock Grid.Column="1" Text="Ellenőrző kérdések indítása" FontSize="25" Width="150" LineHeight="50"
+                                   TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+            </Border>
+            
+        </Grid>
+
+    </Grid>
+</Page>

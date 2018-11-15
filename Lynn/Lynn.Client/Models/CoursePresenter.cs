@@ -12,19 +12,27 @@ namespace Lynn.Client.Models
     public class CoursePresenter
     {
         private Course _course;
-        public int ID { get { return _course.ID; } }
+        public int Id { get { return _course.Id; } }
         public string CourseName { get { return _course.CourseName; } }
-        public string KnownLanguage { get { return _course.KnownLanguage; } }
-        public string KnownLanguageTerritory { get { return _course.KnownLanguageTerritory; } }
-        public string LearningLanguage { get { return _course.LearningLanguage; } }
-        public string LearningLanguageTerritory { get { return _course.LearningLanguageTerritory; } }
-        public string Level { get { return _course.Level; } }
+        public LanguageDto TeachingLanguage { get { return _course.TeachingLanguage; } }
+        public LanguageDto LearningLanguage { get { return _course.LearningLanguage; } }
+        public CourseLevelDto Level { get { return _course.Level; } }
         public string Editor { get { return _course.Editor; } }
         public string Details { get { return _course.Details; } }
-        public string Flag { get { return $"/Assets/flags/{_course.LearningLanguage}.png"; } }
-        public Course Course { get { return _course; } }
-        public string KnownLanguageName { get { return _course.KnownLanguageName; } }
-        public string LearningLanguageName { get { return _course.LearningLanguageName; } }
+        public Course Course { get { return _course; } set { _course = value; } }
+        public string Flag
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_course.LearningLanguage.Territory.Code))
+                {
+                    return $"/Assets/flags/{_course.LearningLanguage.Language.Code}.png";
+                }
+                return $"/Assets/flags/{_course.LearningLanguage.Language.Code}/{_course.LearningLanguage.Territory.Code}.png";
+            }
+        }
+
+        protected CoursePresenter() {}
 
         public CoursePresenter(Course course)
         {

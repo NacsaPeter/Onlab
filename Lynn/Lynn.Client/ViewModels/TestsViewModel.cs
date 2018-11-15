@@ -23,8 +23,8 @@ namespace Lynn.Client.ViewModels
             LoggedInUser = MainViewModel.LoggedInUser;
         }
 
-        private Course _course;
-        public Course Course
+        private CoursePresenter _course;
+        public CoursePresenter Course
         {
             get { return _course; }
             set { Set(ref _course, value, nameof(Course)); }
@@ -37,6 +37,13 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _loggedInUser, value, nameof(LoggedInUser)); }
         }
 
+        private Enrollment _enrollment;
+        public Enrollment Enrollment
+        {
+            get { return _enrollment; }
+            set { Set(ref _enrollment, value, nameof(Enrollment)); }
+        }
+
         private ObservableCollection<TestPresenter> _tests;
         public ObservableCollection<TestPresenter> Tests
         {
@@ -44,21 +51,28 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _tests, value, nameof(Tests)); }
         }
 
-        public void RefreshTests()
+        public async void RefreshTests()
         {
-            ProcessTestsByCourseID(Course.ID);
+            await ProcessTestsByCourseId(Course.Id);
+            await ProcessEnrollment(LoggedInUser.ID, Course.Id);
         }
 
-        private async Task ProcessTestsByCourseID(int courseID)
+        private async Task ProcessTestsByCourseId(int courseId)
         {
             var service = new CourseService();
-            var result = await service.GetTestsByCourseID(courseID);
+            var result = await service.GetTestsByCourseID(courseId);
             Tests = TestPresenter.GetTestPresenters(result);
+        }
+
+        private async Task ProcessEnrollment(int userId, int courseId)
+        {
+            var service = new EnrollmentService();
+            Enrollment = await service.GetEnrollment(userId, courseId);
         }
 
         public void StartTest(Test test)
         {
-            NavigationService.Navigate(typeof(DoExercisesPage), test);
+            NavigationService.Navigate(typeof(DetailedTestPage), test);
         }
     }
 }

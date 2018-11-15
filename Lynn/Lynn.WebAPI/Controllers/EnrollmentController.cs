@@ -34,7 +34,7 @@ namespace Lynn.WebAPI.Controllers
                 return BadRequest();
             }
 
-            return CreatedAtAction(nameof(GetEnrollmentById), new { created.ID }, created);
+            return CreatedAtAction(nameof(GetEnrollmentById), new { created.Id }, created);
         }
 
         [HttpGet("{id}", Name = "GetEnrollmentById")]
@@ -48,6 +48,15 @@ namespace Lynn.WebAPI.Controllers
             return Ok(enrollment);
         }
 
-
+        [HttpGet("{userId}/{courseId}", Name = "GetEnrollment")]
+        public async Task<IActionResult> GetEnrollment(int userId, int courseId)
+        {
+            var enrollment = await _manager.GetEnrollmentAsync(userId, courseId);
+            if (enrollment == null)
+            {
+                return NotFound();
+            }
+            return Ok(enrollment);
+        }
     }
 }

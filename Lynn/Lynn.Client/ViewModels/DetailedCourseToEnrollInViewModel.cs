@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Serialization;
 using Windows.UI.Popups;
+using Windows.UI.Xaml.Controls;
 
 namespace Lynn.Client.ViewModels
 {
@@ -24,7 +25,7 @@ namespace Lynn.Client.ViewModels
         public DetailedCourseToEnrollInViewModel(Course course)
         {
             Course = course;
-            EnrollIn_Click = new RelayCommand(new Action(EnrollIn));
+            EnrollIn_Click = new RelayCommand(new Action(EnrollInAsync));
             Cancel_Click = new RelayCommand(new Action(Cancel));
         }
 
@@ -37,13 +38,22 @@ namespace Lynn.Client.ViewModels
 
         private void Cancel() {}
 
-        private void EnrollIn() => EnrollInAsync();
-
-        private async Task EnrollInAsync()
+        private async void EnrollInAsync()
         {
             User loggedInUser = MainViewModel.LoggedInUser;
             var service = new EnrollmentService();
-            await service.EnrollInAsync(loggedInUser, Course);
+            var result = await service.EnrollInAsync(loggedInUser, Course);
+            var contentDialog = new ContentDialog();
+            if (result)
+            {
+                contentDialog.Content = "A jelentkezés sikeres volt";
+            }
+            else
+            {
+                contentDialog.Content = "A jelentkezés sikertelen volt";
+            }
+            contentDialog.CloseButtonText = "Ok";
+            await contentDialog.ShowAsync();
         }
 
     }

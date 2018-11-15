@@ -7,17 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="308"
-    d:DesignWidth="408"
-    MaxHeight="308" MinHeight="308"
-    MaxWidth="408" MinWidth="408">
+    d:DesignWidth="408">
 
-    <Grid BorderThickness="2" BorderBrush="Black">
+    <Grid BorderThickness="2" BorderBrush="Black" CornerRadius="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"></RowDefinition>
-            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Sentence}" FontSize="18" />
-        <TextBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Translation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="300" Height="80" KeyDown="EnterKeyDownEventHandler" TextWrapping="Wrap" IsSpellCheckEnabled="False"/>
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Text="{Binding Sentence}" FontSize="28" />
+        
+        <TextBox Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                 Text="{Binding Translation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="50,20,50,40" Padding="20" FontSize="22" KeyDown="EnterKeyDownEventHandler"
+                 TextWrapping="Wrap" IsSpellCheckEnabled="False"/>
     </Grid>
 </UserControl>

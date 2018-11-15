@@ -22,13 +22,11 @@ namespace Lynn.Client.ViewModels
 {
     public class DoExercisesViewModel : Observable
     {
-        public ICommand Start_Click { get; set; }
-
         public DoExercisesViewModel(Grid gridOfTest)
         {
             _gridOfTest = gridOfTest;
             LoggedInUser = MainViewModel.LoggedInUser;
-            Start_Click = new RelayCommand(new Action(DoExercises));
+            Results = new ObservableCollection<ResultPresenter>();
         }
 
         private Test _test;
@@ -59,16 +57,39 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _currentExercise, value, nameof(CurrentExercise)); }
         }
 
+        private bool _end;
+        public bool End
+        {
+            get { return _end; }
+            set { Set(ref _end, value, nameof(End)); }
+        }
+
+        private int _points;
+        public int Points
+        {
+            get { return _points; }
+            set { Set(ref _points, value, nameof(Points)); }
+        }
+
+        private int _correctAnswers = 0;
+        public int CorrectAnswers
+        {
+            get { return _correctAnswers; }
+            set { Set(ref _correctAnswers, value, nameof(CorrectAnswers)); }
+        }
+
+        private ObservableCollection<ResultPresenter> _results;
+        public ObservableCollection<ResultPresenter> Results
+        {
+            get { return _results; }
+            set { Set(ref _results, value, nameof(Results)); }
+        }
+
         private Grid _gridOfTest;
         private int _currentExerciseNum = 0;
-        private int _correctAnswers = 0;
-        public int Points { get; private set; }
 
-        private void DoExercises()
+        public void DoExercises()
         {
-            _gridOfTest.Children.Clear();
-            _gridOfTest.RowDefinitions.Clear();
-            _gridOfTest.ColumnDefinitions.Clear();
             if (VocabularyExercises.Count != _currentExerciseNum)
             {
                 var exercise = VocabularyExercises[_currentExerciseNum];
@@ -79,17 +100,15 @@ namespace Lynn.Client.ViewModels
             }
         }
 
-        public void ProcessExercises()
-        {
-            ProcessExercisesAsync(Test);
-        }
-
-        private async Task ProcessExercisesAsync(Test test)
+        public async Task ProcessExercisesAsync()
         {
             var service = new CourseService();
-            var result = await service.GetVocabularyExercises(test);
+            var result = await service.GetVocabularyExercises(Test);
             VocabularyExercises = VocabularyExercisePresenter.GetVocabularyExercisePresenters(result);
-            CurrentExercise = VocabularyExercises[0];
+            if (VocabularyExercises.Count != 0)
+            {
+                CurrentExercise = VocabularyExercises[0];
+            }
         }
 
         private IExerciseView SetExerciseType(VocabularyExercise exercise)
@@ -112,8 +131,21 @@ namespace Lynn.Client.ViewModels
 
         private void NextExercise(object sender, ContentDialogButtonClickEventArgs args)
         {
-            if (((IExerciseView)_gridOfTest.Children[0]).CheckIsCorrect()) _correctAnswers++;
+            var result = new ResultPresenter
+            {
+                Number = Results.Count + 1,
+                IsCorrect = false
+            };
+
+            if (((IExerciseView)_gridOfTest.Children[0]).CheckIsCorrect())
+            {
+                CorrectAnswers++;
+                result.IsCorrect = true;
+            }
+
+            Results.Add(result);
             _gridOfTest.Children.Clear();
+
             if (_vocabularyExercises.Count != _currentExerciseNum)
             { 
                 var exercise = _vocabularyExercises[_currentExerciseNum];
@@ -124,31 +156,8 @@ namespace Lynn.Client.ViewModels
             }
             else
             {
-                StackPanel stackPanel = new StackPanel
-                {
-                    Orientation = Orientation.Vertical,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center
-                };
-                TextBlock endTextBlock = new TextBlock
-                {
-                    Text = "Vége",
-                    FontSize = 50,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    Margin = new Thickness { Bottom = 60 }
-                };
-                Points = (int)((float)_correctAnswers / (float)Test.NumberOfQuestions * (float)Test.MaxPoints);
-                TextBlock pointsTextBlock = new TextBlock
-                {
-                    Text = $"Pontszáma: {Points}/{Test.MaxPoints}",
-                    FontSize = 24,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    HorizontalAlignment = HorizontalAlignment.Center
-                };
-                stackPanel.Children.Add(endTextBlock);
-                stackPanel.Children.Add(pointsTextBlock);
-                _gridOfTest.Children.Add(stackPanel);
+                Points = (int)(CorrectAnswers / (float)Test.NumberOfQuestions * (float)Test.MaxPoints);
+                End = true;
             }
         }
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Lynn.WebAPI.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = "Bearer")]
+    //[Authorize(AuthenticationSchemes = "Bearer")]
     public class LanguageController : Controller
     {
         private readonly LanguageManager _languageManager;
@@ -21,11 +21,24 @@ namespace Lynn.WebAPI.Controllers
             _enrollmentManager = enrollmentManager;
         }
 
-        [Authorize(AuthenticationSchemes = "Bearer", Policy = "GuruOnly")]
         [HttpGet]
         public async Task<IActionResult> GetLanguages()
         {
             return Ok(await _languageManager.GetLanguages());
+        }
+
+        [HttpGet]
+        [Route("territory")]
+        public async Task<IActionResult> GetTerritories()
+        {
+            return Ok(await _languageManager.GetTerritories());
+        }
+
+        [HttpGet]
+        [Route("levels")]
+        public async Task<IActionResult> GetCourseLevels()
+        {
+            return Ok(await _languageManager.GetCourseLevels());
         }
 
         [HttpGet]

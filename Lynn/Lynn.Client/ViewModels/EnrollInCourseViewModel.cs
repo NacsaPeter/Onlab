@@ -70,34 +70,24 @@ namespace Lynn.Client.ViewModels
             Languages = await service.GetLanguages();
         }
 
-        private void SearchCourseByName()
-        {
-            ProcessCoursesByName(CourseName);
-        }
-
-        private void SearchCourseByLanguage()
-        {
-            ProcessCoursesByLanguage(KnownLanguage.Code, LearningLanguage.Code);
-        }
-
-        private async Task ProcessCoursesByName(string name)
+        private async void SearchCourseByName()
         {
             var service = new EnrollmentService();
-            var results = await service.GetCoursesByNameAsync(name);
+            var results = await service.GetCoursesByNameAsync(CourseName);
             Courses = CoursePresenter.GetCoursePresenters(results);
         }
 
-        private async Task ProcessCoursesByLanguage(string knownLanguageCode, string learningLanguageCode)
+        private async void SearchCourseByLanguage()
         {
             var service = new LanguageService();
-            var results = await service.GetCoursesByLanguageCode(knownLanguageCode, learningLanguageCode);
+            var results = await service.GetCoursesByLanguageCode(KnownLanguage.Code, LearningLanguage.Code);
             Courses = CoursePresenter.GetCoursePresenters(results);
         }
 
-        public void ShowCourseDetails(Course course)
+        public async Task ShowCourseDetails(Course course)
         {
-            DetailedCourseToEnrollInView detailedCourse = new DetailedCourseToEnrollInView(course);
-            detailedCourse.ShowAsync();
+            var detailedCourse = new DetailedCourseToEnrollInView(course);
+            await detailedCourse.ShowAsync();
         }
     }
 }

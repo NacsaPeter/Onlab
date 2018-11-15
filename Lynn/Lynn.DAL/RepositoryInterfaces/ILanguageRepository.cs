@@ -8,5 +8,9 @@ namespace Lynn.DAL
     public interface ILanguageRepository
     {
         Task<ICollection<DbLanguage>> GetLanguagesAsync();
+        Task<ICollection<DbTerritory>> GetTerritoriesAsync();
+        Task<ICollection<DbCourseLevel>> GetCourseLevelsAsync();
+        Task<DbLanguage> GetLanguageByCodeAsync(string code);
+        Task<DbTerritory> GetTerritoryByCodeAsync(string code);
     }
 }

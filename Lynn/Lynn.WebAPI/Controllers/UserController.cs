@@ -12,17 +12,23 @@ namespace Lynn.WebAPI.Controllers
     //[Authorize(AuthenticationSchemes = "Bearer")]
     public class UserController : Controller
     {
-        private readonly EnrollmentManager _manager;
+        private readonly UserManager _userManager;
 
-        public UserController(EnrollmentManager manager)
+        public UserController(UserManager userManager)
         {
-            _manager = manager;
+            _userManager = userManager;
         }
 
         [HttpGet("{username}")]
         public async Task<IActionResult> GetUser(string username)
         {
-            return Ok(await _manager.GetUserByNameAsync(username));
+            return Ok(await _userManager.GetUserByNameAsync(username));
+        }
+
+        [HttpGet("mycourses/{username}")]
+        public async Task<IActionResult> GetMyCourses(string username)
+        {
+            return Ok(await _userManager.GetMyCoursesAsync(username));
         }
     }
 }

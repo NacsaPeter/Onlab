@@ -1,0 +1,167 @@
+﻿<Page
+    x:Class="Lynn.Client.Views.EditCoursePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lynn.Client.Views"
+    xmlns:vm="using:Lynn.Client.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Lynn.Client.Converters"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vm:EditCourseViewModel x:ConnectionId='1' x:Name="ViewModel"/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <CollectionViewSource x:Key="TestsViewSource" IsSourceGrouped="False" Source="{Binding Tests}"/>
+        <c:TestLevelToVisibilityConverter x:Key="TestLevelToVisibilityConverter"/>
+        <CollectionViewSource x:Key="TeachingLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
+        <CollectionViewSource x:Key="TeachingTerritoriesViewSource" IsSourceGrouped="False" Source="{Binding Territories}"/>
+        <CollectionViewSource x:Key="LearningLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
+        <CollectionViewSource x:Key="LearningTerritoriesViewSource" IsSourceGrouped="False" Source="{Binding Territories}"/>
+        <CollectionViewSource x:Key="CourseLevelsViewSource" IsSourceGrouped="False" Source="{Binding Levels}"/>
+        <DataTemplate x:Key="LanguageComboBoxItemDataTemplate">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+        <DataTemplate x:Key="TerritoryComboBoxItemDataTemplate">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+        <DataTemplate x:Key="CourseLevelComboBoxItemDataTemplate">
+            <TextBlock Text="{Binding LevelCode}" />
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="AliceBlue">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
+            <TextBlock Text="Kurzus szerkesztése" FontSize="{StaticResource LargeFontSize}"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;"
+                            Width="40" Height="40"/>
+                <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+                <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Background="LightCyan" Margin="10,20,10,20"
+              CornerRadius="5" BorderBrush="Black" BorderThickness="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="0,60,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Név:" FontSize="20"/>
+                <TextBox Grid.Column="1" Grid.ColumnSpan="2" Width="230" IsSpellCheckEnabled="False"
+                         Background="White" Text="{Binding Course.CourseName}"/>
+            </Grid>
+
+            <Grid Grid.Row="1" HorizontalAlignment="Center" Margin="0,55,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Nyelvi szint:" FontSize="16"/>
+                <ComboBox Grid.Column="1" Width="110" Background="White"
+                          ItemsSource="{Binding Source={StaticResource CourseLevelsViewSource}}"
+                          ItemTemplate="{Binding Source={StaticResource CourseLevelComboBoxItemDataTemplate}}"
+                          SelectedItem="{Binding Course.Level, Mode=TwoWay}"/>
+            </Grid>
+
+            <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Tanuló nyelv:" VerticalAlignment="Center" FontSize="16"/>
+                <ComboBox Grid.Column="1" Width="110" Background="White"
+                          ItemsSource="{Binding Source={StaticResource LearningLanguagesViewSource}}"
+                          ItemTemplate="{Binding Source={StaticResource LanguageComboBoxItemDataTemplate}}"
+                          SelectedItem="{Binding Course.LearningLanguage.Language, Mode=TwoWay}"/>
+                <TextBlock Grid.Column="2" Text="Nyelvterület:" VerticalAlignment="Center" Margin="18,0,0,0" FontSize="16"/>
+                <ComboBox Grid.Column="3" Width="110" Background="White"
+                          ItemsSource="{Binding Source={StaticResource LearningTerritoriesViewSource}}"
+                          ItemTemplate="{Binding Source={StaticResource TerritoryComboBoxItemDataTemplate}}"
+                          SelectedItem="{Binding Course.LearningLanguage.Territory, Mode=TwoWay}"/>
+            </Grid>
+
+            <Grid Grid.Row="3" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Tanító nyelv:" VerticalAlignment="Center" FontSize="16"/>
+                <ComboBox Grid.Column="1" Width="110" Background="White"
+                          ItemsSource="{Binding Source={StaticResource TeachingLanguagesViewSource}}"
+                          ItemTemplate="{Binding Source={StaticResource LanguageComboBoxItemDataTemplate}}"
+                          SelectedItem="{Binding Course.TeachingLanguage.Language, Mode=TwoWay}"/>
+                <TextBlock Grid.Column="2" Text="Nyelvterület:" VerticalAlignment="Center" Margin="18,0,0,0" FontSize="16"/>
+                <ComboBox Grid.Column="3" Width="110" Background="White"
+                          ItemsSource="{Binding Source={StaticResource TeachingTerritoriesViewSource}}"
+                          ItemTemplate="{Binding Source={StaticResource TerritoryComboBoxItemDataTemplate}}"
+                          SelectedItem="{Binding Course.TeachingLanguage.Territory, Mode=TwoWay}"/>
+            </Grid>
+
+            <StackPanel Grid.Row="4" HorizontalAlignment="Center" Margin="0,55,0,0">
+                <TextBlock Text="Részletek:" HorizontalAlignment="Left" FontSize="16"/>
+                <TextBox Width="450" Height="150" Margin="0,15,0,0" Background="White" Padding="10"
+                         TextWrapping="Wrap" IsSpellCheckEnabled="False" Text="{Binding Course.Details}"/>
+                <Button HorizontalAlignment="Right" Width="120" Height="45" Margin="0,45,0,0" Command="{Binding SaveCourse_Click}">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74E;" Margin="0,0,7,0"/>
+                        <TextBlock Text="Mentés" FontSize="18"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+
+        <GridView x:ConnectionId='2' Grid.Row="1" Grid.Column="1" Padding="25" ItemsSource="{Binding Source={StaticResource TestsViewSource}}"
+                  IsItemClickEnabled="True"                                Background="WhiteSmoke">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2" Width="237" Height="178">
+                        <Image Source="{Binding Picture}" VerticalAlignment="Center" Stretch="Fill"/>
+                        <Grid Background="Gray" Opacity="0.9" Height="30" Width="30" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <TextBlock Text="{Binding Level}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       Visibility="{Binding Level, Converter={StaticResource TestLevelToVisibilityConverter}}"/>
+                        </Grid>
+                        <Border VerticalAlignment="Bottom" Background="Gray" Opacity="0.9" Height="35">
+                            <TextBlock Text="{Binding CategoryName}" Margin="12,5" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Right"/>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+    </Grid>
+</Page>
+

@@ -25,10 +25,10 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _courses, value, nameof(Courses)); }
         }
 
-        public void RefreshEnrolledCourses(object sender, SelectionChangedEventArgs args)
+        public async Task RefreshEnrolledCourses(object sender, SelectionChangedEventArgs args)
         {
             User loggedInUser = MainViewModel.LoggedInUser;
-            ProcessEnrolledCourses(loggedInUser);
+            await ProcessEnrolledCourses(loggedInUser);
         }
 
         private async Task ProcessEnrolledCourses(User user)
@@ -38,10 +38,9 @@ namespace Lynn.Client.ViewModels
             Courses = CoursePresenter.GetCoursePresenters(results);
         }
 
-        internal void ShowCourseDetails(Course course)
+        public void StartCourse(Course course)
         {
-            DetailedCourseToStartView detailedCourse = new DetailedCourseToStartView(course);
-            detailedCourse.ShowAsync();
+            NavigationService.Navigate(typeof(TestsPage), course);
         }
     }
 }

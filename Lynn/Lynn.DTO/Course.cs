@@ -9,31 +9,19 @@ namespace Lynn.DTO
     public class Course
     {
         [DataMember(Name = "id")]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [DataMember(Name = "courseName")]
         public string CourseName { get; set; }
 
-        [DataMember(Name = "knownLanguage")]
-        public string KnownLanguage { get; set; }
-
-        [DataMember(Name = "knownLanguageName")]
-        public string KnownLanguageName { get; set; }
-
-        [DataMember(Name = "knownLanguageTerritory")]
-        public string KnownLanguageTerritory { get; set; }
+        [DataMember(Name = "teachingLanguage")]
+        public LanguageDto TeachingLanguage { get; set; }
 
         [DataMember(Name = "learningLanguage")]
-        public string LearningLanguage { get; set; }
-
-        [DataMember(Name = "learningLanguageName")]
-        public string LearningLanguageName { get; set; }
-
-        [DataMember(Name = "learningLanguageTerritory")]
-        public string LearningLanguageTerritory { get; set; }
+        public LanguageDto LearningLanguage { get; set; }
 
         [DataMember(Name = "level")]
-        public string Level { get; set; }
+        public CourseLevelDto Level { get; set; }
 
         [DataMember(Name = "editor")]
         public string Editor { get; set; }

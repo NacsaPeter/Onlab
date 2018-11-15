@@ -32,12 +32,17 @@ namespace Lynn.Client.Views
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var coursePresenter = (CoursePresenter)e.ClickedItem;
-            ViewModel.ShowCourseDetails(coursePresenter.Course);
+            ViewModel.StartCourse(coursePresenter.Course);
         }
 
         public void RefreshEnrolledCourses(object sender, SelectionChangedEventArgs args)
         {
             ViewModel.RefreshEnrolledCourses(sender, args);
+        }
+
+        private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

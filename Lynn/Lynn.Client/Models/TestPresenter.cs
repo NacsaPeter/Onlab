@@ -16,6 +16,8 @@ namespace Lynn.Client.Models
         public string Picture { get { return $"/Assets/categories/{CategoryName}.png"; } }
         public Test Test { get { return _test; } }
 
+        public TestPresenter() {}
+
         public TestPresenter(Test test)
         {
             _test = test;

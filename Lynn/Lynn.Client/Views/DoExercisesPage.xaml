@@ -6,10 +6,13 @@
     xmlns:vm="using:Lynn.Client.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Lynn.Client.Converters"
     mc:Ignorable="d">
 
     <Page.Resources>
-        <CollectionViewSource x:Key="ExercisesViewSource" IsSourceGrouped="False" Source="{Binding VocabularyExercises}"/>
+        <CollectionViewSource x:Key="ResultsViewSource" IsSourceGrouped="False" Source="{Binding Results}"/>
+        <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
+        <c:BoolFalseToVisibilityConverter x:Key="BoolFalseToVisibilityConverter"/>
     </Page.Resources>
 
     <Grid>
@@ -17,60 +20,79 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Background="AliceBlue">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
-                <TextBlock Text="{Binding Test.CategoryName}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-                <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button FontFamily="Segoe MDL2 Assets" Content="&#xE77B;"
-                                Width="50" Height="50" Background="Transparent"/>
-                    <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
-                    <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
-                </StackPanel>
-            </Grid>
+        <Grid Grid.Row="0" Grid.ColumnSpan="3" Background="AliceBlue">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
+            <TextBlock Text="{Binding Test.CategoryName}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;" Width="40" Height="40"/>
+                <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+                <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+            </StackPanel>
+        </Grid>
 
-        <Grid Grid.Row="1" Name="GridOfTest">
+        <Line Y1="0" Y2="600" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"
+              StrokeThickness="1" Stroke="Black" StrokeDashCap="Round"/>
+
+        <ListView Grid.Row="1" Grid.Column="2" IsItemClickEnabled="False" Margin="50" IsHitTestVisible="False"
+                  ItemsSource="{Binding Source={StaticResource ResultsViewSource}}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="9,10,9,1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderThickness="1" BorderBrush="Black" CornerRadius="5">
+                            <TextBlock Text="{Binding Number}" FontSize="30" Margin="22,10"/>
+                        </Border>
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0" CornerRadius="5"
+                                Visibility="{Binding IsCorrect, Converter={StaticResource BoolTrueToVisibilityConverter}}">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE73E;" Foreground="Green"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0"
+                                       FontSize="45" />
+                        </Border>
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0" CornerRadius="5"
+                                Visibility="{Binding IsCorrect, Converter={StaticResource BoolFalseToVisibilityConverter}}">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE711;" Foreground="Red"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0"
+                                       FontSize="45" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="1" Grid.Column="0" Name="GridOfTest" Padding="80,120">
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Visibility="{Binding End,
+                Converter={StaticResource BoolTrueToVisibilityConverter}}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.7*"/>
-                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*"/>
-                <ColumnDefinition Width="0.8*"/>
-            </Grid.ColumnDefinitions>
-
-            <GridView Name="LeftGridView" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
-                      ItemsSource="{Binding Source={StaticResource ExercisesViewSource}}"
-                      IsItemClickEnabled="True" ItemClick="GridView_ItemClick" Background="WhiteSmoke">
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Width="{Binding ElementName=LeftGridView,Path=ActualWidth}" Height="60">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.35*" />
-                                <ColumnDefinition Width="0.65*" />
-                            </Grid.ColumnDefinitions>
-                            <Image Source="{Binding Picture}" Height="25" VerticalAlignment="Center"
-                                   HorizontalAlignment="Center" Grid.Column="0"/>
-                            <TextBlock Text="{Binding Expression}" FontSize="{StaticResource MediumFontSize}"
-                                       VerticalAlignment="Center" Grid.Column="1"/>
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-
-            <StackPanel Grid.Row="0" Grid.Column="1" Margin="200,100,200,0" HorizontalAlignment="Center">
-                <Image Source="{Binding CurrentExercise.Picture}" Height="200" Margin="0,10"/>
-                <TextBlock Text="{Binding CurrentExercise.Expression}" HorizontalAlignment="Center" Margin="0,10"/>
-                <TextBlock Text="{Binding CurrentExercise.TranslatedExpression}" HorizontalAlignment="Center" Margin="0,10"/>
-                <TextBlock Text="{Binding CurrentExercise.Sentence}" HorizontalAlignment="Center" Margin="0,10"/>
-                <TextBlock Text="{Binding CurrentExercise.TranslatedSentence}" HorizontalAlignment="Center" Margin="0,10"/>
+            <TextBlock Grid.Row="0" Text="Vége" FontSize="50" HorizontalAlignment="Center" Margin="0,200,0,0" />
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,90,0,0" Orientation="Horizontal">
+                <TextBlock Text="Helyes válaszok:" FontSize="24"/>
+                <TextBlock Text="{Binding CorrectAnswers}" FontSize="24" Margin="10,0,0,0"/>
+                <TextBlock Text="/" FontSize="24" Margin="5,0"/>
+                <TextBlock Text="{Binding Test.NumberOfQuestions}" FontSize="24"/>
             </StackPanel>
-            
-            <Button Name="StartButton" Grid.Row="1" Grid.Column="1" Command="{Binding Start_Click}" HorizontalAlignment="Center"
-                    Background="LightGreen" Content="Ellenőrző kérdések indítása"
-                    BorderThickness="1" BorderBrush="Black"/>
-
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0,35,0,0" Orientation="Horizontal">
+                <TextBlock Text="Pontszám:" FontSize="24"/>
+                <TextBlock Text="{Binding Points}" FontSize="24" Margin="10,0,0,0"/>
+                <TextBlock Text="/" FontSize="24" Margin="5,0"/>
+                <TextBlock Text="{Binding Test.MaxPoints}" FontSize="24"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

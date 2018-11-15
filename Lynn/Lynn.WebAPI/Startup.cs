@@ -7,6 +7,8 @@ using Lynn.BLL;
 using Lynn.BLL.Mapping;
 using Lynn.DAL;
 using Lynn.DAL.Identity;
+using Lynn.DAL.Repositories;
+using Lynn.DAL.RepositoryInterfaces;
 using Lynn.WebAPI.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,10 +37,12 @@ namespace Lynn.WebAPI
             services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<EnrollmentManager>();
             services.AddTransient<ExercisesManager>();
             services.AddTransient<LanguageManager>();
             services.AddTransient<TestsManager>();
+            services.AddTransient<UserManager>();
             services.AddSingleton<IMapper>(MapperConfig.Configure());
 
             services.AddDbContext<LynnDb>(options =>

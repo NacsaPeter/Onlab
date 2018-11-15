@@ -37,12 +37,12 @@
             <StackPanel Orientation="Horizontal" Margin="0,15,0,30" HorizontalAlignment="Center">
                 <TextBlock Text="Tanító nyelv:" Margin="0,5,0,0"/>
                 <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="13,0,0,0" VerticalAlignment="Top"
-                          ItemsSource="{Binding Source={StaticResource KnownLanguagesViewSource}}" Width="92"
+                          ItemsSource="{Binding Source={StaticResource KnownLanguagesViewSource}}" Width="104"
                           ItemTemplate="{Binding Source={StaticResource ComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding KnownLanguage, Mode=TwoWay}"/>
-                <TextBlock Text="Tanulandó nyelv:" Margin="10,5,0,0"/>
+                <TextBlock Text="Tanuló nyelv:" Margin="10,5,0,0"/>
                 <ComboBox PlaceholderText="Válassz" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"
-                          ItemsSource="{Binding Source={StaticResource LearningLanguagesViewSource}}" Width="92"
+                          ItemsSource="{Binding Source={StaticResource LearningLanguagesViewSource}}" Width="104"
                           ItemTemplate="{Binding Source={StaticResource ComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding LearningLanguage, Mode=TwoWay}"/>
                 <Button Content="Keresés nyelv szerint" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Command="{Binding SearchCourseByLanguage_Click}"/>

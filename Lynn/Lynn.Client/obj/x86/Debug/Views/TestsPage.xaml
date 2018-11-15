@@ -21,17 +21,68 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
-        <TextBlock Grid.Row="0" Text="Feladatsorok" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button FontFamily="Segoe MDL2 Assets" Content="&#xE77B;"
-                        Width="50" Height="50" Background="Transparent"/>
-            <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
-            <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
-        </StackPanel>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
+            <TextBlock Text="Feladatsorok" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;"
+                            Width="40" Height="40"/>
+                <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+                <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+            </StackPanel>
+        </Grid>
 
-        <GridView x:ConnectionId='2' Grid.Row="2" Padding="18" ItemsSource="{Binding Source={StaticResource CoursesViewSource}}"
+        <Grid Grid.Row="1" Grid.Column="0" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Height="100" Width="150" BorderThickness="0.5" BorderBrush="Black"
+                    Margin="0,50,0,0" CornerRadius="5">
+                <Image Source="{Binding Course.Flag}" VerticalAlignment="Center" Stretch="Fill" />
+            </Border>
+            <TextBlock Grid.Row="1" Text="{Binding Course.CourseName}" FontSize="30" FontWeight="SemiBold"
+                       HorizontalAlignment="Center" Margin="0,30,0,0"/>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock Text="{Binding Course.Level.LevelCode}" FontSize="18"/>
+                <TextBlock Text="-" Margin="5,0" FontSize="18"/>
+                <TextBlock Text="{Binding Course.Level.LevelName}" FontSize="18"/>
+            </StackPanel>
+            <TextBlock Grid.Row="4" Text="{Binding Course.Editor}" HorizontalAlignment="Center" Margin="0,10,0,0" />
+            <TextBlock Grid.Row="5" Text="{Binding Course.Details}" FontStyle="Italic"
+                    HorizontalAlignment="Center" Margin="0,25,0,0"/>
+            <Line Grid.Row="6" X1="0" Y1="60" X2="220" Y2="60" HorizontalAlignment="Center"
+                  Stroke="Black" StrokeThickness="2" StrokeEndLineCap="Round" StrokeStartLineCap="Round"/>
+            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0">
+                <Border Height="50" Width="50" BorderThickness="1"  
+                        BorderBrush="Black" CornerRadius="5" Margin="0,20,0,0" Background="LemonChiffon">
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;"
+                                Width="40" Height="40"/>
+                </Border>
+                <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="25" VerticalAlignment="Bottom" Padding="15,10"/>
+            </StackPanel>
+            <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <TextBlock Text="{Binding Enrollment.Level}" FontSize="15"/>
+                <TextBlock Text=". szint  -" FontSize="15"/>
+                <TextBlock Text="{Binding Enrollment.Points}" FontSize="15" Margin="6,0,0,0"/>
+                <TextBlock Text=" pont" FontSize="15"/>
+            </StackPanel>
+        </Grid>
+
+        <GridView x:ConnectionId='2' Grid.Row="1" Grid.Column="1" Padding="25" ItemsSource="{Binding Source={StaticResource CoursesViewSource}}"
                   IsItemClickEnabled="True"                                Background="WhiteSmoke">
             <GridView.ItemTemplate>
                 <DataTemplate>

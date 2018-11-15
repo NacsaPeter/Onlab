@@ -10,5 +10,6 @@ namespace Lynn.DAL
         Task<ICollection<DbTest>> GetTestsByCourseIdAsync(int id);
         Task<ICollection<DbVocabularyExercise>> GetVocabularyExercisesByTestIdAsync(int id);
         Task<DbCategory> GetCategoryByTestIdAsync(int testId);
+        Task<DbTestUser> GetTestUserAsync(int userId, int testId);
     }
 }

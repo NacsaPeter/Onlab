@@ -27,6 +27,19 @@ namespace Lynn.Client.Services
             }
         }
 
+        public async Task<TestTrying> GetTestTrying(int userId, int testId)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
+
+                var serializer = new DataContractJsonSerializer(typeof(TestTrying));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/tests/{userId}/{testId}");
+                return serializer.ReadObject(await streamTask) as TestTrying;
+            }
+        }
+
         public async Task<ObservableCollection<VocabularyExercise>> GetVocabularyExercises(Test test)
         {
             using (var client = new HttpClient())

@@ -41,5 +41,41 @@ namespace Lynn.DAL
                 .Where(t => t.TestId == id)
                 .ToListAsync();
         }
+
+        public async Task<DbTestUser> GetTestUserAsync(int userId, int testId)
+        {
+            var trying = await _context.TestTryings
+                .Include(t => t.BestResult)
+                .Include(t => t.LastResult)
+                .Where(t => t.UserId == userId && t.TestId == testId)
+                .SingleOrDefaultAsync();
+
+            if (trying == null)
+            {
+                trying = new DbTestUser
+                {
+                    Attempts = 0,
+                    BestResult = new DbTestResult
+                    {
+                        RightAnswers = 0,
+                        WrongAnswers = 0,
+                        Points = 0
+                    },
+                    IsCorrect = false,
+                    LastResult = new DbTestResult
+                    {
+                        RightAnswers = 0,
+                        WrongAnswers = 0,
+                        Points = 0
+                    },
+                    TestId = testId,
+                    UserId = userId
+                };
+                _context.Add(trying);
+                await _context.SaveChangesAsync();
+            }
+
+            return trying;
+        }
     }
 }

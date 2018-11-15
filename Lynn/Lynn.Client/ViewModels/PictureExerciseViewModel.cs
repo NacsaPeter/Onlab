@@ -40,14 +40,14 @@ namespace Lynn.Client.ViewModels
         {
             Exercise = vocabularyExercise;
             Answers = new List<string>();
-            SetAnswersRandom(Answers, Exercise, Exercise.Expression, true);
+            SetAnswersRandom(Answers, Exercise, Exercise.CorrectAnswer, true);
             PictureLocation = $"/Assets/{Exercise.Picture}";
             ResultContentDialog = new ContentDialog { CloseButtonText = "Tovább" };
             Answer_Click = new RelayCommand<string>(CheckAnswer);
         }
 
         private void CheckAnswer(string chosen) =>
-            CheckAnswer(ResultContentDialog, Exercise.Expression, chosen, ref _isCorrect);
+            CheckAnswer(ResultContentDialog, Exercise.CorrectAnswer, chosen, ref _isCorrect);
 
     }
 }

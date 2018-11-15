@@ -29,12 +29,21 @@ namespace Lynn.Client.Views
         {
             LearningPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
             SettingsPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            CreateCoursesPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
         private void SettingsButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             LearningPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             SettingsPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            CreateCoursesPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void MyCoursesButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            LearningPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            SettingsPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            CreateCoursesPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
     }
 }

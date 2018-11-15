@@ -19,9 +19,19 @@ namespace Lynn.BLL
             _mapper = mapper;
         }
 
-        public async Task<ICollection<DTO.Language>> GetLanguages()
+        public async Task<ICollection<Language>> GetLanguages()
         {
-            return _mapper.Map<ICollection<DTO.Language>>(await _repo.GetLanguagesAsync());
+            return _mapper.Map<ICollection<Language>>(await _repo.GetLanguagesAsync());
+        }
+
+        public async Task<ICollection<Territory>> GetTerritories()
+        {
+            return _mapper.Map<ICollection<Territory>>(await _repo.GetTerritoriesAsync());
+        }
+
+        public async Task<ICollection<CourseLevelDto>> GetCourseLevels()
+        {
+            return _mapper.Map<ICollection<CourseLevelDto>>(await _repo.GetCourseLevelsAsync());
         }
     }
 }

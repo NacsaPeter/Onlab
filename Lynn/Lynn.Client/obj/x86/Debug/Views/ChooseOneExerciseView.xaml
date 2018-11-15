@@ -7,26 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="308"
-    d:DesignWidth="408"
-    MaxHeight="308" MinHeight="308"
-    MaxWidth="408" MinWidth="408">
+    d:DesignWidth="408">
 
-    <Grid BorderThickness="2" BorderBrush="Black">
+    <Grid BorderThickness="2" BorderBrush="Black" CornerRadius="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"></RowDefinition>
-            <RowDefinition Height="75"></RowDefinition>
-            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Expression}" FontSize="24"></TextBlock>
-        <Button Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[0]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[0]}" Margin="15,15,7.5,7.5"></Button>
-        <Button Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[1]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[1]}" Margin="7.5,15,15,7.5"></Button>
-        <Button Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[2]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[2]}" Margin="15,7.5,7.5,15"></Button>
-        <Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="{Binding Answers[3]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[3]}" Margin="7.5,7.5,15,15"></Button>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Text="{Binding Expression}" FontSize="40"/>
+
+        <Button Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                Content="{Binding Answers[0]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[0]}"
+                Margin="15,15,7.5,7.5" FontSize="22"/>
+
+        <Button Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                Content="{Binding Answers[1]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[1]}"
+                Margin="7.5,15,15,7.5" FontSize="22"/>
+
+        <Button Grid.Row="2" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                Content="{Binding Answers[2]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[2]}"
+                Margin="15,7.5,7.5,15" FontSize="22"/>
+
+        <Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                Content="{Binding Answers[3]}" Command="{Binding Answer_Click}" CommandParameter="{Binding Answers[3]}"
+                Margin="7.5,7.5,15,15" FontSize="22"/>
     </Grid>
 </UserControl>
 

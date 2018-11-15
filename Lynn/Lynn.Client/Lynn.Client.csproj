@@ -120,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
+    <Compile Include="Converters\BoolFalseToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolTrueToVisibilityConverter.cs" />
+    <Compile Include="Converters\TestLevelToVisibilityConverter.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\Observable.cs" />
@@ -127,6 +130,9 @@
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Interfaces\IExerciseView.cs" />
     <Compile Include="Models\CoursePresenter.cs" />
+    <Compile Include="Models\NewCoursePresenter.cs" />
+    <Compile Include="Models\NewTestPresenter.cs" />
+    <Compile Include="Models\ResultPresenter.cs" />
     <Compile Include="Models\TestPresenter.cs" />
     <Compile Include="Models\VocabularyExercisePresenter.cs" />
     <Compile Include="Services\ActivationService.cs" />
@@ -146,12 +152,15 @@
     <Compile Include="Services\WindowManagerService.cs" />
     <Compile Include="ViewModels\ChooseOneExerciseViewModel.cs" />
     <Compile Include="ViewModels\ChoosingExerciseBaseViewModel.cs" />
+    <Compile Include="ViewModels\CreateCoursesViewModel.cs" />
     <Compile Include="ViewModels\DetailedCourseToEnrollInViewModel.cs" />
-    <Compile Include="ViewModels\DetailedCourseToStartViewModel.cs" />
+    <Compile Include="ViewModels\DetailedTestViewModel.cs" />
     <Compile Include="ViewModels\DoExercisesViewModel.cs" />
+    <Compile Include="ViewModels\EditCourseViewModel.cs" />
     <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
     <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
     <Compile Include="ViewModels\ExerciseBaseViewModel.cs" />
+    <Compile Include="ViewModels\LearnExpressionsViewModel.cs" />
     <Compile Include="ViewModels\LearningViewModel.cs" />
     <Compile Include="ViewModels\LoggedInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -163,20 +172,29 @@
     <Compile Include="Views\ChooseOneExerciseView.xaml.cs">
       <DependentUpon>ChooseOneExerciseView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CreateCoursesPage.xaml.cs">
+      <DependentUpon>CreateCoursesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DetailedCourseToEnrollInView.xaml.cs">
       <DependentUpon>DetailedCourseToEnrollInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DetailedCourseToStartView.xaml.cs">
-      <DependentUpon>DetailedCourseToStartView.xaml</DependentUpon>
+    <Compile Include="Views\DetailedTestPage.xaml.cs">
+      <DependentUpon>DetailedTestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DoExercisesPage.xaml.cs">
       <DependentUpon>DoExercisesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditCoursePage.xaml.cs">
+      <DependentUpon>EditCoursePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnrolledCoursesPage.xaml.cs">
       <DependentUpon>EnrolledCoursesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnrollInCoursePage.xaml.cs">
       <DependentUpon>EnrollInCoursePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LearnExpressionsPage.xaml.cs">
+      <DependentUpon>LearnExpressionsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LearningPage.xaml.cs">
       <DependentUpon>LearningPage.xaml</DependentUpon>
@@ -242,15 +260,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CreateCoursesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DetailedCourseToEnrollInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DetailedCourseToStartView.xaml">
+    <Page Include="Views\DetailedTestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DoExercisesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditCoursePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,6 +285,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EnrollInCoursePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LearnExpressionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -334,10 +364,13 @@
     <Content Include="Assets\flags\it.png" />
     <Content Include="Assets\flags\it\IT.png" />
     <Content Include="Assets\international-flags.jpg" />
+    <Content Include="Assets\learning.png" />
     <Content Include="Assets\lemon.jpg" />
+    <Content Include="Assets\new-course.png" />
     <Content Include="Assets\orange.jpg" />
     <Content Include="Assets\pear.jpg" />
     <Content Include="Assets\profile.jpg" />
+    <Content Include="Assets\test.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

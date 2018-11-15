@@ -27,14 +27,14 @@ namespace Lynn.Client.Services
             }
         }
 
-        public async Task<Uri> EnrollInAsync(User user, Course course)
+        public async Task<bool> EnrollInAsync(User user, Course course)
         {
             using (var client = new HttpClient())
             {
                 Enrollment enrollment = new Enrollment
                 {
-                    CourseID = course.ID,
-                    UserID = user.ID,
+                    CourseId = course.Id,
+                    UserId = user.ID,
                     Points = 0,
                     Level = 1
                 };
@@ -43,8 +43,14 @@ namespace Lynn.Client.Services
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));
 
                 HttpResponseMessage response = await client.PostAsJsonAsync("api/enrollment", enrollment);
-                response.EnsureSuccessStatusCode();
-                return response.Headers.Location;
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
@@ -58,6 +64,19 @@ namespace Lynn.Client.Services
                 var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
                 var streamTask = client.GetStreamAsync($"{BaseUrl}/api/enrolledcourses/{user.ID}");
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
+            }
+        }
+
+        public async Task<Enrollment> GetEnrollment(int userId, int courseId)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollment"));
+
+                var serializer = new DataContractJsonSerializer(typeof(Enrollment));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/enrollment/{userId}/{courseId}");
+                return serializer.ReadObject(await streamTask) as Enrollment;
             }
         }
 

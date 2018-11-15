@@ -25,5 +25,11 @@ namespace Lynn.WebAPI.Controllers
         {
             return Ok(await _manager.GetTestsAsync(id));
         }
+
+        [HttpGet("{userId}/{testId}")]
+        public async Task<IActionResult> GetTestTryingAsync(int userId, int testId)
+        {
+            return Ok(await _manager.GetTestTryingAsync(userId, testId));
+        }
     }
 }

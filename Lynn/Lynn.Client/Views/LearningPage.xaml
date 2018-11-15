@@ -16,8 +16,8 @@
 
             <Pivot.RightHeader>
                 <StackPanel Margin="0,0,20,0" Orientation="Horizontal">
-                    <Button FontFamily="Segoe MDL2 Assets" Content="&#xE77B;"
-                        Width="50" Height="50" Background="Transparent"/>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;"
+                        Width="40" Height="40"/>
                     <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
                     <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
                 </StackPanel>

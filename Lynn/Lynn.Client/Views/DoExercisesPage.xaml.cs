@@ -34,16 +34,12 @@ namespace Lynn.Client.Views
             DataContext = ViewModel;
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             ViewModel.Test = (Test)e.Parameter;
-            ViewModel.ProcessExercises();
-        }
-
-        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ViewModel.CurrentExercise = (VocabularyExercisePresenter)e.ClickedItem;
+            await ViewModel.ProcessExercisesAsync();
+            ViewModel.DoExercises();
         }
     }
 }

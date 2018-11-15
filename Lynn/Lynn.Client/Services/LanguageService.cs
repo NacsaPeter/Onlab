@@ -38,5 +38,31 @@ namespace Lynn.Client.Services
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
+
+        public async Task<ObservableCollection<Territory>> GetTerritories()
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/language"));
+
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Territory>));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/language/territory");
+                return serializer.ReadObject(await streamTask) as ObservableCollection<Territory>;
+            }
+        }
+
+        public async Task<ObservableCollection<CourseLevelDto>> GetCourseLevels()
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/language"));
+
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<CourseLevelDto>));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/language/levels");
+                return serializer.ReadObject(await streamTask) as ObservableCollection<CourseLevelDto>;
+            }
+        }
     }
 }

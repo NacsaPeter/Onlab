@@ -30,7 +30,7 @@ namespace Lynn.Client.Services
                 var content = new StringContent(JsonConvert.SerializeObject(registerUser), Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await client.PostAsync($"{BaseUrl}/api/account", content);
 
-                if (response.StatusCode == HttpStatusCode.OK)
+                if (response.IsSuccessStatusCode)
                 {
                     return true;
                 }

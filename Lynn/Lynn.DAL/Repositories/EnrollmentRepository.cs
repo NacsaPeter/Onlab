@@ -20,27 +20,12 @@ namespace Lynn.DAL
         public async Task<ICollection<DbCourse>> GetEnrolledCoursesAsync(ApplicationUser user)
         {
             return await _context.Enrollments
-                .Include(e => e.Course)
-                .Include(e => e.Course.Level)
-                .Include(e => e.Course.Editor)
                 .Include(e => e.User)
-                .Where(e => e.User.UserName == user.UserName)
+                .Where(e => e.User.Id == user.Id)
                 .Select(e => e.Course)
+                .Include(c => c.Level)
+                .Include(c => c.Editor)
                 .ToListAsync();
-        }
-
-        public async Task<ApplicationUser> GetUserByIDAsync(int id)
-        {
-            return await _context.Users
-                    .Where(t => t.Id == id)
-                    .SingleOrDefaultAsync();
-        }
-
-        public async Task<ApplicationUser> GetUserByNameAsync(string username)
-        {
-            return await _context.Users
-                    .Where(t => t.UserName == username)
-                    .SingleOrDefaultAsync();
         }
 
         // Todo: refactor
@@ -79,6 +64,13 @@ namespace Lynn.DAL
         {
             return await _context.Enrollments
                 .Where(t => t.Id == enrollmentId)
+                .SingleOrDefaultAsync();
+        }
+
+        public async Task<DbEnrollment> GetEnrollmentAsync(int userId, int courseId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.UserId == userId && e.CourseId == courseId)
                 .SingleOrDefaultAsync();
         }
 

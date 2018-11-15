@@ -28,5 +28,14 @@ namespace Lynn.BLL
             }
             return tests;
         }
+        
+        public async Task<TestTrying> GetTestTryingAsync(int userId, int testId)
+        {
+            var dbTestUser = await _repo.GetTestUserAsync(userId, testId);
+            var trying = _mapper.Map<TestTrying>(dbTestUser);
+            trying.LastResult = _mapper.Map<TestResultDto>(dbTestUser.LastResult);
+            trying.BestResult = _mapper.Map<TestResultDto>(dbTestUser.BestResult);
+            return trying;
+        }
     }
 }
