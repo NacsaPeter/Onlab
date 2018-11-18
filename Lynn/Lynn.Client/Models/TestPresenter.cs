@@ -15,6 +15,7 @@ namespace Lynn.Client.Models
         public int Level { get { return _test.Level; } }
         public string Picture { get { return $"/Assets/categories/{CategoryName}.png"; } }
         public Test Test { get { return _test; } }
+        public bool HigherThanEnrollmentLevel { get; private set; }
 
         public TestPresenter() {}
 
@@ -23,12 +24,18 @@ namespace Lynn.Client.Models
             _test = test;
         }
 
-        public static ObservableCollection<TestPresenter> GetTestPresenters(ObservableCollection<Test> tests)
+        public static ObservableCollection<TestPresenter> GetTestPresenters(
+            ObservableCollection<Test> tests,
+            int enrollmentLevel = 0)
         {
             var testPresenters = new ObservableCollection<TestPresenter>();
             foreach (var item in tests)
             {
-                testPresenters.Add(new TestPresenter(item));
+                var testPresenter = new TestPresenter(item)
+                {
+                    HigherThanEnrollmentLevel = item.Level > enrollmentLevel
+                };
+                testPresenters.Add(testPresenter);
             }
             return testPresenters;
         }

@@ -37,10 +37,22 @@ namespace Lynn.Client.Views
             ViewModel.RefreshTests();
         }
 
-        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
             TestPresenter test = (TestPresenter)e.ClickedItem;
-            ViewModel.StartTest(test.Test);
+            if (test.HigherThanEnrollmentLevel)
+            {
+                var dialog = new ContentDialog
+                {
+                    Content = "A feladatsor csak az alsóbb szintek\nelvégzése után lesz elérhető.",
+                    CloseButtonText = "Ok"
+                };
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                ViewModel.StartTest(test.Test);
+            }
         }
     }
 }

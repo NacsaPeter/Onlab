@@ -23,6 +23,7 @@ namespace Lynn.DAL
                 .Include(t => t.Category)
                 .Include(t => t.Course)
                 .Where(t => t.CourseId == id)
+                .OrderBy(t => t.Level)
                 .ToListAsync();
         }
 

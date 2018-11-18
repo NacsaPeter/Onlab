@@ -53,15 +53,16 @@ namespace Lynn.Client.ViewModels
 
         public async void RefreshTests()
         {
-            await ProcessTestsByCourseId(Course.Id);
             await ProcessEnrollment(LoggedInUser.ID, Course.Id);
+            await ProcessTestsByCourseId(Course.Id);
+
         }
 
         private async Task ProcessTestsByCourseId(int courseId)
         {
             var service = new CourseService();
             var result = await service.GetTestsByCourseID(courseId);
-            Tests = TestPresenter.GetTestPresenters(result);
+            Tests = TestPresenter.GetTestPresenters(result, Enrollment.Level);
         }
 
         private async Task ProcessEnrollment(int userId, int courseId)

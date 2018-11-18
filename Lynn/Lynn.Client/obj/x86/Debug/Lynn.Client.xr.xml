@@ -63,6 +63,7 @@
     <RootPropertyPathName Name="Register_Click" />
     <RootPropertyPathName Name="ConfirmPassword" />
     <RootPropertyPathName Name="Email" />
+    <RootPropertyPathName Name="HigherThanEnrollmentLevel" />
     <RootPropertyPathName Name="Enrollment" />
     <RootPropertyPathName Name="LevelName" />
     <RootPropertyPathName Name="Translation" />
@@ -279,7 +280,7 @@
     </RootType>
     <RootType FullName="Lynn.Client.Views.DoExercisesPage" />
     <RootType FullName="Lynn.Client.ViewModels.EditCourseViewModel" />
-    <RootType FullName="Lynn.Client.Converters.TestLevelToVisibilityConverter" />
+    <RootType FullName="Lynn.Client.Converters.HigherThanZeroToVisibilityConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />

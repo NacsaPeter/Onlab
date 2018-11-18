@@ -682,6 +682,9 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\categories\Gyümölcsök.png">
       <PackagePath>Assets\categories\Gyümölcsök.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\categories\Nyelvtan.png">
+      <PackagePath>Assets\categories\Nyelvtan.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\categories\Színek.png">
       <PackagePath>Assets\categories\Színek.png</PackagePath>
     </AppxPackagedFile>

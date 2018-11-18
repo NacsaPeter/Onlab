@@ -6,6 +6,7 @@
     xmlns:vm="using:Lynn.Client.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Lynn.Client.Converters"
     mc:Ignorable="d">
 
     <Page.DataContext>
@@ -14,6 +15,7 @@
 
     <Page.Resources>
         <CollectionViewSource x:Key="CoursesViewSource" IsSourceGrouped="False" Source="{Binding Tests}"/>
+        <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
     </Page.Resources>
 
     <Grid Background="AliceBlue">
@@ -91,6 +93,8 @@
                 <DataTemplate>
                     <Grid Margin="2" Width="237" Height="178">
                         <Image Source="{Binding Picture}" VerticalAlignment="Center" Stretch="Fill"/>
+                        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Gray" Opacity="0.8"
+                              Visibility="{Binding HigherThanEnrollmentLevel, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
                         <Grid Background="Gray" Opacity="0.9" Height="30" Width="30" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">
                             <TextBlock Text="{Binding Level}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />
                         </Grid>
