@@ -57,6 +57,7 @@
     <RootPropertyPathName Name="CorrectAnswer" />
     <RootPropertyPathName Name="ActualWidth" />
     <RootPropertyPathName Name="LogIn_Click" />
+    <RootPropertyPathName Name="LoginSuccess" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="UserName" />
     <RootPropertyPathName Name="PictureLocation" />

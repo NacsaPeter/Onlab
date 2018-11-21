@@ -6,12 +6,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views = "using:Lynn.Client.Views"
     xmlns:vm = "using:Lynn.Client.ViewModels"
+    xmlns:c="using:Lynn.Client.Converters"
     mc:Ignorable="d"
     MinWidth="800" MinHeight="600">
 
     <Page.DataContext>
         <vm:MainViewModel x:ConnectionId='1' x:Name="ViewModel"/>
     </Page.DataContext>
+
+    <Page.Resources>
+        <c:BoolFalseToVisibilityConverter x:Key="BoolFalseToVisibilityConverter"/>
+    </Page.Resources>
 
     <Grid>
 
@@ -28,8 +33,9 @@
                         <RowDefinition Height="45"></RowDefinition>
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="35"></RowDefinition>
-                        <RowDefinition Height="65"></RowDefinition>
-                        <RowDefinition Height="70"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="35"></RowDefinition>
                         <RowDefinition Height="35"></RowDefinition>
                     </Grid.RowDefinitions>
@@ -56,17 +62,21 @@
                     <PasswordBox Grid.Row="4" Grid.Column="0" VerticalAlignment="Top"
                                  Margin="60, 5, 60, 10" FontSize="15" Background="White" PasswordChar="*"
                                  Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    
-                    <Button Grid.Row="5" Grid.Column="0" VerticalAlignment="Top"
+
+                    <TextBlock Grid.Row="5" Margin="62, 0, 0, 0" Text="A bejelentkezés sikertelen volt."
+                               FontSize="13" Foreground="Red"
+                               Visibility="{Binding LoginSuccess, Converter={StaticResource BoolFalseToVisibilityConverter}}"/>
+
+                    <Button Grid.Row="6" Grid.Column="0" VerticalAlignment="Top"
                             HorizontalAlignment="Center" Content="Bejelentkezés"
-                            Margin="10, 15, 10, 10" FontSize="15" BorderThickness="1"
+                            Margin="10, 0, 10, 10" FontSize="15" BorderThickness="1"
                             BorderBrush="Black" Background="#338D8787" Command="{Binding LogIn_Click}"/>
                     
-                    <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"
+                    <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"
                                HorizontalAlignment="Center" Margin="10, 5, 10, 10"
                                FontSize="13" Text="Elfelejtett jelszó" />
                     
-                    <TextBlock Grid.Row="7" Grid.Column="0" VerticalAlignment="Top"
+                    <TextBlock Grid.Row="8" Grid.Column="0" VerticalAlignment="Top"
                                HorizontalAlignment="Center" Margin="10, 0, 10, 10"
                                FontSize="13">
                         

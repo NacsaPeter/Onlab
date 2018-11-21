@@ -30,11 +30,19 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _password, value, nameof(Password)); }
         }
 
+        private bool _loginSuccess;
+        public bool LoginSuccess
+        {
+            get { return _loginSuccess; }
+            set { Set(ref _loginSuccess, value, nameof(LoginSuccess)); }
+        }
+
         public ICommand LogIn_Click { get; set; }
 
         public MainViewModel()
         {
             LogIn_Click = new RelayCommand(new Action(LoggingIn));
+            LoginSuccess = true;
         }
 
         private async void LoggingIn()
@@ -52,18 +60,15 @@ namespace Lynn.Client.ViewModels
             AccessToken = await LogInService.LogIn(user);
             if (AccessToken == "")
             {
-                ContentDialog contentDialog = new ContentDialog
-                {
-                    Content = "A bejelentkezés sikertelen volt",
-                    CloseButtonText = "Ok"
-                };
-                await contentDialog.ShowAsync();
+                LoginSuccess = false;
+                Password = "";
                 return;
             }
 
             var userService = new UserService();
             LoggedInUser = await userService.GetUserByName(user.Username);
 
+            LoginSuccess = true;
             NavigationService.Navigate(typeof(LoggedInPage), LoggedInUser);
         }
 
