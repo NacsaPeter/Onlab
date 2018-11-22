@@ -3,41 +3,60 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Lynn.Client.Views"
+    xmlns:c="using:Lynn.Client.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Title="Részletek"
+    Background="LightGoldenrodYellow"
     PrimaryButtonText="Feliratkozás"
     SecondaryButtonText="Mégse"
     PrimaryButtonCommand="{Binding EnrollIn_Click}"
     SecondaryButtonCommand="{Binding Cancel_Click}">
 
+    <ContentDialog.Resources>
+        <c:LanguageToFlagPicturePathConverter x:Key="LanguageToFlagPicturePathConverter"/>
+    </ContentDialog.Resources>
+
     <Grid Width="350">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Név:" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Tanuló nyelv:" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Tanító nyelv:" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Szint:" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Szerkesztő:" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Leírás:" VerticalAlignment="Top" Margin="0, 6"></TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Course.CourseName}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Course.LearningLanguage.Language.Name}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Course.TeachingLanguage.Language.Name}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Course.Level.LevelCode}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Course.Editor}" VerticalAlignment="Center"></TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Course.Details}" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+        <StackPanel Grid.Row="0" Margin="0,15,20,40" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Width="75" Height="50" Margin="0,0,20,0" Source="{Binding Course.LearningLanguage,
+                   Converter={StaticResource LanguageToFlagPicturePathConverter}}"/>
+            <TextBlock Text="{Binding Course.CourseName}" FontSize="25" TextWrapping="Wrap"
+                       VerticalAlignment="Center" FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,5" HorizontalAlignment="Center">
+            <TextBlock Text="Tanuló nyelv:" FontSize="17" Margin="0,0,15,0"/>
+            <TextBlock Text="{Binding Course.LearningLanguage.Language.Name}" FontSize="17"/>
+            <TextBlock Text="-" FontSize="17" Margin="5,0"/>
+            <TextBlock Text="{Binding Course.LearningLanguage.Territory.Name}" FontSize="17"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,30" HorizontalAlignment="Center">
+            <TextBlock Text="Tanító nyelv:" FontSize="17" Margin="0,0,15,0"/>
+            <TextBlock Text="{Binding Course.TeachingLanguage.Language.Name}" FontSize="17"/>
+            <TextBlock Text="-" FontSize="17" Margin="5,0"/>
+            <TextBlock Text="{Binding Course.TeachingLanguage.Territory.Name}" FontSize="17"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,30">
+            <TextBlock Text="{Binding Course.Editor}" FontSize="17"/>
+            <TextBlock Text="," FontSize="17" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding Course.Level.LevelCode}" FontSize="17"/>
+            <TextBlock Text="-" FontSize="17" Margin="5,0"/>
+            <TextBlock Text="{Binding Course.Level.LevelName}" FontSize="17"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="4" Text="{Binding Course.Details}" HorizontalAlignment="Center"
+                   FontSize="17" FontStyle="Italic" TextWrapping="Wrap" Margin="0,0,0,30"/>
     </Grid>
     
 </ContentDialog>

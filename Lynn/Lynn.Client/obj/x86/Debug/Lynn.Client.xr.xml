@@ -17,12 +17,14 @@
     <RootPropertyPathName Name="Cancel_Click" />
     <RootPropertyPathName Name="Course" />
     <RootPropertyPathName Name="Details" />
-    <RootPropertyPathName Name="Editor" />
     <RootPropertyPathName Name="Level" />
+    <RootPropertyPathName Name="LevelName" />
     <RootPropertyPathName Name="LevelCode" />
+    <RootPropertyPathName Name="Editor" />
     <RootPropertyPathName Name="TeachingLanguage" />
-    <RootPropertyPathName Name="Language" />
+    <RootPropertyPathName Name="Territory" />
     <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="Language" />
     <RootPropertyPathName Name="LearningLanguage" />
     <RootPropertyPathName Name="DoTest_Click" />
     <RootPropertyPathName Name="LearnExpressions_Click" />
@@ -45,7 +47,6 @@
     <RootPropertyPathName Name="Languages" />
     <RootPropertyPathName Name="Tests" />
     <RootPropertyPathName Name="SaveCourse_Click" />
-    <RootPropertyPathName Name="Territory" />
     <RootPropertyPathName Name="SearchCourseByLanguage_Click" />
     <RootPropertyPathName Name="KnownLanguage" />
     <RootPropertyPathName Name="SearchCourseByName_Click" />
@@ -66,7 +67,6 @@
     <RootPropertyPathName Name="Email" />
     <RootPropertyPathName Name="HigherThanEnrollmentLevel" />
     <RootPropertyPathName Name="Enrollment" />
-    <RootPropertyPathName Name="LevelName" />
     <RootPropertyPathName Name="Translation" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -93,6 +93,7 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="FontStyle" />
       <RootProperty Name="Width" />
       <RootProperty Name="LineHeight" />
       <RootProperty Name="FontFamily" />
@@ -101,7 +102,6 @@
       <RootProperty Name="Name" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Style" />
-      <RootProperty Name="FontStyle" />
       <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
@@ -218,9 +218,10 @@
       <RootProperty Name="Source" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Stretch" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="VerticalAlignment" />
@@ -247,13 +248,15 @@
       <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
-      <RootProperty Name="Title" />
+      <RootProperty Name="Background" />
       <RootProperty Name="PrimaryButtonText" />
       <RootProperty Name="SecondaryButtonText" />
       <RootProperty Name="PrimaryButtonCommand" />
       <RootProperty Name="SecondaryButtonCommand" />
+      <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Lynn.Client.Converters.LanguageToFlagPicturePathConverter" />
     <RootType FullName="Lynn.Client.Views.DetailedCourseToEnrollInView" />
     <RootType FullName="Lynn.Client.ViewModels.DetailedTestViewModel" />
     <RootType FullName="Lynn.Client.Converters.BoolTrueToVisibilityConverter" />
