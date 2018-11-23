@@ -33,7 +33,7 @@ namespace Lynn.Client.ViewModels
 
         private async Task ProcessEnrolledCourses(User user)
         {
-            var service = new EnrollmentService();
+            var service = new CourseService();
             var results = await service.GetEnrolledCourses(user);
             Courses = CoursePresenter.GetCoursePresenters(results);
         }

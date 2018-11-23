@@ -102,7 +102,7 @@ namespace Lynn.Client.ViewModels
 
         public async Task ProcessExercisesAsync()
         {
-            var service = new CourseService();
+            var service = new ExerciseService();
             var result = await service.GetVocabularyExercises(Test);
             VocabularyExercises = VocabularyExercisePresenter.GetVocabularyExercisePresenters(result);
             if (VocabularyExercises.Count != 0)
@@ -158,14 +158,14 @@ namespace Lynn.Client.ViewModels
             {
                 Points = (int)(CorrectAnswers / (float)Test.NumberOfQuestions * Test.MaxPoints);
                 End = true;
-                var courseService = new CourseService();
+                var service = new TestService();
                 var testResult = new TestResultDto
                 {
                     RightAnswers = CorrectAnswers,
                     WrongAnswers = Test.NumberOfQuestions - CorrectAnswers,
                     Points = Points
                 };
-                var userPoints = await courseService.PostTestResult(LoggedInUser, Test, testResult);
+                var userPoints = await service.PostTestResult(LoggedInUser, Test, testResult);
                 LoggedInUser.Points = userPoints;
             }
         }

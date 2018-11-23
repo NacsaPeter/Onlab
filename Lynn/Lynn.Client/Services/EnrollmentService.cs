@@ -14,19 +14,6 @@ namespace Lynn.Client.Services
 {
     public class EnrollmentService : BaseHttpService
     {
-        public async Task<ObservableCollection<Course>> GetCoursesByNameAsync(string name)
-        {
-            using (var client = new HttpClient())
-            {
-                InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrollincourses"));
-
-                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/enrollincourses/{name}");
-                return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
-            }
-        }
-
         public async Task<bool> EnrollInAsync(User user, Course course)
         {
             using (var client = new HttpClient())
@@ -51,19 +38,6 @@ namespace Lynn.Client.Services
                 {
                     return false;
                 }
-            }
-        }
-
-        public async Task<ObservableCollection<Course>> GetEnrolledCourses(User user)
-        {
-            using (var client = new HttpClient())
-            {
-                InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/enrolledcourses"));
-            
-                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/enrolledcourses/{user.ID}");
-                return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
 

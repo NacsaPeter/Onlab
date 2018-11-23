@@ -60,8 +60,8 @@ namespace Lynn.Client.ViewModels
 
         private async Task ProcessTestsByCourseId(int courseId)
         {
-            var service = new CourseService();
-            var result = await service.GetTestsByCourseID(courseId);
+            var service = new TestService();
+            var result = await service.GetTestsByCourseId(courseId);
             Tests = TestPresenter.GetTestPresenters(result, Enrollment.Level);
         }
 

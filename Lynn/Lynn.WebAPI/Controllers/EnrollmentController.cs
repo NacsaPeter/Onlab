@@ -38,7 +38,7 @@ namespace Lynn.WebAPI.Controllers
             return CreatedAtAction(nameof(GetEnrollmentById), new { created.Id }, created);
         }
 
-        [HttpGet("{id}", Name = "GetEnrollmentById")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetEnrollmentById(int id)
         {
             var enrollment = await _enrollmentManager.GetEnrollmentByIdAsync(id);
@@ -49,7 +49,7 @@ namespace Lynn.WebAPI.Controllers
             return Ok(enrollment);
         }
 
-        [HttpGet("{userId}/{courseId}", Name = "GetEnrollment")]
+        [HttpGet("{userId}/{courseId}")]
         public async Task<IActionResult> GetEnrollment(int userId, int courseId)
         {
             var enrollment = await _enrollmentManager.GetEnrollmentAsync(userId, courseId);

@@ -25,7 +25,7 @@ namespace Lynn.Client.Services
                 // request token
                 var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
                 var tokenResponse = await tokenClient
-                .RequestResourceOwnerPasswordAsync(user.Username, user.Password, "api1");
+                .RequestResourceOwnerPasswordAsync(user.Username, user.Password, "lynnapi");
                 if (tokenResponse.IsError)
                 {
                     return "";

@@ -27,7 +27,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="0,15,20,40" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image Width="75" Height="50" Margin="0,0,20,0" Source="{Binding Course.LearningLanguage,
+            <Image Width="75" Margin="0,0,20,0" Source="{Binding Course.LearningLanguage,
                    Converter={StaticResource LanguageToFlagPicturePathConverter}}"/>
             <TextBlock Text="{Binding Course.CourseName}" FontSize="25" TextWrapping="Wrap"
                        VerticalAlignment="Center" FontWeight="Bold"/>

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Lynn.WebAPI.Controllers
 {
     [Route("api/[controller]")]
-    //[Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class LanguageController : Controller
     {
         private readonly ILanguageManager _languageManager;

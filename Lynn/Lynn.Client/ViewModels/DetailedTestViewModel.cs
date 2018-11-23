@@ -47,7 +47,7 @@ namespace Lynn.Client.ViewModels
 
         public async void ProcessTestTrying()
         {
-            var service = new CourseService();
+            var service = new TestService();
             TestTrying = await service.GetTestTrying(LoggedInUser.ID, Test.Test.ID);
         }
 

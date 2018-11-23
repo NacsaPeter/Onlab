@@ -72,7 +72,7 @@ namespace Lynn.Client.ViewModels
 
         private async void SearchCourseByName()
         {
-            var service = new EnrollmentService();
+            var service = new CourseService();
             var results = await service.GetCoursesByNameAsync(CourseName);
             Courses = CoursePresenter.GetCoursePresenters(results);
         }

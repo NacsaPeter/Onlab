@@ -48,7 +48,7 @@ namespace Lynn.Client.ViewModels
 
         public async Task ProcessExercisesAsync()
         {
-            var service = new CourseService();
+            var service = new ExerciseService();
             var result = await service.GetVocabularyExercises(Test);
             VocabularyExercises = VocabularyExercisePresenter.GetVocabularyExercisePresenters(result);
             if (VocabularyExercises.Count != 0)

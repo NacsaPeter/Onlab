@@ -14,58 +14,29 @@ namespace Lynn.Client.Services
 {
     public class CourseService : BaseHttpService
     {
-        public async Task<ObservableCollection<Test>> GetTestsByCourseID(int courseID)
+        public async Task<ObservableCollection<Course>> GetCoursesByNameAsync(string name)
         {
             using (var client = new HttpClient())
             {
                 InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/course"));
 
-                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Test>));
-                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/tests/{courseID}");
-                return serializer.ReadObject(await streamTask) as ObservableCollection<Test>;
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/course/name/{name}");
+                return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
 
-        public async Task<TestTrying> GetTestTrying(int userId, int testId)
+        public async Task<ObservableCollection<Course>> GetEnrolledCourses(User user)
         {
             using (var client = new HttpClient())
             {
                 InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/course"));
 
-                var serializer = new DataContractJsonSerializer(typeof(TestTrying));
-                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/tests/{userId}/{testId}");
-                return serializer.ReadObject(await streamTask) as TestTrying;
-            }
-        }
-
-        public async Task<ObservableCollection<VocabularyExercise>> GetVocabularyExercises(Test test)
-        {
-            using (var client = new HttpClient())
-            {
-                InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/exercises"));
-
-                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<VocabularyExercise>));
-                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/exercises/{test.ID}");
-                return serializer.ReadObject(await streamTask) as ObservableCollection<VocabularyExercise>;
-            }
-        }
-
-        public async Task<int> PostTestResult(User user, Test test, TestResultDto testResult)
-        {
-            using (var client = new HttpClient())
-            {
-                InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/tests"));
-
-                HttpResponseMessage response = await client
-                    .PostAsJsonAsync($"api/tests/result/{user.ID}/{test.ID}", testResult);
-                response.EnsureSuccessStatusCode();
-
-                var serializer = new DataContractJsonSerializer(typeof(int));
-                return (int)serializer.ReadObject(await response.Content.ReadAsStreamAsync());
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/course/enrolled/{user.ID}");
+                return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
     }

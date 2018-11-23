@@ -12,7 +12,7 @@ namespace Lynn.WebAPI.Identity
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("lynnapi", "Lynn API")
             };
         }
 
@@ -39,7 +39,7 @@ namespace Lynn.WebAPI.Identity
                      {
                          new Secret("secret".Sha256())
                      },
-                     AllowedScopes = { "api1" }
+                     AllowedScopes = { "lynnapi" }
                  }
             };
         }

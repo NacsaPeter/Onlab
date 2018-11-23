@@ -75,7 +75,7 @@ namespace Lynn.WebAPI
                 {
                     options.Authority = "http://localhost:57770";
                     options.RequireHttpsMetadata = false;
-                    options.ApiName = "api1";
+                    options.ApiName = "lynnapi";
                 });
 
             services.AddAuthorization(options =>
