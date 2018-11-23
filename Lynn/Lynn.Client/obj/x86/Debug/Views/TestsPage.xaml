@@ -16,6 +16,8 @@
     <Page.Resources>
         <CollectionViewSource x:Key="CoursesViewSource" IsSourceGrouped="False" Source="{Binding Tests}"/>
         <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
+        <c:LanguageToFlagPicturePathConverter x:Key="LanguageToFlagPicturePathConverter"/>
+        <c:CategoryToTestPicturePathConverter x:Key="CategoryToTestPicturePathConverter"/>
     </Page.Resources>
 
     <Grid Background="AliceBlue">
@@ -57,7 +59,8 @@
             </Grid.RowDefinitions>
             <Border Grid.Row="0" Height="100" Width="150" BorderThickness="0.5" BorderBrush="Black"
                     Margin="0,50,0,0" CornerRadius="5">
-                <Image Source="{Binding Course.Flag}" VerticalAlignment="Center" Stretch="Fill" />
+                <Image Source="{Binding Course.LearningLanguage, Converter={StaticResource LanguageToFlagPicturePathConverter}}"
+                       VerticalAlignment="Center" Stretch="Fill" />
             </Border>
             <TextBlock Grid.Row="1" Text="{Binding Course.CourseName}" FontSize="30" FontWeight="SemiBold"
                        HorizontalAlignment="Center" Margin="0,30,0,0"/>
@@ -68,7 +71,7 @@
             </StackPanel>
             <TextBlock Grid.Row="4" Text="{Binding Course.Editor}" HorizontalAlignment="Center" Margin="0,10,0,0" />
             <TextBlock Grid.Row="5" Text="{Binding Course.Details}" FontStyle="Italic"
-                    HorizontalAlignment="Center" Margin="0,25,0,0"/>
+                    HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap"/>
             <Line Grid.Row="6" X1="0" Y1="60" X2="220" Y2="60" HorizontalAlignment="Center"
                   Stroke="Black" StrokeThickness="2" StrokeEndLineCap="Round" StrokeStartLineCap="Round"/>
             <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,40,0,0">
@@ -92,7 +95,8 @@
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2" Width="237" Height="178">
-                        <Image Source="{Binding Picture}" VerticalAlignment="Center" Stretch="Fill"/>
+                        <Image Source="{Binding CategoryName, Converter={StaticResource CategoryToTestPicturePathConverter}}"
+                               VerticalAlignment="Center" Stretch="Fill"/>
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Gray" Opacity="0.8"
                               Visibility="{Binding HigherThanEnrollmentLevel, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
                         <Grid Background="Gray" Opacity="0.9" Height="30" Width="30" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left">

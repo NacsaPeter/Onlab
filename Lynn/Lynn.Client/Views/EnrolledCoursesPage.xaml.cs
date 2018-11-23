@@ -1,5 +1,6 @@
 ﻿using Lynn.Client.Models;
 using Lynn.Client.ViewModels;
+using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,13 +32,12 @@ namespace Lynn.Client.Views
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var coursePresenter = (CoursePresenter)e.ClickedItem;
-            ViewModel.StartCourse(coursePresenter.Course);
+            ViewModel.StartCourse((Course)e.ClickedItem);
         }
 
-        public void RefreshEnrolledCourses(object sender, SelectionChangedEventArgs args)
+        public async void RefreshEnrolledCourses(object sender, SelectionChangedEventArgs args)
         {
-            ViewModel.RefreshEnrolledCourses(sender, args);
+            await ViewModel.RefreshEnrolledCourses(sender, args);
         }
 
         private void GridView_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -18,8 +18,8 @@ namespace Lynn.Client.ViewModels
 {
     public class EnrolledCoursesViewModel : Observable
     {
-        private ObservableCollection<CoursePresenter> _courses;
-        public ObservableCollection<CoursePresenter> Courses
+        private ObservableCollection<Course> _courses;
+        public ObservableCollection<Course> Courses
         {
             get { return _courses; }
             set { Set(ref _courses, value, nameof(Courses)); }
@@ -34,8 +34,7 @@ namespace Lynn.Client.ViewModels
         private async Task ProcessEnrolledCourses(User user)
         {
             var service = new CourseService();
-            var results = await service.GetEnrolledCourses(user);
-            Courses = CoursePresenter.GetCoursePresenters(results);
+            Courses = await service.GetEnrolledCourses(user);
         }
 
         public void StartCourse(Course course)

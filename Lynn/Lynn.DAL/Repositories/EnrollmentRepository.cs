@@ -18,14 +18,12 @@ namespace Lynn.DAL
             _context = context;
         }
 
-        // Todo: refactor
         public async Task<DbEnrollment> EnrollCourseAsync(DbEnrollment enrollment)
         {
             DbEnrollment existingEnrollment = _context.Enrollments
                 .Where(e => e.CourseId == enrollment.CourseId && e.UserId == enrollment.UserId)
                 .SingleOrDefault();
 
-            // Todo: throw exception
             if (existingEnrollment != null)
             {
                 return null;

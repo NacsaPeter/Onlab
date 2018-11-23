@@ -23,8 +23,8 @@ namespace Lynn.Client.ViewModels
             LoggedInUser = MainViewModel.LoggedInUser;
         }
 
-        private CoursePresenter _course;
-        public CoursePresenter Course
+        private Course _course;
+        public Course Course
         {
             get { return _course; }
             set { Set(ref _course, value, nameof(Course)); }

@@ -33,7 +33,7 @@ namespace Lynn.Client.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            ViewModel.Course = new CoursePresenter((Course)e.Parameter);
+            ViewModel.Course = (Course)e.Parameter;
             ViewModel.RefreshTests();
         }
 

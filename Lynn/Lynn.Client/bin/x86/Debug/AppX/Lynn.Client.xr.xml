@@ -384,6 +384,7 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ElementTheme" />
     <RootType FullName="Lynn.Client.ViewModels.TestsViewModel" />
+    <RootType FullName="Lynn.Client.Converters.CategoryToTestPicturePathConverter" />
     <RootType FullName="Lynn.Client.Views.TestsPage" />
     <RootType FullName="Lynn.Client.Views.TranslationExerciseView" />
   </Roots.RootTypes>

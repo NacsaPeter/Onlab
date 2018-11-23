@@ -122,6 +122,7 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Converters\BoolFalseToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolTrueToVisibilityConverter.cs" />
+    <Compile Include="Converters\CategoryToTestPicturePathConverter.cs" />
     <Compile Include="Converters\HigherThanZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\LanguageToFlagPicturePathConverter.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
