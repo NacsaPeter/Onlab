@@ -26,19 +26,6 @@ namespace Lynn.Client.Services
             }
         }
 
-        public async Task<ObservableCollection<Course>> GetCoursesByLanguageCode(string knownCode, string learningCode)
-        {
-            using (var client = new HttpClient())
-            {
-                InitializeClient(client);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/language"));
-
-                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<Course>));
-                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/language/{knownCode}/{learningCode}");
-                return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
-            }
-        }
-
         public async Task<ObservableCollection<Territory>> GetTerritories()
         {
             using (var client = new HttpClient())

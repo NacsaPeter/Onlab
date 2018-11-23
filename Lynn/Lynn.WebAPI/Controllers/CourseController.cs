@@ -33,6 +33,13 @@ namespace Lynn.WebAPI.Controllers
             return Ok(await _courseManager.GetCoursesByNameAsync(coursename));
         }
 
+        [HttpGet]
+        [Route("language/{teaching}/{learning}")]
+        public async Task<IActionResult> GetCoursesByLanguageCode(string teaching, string learning)
+        {
+            return Ok(await _courseManager.GetCoursesByLanguageCodeAsync(teaching, learning));
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateCourseAsync([FromBody]Course course)
         {

@@ -79,7 +79,7 @@ namespace Lynn.Client.ViewModels
 
         private async void SearchCourseByLanguage()
         {
-            var service = new LanguageService();
+            var service = new CourseService();
             var results = await service.GetCoursesByLanguageCode(KnownLanguage.Code, LearningLanguage.Code);
             Courses = CoursePresenter.GetCoursePresenters(results);
         }

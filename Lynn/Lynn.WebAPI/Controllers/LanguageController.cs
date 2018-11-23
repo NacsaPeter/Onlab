@@ -14,17 +14,10 @@ namespace Lynn.WebAPI.Controllers
     public class LanguageController : Controller
     {
         private readonly ILanguageManager _languageManager;
-        private readonly IEnrollmentManager _enrollmentManager;
-        private readonly ICourseManager _courseManager;
 
-        public LanguageController(
-            ILanguageManager languageManager,
-            IEnrollmentManager enrollmentManager,
-            ICourseManager courseManager)
+        public LanguageController(ILanguageManager languageManager)
         {
             _languageManager = languageManager;
-            _enrollmentManager = enrollmentManager;
-            _courseManager = courseManager;
         }
 
         [HttpGet]
@@ -45,13 +38,6 @@ namespace Lynn.WebAPI.Controllers
         public async Task<IActionResult> GetCourseLevels()
         {
             return Ok(await _languageManager.GetCourseLevels());
-        }
-
-        [HttpGet]
-        [Route("{teaching}/{learning}")]
-        public async Task<IActionResult> GetCoursesByLanguageCode(string teaching, string learning)
-        {
-            return Ok(await _courseManager.GetCoursesByLanguageCodeAsync(teaching, learning));
         }
     }
 }

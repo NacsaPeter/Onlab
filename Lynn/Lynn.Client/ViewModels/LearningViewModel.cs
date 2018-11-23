@@ -22,7 +22,7 @@ namespace Lynn.Client.ViewModels
             _coursesPivot = coursesPivot;
             PivotItem enrollInCoursePivotItem = new PivotItem
             {
-                Header = "Kurzus felvétel",
+                Header = "Kurzusfelvétel",
                 Content = new EnrollInCourse()
             };
             _coursesPivot.Items.Add(enrollInCoursePivotItem);
