@@ -85,7 +85,7 @@ namespace Lynn.Client.ViewModels
                     case "DuplicateUserName": ErrorMessage = "Ez a felhasználónév már foglalt.";
                         break;
 
-                    case "PasswordTooShort": ErrorMessage = "A jelszó legalább 8 karakter hosszú kell legyen.";
+                    case "PasswordTooShort": ErrorMessage = "A jelszó legalább 6 karakter hosszú kell legyen.";
                         break;
 
                     case "PasswordRequiresNonAlphanumeric":
@@ -94,6 +94,10 @@ namespace Lynn.Client.ViewModels
 
                     case "PasswordRequiresDigit":
                         ErrorMessage = "A jelszónak tartalmaznia kell számot is.";
+                        break;
+
+                    case "PasswordRequiresLower":
+                        ErrorMessage = "A jelszónak tartalmaznia kell kisbetűt is.";
                         break;
 
                     case "PasswordRequiresUpper":
