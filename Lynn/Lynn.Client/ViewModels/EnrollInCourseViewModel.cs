@@ -22,8 +22,8 @@ namespace Lynn.Client.ViewModels
         public ICommand SearchCourseByName_Click { get; set; }
         public ICommand SearchCourseByLanguage_Click { get; set; }
 
-        private ObservableCollection<CoursePresenter> _courses;
-        public ObservableCollection<CoursePresenter> Courses
+        private ObservableCollection<Course> _courses;
+        public ObservableCollection<Course> Courses
         {
             get { return _courses;  }
             set { Set(ref _courses, value, nameof(Courses)); }
@@ -73,15 +73,13 @@ namespace Lynn.Client.ViewModels
         private async void SearchCourseByName()
         {
             var service = new CourseService();
-            var results = await service.GetCoursesByNameAsync(CourseName);
-            Courses = CoursePresenter.GetCoursePresenters(results);
+            Courses = await service.GetCoursesByNameAsync(CourseName);
         }
 
         private async void SearchCourseByLanguage()
         {
             var service = new CourseService();
-            var results = await service.GetCoursesByLanguageCode(KnownLanguage.Code, LearningLanguage.Code);
-            Courses = CoursePresenter.GetCoursePresenters(results);
+            Courses = await service.GetCoursesByLanguageCode(KnownLanguage.Code, LearningLanguage.Code);
         }
 
         public async Task ShowCourseDetails(Course course)

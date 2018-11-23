@@ -1,5 +1,4 @@
-﻿using Lynn.Client.Models;
-using Lynn.Client.ViewModels;
+﻿using Lynn.DTO;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,10 +28,9 @@ namespace Lynn.Client.Views
             this.InitializeComponent();
         }
 
-        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var coursePresenter = (CoursePresenter)e.ClickedItem;
-            ViewModel.ShowCourseDetails(coursePresenter.Course);
+            await ViewModel.ShowCourseDetails((Course)e.ClickedItem);
         }
     }
 }

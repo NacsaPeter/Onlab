@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Lynn.Client.Views"
     xmlns:vm="using:Lynn.Client.ViewModels"
+    xmlns:c="using:Lynn.Client.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -16,6 +17,7 @@
         <CollectionViewSource x:Key="CoursesViewSource" IsSourceGrouped="False" Source="{Binding Courses}"/>
         <CollectionViewSource x:Key="KnownLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
         <CollectionViewSource x:Key="LearningLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
+        <c:LanguageToFlagPicturePathConverter x:Key="LanguageToFlagPicturePathConverter"/>
         <DataTemplate x:Key="ComboBoxItemDataTemplate">
             <TextBlock Text="{Binding Name}" />
         </DataTemplate>
@@ -31,8 +33,11 @@
         <StackPanel Background="White">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
                 <TextBlock Text="Kurzus neve:" Margin="0,5,0,0"/>
-                <TextBox Width="313" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0" Text="{Binding CourseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSpellCheckEnabled="False" />
-                <Button Content="Keresés név szerint" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Width="157.6" Command="{Binding SearchCourseByName_Click}"/>
+                <TextBox Width="313" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="12,0,0,0"
+                         Text="{Binding CourseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         IsSpellCheckEnabled="False" />
+                <Button Content="Keresés név szerint" HorizontalAlignment="Left" Margin="11,0,0,0"
+                        VerticalAlignment="Top" Width="157.6" Command="{Binding SearchCourseByName_Click}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,15,0,30" HorizontalAlignment="Center">
                 <TextBlock Text="Tanító nyelv:" Margin="0,5,0,0"/>
@@ -45,7 +50,8 @@
                           ItemsSource="{Binding Source={StaticResource LearningLanguagesViewSource}}" Width="104"
                           ItemTemplate="{Binding Source={StaticResource ComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding LearningLanguage, Mode=TwoWay}"/>
-                <Button Content="Keresés nyelv szerint" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Command="{Binding SearchCourseByLanguage_Click}"/>
+                <Button Content="Keresés nyelv szerint" HorizontalAlignment="Left" Margin="11,0,0,0"
+                        VerticalAlignment="Top" Command="{Binding SearchCourseByLanguage_Click}"/>
             </StackPanel>
         </StackPanel>
 
@@ -54,9 +60,11 @@
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2" Width="237" Height="178">
-                        <Image Source="{Binding Flag}" VerticalAlignment="Center" Stretch="Fill"/>
+                        <Image Source="{Binding LearningLanguage, Converter={StaticResource LanguageToFlagPicturePathConverter}}"
+                               VerticalAlignment="Center" Stretch="Fill"/>
                         <Border VerticalAlignment="Bottom" Background="Gray" Opacity="0.9" Height="35">
-                            <TextBlock Text="{Binding CourseName}" Margin="12,5" Foreground="White" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding CourseName}" Margin="12,5"
+                                       Foreground="White" TextWrapping="Wrap"/>
                         </Border>
                     </Grid>
                 </DataTemplate>
