@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +14,7 @@ namespace Lynn.Client.Services
 {
     public class RegistrationService : BaseHttpService
     {
-        public async Task<bool> Register(string userName, string email, string password)
+        public async Task<string> Register(string userName, string email, string password)
         {
             using (var client = new HttpClient())
             {
@@ -32,11 +33,12 @@ namespace Lynn.Client.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return true;
+                    return "Success";
                 }
                 else
                 {
-                    return false;
+                    var serializer = new DataContractJsonSerializer(typeof(string));
+                    return (string)serializer.ReadObject(await response.Content.ReadAsStreamAsync());
                 }
             }
         }

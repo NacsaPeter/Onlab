@@ -1015,6 +1015,8 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 userType.AddMemberName("Email");
                 userType.AddMemberName("Password");
                 userType.AddMemberName("ConfirmPassword");
+                userType.AddMemberName("ErrorMessage");
+                userType.AddMemberName("RegistrationSuccess");
                 userType.AddMemberName("Register_Click");
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -1643,67 +1645,87 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.ConfirmPassword = (global::System.String)Value;
         }
-        private object get_68_RegistrationViewModel_Register_Click(object instance)
+        private object get_68_RegistrationViewModel_ErrorMessage(object instance)
+        {
+            var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
+            return that.ErrorMessage;
+        }
+        private void set_68_RegistrationViewModel_ErrorMessage(object instance, object Value)
+        {
+            var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
+            that.ErrorMessage = (global::System.String)Value;
+        }
+        private object get_69_RegistrationViewModel_RegistrationSuccess(object instance)
+        {
+            var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
+            return that.RegistrationSuccess;
+        }
+        private void set_69_RegistrationViewModel_RegistrationSuccess(object instance, object Value)
+        {
+            var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
+            that.RegistrationSuccess = (global::System.Boolean)Value;
+        }
+        private object get_70_RegistrationViewModel_Register_Click(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.Register_Click;
         }
-        private void set_68_RegistrationViewModel_Register_Click(object instance, object Value)
+        private void set_70_RegistrationViewModel_Register_Click(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.Register_Click = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_69_EnumToBooleanConverter_EnumType(object instance)
+        private object get_71_EnumToBooleanConverter_EnumType(object instance)
         {
             var that = (global::Lynn.Client.Helpers.EnumToBooleanConverter)instance;
             return that.EnumType;
         }
-        private void set_69_EnumToBooleanConverter_EnumType(object instance, object Value)
+        private void set_71_EnumToBooleanConverter_EnumType(object instance, object Value)
         {
             var that = (global::Lynn.Client.Helpers.EnumToBooleanConverter)instance;
             that.EnumType = (global::System.Type)Value;
         }
-        private object get_70_TestsViewModel_Course(object instance)
+        private object get_72_TestsViewModel_Course(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.Course;
         }
-        private void set_70_TestsViewModel_Course(object instance, object Value)
+        private void set_72_TestsViewModel_Course(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.Course = (global::Lynn.Client.Models.CoursePresenter)Value;
         }
-        private object get_71_TestsViewModel_LoggedInUser(object instance)
+        private object get_73_TestsViewModel_LoggedInUser(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.LoggedInUser;
         }
-        private void set_71_TestsViewModel_LoggedInUser(object instance, object Value)
+        private void set_73_TestsViewModel_LoggedInUser(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.LoggedInUser = (global::Lynn.DTO.User)Value;
         }
-        private object get_72_TestsViewModel_Enrollment(object instance)
+        private object get_74_TestsViewModel_Enrollment(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.Enrollment;
         }
-        private void set_72_TestsViewModel_Enrollment(object instance, object Value)
+        private void set_74_TestsViewModel_Enrollment(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.Enrollment = (global::Lynn.DTO.Enrollment)Value;
         }
-        private object get_73_TestsViewModel_Tests(object instance)
+        private object get_75_TestsViewModel_Tests(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.Tests;
         }
-        private void set_73_TestsViewModel_Tests(object instance, object Value)
+        private void set_75_TestsViewModel_Tests(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.Tests = (global::System.Collections.ObjectModel.ObservableCollection<global::Lynn.Client.Models.TestPresenter>)Value;
         }
-        private object get_74_TranslationExerciseView_ViewModel(object instance)
+        private object get_76_TranslationExerciseView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.TranslationExerciseView)instance;
             return that.ViewModel;
@@ -2124,46 +2146,58 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 xamlMember.Getter = get_67_RegistrationViewModel_ConfirmPassword;
                 xamlMember.Setter = set_67_RegistrationViewModel_ConfirmPassword;
                 break;
+            case "Lynn.Client.ViewModels.RegistrationViewModel.ErrorMessage":
+                userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
+                xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ErrorMessage", "String");
+                xamlMember.Getter = get_68_RegistrationViewModel_ErrorMessage;
+                xamlMember.Setter = set_68_RegistrationViewModel_ErrorMessage;
+                break;
+            case "Lynn.Client.ViewModels.RegistrationViewModel.RegistrationSuccess":
+                userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
+                xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "RegistrationSuccess", "Boolean");
+                xamlMember.Getter = get_69_RegistrationViewModel_RegistrationSuccess;
+                xamlMember.Setter = set_69_RegistrationViewModel_RegistrationSuccess;
+                break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.Register_Click":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Register_Click", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_68_RegistrationViewModel_Register_Click;
-                xamlMember.Setter = set_68_RegistrationViewModel_Register_Click;
+                xamlMember.Getter = get_70_RegistrationViewModel_Register_Click;
+                xamlMember.Setter = set_70_RegistrationViewModel_Register_Click;
                 break;
             case "Lynn.Client.Helpers.EnumToBooleanConverter.EnumType":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Helpers.EnumToBooleanConverter");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "EnumType", "System.Type");
-                xamlMember.Getter = get_69_EnumToBooleanConverter_EnumType;
-                xamlMember.Setter = set_69_EnumToBooleanConverter_EnumType;
+                xamlMember.Getter = get_71_EnumToBooleanConverter_EnumType;
+                xamlMember.Setter = set_71_EnumToBooleanConverter_EnumType;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.Course":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Course", "Lynn.Client.Models.CoursePresenter");
-                xamlMember.Getter = get_70_TestsViewModel_Course;
-                xamlMember.Setter = set_70_TestsViewModel_Course;
+                xamlMember.Getter = get_72_TestsViewModel_Course;
+                xamlMember.Setter = set_72_TestsViewModel_Course;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.LoggedInUser":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LoggedInUser", "Lynn.DTO.User");
-                xamlMember.Getter = get_71_TestsViewModel_LoggedInUser;
-                xamlMember.Setter = set_71_TestsViewModel_LoggedInUser;
+                xamlMember.Getter = get_73_TestsViewModel_LoggedInUser;
+                xamlMember.Setter = set_73_TestsViewModel_LoggedInUser;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.Enrollment":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Enrollment", "Lynn.DTO.Enrollment");
-                xamlMember.Getter = get_72_TestsViewModel_Enrollment;
-                xamlMember.Setter = set_72_TestsViewModel_Enrollment;
+                xamlMember.Getter = get_74_TestsViewModel_Enrollment;
+                xamlMember.Setter = set_74_TestsViewModel_Enrollment;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.Tests":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Tests", "System.Collections.ObjectModel.ObservableCollection`1<Lynn.Client.Models.TestPresenter>");
-                xamlMember.Getter = get_73_TestsViewModel_Tests;
-                xamlMember.Setter = set_73_TestsViewModel_Tests;
+                xamlMember.Getter = get_75_TestsViewModel_Tests;
+                xamlMember.Setter = set_75_TestsViewModel_Tests;
                 break;
             case "Lynn.Client.Views.TranslationExerciseView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.TranslationExerciseView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.TranslationExerciseViewModel");
-                xamlMember.Getter = get_74_TranslationExerciseView_ViewModel;
+                xamlMember.Getter = get_76_TranslationExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }

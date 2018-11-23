@@ -63,6 +63,8 @@
     <RootPropertyPathName Name="UserName" />
     <RootPropertyPathName Name="PictureLocation" />
     <RootPropertyPathName Name="Register_Click" />
+    <RootPropertyPathName Name="RegistrationSuccess" />
+    <RootPropertyPathName Name="ErrorMessage" />
     <RootPropertyPathName Name="ConfirmPassword" />
     <RootPropertyPathName Name="Email" />
     <RootPropertyPathName Name="HigherThanEnrollmentLevel" />
@@ -99,7 +101,6 @@
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Inlines" />
-      <RootProperty Name="Name" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Style" />
       <RootProperty Name="Padding" />

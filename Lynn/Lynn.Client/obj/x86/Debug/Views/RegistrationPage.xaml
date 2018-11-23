@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Lynn.Client.Views"
     xmlns:vm="using:Lynn.Client.ViewModels"
+    xmlns:c="using:Lynn.Client.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -13,6 +14,10 @@
         <vm:RegistrationViewModel x:ConnectionId='1' x:Name="ViewModel"/>
     </Page.DataContext>
 
+    <Page.Resources>
+        <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
+    </Page.Resources>
+
     <Grid>
 
         <Grid.Background>
@@ -21,42 +26,50 @@
 
         <Grid BorderBrush="Black" BorderThickness="2"
               Width="420" Height="500" CornerRadius="5"
-              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+              Background="AliceBlue">
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
 
-            <StackPanel Background="AliceBlue">
+            <TextBlock Grid.Row="0" Text="Regisztráció"
+                    TextAlignment="Center" VerticalAlignment="Center"  
+                    FontSize="35" Margin="0,60,0,0"/>
 
-                <TextBlock x:ConnectionId='2' Name="Reg" Text="Regisztráció"  
-                           TextAlignment="Center" VerticalAlignment="Center"  
-                           FontSize="35" Margin="0,60,0,0">
-                </TextBlock>
+            <TextBox Grid.Row="1" PlaceholderText="Felhasználónév" Width="300" Background="White"
+                    Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="0,55,0,0" IsSpellCheckEnabled="False"/>
 
-                <TextBox PlaceholderText="Felhasználónév" Width="300" Background="White"
-                         Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Margin="0,50,0,0" IsSpellCheckEnabled="False">
-                </TextBox>
+            <TextBox Grid.Row="2" PlaceholderText="Email cím" Width="300" Background="White"
+                    Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="0,15,0,0" IsSpellCheckEnabled="False"/>
 
-                <TextBox PlaceholderText="Email cím" Width="300" Background="White"
-                         Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Margin="0,15,0,0" IsSpellCheckEnabled="False">
-                </TextBox>
+            <PasswordBox Grid.Row="3" PlaceholderText="Jelszó" Width="300" Background="White"
+                    Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="0,15,0,0" PasswordChar="*"/>
 
-                <PasswordBox PlaceholderText="Jelszó" Width="300" Background="White"
-                         Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Margin="0,15,0,0" PasswordChar="*">
-                </PasswordBox>
+            <PasswordBox Grid.Row="4" PlaceholderText="Jelszó megerősítése" Width="300" Background="White"
+                    Password="{Binding ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="0,15,0,0" PasswordChar="*"/>
 
-                <PasswordBox PlaceholderText="Jelszó megerősítése" Width="300" Background="White"
-                         Password="{Binding ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Margin="0,15,0,0" PasswordChar="*">
-                </PasswordBox>
+            <TextBlock Grid.Row="5" Foreground="Red" TextWrapping="Wrap"
+                    Text="{Binding ErrorMessage, Mode=TwoWay}"
+                    Margin="10,15,10,0" Width="280" FontSize="13"/>
 
-                <Button Content="Küld" HorizontalAlignment="Center" Background="#338D8787"
-                            Command="{Binding Register_Click}" BorderBrush="Black" FontSize="15"
-                            BorderThickness="1" Width="80" Margin="0,65,0,0">
-                </Button>
+            <TextBlock Grid.Row="5" Foreground="Green" TextWrapping="Wrap"
+                    Text="A regisztráció sikeres volt."
+                    Visibility="{Binding RegistrationSuccess, Converter={StaticResource BoolTrueToVisibilityConverter}}"
+                    Margin="10,15,10,0" Width="280" FontSize="13"/>
 
-            </StackPanel>
+            <Button Grid.Row="6" Content="Küld" HorizontalAlignment="Center" Background="#338D8787"
+                    Command="{Binding Register_Click}" BorderBrush="Black" FontSize="15"
+                    BorderThickness="1" Width="80" Margin="0,7,0,0"/>
 
         </Grid>
     </Grid>

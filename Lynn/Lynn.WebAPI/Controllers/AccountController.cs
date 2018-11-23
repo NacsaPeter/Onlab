@@ -48,6 +48,10 @@ namespace Lynn.WebAPI.Controllers
             }
             else
             {
+                foreach (var error in result.Errors)
+                {
+                    return BadRequest(error.Code);
+                }
                 return BadRequest();
             }
         }
