@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Lynn.BLL;
+using Lynn.BLL.Interfaces;
 using Lynn.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,17 +15,17 @@ namespace Lynn.WebAPI.Controllers
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class EditController : Controller
     {
-        private readonly EditManager _editManager;
+        private readonly ICourseManager _courseManager;
 
-        public EditController(EditManager editManager)
+        public EditController(ICourseManager courseManager)
         {
-            _editManager = editManager;
+            _courseManager = courseManager;
         }
 
         [HttpPost("course")]
         public async Task<Course> CreateCourseAsync([FromBody]Course course)
         {
-            return await _editManager.CreateCourseAsync(course);
+            return await _courseManager.CreateCourseAsync(course);
         }
 
         [HttpPost("test")]

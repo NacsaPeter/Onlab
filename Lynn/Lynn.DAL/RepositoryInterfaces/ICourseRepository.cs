@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lynn.DAL
+namespace Lynn.DAL.RepositoryInterfaces
 {
     public interface ICourseRepository
     {
-        Task<ICollection<DbTest>> GetTestsByCourseIdAsync(int id);
-        Task<ICollection<DbVocabularyExercise>> GetVocabularyExercisesByTestIdAsync(int id);
-        Task<DbCategory> GetCategoryByTestIdAsync(int testId);
-        Task<DbTestUser> GetTestUserAsync(int userId, int testId);
-        Task<ApplicationUser> AddTestResultAsync(DbTestResult testResult, int userId, int testId);
+        Task<ICollection<DbCourse>> GetCoursesByNameAsync(string coursename);
+        Task<ICollection<DbCourse>> GetCoursesByLanguageCodeAsync(string teaching, string learning);
+        Task<ICollection<DbCourse>> GetEnrolledCoursesAsync(ApplicationUser user);
+        Task<ICollection<DbCourse>> GetCoursesByEditorAsync(ApplicationUser user);
+        Task<DbCourse> CreateCourseAsync(DbCourse course);
+        Task<DbCourse> EditCourseAsync(DbCourse course);
     }
 }

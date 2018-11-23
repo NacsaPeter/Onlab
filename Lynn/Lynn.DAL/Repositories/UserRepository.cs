@@ -18,12 +18,12 @@ namespace Lynn.DAL.Repositories
             _context = context;
         }
 
-        public async Task<ICollection<DbCourse>> GetMyCoursesAsync(ApplicationUser user)
+        public async Task<ApplicationUser> GetEditorByCourseIdAsync(int courseId)
         {
             return await _context.Courses
-                .Include(c => c.Editor)
-                .Where(c => c.Editor == user)
-                .ToListAsync();
+                .Where(c => c.Id == courseId)
+                .Select(c => c.Editor)
+                .SingleOrDefaultAsync();
         }
 
         public async Task<ApplicationUser> GetUserByIdAsync(int id)

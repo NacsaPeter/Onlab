@@ -1,4 +1,5 @@
 ﻿using Lynn.BLL;
+using Lynn.BLL.Interfaces;
 using Lynn.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,17 +14,17 @@ namespace Lynn.WebAPI.Controllers
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class ExercisesController : Controller
     {
-        private readonly ExercisesManager _manager;
+        private readonly IExerciseManager _exerciseManager;
 
-        public ExercisesController(ExercisesManager manager)
+        public ExercisesController(IExerciseManager exerciseManager)
         {
-            _manager = manager;
+            _exerciseManager = exerciseManager;
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetExercisesByTestId(int id)
         {
-            return Ok(await _manager.GetVocabularyExercisesAsync(id));
+            return Ok(await _exerciseManager.GetVocabularyExercisesAsync(id));
         }
     }
 }

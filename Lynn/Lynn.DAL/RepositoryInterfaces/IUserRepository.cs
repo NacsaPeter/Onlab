@@ -8,8 +8,8 @@ namespace Lynn.DAL.RepositoryInterfaces
 {
     public interface IUserRepository
     {
-        Task<ICollection<DbCourse>> GetMyCoursesAsync(ApplicationUser user);
         Task<ApplicationUser> GetUserByIdAsync(int id);
         Task<ApplicationUser> GetUserByNameAsync(string username);
+        Task<ApplicationUser> GetEditorByCourseIdAsync(int courseId);
     }
 }

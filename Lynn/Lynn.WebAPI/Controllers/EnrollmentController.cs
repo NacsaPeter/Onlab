@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lynn.BLL;
+using Lynn.BLL.Interfaces;
 using Lynn.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,11 +13,11 @@ namespace Lynn.WebAPI.Controllers
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class EnrollmentController : Controller
     {
-        private readonly EnrollmentManager _manager;
+        private readonly IEnrollmentManager _enrollmentManager;
 
-        public EnrollmentController(EnrollmentManager manager)
+        public EnrollmentController(IEnrollmentManager enrollmentManager)
         {
-            _manager = manager;
+            _enrollmentManager = enrollmentManager;
         }
 
         [HttpPost]
@@ -27,7 +28,7 @@ namespace Lynn.WebAPI.Controllers
                 return BadRequest();
             }
 
-            var created = await _manager.EnrollCourseAsync(enrollment);
+            var created = await _enrollmentManager.EnrollCourseAsync(enrollment);
 
             if (created == null)
             {
@@ -40,7 +41,7 @@ namespace Lynn.WebAPI.Controllers
         [HttpGet("{id}", Name = "GetEnrollmentById")]
         public async Task<IActionResult> GetEnrollmentById(int id)
         {
-            var enrollment = await _manager.GetEnrollmentByIdAsync(id);
+            var enrollment = await _enrollmentManager.GetEnrollmentByIdAsync(id);
             if (enrollment == null)
             {
                 return NotFound();
@@ -51,7 +52,7 @@ namespace Lynn.WebAPI.Controllers
         [HttpGet("{userId}/{courseId}", Name = "GetEnrollment")]
         public async Task<IActionResult> GetEnrollment(int userId, int courseId)
         {
-            var enrollment = await _manager.GetEnrollmentAsync(userId, courseId);
+            var enrollment = await _enrollmentManager.GetEnrollmentAsync(userId, courseId);
             if (enrollment == null)
             {
                 return NotFound();

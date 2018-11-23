@@ -1,4 +1,5 @@
 ﻿using Lynn.BLL;
+using Lynn.BLL.Interfaces;
 using Lynn.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,29 +14,29 @@ namespace Lynn.WebAPI.Controllers
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class TestsController : Controller
     {
-        private readonly TestsManager _manager;
+        private readonly ITestManager _testManager;
 
-        public TestsController(TestsManager manager)
+        public TestsController(ITestManager testManager)
         {
-            _manager = manager;
+            _testManager = testManager;
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTestsByCourseIdAsync(int id)
         {
-            return Ok(await _manager.GetTestsAsync(id));
+            return Ok(await _testManager.GetTestsAsync(id));
         }
 
         [HttpGet("{userId}/{testId}")]
         public async Task<IActionResult> GetTestTryingAsync(int userId, int testId)
         {
-            return Ok(await _manager.GetTestTryingAsync(userId, testId));
+            return Ok(await _testManager.GetTestTryingAsync(userId, testId));
         }
 
         [HttpPost("result/{userId}/{testId}")]
         public async Task<IActionResult> AddTestResult([FromBody]TestResultDto testResult, int userId, int testId)
         {
-            var user = await _manager.AddTestResult(testResult, userId, testId);
+            var user = await _testManager.AddTestResult(testResult, userId, testId);
             return Ok(user.Points);
         }
     }

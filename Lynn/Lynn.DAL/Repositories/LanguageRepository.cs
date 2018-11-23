@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Lynn.DAL.RepositoryInterfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,14 @@ namespace Lynn.DAL
         public LanguageRepository(LynnDb context)
         {
             _context = context;
+        }
+
+        public async Task<DbCourseLevel> GetCourseLevelByCourseIdAsync(int courseId)
+        {
+            return await _context.Courses
+                .Where(c => c.Id == courseId)
+                .Select(c => c.Level)
+                .SingleOrDefaultAsync();
         }
 
         public async Task<ICollection<DbCourseLevel>> GetCourseLevelsAsync()

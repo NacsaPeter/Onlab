@@ -1,4 +1,5 @@
 ﻿using Lynn.BLL;
+using Lynn.BLL.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,13 +13,18 @@ namespace Lynn.WebAPI.Controllers
     //[Authorize(AuthenticationSchemes = "Bearer")]
     public class LanguageController : Controller
     {
-        private readonly LanguageManager _languageManager;
-        private readonly EnrollmentManager _enrollmentManager;
+        private readonly ILanguageManager _languageManager;
+        private readonly IEnrollmentManager _enrollmentManager;
+        private readonly ICourseManager _courseManager;
 
-        public LanguageController(LanguageManager languageManager, EnrollmentManager enrollmentManager)
+        public LanguageController(
+            ILanguageManager languageManager,
+            IEnrollmentManager enrollmentManager,
+            ICourseManager courseManager)
         {
             _languageManager = languageManager;
             _enrollmentManager = enrollmentManager;
+            _courseManager = courseManager;
         }
 
         [HttpGet]
@@ -42,10 +48,10 @@ namespace Lynn.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{known}/{learning}")]
-        public async Task<IActionResult> GetCoursesByLanguageCode(string known, string learning)
+        [Route("{teaching}/{learning}")]
+        public async Task<IActionResult> GetCoursesByLanguageCode(string teaching, string learning)
         {
-            return Ok(await _enrollmentManager.GetCoursesByLanguageCodeAsync(known, learning));
+            return Ok(await _courseManager.GetCoursesByLanguageCodeAsync(teaching, learning));
         }
     }
 }

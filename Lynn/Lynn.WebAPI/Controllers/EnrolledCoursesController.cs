@@ -1,4 +1,5 @@
 ﻿using Lynn.BLL;
+using Lynn.BLL.Interfaces;
 using Lynn.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,17 +14,17 @@ namespace Lynn.WebAPI.Controllers
     [Authorize(AuthenticationSchemes = "Bearer")]
     public class EnrolledCoursesController : Controller
     {
-        private readonly EnrollmentManager _manager;
+        private readonly ICourseManager _courseManager;
 
-        public EnrolledCoursesController(EnrollmentManager manager)
+        public EnrolledCoursesController(ICourseManager courseManager)
         {
-            _manager = manager;
+            _courseManager = courseManager;
         }
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetEnrolledCoursesByUserId(int id)
         {
-            return Ok(await _manager.GetEnrolledCoursesAsync(id));
+            return Ok(await _courseManager.GetEnrolledCoursesAsync(id));
         }
     }
 }

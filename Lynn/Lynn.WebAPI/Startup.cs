@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Lynn.BLL;
+using Lynn.BLL.Interfaces;
+using Lynn.BLL.Managers;
 using Lynn.BLL.Mapping;
 using Lynn.DAL;
 using Lynn.DAL.Identity;
@@ -34,16 +36,21 @@ namespace Lynn.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
+            services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
+            services.AddTransient<IExerciseRepository, ExerciseRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
+            services.AddTransient<ITestRepository, TestRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<EnrollmentManager>();
-            services.AddTransient<ExercisesManager>();
-            services.AddTransient<LanguageManager>();
-            services.AddTransient<TestsManager>();
-            services.AddTransient<UserManager>();
-            services.AddSingleton<IMapper>(MapperConfig.Configure());
+
+            services.AddTransient<ICourseManager, CourseManager>();
+            services.AddTransient<IEnrollmentManager, EnrollmentManager>();
+            services.AddTransient<IExerciseManager, ExerciseManager>();
+            services.AddTransient<ILanguageManager, LanguageManager>();
+            services.AddTransient<ITestManager, TestManager>();
+            services.AddTransient<IUserManager, UserManager>();
+
+            services.AddSingleton(MapperConfig.Configure());
 
             services.AddDbContext<LynnDb>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -51,8 +58,6 @@ namespace Lynn.WebAPI
             services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<LynnDb>()
                 .AddDefaultTokenProviders();
-
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddMvc();
 

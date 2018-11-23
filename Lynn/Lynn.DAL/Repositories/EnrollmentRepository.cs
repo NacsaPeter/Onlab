@@ -5,6 +5,7 @@ using System.Linq;
 using Lynn.DAL.Identity;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Lynn.DAL.RepositoryInterfaces;
 
 namespace Lynn.DAL
 {
@@ -15,17 +16,6 @@ namespace Lynn.DAL
         public EnrollmentRepository(LynnDb context)
         {
             _context = context;
-        }
-
-        public async Task<ICollection<DbCourse>> GetEnrolledCoursesAsync(ApplicationUser user)
-        {
-            return await _context.Enrollments
-                .Include(e => e.User)
-                .Where(e => e.User.Id == user.Id)
-                .Select(e => e.Course)
-                .Include(c => c.Level)
-                .Include(c => c.Editor)
-                .ToListAsync();
         }
 
         // Todo: refactor
@@ -51,15 +41,6 @@ namespace Lynn.DAL
             return newEnrollment;
         }
 
-        public async Task<ICollection<DbCourse>> GetCoursesByNameAsync(string coursename)
-        {
-            return await _context.Courses
-                .Include(c => c.Editor)
-                .Include(c => c.Level)
-                .Where(t => t.CourseName.Contains(coursename))
-                .ToListAsync();
-        }
-
         public async Task<DbEnrollment> GetEnrollmentByIdAsync(int enrollmentId)
         {
             return await _context.Enrollments
@@ -72,51 +53,6 @@ namespace Lynn.DAL
             return await _context.Enrollments
                 .Where(e => e.UserId == userId && e.CourseId == courseId)
                 .SingleOrDefaultAsync();
-        }
-
-        public async Task<ApplicationUser> GetEditorByCourseIdAsync(int courseId)
-        {
-            return await _context.Courses
-                .Where(c => c.Id == courseId)
-                .Select(c => c.Editor)
-                .SingleOrDefaultAsync();
-        }
-
-        public async Task<DbCourseLevel> GetCourseLevelByCourseIdAsync(int courseId)
-        {
-            return await _context.Courses
-                .Where(c => c.Id == courseId)
-                .Select(c => c.Level)
-                .SingleOrDefaultAsync();
-        }
-
-        public async Task<ICollection<DbCourse>> GetCoursesByLanguageCodeAsync(string known, string learning)
-        {
-            if (known == "" && learning != "")
-            {
-                return await _context.Courses
-                    .Include(c => c.Level)
-                    .Include(c => c.Editor)
-                    .Where(c => c.TeachingLanguage == known)
-                    .ToListAsync();
-            }
-            else if (known != "" && learning == "")
-            {
-                return await _context.Courses
-                    .Include(c => c.Level)
-                    .Include(c => c.Editor)
-                    .Where(c => c.LearningLanguage == learning)
-                    .ToListAsync();
-            }
-            else
-            {
-                return await _context.Courses
-                    .Include(c => c.Level)
-                    .Include(c => c.Editor)
-                    .Where(l => l.TeachingLanguage == known 
-                        && l.LearningLanguage == learning)
-                    .ToListAsync();
-            }
         }
     }
 }
