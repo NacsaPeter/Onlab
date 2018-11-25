@@ -59,8 +59,10 @@ Views\DoExercisesPage.xbf
 Views\EditCoursePage.xbf
 Views\EnrolledCoursesPage.xbf
 Views\EnrollInCoursePage.xbf
+Views\GrammarChooseOneExerciseView.xbf
 Views\LearnExpressionsPage.xbf
 Views\LearningPage.xbf
+Views\LearnRulesPage.xbf
 Views\LoggedInPage.xbf
 Views\MainPage.xbf
 Views\PictureExerciseView.xbf

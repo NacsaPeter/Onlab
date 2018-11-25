@@ -43,18 +43,18 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _loggedInUser, value, nameof(LoggedInUser)); }
         }
 
-        private ObservableCollection<VocabularyExercisePresenter> _vocabularyExercises;
-        public ObservableCollection<VocabularyExercisePresenter> VocabularyExercises
+        private ObservableCollection<VocabularyExercise> _vocabularyExercises;
+        public ObservableCollection<VocabularyExercise> VocabularyExercises
         {
             get { return _vocabularyExercises; }
             set { Set(ref _vocabularyExercises, value, nameof(VocabularyExercises)); }
         }
 
-        private VocabularyExercisePresenter _currentExercise;
-        public VocabularyExercisePresenter CurrentExercise
+        private ObservableCollection<GrammarExercise> _grammarExercises;
+        public ObservableCollection<GrammarExercise> GrammarExercises
         {
-            get { return _currentExercise; }
-            set { Set(ref _currentExercise, value, nameof(CurrentExercise)); }
+            get { return _grammarExercises; }
+            set { Set(ref _grammarExercises, value, nameof(GrammarExercises)); }
         }
 
         private bool _end;
@@ -90,24 +90,39 @@ namespace Lynn.Client.ViewModels
 
         public void DoExercises()
         {
-            if (VocabularyExercises.Count != _currentExerciseNum)
+            if (Test.CategoryName == "Nyelvtan")
             {
-                var exercise = VocabularyExercises[_currentExerciseNum];
-                IExerciseView exerciseView = SetExerciseType(exercise.Exercise);
-                exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
-                _gridOfTest.Children.Add(exerciseView.GetUIElement());
-                _currentExerciseNum++;
+                if (GrammarExercises.Count != _currentExerciseNum)
+                {
+                    IExerciseView exerciseView = new GrammarChooseOneExerciseView(GrammarExercises[_currentExerciseNum]);
+                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                    _gridOfTest.Children.Add(exerciseView.GetUIElement());
+                    _currentExerciseNum++;
+                }
+            }
+            else
+            {
+                if (VocabularyExercises.Count != _currentExerciseNum)
+                {
+                    var exercise = VocabularyExercises[_currentExerciseNum];
+                    IExerciseView exerciseView = SetExerciseType(exercise);
+                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                    _gridOfTest.Children.Add(exerciseView.GetUIElement());
+                    _currentExerciseNum++;
+                }
             }
         }
 
         public async Task ProcessExercisesAsync()
         {
             var service = new ExerciseService();
-            var result = await service.GetVocabularyExercises(Test);
-            VocabularyExercises = VocabularyExercisePresenter.GetVocabularyExercisePresenters(result);
-            if (VocabularyExercises.Count != 0)
+            if (Test.CategoryName == "Nyelvtan")
             {
-                CurrentExercise = VocabularyExercises[0];
+                GrammarExercises = await service.GetGrammarExercises(Test);
+            }
+            else
+            {
+                VocabularyExercises = await service.GetVocabularyExercises(Test);
             }
         }
 
@@ -146,27 +161,54 @@ namespace Lynn.Client.ViewModels
             Results.Add(result);
             _gridOfTest.Children.Clear();
 
-            if (_vocabularyExercises.Count != _currentExerciseNum)
-            { 
-                var exercise = _vocabularyExercises[_currentExerciseNum];
-                IExerciseView exerciseView = SetExerciseType(exercise.Exercise);
-                exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
-                _gridOfTest.Children.Add(exerciseView.GetUIElement());
-                _currentExerciseNum++;
+            if (Test.CategoryName == "Nyelvtan")
+            {
+                if (GrammarExercises.Count != _currentExerciseNum)
+                {
+                    IExerciseView exerciseView = new GrammarChooseOneExerciseView(GrammarExercises[_currentExerciseNum]);
+                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                    _gridOfTest.Children.Add(exerciseView.GetUIElement());
+                    _currentExerciseNum++;
+                }
+                else
+                {
+                    Points = (int)(CorrectAnswers / (float)Test.NumberOfQuestions * Test.MaxPoints);
+                    End = true;
+                    var service = new TestService();
+                    var testResult = new TestResultDto
+                    {
+                        RightAnswers = CorrectAnswers,
+                        WrongAnswers = Test.NumberOfQuestions - CorrectAnswers,
+                        Points = Points
+                    };
+                    var userPoints = await service.PostTestResult(LoggedInUser, Test, testResult);
+                    LoggedInUser.Points = userPoints;
+                }
             }
             else
             {
-                Points = (int)(CorrectAnswers / (float)Test.NumberOfQuestions * Test.MaxPoints);
-                End = true;
-                var service = new TestService();
-                var testResult = new TestResultDto
+                if (VocabularyExercises.Count != _currentExerciseNum)
                 {
-                    RightAnswers = CorrectAnswers,
-                    WrongAnswers = Test.NumberOfQuestions - CorrectAnswers,
-                    Points = Points
-                };
-                var userPoints = await service.PostTestResult(LoggedInUser, Test, testResult);
-                LoggedInUser.Points = userPoints;
+                    var exercise = VocabularyExercises[_currentExerciseNum];
+                    IExerciseView exerciseView = SetExerciseType(exercise);
+                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                    _gridOfTest.Children.Add(exerciseView.GetUIElement());
+                    _currentExerciseNum++;
+                }
+                else
+                {
+                    Points = (int)(CorrectAnswers / (float)Test.NumberOfQuestions * Test.MaxPoints);
+                    End = true;
+                    var service = new TestService();
+                    var testResult = new TestResultDto
+                    {
+                        RightAnswers = CorrectAnswers,
+                        WrongAnswers = Test.NumberOfQuestions - CorrectAnswers,
+                        Points = Points
+                    };
+                    var userPoints = await service.PostTestResult(LoggedInUser, Test, testResult);
+                    LoggedInUser.Points = userPoints;
+                }
             }
         }
     }

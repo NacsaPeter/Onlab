@@ -28,16 +28,15 @@
     <RootPropertyPathName Name="LearningLanguage" />
     <RootPropertyPathName Name="DoTest_Click" />
     <RootPropertyPathName Name="LearnExpressions_Click" />
+    <RootPropertyPathName Name="Test" />
+    <RootPropertyPathName Name="CategoryName" />
     <RootPropertyPathName Name="TestTrying" />
     <RootPropertyPathName Name="BestResult" />
     <RootPropertyPathName Name="RightAnswers" />
     <RootPropertyPathName Name="LastResult" />
-    <RootPropertyPathName Name="Test" />
     <RootPropertyPathName Name="MaxPoints" />
     <RootPropertyPathName Name="NumberOfQuestions" />
     <RootPropertyPathName Name="IsCorrect" />
-    <RootPropertyPathName Name="Picture" />
-    <RootPropertyPathName Name="CategoryName" />
     <RootPropertyPathName Name="Results" />
     <RootPropertyPathName Name="End" />
     <RootPropertyPathName Name="CorrectAnswers" />
@@ -46,10 +45,13 @@
     <RootPropertyPathName Name="Territories" />
     <RootPropertyPathName Name="Languages" />
     <RootPropertyPathName Name="Tests" />
+    <RootPropertyPathName Name="Picture" />
     <RootPropertyPathName Name="SaveCourse_Click" />
     <RootPropertyPathName Name="SearchCourseByLanguage_Click" />
     <RootPropertyPathName Name="KnownLanguage" />
     <RootPropertyPathName Name="SearchCourseByName_Click" />
+    <RootPropertyPathName Name="Exercise" />
+    <RootPropertyPathName Name="Question" />
     <RootPropertyPathName Name="VocabularyExercises" />
     <RootPropertyPathName Name="CurrentExercise" />
     <RootPropertyPathName Name="TranslatedSentence" />
@@ -57,6 +59,10 @@
     <RootPropertyPathName Name="TranslatedCorrectAnswer" />
     <RootPropertyPathName Name="CorrectAnswer" />
     <RootPropertyPathName Name="ActualWidth" />
+    <RootPropertyPathName Name="Rules" />
+    <RootPropertyPathName Name="CurrentRule" />
+    <RootPropertyPathName Name="TranslatedExplanation" />
+    <RootPropertyPathName Name="Explanation" />
     <RootPropertyPathName Name="LogIn_Click" />
     <RootPropertyPathName Name="LoginSuccess" />
     <RootPropertyPathName Name="Password" />
@@ -147,10 +153,10 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="CornerRadius" />
+      <RootProperty Name="Background" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Background" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
@@ -204,6 +210,9 @@
       <RootProperty Name="Children" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="CornerRadius" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="Padding" />
@@ -261,6 +270,8 @@
     <RootType FullName="Lynn.Client.Views.DetailedCourseToEnrollInView" />
     <RootType FullName="Lynn.Client.ViewModels.DetailedTestViewModel" />
     <RootType FullName="Lynn.Client.Converters.BoolTrueToVisibilityConverter" />
+    <RootType FullName="Lynn.Client.Converters.CategoryToLearningTextConverter" />
+    <RootType FullName="Lynn.Client.Converters.CategoryToTestPicturePathConverter" />
     <RootType FullName="Lynn.Client.Views.DetailedTestPage" />
     <RootType FullName="Lynn.Client.Converters.BoolFalseToVisibilityConverter" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Line">
@@ -317,7 +328,9 @@
     <RootType FullName="Lynn.Client.Views.EnrolledCourses" />
     <RootType FullName="Lynn.Client.ViewModels.EnrollInCourseViewModel" />
     <RootType FullName="Lynn.Client.Views.EnrollInCourse" />
+    <RootType FullName="Lynn.Client.Views.GrammarChooseOneExerciseView" />
     <RootType FullName="Lynn.Client.ViewModels.LearnExpressionsViewModel" />
+    <RootType FullName="Lynn.Client.Converters.PictureToPathConverter" />
     <RootType FullName="Lynn.Client.Views.LearnExpressionsPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
       <RootProperty Name="Name" />
@@ -329,6 +342,8 @@
     <RootType FullName="Lynn.Client.Views.LearningPage">
       <RootProperty Name="Visibility" />
     </RootType>
+    <RootType FullName="Lynn.Client.ViewModels.LearnRulesViewModel" />
+    <RootType FullName="Lynn.Client.Views.LearnRulesPage" />
     <RootType FullName="Lynn.Client.ViewModels.LoggedInViewModel" />
     <RootType FullName="Lynn.Client.Views.SettingsPage">
       <RootProperty Name="Visibility" />
@@ -384,7 +399,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ElementTheme" />
     <RootType FullName="Lynn.Client.ViewModels.TestsViewModel" />
-    <RootType FullName="Lynn.Client.Converters.CategoryToTestPicturePathConverter" />
     <RootType FullName="Lynn.Client.Views.TestsPage" />
     <RootType FullName="Lynn.Client.Views.TranslationExerciseView" />
   </Roots.RootTypes>

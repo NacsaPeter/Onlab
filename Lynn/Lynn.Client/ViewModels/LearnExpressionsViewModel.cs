@@ -27,15 +27,15 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _loggedInUser, value, nameof(LoggedInUser)); }
         }
 
-        private ObservableCollection<VocabularyExercisePresenter> _vocabularyExercises;
-        public ObservableCollection<VocabularyExercisePresenter> VocabularyExercises
+        private ObservableCollection<VocabularyExercise> _vocabularyExercises;
+        public ObservableCollection<VocabularyExercise> VocabularyExercises
         {
             get { return _vocabularyExercises; }
             set { Set(ref _vocabularyExercises, value, nameof(VocabularyExercises)); }
         }
 
-        private VocabularyExercisePresenter _currentExercise;
-        public VocabularyExercisePresenter CurrentExercise
+        private VocabularyExercise _currentExercise;
+        public VocabularyExercise CurrentExercise
         {
             get { return _currentExercise; }
             set { Set(ref _currentExercise, value, nameof(CurrentExercise)); }
@@ -49,8 +49,7 @@ namespace Lynn.Client.ViewModels
         public async Task ProcessExercisesAsync()
         {
             var service = new ExerciseService();
-            var result = await service.GetVocabularyExercises(Test);
-            VocabularyExercises = VocabularyExercisePresenter.GetVocabularyExercisePresenters(result);
+            VocabularyExercises = await service.GetVocabularyExercises(Test);
             if (VocabularyExercises.Count != 0)
             {
                 CurrentExercise = VocabularyExercises[0];

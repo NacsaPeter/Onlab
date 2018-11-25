@@ -21,10 +21,22 @@ namespace Lynn.WebAPI.Controllers
             _exerciseManager = exerciseManager;
         }
 
-        [HttpGet("test/{id}")]
-        public async Task<IActionResult> GetExercisesByTestId(int id)
+        [HttpGet("vocabulary/test/{id}")]
+        public async Task<IActionResult> GetVocabularyExercisesByTestId(int id)
         {
             return Ok(await _exerciseManager.GetVocabularyExercisesAsync(id));
+        }
+
+        [HttpGet("grammar/test/{id}")]
+        public async Task<IActionResult> GetGrammarExercisesByTestId(int id)
+        {
+            return Ok(await _exerciseManager.GetGrammarExercisesAsync(id));
+        }
+
+        [HttpGet("rule/test/{id}")]
+        public async Task<IActionResult> GetGrammarRulesByTestId(int id)
+        {
+            return Ok(await _exerciseManager.GetGrammarRulesAsync(id));
         }
     }
 }

@@ -1225,3 +1225,13 @@ C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Mu
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Microsoft.Xaml.Interactions.pri.xml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\LearnRulesPage.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LearnRulesPage.g.i.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LearnRulesPage.g.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LearnRulesPage.xaml
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\LearnRulesPage.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\GrammarChooseOneExerciseView.xbf
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\GrammarChooseOneExerciseView.g.i.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\GrammarChooseOneExerciseView.g.cs
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\GrammarChooseOneExerciseView.xaml
+C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\obj\x86\Debug\Views\GrammarChooseOneExerciseView.xbf

@@ -16,6 +16,8 @@
 
     <Page.Resources>
         <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
+        <c:CategoryToLearningTextConverter x:Key="CategoryToLearningTextConverter"/>
+        <c:CategoryToTestPicturePathConverter x:Key="CategoryToTestPicturePathConverter"/>
     </Page.Resources>
 
     <Grid>
@@ -32,7 +34,8 @@
 
         <Grid Grid.Row="0" Background="AliceBlue" Grid.ColumnSpan="2">
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
-            <TextBlock Text="{Binding Test.CategoryName}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock Text="{Binding Test.CategoryName}" FontSize="{StaticResource LargeFontSize}"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" />
             <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;" Width="40" Height="40"/>
                 <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
@@ -56,7 +59,8 @@
             
             <Border CornerRadius="5" Margin="0,65,0,0"
                     Width="237" Height="178" HorizontalAlignment="Center" Grid.Row="0">
-                <Image Source="{Binding Test.Picture}" Stretch="Fill" />
+                <Image Stretch="Fill" Source="{Binding Test.CategoryName,
+                    Converter={StaticResource CategoryToTestPicturePathConverter}}" />
             </Border>
             
             <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,35,0,0"
@@ -68,11 +72,11 @@
             </StackPanel>
             
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <TextBlock Text="Kifejezések száma:" />
-                <TextBlock Text="{Binding Test.Test.NumberOfQuestions}" Margin="8,0,0,0"/>
+                <TextBlock Text="Kérdések száma:" />
+                <TextBlock Text="{Binding Test.NumberOfQuestions}" Margin="8,0,0,0"/>
                 <TextBlock Text="-" Margin="10,0"/>
                 <TextBlock Text="Maximális pontszám:" />
-                <TextBlock Text="{Binding Test.Test.MaxPoints}" Margin="8,0,0,0"/>
+                <TextBlock Text="{Binding Test.MaxPoints}" Margin="8,0,0,0"/>
             </StackPanel>
             
             <TextBlock Grid.Row="3" Text="Legutóbbi eredmény:" Margin="0,55,0,0" HorizontalAlignment="Center" FontSize="20"/>
@@ -113,7 +117,8 @@
                             <Image Source="/Assets/learning.png" Stretch="Uniform"/>
                         </Border>
 
-                        <TextBlock Grid.Column="1" Text="Kifejezések tanulása" FontSize="25" Width="150" LineHeight="50"
+                        <TextBlock Grid.Column="1" FontSize="25" Width="150" LineHeight="50"
+                                   Text="{Binding Test.CategoryName, Converter={StaticResource CategoryToLearningTextConverter}}"
                                    TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>

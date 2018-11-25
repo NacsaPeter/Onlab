@@ -17,6 +17,24 @@ namespace Lynn.DAL.Repositories
             _context = context;
         }
 
+        public async Task<ICollection<DbGrammarExercise>> GetGrammarExercisesByTestIdAsync(int testId)
+        {
+            return await _context.GrammarExercises
+                .Include(e => e.Test)
+                .Where(t => t.TestId == testId)
+                .ToListAsync();
+        }
+
+        public async Task<ICollection<DbRule>> GetGrammarRulesByTestIdAsync(int testId)
+        {
+            return await _context.GrammarExercises
+                .Include(e => e.Rule)
+                .Where(e => e.TestId == testId)
+                .Select(e => e.Rule)
+                .Distinct()
+                .ToListAsync();
+        }
+
         public async Task<ICollection<DbVocabularyExercise>> GetVocabularyExercisesByTestIdAsync(int id)
         {
             return await _context.VocabularyExercises

@@ -38,7 +38,7 @@ namespace Lynn.Client.Views
 
         private void Expressions_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ViewModel.CurrentExercise = (VocabularyExercisePresenter)e.ClickedItem;
+            ViewModel.CurrentExercise = (VocabularyExercise)e.ClickedItem;
         }
     }
 }

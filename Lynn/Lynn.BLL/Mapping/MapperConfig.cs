@@ -23,6 +23,9 @@ namespace Lynn.BLL.Mapping
                 cfg.CreateMap<DbVocabularyExercise, VocabularyExercise>();
                 cfg.CreateMap<VocabularyExercise, DbVocabularyExercise>();
 
+                cfg.CreateMap<DbGrammarExercise, GrammarExercise>();
+                cfg.CreateMap<GrammarExercise, DbGrammarExercise>();
+
                 cfg.CreateMap<DbTest, Test>();
                 cfg.CreateMap<Test, DbTest>();
 
@@ -46,6 +49,9 @@ namespace Lynn.BLL.Mapping
 
                 cfg.CreateMap<DbTestResult, TestResultDto>();
                 cfg.CreateMap<TestResultDto, DbTestResult>();
+
+                cfg.CreateMap<DbRule, RuleDto>();
+                cfg.CreateMap<RuleDto, DbRule>();
 
                 cfg.CreateMap<DbTestUser, TestTrying>()
                     .ForMember(t => t.LastResult, opt => opt.Ignore())

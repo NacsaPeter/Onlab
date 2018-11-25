@@ -15,7 +15,7 @@
         <c:BoolFalseToVisibilityConverter x:Key="BoolFalseToVisibilityConverter"/>
     </Page.Resources>
 
-    <Grid>
+    <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
@@ -51,16 +51,18 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="0" BorderThickness="1" BorderBrush="Black" CornerRadius="5">
+                        <Border Grid.Column="0" BorderThickness="1" BorderBrush="Black" CornerRadius="5" Background="LemonChiffon">
                             <TextBlock Text="{Binding Number}" FontSize="30" Margin="22,10"/>
                         </Border>
-                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0" CornerRadius="5"
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black"
+                                Margin="5,0,0,0" CornerRadius="5" Background="LemonChiffon"
                                 Visibility="{Binding IsCorrect, Converter={StaticResource BoolTrueToVisibilityConverter}}">
                             <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE73E;" Foreground="Green"
                                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0"
                                        FontSize="45" />
                         </Border>
-                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="5,0,0,0" CornerRadius="5"
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black"
+                                Margin="5,0,0,0" CornerRadius="5" Background="LemonChiffon"
                                 Visibility="{Binding IsCorrect, Converter={StaticResource BoolFalseToVisibilityConverter}}">
                             <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE711;" Foreground="Red"
                                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,0"
@@ -77,25 +79,27 @@
 
         <Grid Grid.Row="1" Grid.Column="0" Visibility="{Binding End,
                 Converter={StaticResource BoolTrueToVisibilityConverter}}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+            <Grid Background="LightCyan" BorderThickness="2" BorderBrush="Black" Margin="80,120" CornerRadius="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Vége" FontSize="50" HorizontalAlignment="Center" Margin="0,200,0,0" />
-            <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,90,0,0" Orientation="Horizontal">
-                <TextBlock Text="Helyes válaszok:" FontSize="24"/>
-                <TextBlock Text="{Binding CorrectAnswers}" FontSize="24" Margin="10,0,0,0"/>
-                <TextBlock Text="/" FontSize="24" Margin="5,0"/>
-                <TextBlock Text="{Binding Test.NumberOfQuestions}" FontSize="24"/>
-            </StackPanel>
-            <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0,35,0,0" Orientation="Horizontal">
-                <TextBlock Text="Pontszám:" FontSize="24"/>
-                <TextBlock Text="{Binding Points}" FontSize="24" Margin="10,0,0,0"/>
-                <TextBlock Text="/" FontSize="24" Margin="5,0"/>
-                <TextBlock Text="{Binding Test.MaxPoints}" FontSize="24"/>
-            </StackPanel>
+                <TextBlock Grid.Row="0" Text="Vége" FontSize="50" HorizontalAlignment="Center" Margin="0,100,0,0" />
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,90,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Helyes válaszok:" FontSize="24"/>
+                    <TextBlock Text="{Binding CorrectAnswers}" FontSize="24" Margin="10,0,0,0"/>
+                    <TextBlock Text="/" FontSize="24" Margin="5,0"/>
+                    <TextBlock Text="{Binding Test.NumberOfQuestions}" FontSize="24"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0,35,0,0" Orientation="Horizontal">
+                    <TextBlock Text="Pontszám:" FontSize="24"/>
+                    <TextBlock Text="{Binding Points}" FontSize="24" Margin="10,0,0,0"/>
+                    <TextBlock Text="/" FontSize="24" Margin="5,0"/>
+                    <TextBlock Text="{Binding Test.MaxPoints}" FontSize="24"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

@@ -9,5 +9,7 @@ namespace Lynn.BLL.Interfaces
     public interface IExerciseManager
     {
         Task<ICollection<VocabularyExercise>> GetVocabularyExercisesAsync(int testId);
+        Task<ICollection<GrammarExercise>> GetGrammarExercisesAsync(int testId);
+        Task<ICollection<RuleDto>> GetGrammarRulesAsync(int testId);
     }
 }

@@ -122,9 +122,11 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Converters\BoolFalseToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolTrueToVisibilityConverter.cs" />
+    <Compile Include="Converters\CategoryToLearningTextConverter.cs" />
     <Compile Include="Converters\CategoryToTestPicturePathConverter.cs" />
     <Compile Include="Converters\HigherThanZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\LanguageToFlagPicturePathConverter.cs" />
+    <Compile Include="Converters\PictureToPathConverter.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\Observable.cs" />
@@ -136,7 +138,6 @@
     <Compile Include="Models\NewTestPresenter.cs" />
     <Compile Include="Models\ResultPresenter.cs" />
     <Compile Include="Models\TestPresenter.cs" />
-    <Compile Include="Models\VocabularyExercisePresenter.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Services\BaseHttpService.cs" />
@@ -164,8 +165,10 @@
     <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
     <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
     <Compile Include="ViewModels\ExerciseBaseViewModel.cs" />
+    <Compile Include="ViewModels\GrammarChooseOneExerciseViewModel.cs" />
     <Compile Include="ViewModels\LearnExpressionsViewModel.cs" />
     <Compile Include="ViewModels\LearningViewModel.cs" />
+    <Compile Include="ViewModels\LearnRulesViewModel.cs" />
     <Compile Include="ViewModels\LoggedInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PictureExerciseViewModel.cs" />
@@ -197,11 +200,17 @@
     <Compile Include="Views\EnrollInCoursePage.xaml.cs">
       <DependentUpon>EnrollInCoursePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GrammarChooseOneExerciseView.xaml.cs">
+      <DependentUpon>GrammarChooseOneExerciseView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LearnExpressionsPage.xaml.cs">
       <DependentUpon>LearnExpressionsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LearningPage.xaml.cs">
       <DependentUpon>LearningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LearnRulesPage.xaml.cs">
+      <DependentUpon>LearnRulesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoggedInPage.xaml.cs">
       <DependentUpon>LoggedInPage.xaml</DependentUpon>
@@ -292,11 +301,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\GrammarChooseOneExerciseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LearnExpressionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LearningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LearnRulesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

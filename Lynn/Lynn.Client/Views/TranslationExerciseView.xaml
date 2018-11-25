@@ -9,7 +9,7 @@
     d:DesignHeight="308"
     d:DesignWidth="408">
 
-    <Grid BorderThickness="2" BorderBrush="Black" CornerRadius="5">
+    <Grid BorderThickness="2" BorderBrush="Black" CornerRadius="5" Background="LightCyan">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>

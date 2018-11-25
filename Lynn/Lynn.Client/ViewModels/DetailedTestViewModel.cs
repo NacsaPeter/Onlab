@@ -21,8 +21,8 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _loggedInUser, value, nameof(LoggedInUser)); }
         }
 
-        private TestPresenter _test;
-        public TestPresenter Test
+        private Test _test;
+        public Test Test
         {
             get { return _test; }
             set { Set(ref _test, value, nameof(Test)); }
@@ -48,17 +48,24 @@ namespace Lynn.Client.ViewModels
         public async void ProcessTestTrying()
         {
             var service = new TestService();
-            TestTrying = await service.GetTestTrying(LoggedInUser.ID, Test.Test.ID);
+            TestTrying = await service.GetTestTrying(LoggedInUser.ID, Test.ID);
         }
 
         private void LearnExpressions()
         {
-            NavigationService.Navigate(typeof(LearnExpressionsPage), Test.Test);
+            if (Test.CategoryName == "Nyelvtan")
+            {
+                NavigationService.Navigate(typeof(LearnRulesPage), Test);
+            }
+            else
+            {
+                NavigationService.Navigate(typeof(LearnExpressionsPage), Test);
+            }
         }
 
         private void DoTest()
         {
-            NavigationService.Navigate(typeof(DoExercisesPage), Test.Test);
+            NavigationService.Navigate(typeof(DoExercisesPage), Test);
         }
     }
 }

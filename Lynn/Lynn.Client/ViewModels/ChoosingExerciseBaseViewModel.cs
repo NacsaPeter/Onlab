@@ -28,5 +28,24 @@ namespace Lynn.Client.ViewModels
                 answers[n] = value;
             }
         }
+
+        protected void SetAnswersRandom(List<string> answers, GrammarExercise exercise)
+        {
+            answers.Add(exercise.CorrectAnswer);
+            answers.Add(exercise.WrongAnswer1);
+            answers.Add(exercise.WrongAnswer2);
+            answers.Add(exercise.WrongAnswer3);
+
+            Random random = new Random();
+            int n = answers.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = random.Next(n + 1);
+                string value = answers[k];
+                answers[k] = answers[n];
+                answers[n] = value;
+            }
+        }
     }
 }

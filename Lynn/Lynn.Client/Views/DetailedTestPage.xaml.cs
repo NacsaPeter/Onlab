@@ -32,7 +32,7 @@ namespace Lynn.Client.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            ViewModel.Test = new TestPresenter((Test)e.Parameter);
+            ViewModel.Test = (Test)e.Parameter;
             ViewModel.ProcessTestTrying();
         }
     }

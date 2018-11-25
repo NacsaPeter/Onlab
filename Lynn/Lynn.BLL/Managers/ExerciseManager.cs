@@ -21,6 +21,18 @@ namespace Lynn.BLL.Managers
             _mapper = mapper;
         }
 
+        public async Task<ICollection<GrammarExercise>> GetGrammarExercisesAsync(int testId)
+        {
+            return _mapper.Map<ICollection<GrammarExercise>>(
+                await _exerciseRepository.GetGrammarExercisesByTestIdAsync(testId));
+        }
+
+        public async Task<ICollection<RuleDto>> GetGrammarRulesAsync(int testId)
+        {
+            return _mapper.Map<ICollection<RuleDto>>(
+                await _exerciseRepository.GetGrammarRulesByTestIdAsync(testId));
+        }
+
         public async Task<ICollection<VocabularyExercise>> GetVocabularyExercisesAsync(int testId)
         {
             return _mapper.Map<ICollection<VocabularyExercise>>(
