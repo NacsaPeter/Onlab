@@ -766,6 +766,9 @@
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\new-course.png">
       <PackagePath>Assets\new-course.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\new-exercise.png">
+      <PackagePath>Assets\new-exercise.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\Assets\test.png">
       <PackagePath>Assets\test.png</PackagePath>
     </AppxPackagedFile>
@@ -840,6 +843,18 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EditCoursePage.xbf">
       <PackagePath>Views\EditCoursePage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EditGrammarExercisePage.xbf">
+      <PackagePath>Views\EditGrammarExercisePage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EditRuleView.xbf">
+      <PackagePath>Views\EditRuleView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EditTestPage.xbf">
+      <PackagePath>Views\EditTestPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EditVocabularyExercisePage.xbf">
+      <PackagePath>Views\EditVocabularyExercisePage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\nacsa\OneDrive\Dokumentumok\git\Onlab\Lynn\Lynn.Client\bin\x86\Debug\Views\EnrolledCoursesPage.xbf">
       <PackagePath>Views\EnrolledCoursesPage.xbf</PackagePath>

@@ -3,6 +3,7 @@ using Lynn.DAL.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,6 +106,30 @@ namespace Lynn.DAL.Repositories
             return test;
         }
 
+        public async Task<bool> DeleteTestAsync(int id)
+        {
+            var test = await _context.Tests
+                .Where(t => t.Id == id)
+                .SingleOrDefaultAsync();
+
+            if (test == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                _context.Tests.Remove(test);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public async Task<DbTest> EditTestAsync(DbTest test)
         {
             var oldTest = await _context.Tests
@@ -116,10 +141,38 @@ namespace Lynn.DAL.Repositories
                 return null;
             }
 
-            _context.Tests.Update(test);
-            await _context.SaveChangesAsync();
+            if (oldTest.Category != test.Category)
+            {
+                oldTest.Category = test.Category;
+            }
+
+            if (oldTest.Level != test.Level)
+            {
+                oldTest.Level = test.Level;
+            }
+
+            if (oldTest.MaxPoints != test.MaxPoints)
+            {
+                oldTest.MaxPoints = test.MaxPoints;
+            }
+
+            try
+            {
+                _context.Tests.Update(oldTest);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
 
             return test;
+        }
+
+        public async Task<ICollection<DbCategory>> GetCategories()
+        {
+            return await _context.Catergories
+                .ToListAsync();
         }
 
         public async Task<DbCategory> GetCategoryByTestIdAsync(int testId)

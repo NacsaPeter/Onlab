@@ -12,7 +12,9 @@ namespace Lynn.DAL.RepositoryInterfaces
         Task<ICollection<DbCourse>> GetCoursesByLanguageCodeAsync(string teaching, string learning);
         Task<ICollection<DbCourse>> GetEnrolledCoursesAsync(ApplicationUser user);
         Task<ICollection<DbCourse>> GetCoursesByEditorAsync(ApplicationUser user);
+        Task<DbCourse> GetCourseByTestIdAsync(int testId);
         Task<DbCourse> CreateCourseAsync(DbCourse course);
         Task<DbCourse> EditCourseAsync(DbCourse course);
+        Task<bool> DeleteCourseAsync(int id);
     }
 }

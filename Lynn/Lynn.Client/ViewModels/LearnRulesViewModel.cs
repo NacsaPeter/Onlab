@@ -48,7 +48,7 @@ namespace Lynn.Client.ViewModels
         public async Task ProcessRulesAsync()
         {
             var service = new ExerciseService();
-            Rules = await service.GetGrammarRules(Test);
+            Rules = await service.GetGrammarRules(Test.ID);
             if (Rules.Count != 0)
             {
                 CurrentRule = Rules[0];

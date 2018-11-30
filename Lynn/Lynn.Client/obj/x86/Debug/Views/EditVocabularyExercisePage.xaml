@@ -1,0 +1,165 @@
+﻿<Page
+    x:Class="Lynn.Client.Views.EditVocabularyExercisePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lynn.Client.Views"
+    xmlns:vm="using:Lynn.Client.ViewModels"
+    xmlns:c="using:Lynn.Client.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <vm:EditVocabularyExerciseViewModel x:ConnectionId='1' x:Name="ViewModel"/>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <c:HigherThanZeroToVisibilityConverter x:Key="HigherThanZeroToVisibilityConverter"/>
+        <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
+        <c:PictureToPathConverter x:Key="PictureToPathConverter"/>
+    </Page.Resources>
+
+    <Grid Background="LemonChiffon">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="AliceBlue">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Lynn" FontSize="{StaticResource LargeFontSize}" Margin="20,10" FontWeight="Bold" />
+            <TextBlock Text="Feladat szerkesztése" FontSize="{StaticResource LargeFontSize}"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <StackPanel Margin="20,0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE77B;"
+                            Width="40" Height="40"/>
+                <TextBlock Text="{Binding LoggedInUser.Username}" FontSize="{StaticResource MediumFontSize}" Margin="20,19,10,10"/>
+                <StackPanel Orientation="Horizontal" Margin="18,19,10,10">
+                    <TextBlock Text="{Binding LoggedInUser.Points}" FontSize="{StaticResource MediumFontSize}" />
+                    <TextBlock Text="pont" FontSize="{StaticResource MediumFontSize}" Margin="5,0,0,0" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="LightCyan" Margin="10,20" Padding="20,0"
+              CornerRadius="5" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Margin="10,10,10,0" Width="200">
+                <Border Height="130" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                    <Image Source="{Binding Exercise.Picture, Converter={StaticResource PictureToPathConverter}}"
+                           Stretch="Fill"/>
+                </Border>
+                <Button Content="Kép kiválasztása" HorizontalAlignment="Right" Margin="5,10"
+                        Command="{Binding SelectPicture_Click}"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="{Binding LearningLanguage}" FontSize="20" Margin="10"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="{Binding TeachingLanguage}" FontSize="20" Margin="10"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"
+                       Text="Kifejezés:" FontSize="20" Margin="10"/>
+            <TextBox Grid.Row="2" Grid.Column="1"
+                        IsSpellCheckEnabled="False" Margin="10"
+                        Background="White" Text="{Binding Exercise.CorrectAnswer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="2" Grid.Column="2"
+                        IsSpellCheckEnabled="False" Margin="10"
+                        Background="White" Text="{Binding Exercise.TranslatedCorrectAnswer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"
+                        Text="Rossz válaszok:" FontSize="20" Margin="10"/>
+            <TextBox Grid.Row="3" Grid.Column="1"
+                     IsSpellCheckEnabled="False" Margin="10"
+                     Background="White" Text="{Binding Exercise.WrongAnswer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="3" Grid.Column="2"
+                        IsSpellCheckEnabled="False" Margin="10"
+                        Background="White" Text="{Binding Exercise.TranslatedWrongAnswer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBox Grid.Row="4" Grid.Column="1"
+                     IsSpellCheckEnabled="False" Margin="10"
+                     Background="White" Text="{Binding Exercise.WrongAnswer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="4" Grid.Column="2"
+                        IsSpellCheckEnabled="False" Margin="10"
+                        Background="White" Text="{Binding Exercise.TranslatedWrongAnswer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBox Grid.Row="5" Grid.Column="1"
+                     IsSpellCheckEnabled="False" Margin="10"
+                     Background="White" Text="{Binding Exercise.WrongAnswer3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Row="5" Grid.Column="2"
+                        IsSpellCheckEnabled="False" Margin="10"
+                        Background="White" Text="{Binding Exercise.TranslatedWrongAnswer3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Grid Grid.Row="6" Grid.ColumnSpan="3" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Példamondat" Margin="10"
+                           FontSize="18" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Background="White" Margin="10"
+                         Text="{Binding Exercise.Sentence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Fordítása:" Margin="10"
+                           FontSize="18" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Background="White" Margin="10"
+                         Text="{Binding Exercise.TranslatedSentence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="7" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Margin="20,30,20,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button HorizontalAlignment="Left" Width="120" Height="45"
+                            Visibility="{Binding Exercise.ID, Converter={StaticResource HigherThanZeroToVisibilityConverter}}"
+                            Grid.Column="0" Command="{Binding DeleteExercise_Click}">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74D;" Margin="0,0,7,0"/>
+                        <TextBlock Text="Törlés" FontSize="18"/>
+                    </StackPanel>
+                </Button>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="Mentés" Foreground="Black"
+                               Visibility="{Binding Saving, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="Mentve" Foreground="Green"
+                               Visibility="{Binding Saved, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="Sikertelen mentés" Foreground="Red"
+                               Visibility="{Binding NotSaved, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
+                <Button Grid.Column="2" HorizontalAlignment="Right" Width="120" Height="45"
+                            Command="{Binding SaveExercise_Click}">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74E;" Margin="0,0,7,0"/>
+                        <TextBlock Text="Mentés" FontSize="18"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Page>
+

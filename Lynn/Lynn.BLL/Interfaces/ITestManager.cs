@@ -11,5 +11,9 @@ namespace Lynn.BLL.Interfaces
         Task<ICollection<Test>> GetTestsAsync(int courseId);
         Task<TestTrying> GetTestTryingAsync(int userId, int testId);
         Task<User> AddTestResult(TestResultDto testResult, int userId, int testId);
+        Task<ICollection<string>> GetCategoriesAsync();
+        Task<Test> CreateTestAsync(Test test);
+        Task<Test> EditTestAsync(Test test);
+        Task<bool> DeleteTestAsync(int id);
     }
 }

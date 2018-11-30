@@ -33,8 +33,15 @@ namespace Lynn.BLL.Managers
         public async Task<Course> CreateCourseAsync(Course course)
         {
             var dbCourse = _mapper.Map<DbCourse>(course);
+            dbCourse.Editor = await _userRepository.GetUserByNameAsync(course.Editor);
+            dbCourse.LearningLanguage = course.LearningLanguage.Language.Code;
+            dbCourse.LearningLanguageTerritory = course.LearningLanguage.Territory.Code;
+            dbCourse.TeachingLanguage = course.TeachingLanguage.Language.Code;
+            dbCourse.TeachingLanguageTerritory = course.TeachingLanguage.Territory.Code;
+            dbCourse.Level = await _languageRepository.GetCourseLevelByCodeAsync(course.Level.LevelCode);
             var createdCourse = await _courseRepository.CreateCourseAsync(dbCourse);
-            return _mapper.Map<Course>(createdCourse);
+            var courseMapper = new CourseMapper(_languageRepository, _mapper);
+            return await courseMapper.MapDbCourse(createdCourse);
         }
 
         public async Task<ICollection<Course>> GetCoursesByLanguageCodeAsync(string known, string learning)
@@ -77,6 +84,18 @@ namespace Lynn.BLL.Managers
 
             var courseMapper = new CourseMapper(_languageRepository, _mapper);
             return await courseMapper.MapDbCourseCollection(dbCourses);
+        }
+
+        public async Task<bool> DeleteCourseAsync(int id)
+        {
+            return await _courseRepository.DeleteCourseAsync(id);
+        }
+
+        public async Task<Course> GetCourseByTestIdAsync(int testId)
+        {
+            var courseMapper = new CourseMapper(_languageRepository, _mapper);
+            var dbCourse = await _courseRepository.GetCourseByTestIdAsync(testId);
+            return await courseMapper.MapDbCourse(dbCourse);
         }
     }
 }

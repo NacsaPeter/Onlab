@@ -16,17 +16,10 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _loggedInUser, value, nameof(LoggedInUser)); }
         }
 
-        private Page _currentPage;
-        public Page CurrentPage
+        public LoggedInViewModel()
         {
-            get { return _currentPage;  }
-            set { Set(ref _currentPage, value, nameof(CurrentPage)); }
+            LoggedInUser = MainViewModel.LoggedInUser;
         }
 
-        public void OnNavigatedTo(object parameter)
-        {
-            LoggedInUser = (User)parameter;
-            CurrentPage = new LearningPage();
-        }
     }
 }

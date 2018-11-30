@@ -54,5 +54,77 @@ namespace Lynn.Client.Services
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Test>;
             }
         }
+
+        public async Task<ObservableCollection<string>> GetTestCategories()
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/test"));
+
+                var serializer = new DataContractJsonSerializer(typeof(ObservableCollection<string>));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/test/categories");
+                return serializer.ReadObject(await streamTask) as ObservableCollection<string>;
+            }
+        }
+
+        public async Task<Test> PostTestAsync(Test test)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/test"));
+
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/test", test);
+                if (response.IsSuccessStatusCode)
+                {
+                    var serializer = new DataContractJsonSerializer(typeof(Test));
+                    return serializer.ReadObject(await response.Content.ReadAsStreamAsync()) as Test;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public async Task<bool> DeleteTestAsync(Test test)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/test"));
+
+                HttpResponseMessage response = await client.DeleteAsync($"{BaseUrl}/api/test/{test.ID}");
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task<Test> PutTestAsync(Test test)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/test"));
+
+                HttpResponseMessage response = await client.PutAsJsonAsync("api/test", test);
+                if (response.IsSuccessStatusCode)
+                {
+                    var serializer = new DataContractJsonSerializer(typeof(Test));
+                    return serializer.ReadObject(await response.Content.ReadAsStreamAsync()) as Test;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

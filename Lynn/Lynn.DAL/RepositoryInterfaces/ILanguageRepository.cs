@@ -15,5 +15,6 @@ namespace Lynn.DAL.RepositoryInterfaces
 
         Task<ICollection<DbCourseLevel>> GetCourseLevelsAsync();
         Task<DbCourseLevel> GetCourseLevelByCourseIdAsync(int courseId);
+        Task<DbCourseLevel> GetCourseLevelByCodeAsync(string levelCode);
     }
 }

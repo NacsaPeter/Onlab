@@ -100,10 +100,43 @@ namespace Lynn.DAL
         public async Task<ICollection<DbCourse>> GetCoursesByEditorAsync(ApplicationUser user)
         {
             return await _context.Courses
+                .Include(c => c.Level)
                 .Include(c => c.Editor)
                 .Where(c => c.Editor == user)
                 .ToListAsync();
         }
 
+        public async Task<bool> DeleteCourseAsync(int id)
+        {
+            var course = await _context.Courses
+                .Where(c => c.Id == id)
+                .SingleOrDefaultAsync();
+
+            if (course == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                _context.Courses.Remove(course);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public async Task<DbCourse> GetCourseByTestIdAsync(int testId)
+        {
+            return await _context.Tests
+                .Include(t => t.Course)
+                .Where(t => t.Id == testId)
+                .Select(t => t.Course)
+                .SingleOrDefaultAsync();
+        }
     }
 }

@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace Lynn.Client.ViewModels
 {
@@ -16,6 +19,28 @@ namespace Lynn.Client.ViewModels
     {
         public User LoggedInUser { get; set; }
         public ICommand SaveCourse_Click { get; set; }
+        public ICommand DeleteCourse_Click { get; set; }
+
+        private bool _saving = false;
+        public bool Saving
+        {
+            get { return _saving; }
+            set { Set(ref _saving, value, nameof(Saving)); }
+        }
+
+        private bool _saved = false;
+        public bool Saved
+        {
+            get { return _saved; }
+            set { Set(ref _saved, value, nameof(Saved)); }
+        }
+
+        private bool _notSaved = false;
+        public bool NotSaved
+        {
+            get { return _notSaved; }
+            set { Set(ref _notSaved, value, nameof(NotSaved)); }
+        }
 
         private Course _course;
         public Course Course
@@ -56,10 +81,10 @@ namespace Lynn.Client.ViewModels
         {
             LoggedInUser = MainViewModel.LoggedInUser;
             SaveCourse_Click = new RelayCommand(SaveCourse);
-            SetLanguages();
+            DeleteCourse_Click = new RelayCommand(DeleteCourseContentDialog);
         }
 
-        private async Task SetLanguages()
+        public async Task SetLanguages()
         {
             var service = new LanguageService();
             Languages = await service.GetLanguages();
@@ -77,8 +102,60 @@ namespace Lynn.Client.ViewModels
 
         private async void SaveCourse()
         {
-            var course = Course;
-            course.Id = -1;
+            Course.Editor = LoggedInUser.Username;
+            var service = new CourseService();
+            if (Course.Id == 0)
+            {
+                Saving = true;
+                var course = await service.PostCourseAsync(Course);
+                Saving = false;
+                if (course == null)
+                {
+                    NotSaved = true;
+                    await Task.Delay(2000);
+                    NotSaved = false;
+                }
+                else
+                {
+                    Course = course;    
+                    Tests = new ObservableCollection<TestPresenter>
+                    {
+                        new NewTestPresenter()
+                    };
+                    Saved = true;
+                    await Task.Delay(2000);
+                    Saved = false;
+                }
+            }
+        }
+
+        private async void DeleteCourseContentDialog()
+        {
+            var contentDialog = new ContentDialog
+            {
+                Content = new TextBlock
+                {
+                    Text = $"Biztosan törli a(z) {Course.CourseName} kurzust?",
+                    TextWrapping = Windows.UI.Xaml.TextWrapping.Wrap,
+                    FontSize = 18,
+                    Margin = new Windows.UI.Xaml.Thickness(20)
+                },
+                Background = new SolidColorBrush(Colors.LemonChiffon),
+                CloseButtonText = "Mégse",
+                PrimaryButtonText = "Törlés",
+                PrimaryButtonCommand = new RelayCommand(DeleteCourse)
+            };
+            await contentDialog.ShowAsync();
+        }
+
+        private async void DeleteCourse()
+        {
+            var service = new CourseService();
+            bool result = await service.DeleteCourseAsync(Course);
+            if (result)
+            {
+                NavigationService.GoBack();
+            }
         }
     }
 }

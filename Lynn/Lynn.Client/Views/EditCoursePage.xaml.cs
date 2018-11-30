@@ -1,4 +1,5 @@
 ﻿using Lynn.Client.Models;
+using Lynn.Client.Services;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace Lynn.Client.Views
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            await ViewModel.SetLanguages();
             if (e.Parameter != null)
             {
                 ViewModel.Course = (Course)e.Parameter;
@@ -39,13 +41,30 @@ namespace Lynn.Client.Views
             }
             else
             {
-                ViewModel.Course = new Course();
+                ViewModel.Course = new Course
+                {
+                    LearningLanguage = new LanguageDto(),
+                    TeachingLanguage = new LanguageDto()
+                };
             }
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            var clickedItem = (TestPresenter)e.ClickedItem;
+            Test parameter;
+            if (clickedItem.Test == null)
+            {
+                parameter = new Test
+                {
+                    CourseID = ViewModel.Course.Id
+                };
+            }
+            else
+            {
+                parameter = clickedItem.Test; 
+            }
+            NavigationService.Navigate(typeof(EditTestPage), parameter);
         }
     }
 }

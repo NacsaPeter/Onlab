@@ -11,5 +11,16 @@ namespace Lynn.BLL.Interfaces
         Task<ICollection<VocabularyExercise>> GetVocabularyExercisesAsync(int testId);
         Task<ICollection<GrammarExercise>> GetGrammarExercisesAsync(int testId);
         Task<ICollection<RuleDto>> GetGrammarRulesAsync(int testId);
+
+        Task<GrammarExercise> CreateGrammarExerciseAsync(GrammarExercise grammarExercise);
+        Task<GrammarExercise> EditGrammarExerciseAsync(GrammarExercise grammarExercise);
+        Task<bool> DeleteGrammarExerciseAsync(int id);
+
+        Task<VocabularyExercise> CreateVocabularyExerciseAsync(VocabularyExercise vocabularyExercise);
+        Task<VocabularyExercise> EditVocabularyExerciseAsync(VocabularyExercise vocabularyExercise);
+        Task<bool> DeleteVocabularyExerciseAsync(int id);
+
+        Task<RuleDto> CreateRuleAsync(RuleDto rule);
+        Task<RuleDto> EditRuleAsync(RuleDto rule);
     }
 }

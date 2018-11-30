@@ -15,8 +15,9 @@
     </Page.DataContext>
 
     <Page.Resources>
-        <CollectionViewSource x:Key="TestsViewSource" IsSourceGrouped="False" Source="{Binding Tests}"/>
         <c:HigherThanZeroToVisibilityConverter x:Key="HigherThanZeroToVisibilityConverter"/>
+        <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
+        <CollectionViewSource x:Key="TestsViewSource" IsSourceGrouped="False" Source="{Binding Tests}"/>
         <CollectionViewSource x:Key="TeachingLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
         <CollectionViewSource x:Key="TeachingTerritoriesViewSource" IsSourceGrouped="False" Source="{Binding Territories}"/>
         <CollectionViewSource x:Key="LearningLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
@@ -33,7 +34,7 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Grid>
+    <Grid Background="LemonChiffon">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
@@ -78,7 +79,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Név:" FontSize="20"/>
                 <TextBox Grid.Column="1" Grid.ColumnSpan="2" Width="230" IsSpellCheckEnabled="False"
-                         Background="White" Text="{Binding Course.CourseName}"/>
+                         Background="White" Text="{Binding Course.CourseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
             <Grid Grid.Row="1" HorizontalAlignment="Center" Margin="0,55,0,0">
@@ -89,7 +90,7 @@
                     <ColumnDefinition Width="110" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Nyelvi szint:" FontSize="16"/>
-                <ComboBox Grid.Column="1" Width="110" Background="White"
+                <ComboBox Grid.Column="1" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource CourseLevelsViewSource}}"
                           ItemTemplate="{Binding Source={StaticResource CourseLevelComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding Course.Level, Mode=TwoWay}"/>
@@ -103,12 +104,12 @@
                     <ColumnDefinition Width="110" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Text="Tanuló nyelv:" VerticalAlignment="Center" FontSize="16"/>
-                <ComboBox Grid.Column="1" Width="110" Background="White"
+                <ComboBox Grid.Column="1" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource LearningLanguagesViewSource}}"
                           ItemTemplate="{Binding Source={StaticResource LanguageComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding Course.LearningLanguage.Language, Mode=TwoWay}"/>
                 <TextBlock Grid.Column="2" Text="Nyelvterület:" VerticalAlignment="Center" Margin="18,0,0,0" FontSize="16"/>
-                <ComboBox Grid.Column="3" Width="110" Background="White"
+                <ComboBox Grid.Column="3" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource LearningTerritoriesViewSource}}"
                           ItemTemplate="{Binding Source={StaticResource TerritoryComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding Course.LearningLanguage.Territory, Mode=TwoWay}"/>
@@ -122,12 +123,12 @@
                     <ColumnDefinition Width="110" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0" Text="Tanító nyelv:" VerticalAlignment="Center" FontSize="16"/>
-                <ComboBox Grid.Column="1" Width="110" Background="White"
+                <ComboBox Grid.Column="1" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource TeachingLanguagesViewSource}}"
                           ItemTemplate="{Binding Source={StaticResource LanguageComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding Course.TeachingLanguage.Language, Mode=TwoWay}"/>
                 <TextBlock Grid.Column="2" Text="Nyelvterület:" VerticalAlignment="Center" Margin="18,0,0,0" FontSize="16"/>
-                <ComboBox Grid.Column="3" Width="110" Background="White"
+                <ComboBox Grid.Column="3" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource TeachingTerritoriesViewSource}}"
                           ItemTemplate="{Binding Source={StaticResource TerritoryComboBoxItemDataTemplate}}"
                           SelectedItem="{Binding Course.TeachingLanguage.Territory, Mode=TwoWay}"/>
@@ -136,13 +137,39 @@
             <StackPanel Grid.Row="4" HorizontalAlignment="Center" Margin="0,55,0,0">
                 <TextBlock Text="Részletek:" HorizontalAlignment="Left" FontSize="16"/>
                 <TextBox Width="450" Height="150" Margin="0,15,0,0" Background="White" Padding="10"
-                         TextWrapping="Wrap" IsSpellCheckEnabled="False" Text="{Binding Course.Details}"/>
-                <Button HorizontalAlignment="Right" Width="120" Height="45" Margin="0,45,0,0" Command="{Binding SaveCourse_Click}">
-                    <StackPanel Orientation="Horizontal">
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74E;" Margin="0,0,7,0"/>
-                        <TextBlock Text="Mentés" FontSize="18"/>
-                    </StackPanel>
-                </Button>
+                         TextWrapping="Wrap" IsSpellCheckEnabled="False"
+                         Text="{Binding Course.Details, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <Grid Margin="0,45,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button HorizontalAlignment="Left" Width="120" Height="45"
+                            Visibility="{Binding Course.Id, Converter={StaticResource HigherThanZeroToVisibilityConverter}}"
+                            Grid.Column="0" Command="{Binding DeleteCourse_Click}">
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74D;" Margin="0,0,7,0"/>
+                            <TextBlock Text="Törlés" FontSize="18"/>
+                        </StackPanel>
+                    </Button>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="Mentés" Foreground="Black"
+                               Visibility="{Binding Saving, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="Mentve" Foreground="Green"
+                               Visibility="{Binding Saved, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               Text="Sikertelen mentés" Foreground="Red"
+                               Visibility="{Binding NotSaved, Converter={StaticResource BoolTrueToVisibilityConverter}}"/>
+                    <Button Grid.Column="2" HorizontalAlignment="Right" Width="120" Height="45"
+                            Command="{Binding SaveCourse_Click}">
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE74E;" Margin="0,0,7,0"/>
+                            <TextBlock Text="Mentés" FontSize="18"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
             </StackPanel>
 
         </Grid>

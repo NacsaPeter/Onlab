@@ -122,8 +122,10 @@
     <Compile Include="Activation\ActivationHandler.cs" />
     <Compile Include="Converters\BoolFalseToVisibilityConverter.cs" />
     <Compile Include="Converters\BoolTrueToVisibilityConverter.cs" />
+    <Compile Include="Converters\CategoryGrammarToVisibilityConverter.cs" />
     <Compile Include="Converters\CategoryToLearningTextConverter.cs" />
     <Compile Include="Converters\CategoryToTestPicturePathConverter.cs" />
+    <Compile Include="Converters\CategoryVocabToVisibilityConverter.cs" />
     <Compile Include="Converters\HigherThanZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\LanguageToFlagPicturePathConverter.cs" />
     <Compile Include="Converters\PictureToPathConverter.cs" />
@@ -134,10 +136,14 @@
     <Compile Include="Helpers\SettingsStorageExtensions.cs" />
     <Compile Include="Interfaces\IExerciseView.cs" />
     <Compile Include="Models\CoursePresenter.cs" />
+    <Compile Include="Models\NewGrammarExercise.cs" />
     <Compile Include="Models\NewCoursePresenter.cs" />
+    <Compile Include="Models\NewRule.cs" />
     <Compile Include="Models\NewTestPresenter.cs" />
     <Compile Include="Models\ResultPresenter.cs" />
+    <Compile Include="Models\RulePresenter.cs" />
     <Compile Include="Models\TestPresenter.cs" />
+    <Compile Include="Models\NewVocabularyExercise.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Services\BaseHttpService.cs" />
@@ -162,6 +168,10 @@
     <Compile Include="ViewModels\DetailedTestViewModel.cs" />
     <Compile Include="ViewModels\DoExercisesViewModel.cs" />
     <Compile Include="ViewModels\EditCourseViewModel.cs" />
+    <Compile Include="ViewModels\EditGrammarExerciseViewModel.cs" />
+    <Compile Include="ViewModels\EditRuleViewModel.cs" />
+    <Compile Include="ViewModels\EditTestViewModel.cs" />
+    <Compile Include="ViewModels\EditVocabularyExerciseViewModel.cs" />
     <Compile Include="ViewModels\EnrolledCoursesViewModel.cs" />
     <Compile Include="ViewModels\EnrollInCourseViewModel.cs" />
     <Compile Include="ViewModels\ExerciseBaseViewModel.cs" />
@@ -193,6 +203,18 @@
     </Compile>
     <Compile Include="Views\EditCoursePage.xaml.cs">
       <DependentUpon>EditCoursePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditGrammarExercisePage.xaml.cs">
+      <DependentUpon>EditGrammarExercisePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditRuleView.xaml.cs">
+      <DependentUpon>EditRuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditTestPage.xaml.cs">
+      <DependentUpon>EditTestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditVocabularyExercisePage.xaml.cs">
+      <DependentUpon>EditVocabularyExercisePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EnrolledCoursesPage.xaml.cs">
       <DependentUpon>EnrolledCoursesPage.xaml</DependentUpon>
@@ -293,6 +315,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EditGrammarExercisePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditRuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditTestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditVocabularyExercisePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EnrolledCoursesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -389,6 +427,7 @@
     <Content Include="Assets\learning.png" />
     <Content Include="Assets\lemon.jpg" />
     <Content Include="Assets\new-course.png" />
+    <Content Include="Assets\new-exercise.png" />
     <Content Include="Assets\orange.jpg" />
     <Content Include="Assets\pear.jpg" />
     <Content Include="Assets\profile.jpg" />

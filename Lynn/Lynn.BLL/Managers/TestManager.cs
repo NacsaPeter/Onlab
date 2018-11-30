@@ -5,6 +5,7 @@ using Lynn.DAL.RepositoryInterfaces;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,6 +50,42 @@ namespace Lynn.BLL.Managers
         {
             var dbTestResult = _mapper.Map<DbTestResult>(testResult);
             return _mapper.Map<User>(await _testRepository.AddTestResultAsync(dbTestResult, userId, testId));
+        }
+
+        public async Task<ICollection<string>> GetCategoriesAsync()
+        {
+            return (await _testRepository.GetCategories())
+                .Select(c => c.Name)
+                .ToList();
+        }
+
+        public async Task<Test> CreateTestAsync(Test test)
+        {
+            var dbTest = _mapper.Map<DbTest>(test);
+            dbTest.Category = (await _testRepository.GetCategories())
+                .Where(c => c.Name == test.CategoryName)
+                .SingleOrDefault();
+            var createdTest = await _testRepository.CreateTestAsync(dbTest);
+            var testDto = _mapper.Map<Test>(createdTest);
+            testDto.CategoryName = (await _testRepository.GetCategoryByTestIdAsync(createdTest.Id)).Name;
+            return testDto;
+        }
+
+        public async Task<Test> EditTestAsync(Test test)
+        {
+            var dbTest = _mapper.Map<DbTest>(test);
+            dbTest.Category = (await _testRepository.GetCategories())
+                .Where(c => c.Name == test.CategoryName)
+                .SingleOrDefault();
+            var editedTest = await _testRepository.EditTestAsync(dbTest);
+            var testDto = _mapper.Map<Test>(editedTest);
+            testDto.CategoryName = (await _testRepository.GetCategoryByTestIdAsync(editedTest.Id)).Name;
+            return testDto;
+        }
+
+        public async Task<bool> DeleteTestAsync(int id)
+        {
+            return await _testRepository.DeleteTestAsync(id);
         }
     }
 }

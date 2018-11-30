@@ -14,12 +14,6 @@ namespace Lynn.Client.Views
             InitializeComponent();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);            
-            ViewModel.OnNavigatedTo(e.Parameter);
-        }
-
         private void HamburgerButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             HamburgerMenuButton.IsPaneOpen = !HamburgerMenuButton.IsPaneOpen;

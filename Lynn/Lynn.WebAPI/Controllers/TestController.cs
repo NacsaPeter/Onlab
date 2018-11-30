@@ -43,13 +43,33 @@ namespace Lynn.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateTestAsync([FromBody]Test test)
         {
-            throw new NotImplementedException();
+            return Ok(await _testManager.CreateTestAsync(test));
         }
 
         [HttpPut]
         public async Task<IActionResult> EditTestAsync([FromBody]Test test)
         {
-            throw new NotImplementedException();
+            return Ok(await _testManager.EditTestAsync(test));
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteTestAsync(int id)
+        {
+            bool success = await _testManager.DeleteTestAsync(id);
+            if (success)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("categories")]
+        public async Task<IActionResult> GetCategoriesAsync()
+        {
+            return Ok(await _testManager.GetCategoriesAsync());
         }
     }
 }

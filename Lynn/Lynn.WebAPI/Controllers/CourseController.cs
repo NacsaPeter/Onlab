@@ -33,8 +33,7 @@ namespace Lynn.WebAPI.Controllers
             return Ok(await _courseManager.GetCoursesByNameAsync(coursename));
         }
 
-        [HttpGet]
-        [Route("language/{teaching}/{learning}")]
+        [HttpGet("language/{teaching}/{learning}")]
         public async Task<IActionResult> GetCoursesByLanguageCode(string teaching, string learning)
         {
             return Ok(await _courseManager.GetCoursesByLanguageCodeAsync(teaching, learning));
@@ -50,6 +49,26 @@ namespace Lynn.WebAPI.Controllers
         public async Task<IActionResult> EditCourseAsync([FromBody]Course course)
         {
             throw new NotImplementedException();
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteCourseAsync(int id)
+        {
+            bool success = await _courseManager.DeleteCourseAsync(id);
+            if (success)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("test/{testId:int}")]
+        public async Task<IActionResult> GetCourseByTestIdAsync(int testId)
+        {
+            return Ok(await _courseManager.GetCourseByTestIdAsync(testId));
         }
     }
 }

@@ -52,5 +52,57 @@ namespace Lynn.Client.Services
                 return serializer.ReadObject(await streamTask) as ObservableCollection<Course>;
             }
         }
+
+        public async Task<Course> PostCourseAsync(Course course)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/course"));
+
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/course", course);
+                if (response.IsSuccessStatusCode)
+                {
+                    var serializer = new DataContractJsonSerializer(typeof(Course));
+                    return serializer.ReadObject(await response.Content.ReadAsStreamAsync()) as Course;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public async Task<bool> DeleteCourseAsync(Course course)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/course"));
+
+                HttpResponseMessage response = await client.DeleteAsync($"{BaseUrl}/api/course/{course.Id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task<Course> GetCourseByTestIdAsync(int testId)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/course"));
+
+                var serializer = new DataContractJsonSerializer(typeof(Course));
+                var streamTask = client.GetStreamAsync($"{BaseUrl}/api/course/test/{testId}");
+                return serializer.ReadObject(await streamTask) as Course;
+            }
+        }
     }
 }

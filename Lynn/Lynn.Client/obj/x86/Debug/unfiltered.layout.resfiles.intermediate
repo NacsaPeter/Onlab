@@ -33,6 +33,7 @@ Assets\learning.png
 Assets\lemon.jpg
 Assets\LockScreenLogo.scale-200.png
 Assets\new-course.png
+Assets\new-exercise.png
 Assets\orange.jpg
 Assets\pear.jpg
 Assets\profile.jpg
@@ -57,6 +58,10 @@ Views\DetailedCourseToEnrollInView.xbf
 Views\DetailedTestPage.xbf
 Views\DoExercisesPage.xbf
 Views\EditCoursePage.xbf
+Views\EditGrammarExercisePage.xbf
+Views\EditRuleView.xbf
+Views\EditTestPage.xbf
+Views\EditVocabularyExercisePage.xbf
 Views\EnrolledCoursesPage.xbf
 Views\EnrollInCoursePage.xbf
 Views\GrammarChooseOneExerciseView.xbf

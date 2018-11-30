@@ -1,0 +1,45 @@
+﻿<ContentDialog
+    x:Class="Lynn.Client.Views.EditRuleView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lynn.Client.Views"
+    xmlns:vm="using:Lynn.Client.ViewModels"
+    xmlns:c="using:Lynn.Client.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Szabály szerkesztése"
+    PrimaryButtonText="Mentés"
+    CloseButtonText="Mégse"
+    Background="LemonChiffon"
+    PrimaryButtonCommand="{Binding SaveRule_Click}">
+
+    <ContentDialog.DataContext>
+        <vm:EditRuleViewModel x:ConnectionId='1' x:Name="ViewModel"/>
+    </ContentDialog.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Név:" VerticalAlignment="Center" FontSize="16" Margin="0,0,20,0"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Width="350" Background="White" Margin="10"
+                 Text="{Binding Rule.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Leírás:" VerticalAlignment="Top" FontSize="16" Margin="0,15,20,0"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Width="350" Background="White" Margin="10" Height="100" TextWrapping="Wrap"
+                 Text="{Binding Rule.Explanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Fordítása:" VerticalAlignment="Top" FontSize="16" Margin="0,15,20,0"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Width="350" Background="White" Margin="10" Height="100" TextWrapping="Wrap"
+                 Text="{Binding Rule.TranslatedExplanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</ContentDialog>
+

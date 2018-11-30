@@ -17,6 +17,13 @@ namespace Lynn.DAL
             _context = context;
         }
 
+        public async Task<DbCourseLevel> GetCourseLevelByCodeAsync(string levelCode)
+        {
+            return await _context.CourseLevels
+                .Where(l => l.LevelCode == levelCode)
+                .SingleOrDefaultAsync();
+        }
+
         public async Task<DbCourseLevel> GetCourseLevelByCourseIdAsync(int courseId)
         {
             return await _context.Courses

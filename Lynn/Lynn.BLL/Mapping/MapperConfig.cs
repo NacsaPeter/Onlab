@@ -36,7 +36,8 @@ namespace Lynn.BLL.Mapping
                 cfg.CreateMap<Course, DbCourse>()
                     .ForMember(c => c.LearningLanguage, opt => opt.Ignore())
                     .ForMember(c => c.TeachingLanguage, opt => opt.Ignore())
-                    .ForMember(c => c.Level, opt => opt.Ignore());
+                    .ForMember(c => c.Level, opt => opt.Ignore())
+                    .ForMember(c => c.Editor, opt => opt.Ignore());
 
                 cfg.CreateMap<DbLanguage, Language>();
                 cfg.CreateMap<Language, DbLanguage>();
