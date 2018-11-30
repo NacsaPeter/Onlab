@@ -284,11 +284,8 @@ namespace Lynn.DAL.Repositories
 
         public async Task<ICollection<DbRule>> GetGrammarRulesByTestIdAsync(int testId)
         {
-            return await _context.GrammarExercises
-                .Include(e => e.Rule)
-                .Where(e => e.TestId == testId)
-                .Select(e => e.Rule)
-                .Distinct()
+            return await _context.Rules
+                .Where(r => r.TestId == testId)
                 .ToListAsync();
         }
 

@@ -11,6 +11,9 @@ namespace Lynn.DTO
         [DataMember(Name = "id")]
         public int Id { get; set; }
 
+        [DataMember(Name = "testId")]
+        public int TestId { get; set; }
+
         [DataMember(Name = "name")]
         public string Name { get; set; }
 

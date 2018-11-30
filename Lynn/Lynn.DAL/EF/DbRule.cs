@@ -15,6 +15,9 @@ namespace Lynn.DAL
         public string Explanation { get; set; }
         public string TranslatedExplanation { get; set; }
 
+        public int? TestId { get; set; }
+        public virtual DbTest Test { get; set; }
+
         public virtual ICollection<DbGrammarExercise> GrammarExercises { get; set; }
     }
 }

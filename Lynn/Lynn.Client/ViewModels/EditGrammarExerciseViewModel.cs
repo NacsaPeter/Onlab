@@ -135,6 +135,7 @@ namespace Lynn.Client.ViewModels
             if (rule.Id == 0)
             {
                 rule.Name = "";
+                rule.TestId = Exercise.TestId;
             }
             var contentDialog = new EditRuleView(rule);
             var result = await contentDialog.ShowAsync();

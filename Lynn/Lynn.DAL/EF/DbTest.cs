@@ -24,5 +24,6 @@ namespace Lynn.DAL
         public virtual ICollection<DbVocabularyExercise> VocabularyExercises { get; set; }
         public virtual ICollection<DbGrammarExercise> GrammarExercises { get; set; }
         public virtual ICollection<DbTestUser> UserTests { get; set; }
+        public virtual ICollection<DbRule> Rules { get; set; }
     }
 }
