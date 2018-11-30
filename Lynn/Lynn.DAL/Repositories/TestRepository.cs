@@ -109,6 +109,7 @@ namespace Lynn.DAL.Repositories
         public async Task<bool> DeleteTestAsync(int id)
         {
             var test = await _context.Tests
+                .Include(t => t.Category)
                 .Where(t => t.Id == id)
                 .SingleOrDefaultAsync();
 
@@ -119,6 +120,15 @@ namespace Lynn.DAL.Repositories
 
             try
             {
+                if (test.Category.Name == "Nyelvtan")
+                {
+                    var rules = await _context.Rules
+                        .Where(r => r.TestId == test.Id)
+                        .ToListAsync();
+
+                    _context.Rules.RemoveRange(rules);
+                }
+
                 _context.Tests.Remove(test);
                 await _context.SaveChangesAsync();
             }

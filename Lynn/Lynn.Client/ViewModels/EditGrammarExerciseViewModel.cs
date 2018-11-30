@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace Lynn.Client.ViewModels
 {
@@ -58,7 +61,7 @@ namespace Lynn.Client.ViewModels
         {
             LoggedInUser = MainViewModel.LoggedInUser;
             SaveExercise_Click = new RelayCommand(SaveExercise);
-            DeleteExercise_Click = new RelayCommand(DeleteExercise);
+            DeleteExercise_Click = new RelayCommand(DeleteExerciseContentDialog);
         }
 
         public async Task SetRules()
@@ -143,6 +146,25 @@ namespace Lynn.Client.ViewModels
             {
                 await SetRules();
             }
+        }
+
+        private async void DeleteExerciseContentDialog()
+        {
+            var contentDialog = new ContentDialog
+            {
+                Content = new TextBlock
+                {
+                    Text = $"Biztosan törli a feladatot?",
+                    TextWrapping = Windows.UI.Xaml.TextWrapping.Wrap,
+                    FontSize = 18,
+                    Margin = new Windows.UI.Xaml.Thickness(20)
+                },
+                Background = new SolidColorBrush(Colors.LemonChiffon),
+                CloseButtonText = "Mégse",
+                PrimaryButtonText = "Törlés",
+                PrimaryButtonCommand = new RelayCommand(DeleteExercise)
+            };
+            await contentDialog.ShowAsync();
         }
     }
 }

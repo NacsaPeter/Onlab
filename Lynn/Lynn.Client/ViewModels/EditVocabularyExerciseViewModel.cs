@@ -13,6 +13,9 @@ using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
+using Windows.UI;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Lynn.Client.ViewModels
@@ -70,7 +73,7 @@ namespace Lynn.Client.ViewModels
         {
             LoggedInUser = MainViewModel.LoggedInUser;
             SaveExercise_Click = new RelayCommand(SaveExercise);
-            DeleteExercise_Click = new RelayCommand(DeleteExercise);
+            DeleteExercise_Click = new RelayCommand(DeleteExerciseContentDialog);
             SelectPicture_Click = new RelayCommand(SelectPicture);
         }
 
@@ -179,6 +182,25 @@ namespace Lynn.Client.ViewModels
             var course = await service.GetCourseByTestIdAsync(Exercise.TestID);
             LearningLanguage = course.LearningLanguage.Language.Name;
             TeachingLanguage = course.TeachingLanguage.Language.Name;
+        }
+
+        private async void DeleteExerciseContentDialog()
+        {
+            var contentDialog = new ContentDialog
+            {
+                Content = new TextBlock
+                {
+                    Text = $"Biztosan törli a feladatot?",
+                    TextWrapping = Windows.UI.Xaml.TextWrapping.Wrap,
+                    FontSize = 18,
+                    Margin = new Windows.UI.Xaml.Thickness(20)
+                },
+                Background = new SolidColorBrush(Colors.LemonChiffon),
+                CloseButtonText = "Mégse",
+                PrimaryButtonText = "Törlés",
+                PrimaryButtonCommand = new RelayCommand(DeleteExercise)
+            };
+            await contentDialog.ShowAsync();
         }
     }
 }
