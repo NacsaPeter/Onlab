@@ -48,7 +48,7 @@ namespace Lynn.WebAPI.Controllers
         [HttpPut]
         public async Task<IActionResult> EditCourseAsync([FromBody]Course course)
         {
-            throw new NotImplementedException();
+            return Ok(await _courseManager.EditCourseAsync(course));
         }
 
         [HttpDelete("{id:int}")]

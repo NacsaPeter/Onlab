@@ -18,20 +18,11 @@
         <c:HigherThanZeroToVisibilityConverter x:Key="HigherThanZeroToVisibilityConverter"/>
         <c:BoolTrueToVisibilityConverter x:Key="BoolTrueToVisibilityConverter"/>
         <CollectionViewSource x:Key="TestsViewSource" IsSourceGrouped="False" Source="{Binding Tests}"/>
-        <CollectionViewSource x:Key="TeachingLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
-        <CollectionViewSource x:Key="TeachingTerritoriesViewSource" IsSourceGrouped="False" Source="{Binding Territories}"/>
-        <CollectionViewSource x:Key="LearningLanguagesViewSource" IsSourceGrouped="False" Source="{Binding Languages}"/>
-        <CollectionViewSource x:Key="LearningTerritoriesViewSource" IsSourceGrouped="False" Source="{Binding Territories}"/>
-        <CollectionViewSource x:Key="CourseLevelsViewSource" IsSourceGrouped="False" Source="{Binding Levels}"/>
-        <DataTemplate x:Key="LanguageComboBoxItemDataTemplate">
-            <TextBlock Text="{Binding Name}" />
-        </DataTemplate>
-        <DataTemplate x:Key="TerritoryComboBoxItemDataTemplate">
-            <TextBlock Text="{Binding Name}" />
-        </DataTemplate>
-        <DataTemplate x:Key="CourseLevelComboBoxItemDataTemplate">
-            <TextBlock Text="{Binding LevelCode}" />
-        </DataTemplate>
+        <CollectionViewSource x:Key="TeachingLanguagesViewSource" IsSourceGrouped="False" Source="{Binding LanguageNames}"/>
+        <CollectionViewSource x:Key="TeachingTerritoriesViewSource" IsSourceGrouped="False" Source="{Binding TerritoryNames}"/>
+        <CollectionViewSource x:Key="LearningLanguagesViewSource" IsSourceGrouped="False" Source="{Binding LanguageNames}"/>
+        <CollectionViewSource x:Key="LearningTerritoriesViewSource" IsSourceGrouped="False" Source="{Binding TerritoryNames}"/>
+        <CollectionViewSource x:Key="CourseLevelsViewSource" IsSourceGrouped="False" Source="{Binding LevelCodes}"/>
     </Page.Resources>
 
     <Grid Background="LemonChiffon">
@@ -92,8 +83,7 @@
                 <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="Nyelvi szint:" FontSize="16"/>
                 <ComboBox Grid.Column="1" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource CourseLevelsViewSource}}"
-                          ItemTemplate="{Binding Source={StaticResource CourseLevelComboBoxItemDataTemplate}}"
-                          SelectedItem="{Binding Course.Level, Mode=TwoWay}"/>
+                          SelectedItem="{Binding CurrentLevelCode, Mode=TwoWay}"/>
             </Grid>
 
             <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="0,20,0,0">
@@ -106,13 +96,11 @@
                 <TextBlock Grid.Column="0" Text="Tanuló nyelv:" VerticalAlignment="Center" FontSize="16"/>
                 <ComboBox Grid.Column="1" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource LearningLanguagesViewSource}}"
-                          ItemTemplate="{Binding Source={StaticResource LanguageComboBoxItemDataTemplate}}"
-                          SelectedItem="{Binding Course.LearningLanguage.Language, Mode=TwoWay}"/>
+                          SelectedItem="{Binding CurrentLearningLanguage, Mode=TwoWay}"/>
                 <TextBlock Grid.Column="2" Text="Nyelvterület:" VerticalAlignment="Center" Margin="18,0,0,0" FontSize="16"/>
                 <ComboBox Grid.Column="3" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource LearningTerritoriesViewSource}}"
-                          ItemTemplate="{Binding Source={StaticResource TerritoryComboBoxItemDataTemplate}}"
-                          SelectedItem="{Binding Course.LearningLanguage.Territory, Mode=TwoWay}"/>
+                          SelectedItem="{Binding CurrentLearningTerritory, Mode=TwoWay}"/>
             </Grid>
 
             <Grid Grid.Row="3" HorizontalAlignment="Center" Margin="0,20,0,0">
@@ -125,13 +113,11 @@
                 <TextBlock Grid.Column="0" Text="Tanító nyelv:" VerticalAlignment="Center" FontSize="16"/>
                 <ComboBox Grid.Column="1" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource TeachingLanguagesViewSource}}"
-                          ItemTemplate="{Binding Source={StaticResource LanguageComboBoxItemDataTemplate}}"
-                          SelectedItem="{Binding Course.TeachingLanguage.Language, Mode=TwoWay}"/>
+                          SelectedItem="{Binding CurrentTeachingLanguage, Mode=TwoWay}"/>
                 <TextBlock Grid.Column="2" Text="Nyelvterület:" VerticalAlignment="Center" Margin="18,0,0,0" FontSize="16"/>
                 <ComboBox Grid.Column="3" Width="110" Background="White" PlaceholderText="Válassz"
                           ItemsSource="{Binding Source={StaticResource TeachingTerritoriesViewSource}}"
-                          ItemTemplate="{Binding Source={StaticResource TerritoryComboBoxItemDataTemplate}}"
-                          SelectedItem="{Binding Course.TeachingLanguage.Territory, Mode=TwoWay}"/>
+                          SelectedItem="{Binding CurrentTeachingTerritory, Mode=TwoWay}"/>
             </Grid>
 
             <StackPanel Grid.Row="4" HorizontalAlignment="Center" Margin="0,55,0,0">

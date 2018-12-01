@@ -42,7 +42,36 @@ namespace Lynn.DAL
                 return null;
             }
 
-            _context.Courses.Update(course);
+            if (oldCourse.CourseName != course.CourseName)
+            {
+                oldCourse.CourseName = course.CourseName;
+            }
+            if (oldCourse.Details != course.Details)
+            {
+                oldCourse.Details = course.Details;
+            }
+            if (oldCourse.LearningLanguage != course.LearningLanguage)
+            {
+                oldCourse.LearningLanguage = course.LearningLanguage;
+            }
+            if (oldCourse.LearningLanguageTerritory != course.LearningLanguageTerritory)
+            {
+                oldCourse.LearningLanguageTerritory = course.LearningLanguageTerritory;
+            }
+            if (oldCourse.TeachingLanguage != course.TeachingLanguage)
+            {
+                oldCourse.TeachingLanguage = course.TeachingLanguage;
+            }
+            if (oldCourse.TeachingLanguageTerritory != course.TeachingLanguageTerritory)
+            {
+                oldCourse.TeachingLanguageTerritory = course.TeachingLanguageTerritory;
+            }
+            if (oldCourse.Level != course.Level)
+            {
+                oldCourse.Level = course.Level;
+            }
+
+            _context.Courses.Update(oldCourse);
             await _context.SaveChangesAsync();
 
             return course;

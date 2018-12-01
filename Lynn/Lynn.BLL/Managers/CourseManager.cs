@@ -97,5 +97,19 @@ namespace Lynn.BLL.Managers
             var dbCourse = await _courseRepository.GetCourseByTestIdAsync(testId);
             return await courseMapper.MapDbCourse(dbCourse);
         }
+
+        public async Task<Course> EditCourseAsync(Course course)
+        {
+            var dbCourse = _mapper.Map<DbCourse>(course);
+            dbCourse.Editor = await _userRepository.GetUserByNameAsync(course.Editor);
+            dbCourse.LearningLanguage = course.LearningLanguage.Language.Code;
+            dbCourse.LearningLanguageTerritory = course.LearningLanguage.Territory.Code;
+            dbCourse.TeachingLanguage = course.TeachingLanguage.Language.Code;
+            dbCourse.TeachingLanguageTerritory = course.TeachingLanguage.Territory.Code;
+            dbCourse.Level = await _languageRepository.GetCourseLevelByCodeAsync(course.Level.LevelCode);
+            var editedCourse = await _courseRepository.EditCourseAsync(dbCourse);
+            var courseMapper = new CourseMapper(_languageRepository, _mapper);
+            return await courseMapper.MapDbCourse(editedCourse);
+        }
     }
 }

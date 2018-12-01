@@ -10,6 +10,7 @@ namespace Lynn.BLL.Interfaces
     {
         Task<Course> CreateCourseAsync(Course course);
         Task<bool> DeleteCourseAsync(int id);
+        Task<Course> EditCourseAsync(Course course);
         Task<ICollection<Course>> GetCoursesByNameAsync(string coursename);
         Task<ICollection<Course>> GetEnrolledCoursesAsync(int userId);
         Task<ICollection<Course>> GetCoursesByLanguageCodeAsync(string known, string learning);

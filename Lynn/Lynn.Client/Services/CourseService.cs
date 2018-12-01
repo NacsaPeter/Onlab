@@ -92,6 +92,26 @@ namespace Lynn.Client.Services
             }
         }
 
+        public async Task<Course> PutCourseAsync(Course course)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/course"));
+
+                HttpResponseMessage response = await client.PutAsJsonAsync("api/course", course);
+                if (response.IsSuccessStatusCode)
+                {
+                    var serializer = new DataContractJsonSerializer(typeof(Course));
+                    return serializer.ReadObject(await response.Content.ReadAsStreamAsync()) as Course;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
         public async Task<Course> GetCourseByTestIdAsync(int testId)
         {
             using (var client = new HttpClient())

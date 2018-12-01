@@ -37,6 +37,11 @@ namespace Lynn.Client.Views
             if (e.Parameter != null)
             {
                 ViewModel.Course = (Course)e.Parameter;
+                ViewModel.CurrentLevelCode = ViewModel.Course.Level.LevelCode;
+                ViewModel.CurrentLearningLanguage = ViewModel.Course.LearningLanguage.Language.Name;
+                ViewModel.CurrentTeachingLanguage = ViewModel.Course.TeachingLanguage.Language.Name;
+                ViewModel.CurrentLearningTerritory = ViewModel.Course.LearningLanguage.Territory.Name;
+                ViewModel.CurrentTeachingTerritory = ViewModel.Course.TeachingLanguage.Territory.Name;
                 await ViewModel.ProcessTestsByCourseId(ViewModel.Course.Id);
             }
             else

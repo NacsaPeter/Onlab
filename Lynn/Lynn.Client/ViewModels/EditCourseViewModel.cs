@@ -20,6 +20,9 @@ namespace Lynn.Client.ViewModels
         public User LoggedInUser { get; set; }
         public ICommand SaveCourse_Click { get; set; }
         public ICommand DeleteCourse_Click { get; set; }
+        public ObservableCollection<Language> Languages { get; set; }
+        public ObservableCollection<Territory> Territories { get; set; }
+        public ObservableCollection<CourseLevelDto> Levels { get; set; }
 
         private bool _saving = false;
         public bool Saving
@@ -56,25 +59,85 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _tests, value, nameof(Tests)); }
         }
 
-        private ObservableCollection<Language> _languages;
-        public ObservableCollection<Language> Languages
+        private ObservableCollection<string> _languageNames;
+        public ObservableCollection<string> LanguageNames
         {
-            get { return _languages; }
-            set { Set(ref _languages, value, nameof(Languages)); }
+            get { return _languageNames; }
+            set { Set(ref _languageNames, value, nameof(LanguageNames)); }
+        }
+        private string _currentLearningLanguage;
+        public string CurrentLearningLanguage
+        {
+            get { return _currentLearningLanguage; }
+            set
+            {
+                Course.LearningLanguage.Language = Languages
+                    .Where(l => l.Name == value)
+                    .SingleOrDefault();
+                Set(ref _currentLearningLanguage, value, nameof(CurrentLearningLanguage));
+            }
+        }
+        private string _currentTeachingLanguage;
+        public string CurrentTeachingLanguage
+        {
+            get { return _currentTeachingLanguage; }
+            set
+            {
+                Course.TeachingLanguage.Language = Languages
+                    .Where(l => l.Name == value)
+                    .SingleOrDefault();
+                Set(ref _currentTeachingLanguage, value, nameof(CurrentTeachingLanguage));
+            }
         }
 
-        private ObservableCollection<Territory> _territories;
-        public ObservableCollection<Territory> Territories
+        private ObservableCollection<string> _territoryNames;
+        public ObservableCollection<string> TerritoryNames
         {
-            get { return _territories; }
-            set { Set(ref _territories, value, nameof(Territories)); }
+            get { return _territoryNames; }
+            set { Set(ref _territoryNames, value, nameof(TerritoryNames)); }
+        }
+        private string _currentLearningTerritory;
+        public string CurrentLearningTerritory
+        {
+            get { return _currentLearningTerritory; }
+            set
+            {
+                Course.LearningLanguage.Territory = Territories
+                    .Where(l => l.Name == value)
+                    .SingleOrDefault();
+                Set(ref _currentLearningTerritory, value, nameof(CurrentLearningTerritory));
+            }
+        }
+        private string _currentTeachingTerritory;
+        public string CurrentTeachingTerritory
+        {
+            get { return _currentTeachingTerritory; }
+            set
+            {
+                Course.TeachingLanguage.Territory = Territories
+                    .Where(l => l.Name == value)
+                    .SingleOrDefault();
+                Set(ref _currentTeachingTerritory, value, nameof(CurrentTeachingTerritory));
+            }
         }
 
-        private ObservableCollection<CourseLevelDto> _levels;
-        public ObservableCollection<CourseLevelDto> Levels
+        private ObservableCollection<string> _levelCodes;
+        public ObservableCollection<string> LevelCodes
         {
-            get { return _levels; }
-            set { Set(ref _levels, value, nameof(Levels)); }
+            get { return _levelCodes; }
+            set { Set(ref _levelCodes, value, nameof(LevelCodes)); }
+        }
+        private string _currentLevelCode;
+        public string CurrentLevelCode
+        {
+            get { return _currentLevelCode; }
+            set
+            {
+                Course.Level = Levels
+                    .Where(l => l.LevelCode == value)
+                    .SingleOrDefault();
+                Set(ref _currentLevelCode, value, nameof(CurrentLevelCode));
+            }
         }
 
         public EditCourseViewModel()
@@ -88,8 +151,23 @@ namespace Lynn.Client.ViewModels
         {
             var service = new LanguageService();
             Languages = await service.GetLanguages();
+            LanguageNames = new ObservableCollection<string>();
+            foreach (var language in Languages)
+            {
+                LanguageNames.Add(language.Name);
+            }
             Territories = await service.GetTerritories();
+            TerritoryNames = new ObservableCollection<string>();
+            foreach (var territory in Territories)
+            {
+                TerritoryNames.Add(territory.Name);
+            }
             Levels = await service.GetCourseLevels();
+            LevelCodes = new ObservableCollection<string>();
+            foreach (var level in Levels)
+            {
+                LevelCodes.Add(level.LevelCode);
+            }
         }
 
         public async Task ProcessTestsByCourseId(int courseId)
@@ -122,6 +200,25 @@ namespace Lynn.Client.ViewModels
                     {
                         new NewTestPresenter()
                     };
+                    Saved = true;
+                    await Task.Delay(2000);
+                    Saved = false;
+                }
+            }
+            else
+            {
+                Saving = true;
+                var course = await service.PutCourseAsync(Course);
+                Saving = false;
+                if (course == null)
+                {
+                    NotSaved = true;
+                    await Task.Delay(2000);
+                    NotSaved = false;
+                }
+                else
+                {
+                    Course = course;
                     Saved = true;
                     await Task.Delay(2000);
                     Saved = false;
