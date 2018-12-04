@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Lynn.Client.Enums;
 using Lynn.Client.Helpers;
 using Lynn.DTO;
 using Windows.UI;
@@ -18,14 +20,8 @@ namespace Lynn.Client.ViewModels
         private bool _isKnownToLearning;
         public string Sentence { get; set; }
         public string TranslatedSentence { get; set; }
-        public ContentDialog ResultContentDialog { get; private set; }
-
-        private bool _isCorrect;
-        public bool IsCorrect
-        {
-            get { return _isCorrect; }
-            set { _isCorrect = value; }
-        }
+        public bool IsCorrect { get; set; }
+        public ICommand NextCommand { get; set; }
 
         private string _translation;
         public string Translation
@@ -41,11 +37,18 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _exercise, value, nameof(Exercise)); }
         }
 
-        public TranslationExerciseViewModel(VocabularyExercise vocabularyExercise)
+        private ExerciseState _state;
+        public ExerciseState State
+        {
+            get { return _state; }
+            set { Set(ref _state, value, nameof(State)); }
+        }
+
+        public TranslationExerciseViewModel(VocabularyExercise vocabularyExercise, ICommand nextCommand)
         {
             Exercise = vocabularyExercise;
+            NextCommand = nextCommand;
             SetExerciseType();
-            ResultContentDialog = new ContentDialog { CloseButtonText = "Tovább" };
         }
 
         private void SetExerciseType()
@@ -57,8 +60,19 @@ namespace Lynn.Client.ViewModels
             TranslatedSentence = _isKnownToLearning ? Exercise.Sentence : Exercise.TranslatedSentence;
         }
 
-        public void CheckAnswer() =>
-            CheckAnswer(ResultContentDialog, TranslatedSentence, Translation, ref _isCorrect);
+        public void CheckAnswer()
+        {
+            if (Translation == TranslatedSentence)
+            {
+                IsCorrect = true;
+                State = ExerciseState.Success;
+            }
+            else
+            {
+                IsCorrect = false;
+                State = ExerciseState.Fail;
+            }
+        }
 
     }
 }

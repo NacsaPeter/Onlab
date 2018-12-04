@@ -1,4 +1,5 @@
-﻿using Lynn.Client.Helpers;
+﻿using Lynn.Client.Enums;
+using Lynn.Client.Helpers;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -15,16 +16,10 @@ using Windows.UI.Xaml.Media;
 namespace Lynn.Client.ViewModels
 {
     public class PictureExerciseViewModel : ChoosingExerciseBaseViewModel
-    {
-        public ContentDialog ResultContentDialog { get; private set; }       
+    { 
         public string PictureLocation { get; private set; }
-
-        private bool _isCorrect;
-        public bool IsCorrect
-        {
-            get { return _isCorrect; }
-            set { _isCorrect = value; }
-        }
+        public bool IsCorrect { get; set; }
+        public ICommand NextCommand { get; set; }
 
         public List<string> Answers { get; set; } 
         public ICommand Answer_Click { get; set; }
@@ -36,18 +31,36 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _exercise, value, nameof(Exercise)); }
         }
 
-        public PictureExerciseViewModel(VocabularyExercise vocabularyExercise)
+        private ExerciseState _state;
+        public ExerciseState State
+        {
+            get { return _state; }
+            set { Set(ref _state, value, nameof(State)); }
+        }
+
+        public PictureExerciseViewModel(VocabularyExercise vocabularyExercise, ICommand nextCommand)
         {
             Exercise = vocabularyExercise;
+            NextCommand = nextCommand;
             Answers = new List<string>();
             SetAnswersRandom(Answers, Exercise, Exercise.CorrectAnswer, true);
             PictureLocation = $"/Assets/{Exercise.Picture}";
-            ResultContentDialog = new ContentDialog { CloseButtonText = "Tovább" };
             Answer_Click = new RelayCommand<string>(CheckAnswer);
         }
 
-        private void CheckAnswer(string chosen) =>
-            CheckAnswer(ResultContentDialog, Exercise.CorrectAnswer, chosen, ref _isCorrect);
+        private void CheckAnswer(string userAnswer)
+        {
+            if (userAnswer == Exercise.CorrectAnswer)
+            {
+                IsCorrect = true;
+                State = ExerciseState.Success;
+            }
+            else
+            {
+                IsCorrect = false;
+                State = ExerciseState.Fail;
+            }
+        }
 
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,21 +25,16 @@ namespace Lynn.Client.Views
     {
         public ChooseOneExerciseViewModel ViewModel { get; }
 
-        public ChooseOneExerciseView(VocabularyExercise vocabularyExercise)
+        public ChooseOneExerciseView(VocabularyExercise vocabularyExercise, ICommand nextCommand)
         {
             this.InitializeComponent();
-            ViewModel = new ChooseOneExerciseViewModel(vocabularyExercise);
+            ViewModel = new ChooseOneExerciseViewModel(vocabularyExercise, nextCommand);
             DataContext = ViewModel;
         }
 
         public bool CheckIsCorrect()
         {
             return ViewModel.IsCorrect;
-        }
-
-        public ContentDialog GetResultContentDialog()
-        {
-            return ViewModel.ResultContentDialog;
         }
 
         public UIElement GetUIElement()

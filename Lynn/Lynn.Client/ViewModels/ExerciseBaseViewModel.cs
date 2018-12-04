@@ -1,4 +1,5 @@
-﻿using Lynn.Client.Helpers;
+﻿using Lynn.Client.Enums;
+using Lynn.Client.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,12 @@ namespace Lynn.Client.ViewModels
 {
     public abstract class ExerciseBaseViewModel : Observable
     {
-        public void CheckAnswer(ContentDialog resultDialog, string rightAnswer, string userAnswer, ref bool isCorrect)
+        public void CheckAnswer(
+            ContentDialog resultDialog,
+            string rightAnswer,
+            string userAnswer,
+            ref bool isCorrect
+          )
         {
             TextBlock text = new TextBlock
             {

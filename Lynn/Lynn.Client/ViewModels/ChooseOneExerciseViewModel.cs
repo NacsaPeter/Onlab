@@ -1,4 +1,5 @@
-﻿using Lynn.Client.Helpers;
+﻿using Lynn.Client.Enums;
+using Lynn.Client.Helpers;
 using Lynn.DTO;
 using System;
 using System.Collections.Generic;
@@ -18,18 +19,9 @@ namespace Lynn.Client.ViewModels
     public class ChooseOneExerciseViewModel : ChoosingExerciseBaseViewModel
     {
         public string Expression { get; private set; }
-        public ContentDialog ResultContentDialog { get; private set; }
-
-        private bool _isCorrect;
-        public bool IsCorrect
-        {
-            get { return _isCorrect; }
-            set { _isCorrect = value; }
-        }
-
-        private string _translatedExpression;
+        public bool IsCorrect { get; set; }
         private bool _isKnownToLearnig;
-
+        public ICommand NextCommand { get; set; }
         public List<string> Answers { get; set; }
         public ICommand Answer_Click { get; set; }
 
@@ -40,18 +32,45 @@ namespace Lynn.Client.ViewModels
             set { Set(ref _exercise, value, nameof(Exercise)); }
         }
 
-        public ChooseOneExerciseViewModel(VocabularyExercise vocabularyExercise)
+        private ExerciseState _state;
+        public ExerciseState State
+        {
+            get { return _state; }
+            set { Set(ref _state, value, nameof(State)); }
+        }
+
+        private string _translatedExpression;
+        public string TranslatedExpression
+        {
+            get { return _translatedExpression; }
+            set { Set(ref _translatedExpression, value, nameof(TranslatedExpression)); }
+        }
+
+
+        public ChooseOneExerciseViewModel(VocabularyExercise vocabularyExercise, ICommand nextCommand)
         {
             Exercise = vocabularyExercise;
+            NextCommand = nextCommand;
+            State = ExerciseState.NotAnswered;
             SetExerciseType();
             Answers = new List<string>();
-            SetAnswersRandom(Answers, Exercise, _translatedExpression, _isKnownToLearnig);
-            ResultContentDialog = new ContentDialog { CloseButtonText = "Tovább" };
+            SetAnswersRandom(Answers, Exercise, TranslatedExpression, _isKnownToLearnig);
             Answer_Click = new RelayCommand<string>(CheckAnswer);
         }
 
-        private void CheckAnswer(string chosen) =>
-            CheckAnswer(ResultContentDialog, _translatedExpression, chosen, ref _isCorrect);
+        private void CheckAnswer(string userAnswer)
+        {
+            if (userAnswer == TranslatedExpression)
+            {
+                IsCorrect = true;
+                State = ExerciseState.Success;
+            }
+            else
+            {
+                IsCorrect = false;
+                State = ExerciseState.Fail;
+            }
+        }
 
         private void SetExerciseType()
         {

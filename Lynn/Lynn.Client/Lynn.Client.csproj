@@ -126,9 +126,13 @@
     <Compile Include="Converters\CategoryToLearningTextConverter.cs" />
     <Compile Include="Converters\CategoryToTestPicturePathConverter.cs" />
     <Compile Include="Converters\CategoryVocabToVisibilityConverter.cs" />
+    <Compile Include="Converters\ExerciseStateToBoolConverter.cs" />
+    <Compile Include="Converters\ExerciseStateToColorConverter.cs" />
+    <Compile Include="Converters\ExerciseStateToVisibilityConverter.cs" />
     <Compile Include="Converters\HigherThanZeroToVisibilityConverter.cs" />
     <Compile Include="Converters\LanguageToFlagPicturePathConverter.cs" />
     <Compile Include="Converters\PictureToPathConverter.cs" />
+    <Compile Include="Enums\ExerciseState.cs" />
     <Compile Include="Helpers\EnumToBooleanConverter.cs" />
     <Compile Include="Helpers\Json.cs" />
     <Compile Include="Helpers\Observable.cs" />

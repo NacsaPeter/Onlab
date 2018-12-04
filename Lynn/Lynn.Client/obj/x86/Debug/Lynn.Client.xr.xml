@@ -4,9 +4,12 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="State" />
     <RootPropertyPathName Name="Answers" />
     <RootPropertyPathName Name="Answer_Click" />
+    <RootPropertyPathName Name="TranslatedExpression" />
     <RootPropertyPathName Name="Expression" />
+    <RootPropertyPathName Name="NextCommand" />
     <RootPropertyPathName Name="Courses" />
     <RootPropertyPathName Name="CourseName" />
     <RootPropertyPathName Name="Flag" />
@@ -127,21 +130,21 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="TextTrimming" />
       <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontStyle" />
       <RootProperty Name="Width" />
       <RootProperty Name="LineHeight" />
       <RootProperty Name="FontFamily" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="Inlines" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Style" />
       <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Source" />
       <RootProperty Name="Converter" />
+      <RootProperty Name="Source" />
       <RootProperty Name="Mode" />
       <RootProperty Name="UpdateSourceTrigger" />
       <RootProperty Name="ElementName" />
@@ -175,8 +178,12 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+      <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Lynn.Client.Converters.ExerciseStateToColorConverter" />
+    <RootType FullName="Lynn.Client.Converters.ExerciseStateToVisibilityConverter" />
+    <RootType FullName="Lynn.Client.Converters.ExerciseStateToBoolConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="BorderBrush" />
@@ -212,37 +219,46 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="Command" />
-      <RootProperty Name="CommandParameter" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="CommandParameter" />
+      <RootProperty Name="IsEnabled" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="Background" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="FontFamily" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="BorderBrush" />
       <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="CornerRadius" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="Glyph" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Lynn.Client.Views.ChooseOneExerciseView" />
     <RootType FullName="Lynn.Client.ViewModels.CreateCoursesViewModel" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
       <RootProperty Name="IsSourceGrouped" />
       <RootProperty Name="Source" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="BorderBrush" />
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="CornerRadius" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="Padding" />
@@ -277,13 +293,6 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Visibility" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.FontIcon">
-      <RootProperty Name="FontFamily" />
-      <RootProperty Name="Glyph" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Lynn.Client.Views.CreateCoursesPage">
       <RootProperty Name="Visibility" />
@@ -344,6 +353,7 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="IsEnabled" />
       <RootEvent Name="KeyDown" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">

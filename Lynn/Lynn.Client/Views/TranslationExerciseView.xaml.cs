@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System;
@@ -25,10 +26,10 @@ namespace Lynn.Client.Views
     {
         public TranslationExerciseViewModel ViewModel { get; }
 
-        public TranslationExerciseView(VocabularyExercise vocabularyExercise)
+        public TranslationExerciseView(VocabularyExercise vocabularyExercise, ICommand nextCommand)
         {
             this.InitializeComponent();
-            ViewModel = new TranslationExerciseViewModel(vocabularyExercise);
+            ViewModel = new TranslationExerciseViewModel(vocabularyExercise, nextCommand);
             DataContext = ViewModel;
         }
 
@@ -43,11 +44,6 @@ namespace Lynn.Client.Views
         public bool CheckIsCorrect()
         {
             return ViewModel.IsCorrect;
-        }
-
-        public ContentDialog GetResultContentDialog()
-        {
-            return ViewModel.ResultContentDialog;
         }
 
         public UIElement GetUIElement()

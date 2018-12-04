@@ -94,8 +94,9 @@ namespace Lynn.Client.ViewModels
             {
                 if (GrammarExercises.Count != _currentExerciseNum)
                 {
-                    IExerciseView exerciseView = new GrammarChooseOneExerciseView(GrammarExercises[_currentExerciseNum]);
-                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                    IExerciseView exerciseView = new GrammarChooseOneExerciseView(
+                        GrammarExercises[_currentExerciseNum], new RelayCommand(NextExercise)
+                      );
                     _gridOfTest.Children.Add(exerciseView.GetUIElement());
                     _currentExerciseNum++;
                 }
@@ -106,7 +107,6 @@ namespace Lynn.Client.ViewModels
                 {
                     var exercise = VocabularyExercises[_currentExerciseNum];
                     IExerciseView exerciseView = SetExerciseType(exercise);
-                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
                     _gridOfTest.Children.Add(exerciseView.GetUIElement());
                     _currentExerciseNum++;
                 }
@@ -130,21 +130,22 @@ namespace Lynn.Client.ViewModels
         {
             Random random = new Random();
             int randomNumber = random.Next(3);
+            var nextCommand = new RelayCommand(NextExercise);
             if (randomNumber == 0)
             {
-                return new ChooseOneExerciseView(exercise);
+                return new ChooseOneExerciseView(exercise, nextCommand);
             }
             else if (randomNumber == 1)
             {
-                return new PictureExerciseView(exercise);
+                return new PictureExerciseView(exercise, nextCommand);
             }
             else
             {
-                return new TranslationExerciseView(exercise);
+                return new TranslationExerciseView(exercise, nextCommand);
             }              
         }
 
-        private async void NextExercise(object sender, ContentDialogButtonClickEventArgs args)
+        private async void NextExercise()
         {
             var result = new ResultPresenter
             {
@@ -165,8 +166,9 @@ namespace Lynn.Client.ViewModels
             {
                 if (GrammarExercises.Count != _currentExerciseNum)
                 {
-                    IExerciseView exerciseView = new GrammarChooseOneExerciseView(GrammarExercises[_currentExerciseNum]);
-                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
+                    IExerciseView exerciseView = new GrammarChooseOneExerciseView(
+                        GrammarExercises[_currentExerciseNum], new RelayCommand(NextExercise)
+                      );
                     _gridOfTest.Children.Add(exerciseView.GetUIElement());
                     _currentExerciseNum++;
                 }
@@ -191,7 +193,6 @@ namespace Lynn.Client.ViewModels
                 {
                     var exercise = VocabularyExercises[_currentExerciseNum];
                     IExerciseView exerciseView = SetExerciseType(exercise);
-                    exerciseView.GetResultContentDialog().CloseButtonClick += NextExercise;
                     _gridOfTest.Children.Add(exerciseView.GetUIElement());
                     _currentExerciseNum++;
                 }
