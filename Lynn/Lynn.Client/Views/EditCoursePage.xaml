@@ -161,7 +161,7 @@
         </Grid>
 
         <GridView Grid.Row="1" Grid.Column="1" Padding="25" ItemsSource="{Binding Source={StaticResource TestsViewSource}}"
-                  IsItemClickEnabled="True" ItemClick="GridView_ItemClick" Background="WhiteSmoke">
+                  IsItemClickEnabled="True" ItemClick="GridView_ItemClick">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2" Width="237" Height="178">

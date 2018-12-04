@@ -122,10 +122,15 @@ namespace Lynn.DAL.Repositories
             {
                 if (test.Category.Name == "Nyelvtan")
                 {
+                    var exercises = await _context.GrammarExercises
+                        .Where(e => e.TestId == test.Id)
+                        .ToListAsync();
+
                     var rules = await _context.Rules
                         .Where(r => r.TestId == test.Id)
                         .ToListAsync();
 
+                    _context.Rules.RemoveRange(rules);
                     _context.Rules.RemoveRange(rules);
                 }
 

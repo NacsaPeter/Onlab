@@ -21,5 +21,6 @@ namespace Lynn.DAL.RepositoryInterfaces
 
         Task<DbRule> CreateRuleAsync(DbRule rule);
         Task<DbRule> EditRuleAsync(DbRule rule);
+        Task<bool> DeleteRuleAsync(int id);
     }
 }

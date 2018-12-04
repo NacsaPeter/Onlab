@@ -22,5 +22,6 @@ namespace Lynn.BLL.Interfaces
 
         Task<RuleDto> CreateRuleAsync(RuleDto rule);
         Task<RuleDto> EditRuleAsync(RuleDto rule);
+        Task<bool> DeleteRuleAsync(int id);
     }
 }

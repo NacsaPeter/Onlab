@@ -95,6 +95,35 @@ namespace Lynn.DAL.Repositories
             return true;
         }
 
+        public async Task<bool> DeleteRuleAsync(int id)
+        {
+            int numberOfExercises = (await _context.GrammarExercises
+                .Where(e => e.RuleId == id)
+                .ToListAsync())
+                .Count;
+
+            var rule = await _context.Rules
+                .Where(r => r.Id == id)
+                .SingleOrDefaultAsync();
+
+            if (rule == null || numberOfExercises != 0)
+            {
+                return false;
+            }
+
+            try
+            {
+                _context.Rules.Remove(rule);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public async Task<bool> DeleteVocabularyExerciseAsync(int id)
         {
             var exercise = await _context.VocabularyExercises

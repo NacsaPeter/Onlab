@@ -211,5 +211,26 @@ namespace Lynn.Client.Services
                 }
             }
         }
+
+        public async Task<bool> DeleteRuleAsync(int ruleId)
+        {
+            using (var client = new HttpClient())
+            {
+                InitializeClient(client);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("api/exercise"));
+
+                HttpResponseMessage response = await client
+                    .DeleteAsync($"{BaseUrl}/api/exercise/rule/{ruleId}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

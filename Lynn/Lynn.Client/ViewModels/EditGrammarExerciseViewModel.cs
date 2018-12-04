@@ -166,5 +166,53 @@ namespace Lynn.Client.ViewModels
             };
             await contentDialog.ShowAsync();
         }
+
+        public async void DeleteRuleContentDialog(RuleDto rule)
+        {
+            var contentDialog = new ContentDialog
+            {
+                Content = new TextBlock
+                {
+                    Text = $"Biztosan törli a szabályt?",
+                    TextWrapping = Windows.UI.Xaml.TextWrapping.Wrap,
+                    FontSize = 18,
+                    Margin = new Windows.UI.Xaml.Thickness(20)
+                },
+                Background = new SolidColorBrush(Colors.LemonChiffon),
+                CloseButtonText = "Mégse",
+                PrimaryButtonText = "Törlés"
+            };
+            var result = await contentDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                await DeleteRule(rule.Id);
+            }
+        }
+
+        public async Task DeleteRule(int id)
+        {
+            var service = new ExerciseService();
+            var result = await service.DeleteRuleAsync(id);
+            if (result)
+            {
+                await SetRules();
+            }
+            else
+            {
+                var contentDialog = new ContentDialog
+                {
+                    Background = new SolidColorBrush(Colors.LemonChiffon),
+                    Content = new TextBlock
+                    {
+                        FontSize = 18,
+                        Text = "A szabályhoz feladat tartozik, ezért nem törölhető.",
+                        TextWrapping = Windows.UI.Xaml.TextWrapping.Wrap,
+                        Margin = new Windows.UI.Xaml.Thickness(20)
+                    },
+                    CloseButtonText = "Ok"
+                };
+                await contentDialog.ShowAsync();
+            }
+        }
     }
 }

@@ -125,7 +125,7 @@
 
         <GridView Grid.Row="1" Grid.Column="1" Padding="25" ItemClick="RulesGridView_ItemClick"
                   ItemsSource="{Binding Source={StaticResource RulesViewSource}}"
-                  IsItemClickEnabled="True" Background="WhiteSmoke">
+                  IsItemClickEnabled="True">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2" Width="480" Height="80" BorderThickness="1"
@@ -133,12 +133,17 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding Rule.Name}" VerticalAlignment="Center" Grid.Column="0"
                                    Margin="30,0" FontSize="18" TextWrapping="Wrap"/>
                         <RadioButton GroupName="RulesRadio" Grid.Column="1" Checked="RadioButton_Checked"
                                      IsChecked="{Binding isCurrent, Mode=TwoWay}"
                                      Visibility="{Binding Rule.Id, Converter={StaticResource HigherThanZeroToVisibilityConverter}}"/>
+                        <Button Grid.Column="2" Background="White" Click="DeleteRuleButton_Clicked"
+                                Visibility="{Binding Rule.Id, Converter={StaticResource HigherThanZeroToVisibilityConverter}}">
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE711;"/>
+                        </Button>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>

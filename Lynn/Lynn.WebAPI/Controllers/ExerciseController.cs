@@ -104,5 +104,19 @@ namespace Lynn.WebAPI.Controllers
             return Ok(await _exerciseManager.EditRuleAsync(rule));
 
         }
+
+        [HttpDelete("rule/{id:int}")]
+        public async Task<IActionResult> DeleteRuleAsync(int id)
+        {
+            bool success = await _exerciseManager.DeleteRuleAsync(id);
+            if (success)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }

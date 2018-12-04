@@ -128,7 +128,7 @@
         <GridView Grid.Row="1" Grid.Column="0" Padding="25" ItemClick="VocabularyGridView_ItemClick"
                   Visibility="{Binding Test.CategoryName, Converter={StaticResource CategoryVocabToVisibilityConverter}}"
                   ItemsSource="{Binding Source={StaticResource VocabularyExercisesViewSource}}"
-                  IsItemClickEnabled="True" Background="WhiteSmoke">
+                  IsItemClickEnabled="True">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2" Width="237" Height="110" BorderThickness="1" BorderBrush="Black" Background="White">
@@ -148,7 +148,7 @@
         <GridView Grid.Row="1" Grid.Column="0" Padding="25" ItemClick="GrammarGridView_ItemClick"
                   Visibility="{Binding Test.CategoryName, Converter={StaticResource CategoryGrammarToVisibilityConverter}}"
                   ItemsSource="{Binding Source={StaticResource GrammarExercisesViewSource}}"
-                  IsItemClickEnabled="True" Background="WhiteSmoke">
+                  IsItemClickEnabled="True">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="2" Width="480" Height="80" BorderThickness="1" BorderBrush="Black" Background="White">

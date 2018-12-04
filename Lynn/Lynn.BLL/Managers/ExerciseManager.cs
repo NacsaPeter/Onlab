@@ -46,6 +46,11 @@ namespace Lynn.BLL.Managers
             return await _exerciseRepository.DeleteGrammarExerciseAsync(id);
         }
 
+        public async Task<bool> DeleteRuleAsync(int id)
+        {
+            return await _exerciseRepository.DeleteRuleAsync(id);
+        }
+
         public async Task<bool> DeleteVocabularyExerciseAsync(int id)
         {
             return await _exerciseRepository.DeleteVocabularyExerciseAsync(id);

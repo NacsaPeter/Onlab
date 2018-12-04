@@ -45,5 +45,11 @@ namespace Lynn.Client.Views
         {
             ViewModel.Exercise.RuleId = ((RulePresenter)((RadioButton)e.OriginalSource).DataContext).Rule.Id;
         }
+
+        private void DeleteRuleButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            var rule = ((RulePresenter)((Button)e.OriginalSource).DataContext).Rule;
+            ViewModel.DeleteRuleContentDialog(rule);
+        }
     }
 }
