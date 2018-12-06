@@ -71,7 +71,7 @@
                 <StackPanel VerticalAlignment="Center" Background="White"
                             BorderBrush="Black" BorderThickness="1" CornerRadius="5">
                     <Border Grid.Row="0" CornerRadius="5" Margin="50,30,50,0">
-                        <Image Source="{Binding CurrentExercise.Picture, Converter={StaticResource PictureToPathConverter}}" Height="200"/>
+                        <Image Source="{Binding CurrentExercise.Picture, Converter={StaticResource PictureToPathConverter}}" Width="250"/>
                     </Border>
 
                     <StackPanel Grid.Row="1" Margin="0,50,0,0" Orientation="Horizontal" HorizontalAlignment="Center">

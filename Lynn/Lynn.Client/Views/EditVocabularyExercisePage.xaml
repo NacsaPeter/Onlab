@@ -107,12 +107,12 @@
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Példamondat" Margin="10"
                            FontSize="18" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Background="White" Margin="10"
+                <TextBox Grid.Row="0" Grid.Column="1" Background="White" Margin="10" IsSpellCheckEnabled="False"
                          Text="{Binding Exercise.Sentence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Fordítása:" Margin="10"
                            FontSize="18" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Background="White" Margin="10"
+                <TextBox Grid.Row="1" Grid.Column="1" Background="White" Margin="10" IsSpellCheckEnabled="False"
                          Text="{Binding Exercise.TranslatedSentence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 

@@ -146,8 +146,22 @@ namespace Lynn.DAL
                 return false;
             }
 
+            var tests = await _context.Tests
+                .Include(t => t.Rules)
+                .Include(t => t.GrammarExercises)
+                .Include(t => t.VocabularyExercises)
+                .Where(t => t.CourseId == course.Id)
+                .ToListAsync();
+
             try
             {
+                foreach (var test in tests)
+                {
+                    _context.Rules.RemoveRange(test.Rules);
+                    _context.GrammarExercises.RemoveRange(test.GrammarExercises);
+                    _context.VocabularyExercises.RemoveRange(test.VocabularyExercises);
+                }
+
                 _context.Courses.Remove(course);
                 await _context.SaveChangesAsync();
             }

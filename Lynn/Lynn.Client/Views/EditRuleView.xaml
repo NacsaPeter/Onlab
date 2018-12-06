@@ -30,15 +30,15 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Név:" VerticalAlignment="Center" FontSize="16" Margin="0,0,20,0"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Width="350" Background="White" Margin="10"
+        <TextBox Grid.Row="0" Grid.Column="1" Width="350" Background="White" Margin="10" IsSpellCheckEnabled="False"
                  Text="{Binding Rule.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Leírás:" VerticalAlignment="Top" FontSize="16" Margin="0,15,20,0"/>
         <TextBox Grid.Row="1" Grid.Column="1" Width="350" Background="White" Margin="10" Height="100" TextWrapping="Wrap"
-                 Text="{Binding Rule.Explanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Rule.Explanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSpellCheckEnabled="False"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Fordítása:" VerticalAlignment="Top" FontSize="16" Margin="0,15,20,0"/>
         <TextBox Grid.Row="2" Grid.Column="1" Width="350" Background="White" Margin="10" Height="100" TextWrapping="Wrap"
-                 Text="{Binding Rule.TranslatedExplanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                 Text="{Binding Rule.TranslatedExplanation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSpellCheckEnabled="False"/>
     </Grid>
 </ContentDialog>

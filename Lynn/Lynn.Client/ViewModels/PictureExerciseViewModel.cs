@@ -44,7 +44,9 @@ namespace Lynn.Client.ViewModels
             NextCommand = nextCommand;
             Answers = new List<string>();
             SetAnswersRandom(Answers, Exercise, Exercise.CorrectAnswer, true);
-            PictureLocation = $"/Assets/{Exercise.Picture}";
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+            string baseurl = resourceLoader.GetString("BaseUri");
+            PictureLocation = $"{baseurl}/api/pictures/{Exercise.Picture}";
             Answer_Click = new RelayCommand<string>(CheckAnswer);
         }
 
