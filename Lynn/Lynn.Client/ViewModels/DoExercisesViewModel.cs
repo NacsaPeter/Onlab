@@ -129,7 +129,7 @@ namespace Lynn.Client.ViewModels
         private IExerciseView SetExerciseType(VocabularyExercise exercise)
         {
             Random random = new Random();
-            int randomNumber = random.Next(3);
+            int randomNumber = random.Next(exercise.Picture == null ? 2 : 3);
             var nextCommand = new RelayCommand(NextExercise);
             if (randomNumber == 0)
             {
@@ -137,11 +137,11 @@ namespace Lynn.Client.ViewModels
             }
             else if (randomNumber == 1)
             {
-                return new PictureExerciseView(exercise, nextCommand);
+                return new TranslationExerciseView(exercise, nextCommand);
             }
             else
             {
-                return new TranslationExerciseView(exercise, nextCommand);
+                return new PictureExerciseView(exercise, nextCommand);
             }              
         }
 
