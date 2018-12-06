@@ -25,7 +25,6 @@ namespace Lynn.Client.ViewModels
         public User LoggedInUser { get; set; }
         public ICommand SaveExercise_Click { get; set; }
         public ICommand DeleteExercise_Click { get; set; }
-        public ICommand SelectPicture_Click { get; set; }
 
         private bool _saving = false;
         public bool Saving
@@ -74,7 +73,6 @@ namespace Lynn.Client.ViewModels
             LoggedInUser = MainViewModel.LoggedInUser;
             SaveExercise_Click = new RelayCommand(SaveExercise);
             DeleteExercise_Click = new RelayCommand(DeleteExerciseContentDialog);
-            SelectPicture_Click = new RelayCommand(SelectPicture);
         }
 
         private async void SaveExercise()
@@ -128,52 +126,6 @@ namespace Lynn.Client.ViewModels
             {
                 NavigationService.GoBack();
             }
-        }
-
-        private async void SelectPicture()
-        {
-            FileOpenPicker open = new FileOpenPicker
-            {
-                SuggestedStartLocation = PickerLocationId.PicturesLibrary,
-                ViewMode = PickerViewMode.Thumbnail
-            };
-
-            open.FileTypeFilter.Clear();
-            open.FileTypeFilter.Add(".bmp");
-            open.FileTypeFilter.Add(".png");
-            open.FileTypeFilter.Add(".jpeg");
-            open.FileTypeFilter.Add(".jpg");
-
-            //StorageFolder folder = await StorageFolder.GetFolderFromPathAsync("\\Assets");
-            //await file.CopyAsync(folder);
-
-            try
-            {
-                //create file in public folder
-                StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-                //StorageFile sampleFile = await storageFolder.CreateFileAsync("test.txt", CreationCollisionOption.ReplaceExisting);
-                StorageFile file = await open.PickSingleFileAsync();
-
-                //get asets folder
-                StorageFolder appInstalledFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-                StorageFolder assetsFolder = await appInstalledFolder.GetFolderAsync("Assets");
-
-                //move file from public folder to assets
-                await file.MoveAsync(assetsFolder, $"test{Exercise.TestID}{file.Name}", NameCollisionOption.ReplaceExisting);
-
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("error: " + ex);
-            }
-
-            //string fName = $"test{Exercise.TestID}{file.Name}";
-            //Exercise.Picture = fName;
-
-            //string sourceDir = file.Path.Substring(0, file.Path.Length - file.Name.Length - 1);
-            //string destDir = "C:\\Users\\Public\\Pictures";
-
-            //File.Copy(Path.Combine(sourceDir, file.Name), Path.Combine(destDir, fName), true);
         }
 
         public async Task SetLanguages()

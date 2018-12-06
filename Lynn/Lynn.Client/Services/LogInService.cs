@@ -15,7 +15,9 @@ namespace Lynn.Client.Services
         public static async Task<string> LogIn(User user)
         {
             // discover endpoints from metadata
-            var disco = await DiscoveryClient.GetAsync("http://localhost:57770/");
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+            string baseurl = resourceLoader.GetString("BaseUri");
+            var disco = await DiscoveryClient.GetAsync(baseurl);
             if (disco.IsError)
             {
                 return "";

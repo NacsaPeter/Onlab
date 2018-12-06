@@ -398,12 +398,10 @@
     <Compile Include="Helpers\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\apple.jpg" />
     <Content Include="Assets\categories\Gyümölcsök.png" />
     <Content Include="Assets\categories\Nyelvtan.png" />
     <Content Include="Assets\categories\Színek.png" />
     <Content Include="Assets\categories\Állatok.png" />
-    <Content Include="Assets\cherry.jpg" />
     <Content Include="Assets\colors\black.png" />
     <Content Include="Assets\colors\blue.png" />
     <Content Include="Assets\colors\brown.png" />
@@ -429,11 +427,8 @@
     <Content Include="Assets\flags\it\IT.png" />
     <Content Include="Assets\international-flags.jpg" />
     <Content Include="Assets\learning.png" />
-    <Content Include="Assets\lemon.jpg" />
     <Content Include="Assets\new-course.png" />
     <Content Include="Assets\new-exercise.png" />
-    <Content Include="Assets\orange.jpg" />
-    <Content Include="Assets\pear.jpg" />
     <Content Include="Assets\profile.jpg" />
     <Content Include="Assets\test.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -448,6 +443,7 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="Lynn.Client_TemporaryKey.pfx" />
+    <PRIResource Include="Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

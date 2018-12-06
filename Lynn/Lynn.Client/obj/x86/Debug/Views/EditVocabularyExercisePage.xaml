@@ -41,10 +41,9 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="1" Background="LightCyan" Margin="10,20" Padding="20,0"
+        <Grid Grid.Row="1" Grid.Column="1" Background="LightCyan" Margin="10,20" Padding="20,20" VerticalAlignment="Center"
               CornerRadius="5" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -59,53 +58,44 @@
                 <ColumnDefinition Width="140"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Margin="10,10,10,0" Width="200">
-                <Border Height="130" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                    <Image Source="{Binding Exercise.Picture, Converter={StaticResource PictureToPathConverter}}"
-                           Stretch="Fill"/>
-                </Border>
-                <Button Content="Kép kiválasztása" HorizontalAlignment="Right" Margin="5,10"
-                        Command="{Binding SelectPicture_Click}"/>
-            </StackPanel>
-
-            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Text="{Binding LearningLanguage}" FontSize="20" Margin="10"/>
-            <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+            <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Text="{Binding TeachingLanguage}" FontSize="20" Margin="10"/>
 
-            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"
+            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
                        Text="Kifejezés:" FontSize="20" Margin="10"/>
-            <TextBox Grid.Row="2" Grid.Column="1"
+            <TextBox Grid.Row="1" Grid.Column="1"
                         IsSpellCheckEnabled="False" Margin="10"
                         Background="White" Text="{Binding Exercise.CorrectAnswer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="2" Grid.Column="2"
+            <TextBox Grid.Row="1" Grid.Column="2"
                         IsSpellCheckEnabled="False" Margin="10"
                         Background="White" Text="{Binding Exercise.TranslatedCorrectAnswer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"
+            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"
                         Text="Rossz válaszok:" FontSize="20" Margin="10"/>
-            <TextBox Grid.Row="3" Grid.Column="1"
+            <TextBox Grid.Row="2" Grid.Column="1"
                      IsSpellCheckEnabled="False" Margin="10,14,10,10"
                      Background="White" Text="{Binding Exercise.WrongAnswer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="3" Grid.Column="2"
+            <TextBox Grid.Row="2" Grid.Column="2"
                         IsSpellCheckEnabled="False" Margin="10,14,10,10"
                         Background="White" Text="{Binding Exercise.TranslatedWrongAnswer1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBox Grid.Row="4" Grid.Column="1"
+            <TextBox Grid.Row="3" Grid.Column="1"
                      IsSpellCheckEnabled="False" Margin="10"
                      Background="White" Text="{Binding Exercise.WrongAnswer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="4" Grid.Column="2"
+            <TextBox Grid.Row="3" Grid.Column="2"
                         IsSpellCheckEnabled="False" Margin="10"
                         Background="White" Text="{Binding Exercise.TranslatedWrongAnswer2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <TextBox Grid.Row="5" Grid.Column="1"
+            <TextBox Grid.Row="4" Grid.Column="1"
                      IsSpellCheckEnabled="False" Margin="10"
                      Background="White" Text="{Binding Exercise.WrongAnswer3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Grid.Row="5" Grid.Column="2"
+            <TextBox Grid.Row="4" Grid.Column="2"
                         IsSpellCheckEnabled="False" Margin="10"
                         Background="White" Text="{Binding Exercise.TranslatedWrongAnswer3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Grid Grid.Row="6" Grid.ColumnSpan="3" Margin="0,15,0,0">
+            <Grid Grid.Row="5" Grid.ColumnSpan="3" Margin="0,15,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -126,7 +116,7 @@
                          Text="{Binding Exercise.TranslatedSentence, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
-            <Grid Grid.Row="7" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Margin="20,30,20,10">
+            <Grid Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Margin="20,30,20,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>

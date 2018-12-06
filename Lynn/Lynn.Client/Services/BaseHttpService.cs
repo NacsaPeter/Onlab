@@ -12,7 +12,14 @@ namespace Lynn.Client.Services
 {
     public abstract class BaseHttpService
     {
-        public static string BaseUrl { get; } = "http://localhost:57770";
+        public static string BaseUrl
+        {
+            get
+            {
+                var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                return resourceLoader.GetString("BaseUri");
+            }
+        }
 
         private readonly Uri serverUrl = new Uri(BaseUrl);
 

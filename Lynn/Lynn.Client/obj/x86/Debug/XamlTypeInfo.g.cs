@@ -1249,7 +1249,6 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 userType.AddMemberName("LoggedInUser");
                 userType.AddMemberName("SaveExercise_Click");
                 userType.AddMemberName("DeleteExercise_Click");
-                userType.AddMemberName("SelectPicture_Click");
                 userType.AddMemberName("Saving");
                 userType.AddMemberName("Saved");
                 userType.AddMemberName("NotSaved");
@@ -2410,547 +2409,537 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             that.DeleteExercise_Click = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_95_EditVocabularyExerciseViewModel_SelectPicture_Click(object instance)
-        {
-            var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
-            return that.SelectPicture_Click;
-        }
-        private void set_95_EditVocabularyExerciseViewModel_SelectPicture_Click(object instance, object Value)
-        {
-            var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
-            that.SelectPicture_Click = (global::System.Windows.Input.ICommand)Value;
-        }
-        private object get_96_EditVocabularyExerciseViewModel_Saving(object instance)
+        private object get_95_EditVocabularyExerciseViewModel_Saving(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             return that.Saving;
         }
-        private void set_96_EditVocabularyExerciseViewModel_Saving(object instance, object Value)
+        private void set_95_EditVocabularyExerciseViewModel_Saving(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             that.Saving = (global::System.Boolean)Value;
         }
-        private object get_97_EditVocabularyExerciseViewModel_Saved(object instance)
+        private object get_96_EditVocabularyExerciseViewModel_Saved(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             return that.Saved;
         }
-        private void set_97_EditVocabularyExerciseViewModel_Saved(object instance, object Value)
+        private void set_96_EditVocabularyExerciseViewModel_Saved(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             that.Saved = (global::System.Boolean)Value;
         }
-        private object get_98_EditVocabularyExerciseViewModel_NotSaved(object instance)
+        private object get_97_EditVocabularyExerciseViewModel_NotSaved(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             return that.NotSaved;
         }
-        private void set_98_EditVocabularyExerciseViewModel_NotSaved(object instance, object Value)
+        private void set_97_EditVocabularyExerciseViewModel_NotSaved(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             that.NotSaved = (global::System.Boolean)Value;
         }
-        private object get_99_EditVocabularyExerciseViewModel_Exercise(object instance)
+        private object get_98_EditVocabularyExerciseViewModel_Exercise(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             return that.Exercise;
         }
-        private void set_99_EditVocabularyExerciseViewModel_Exercise(object instance, object Value)
+        private void set_98_EditVocabularyExerciseViewModel_Exercise(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             that.Exercise = (global::Lynn.DTO.VocabularyExercise)Value;
         }
-        private object get_100_EditVocabularyExerciseViewModel_LearningLanguage(object instance)
+        private object get_99_EditVocabularyExerciseViewModel_LearningLanguage(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             return that.LearningLanguage;
         }
-        private void set_100_EditVocabularyExerciseViewModel_LearningLanguage(object instance, object Value)
+        private void set_99_EditVocabularyExerciseViewModel_LearningLanguage(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             that.LearningLanguage = (global::System.String)Value;
         }
-        private object get_101_EditVocabularyExerciseViewModel_TeachingLanguage(object instance)
+        private object get_100_EditVocabularyExerciseViewModel_TeachingLanguage(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             return that.TeachingLanguage;
         }
-        private void set_101_EditVocabularyExerciseViewModel_TeachingLanguage(object instance, object Value)
+        private void set_100_EditVocabularyExerciseViewModel_TeachingLanguage(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EditVocabularyExerciseViewModel)instance;
             that.TeachingLanguage = (global::System.String)Value;
         }
-        private object get_102_EnrolledCoursesViewModel_Courses(object instance)
+        private object get_101_EnrolledCoursesViewModel_Courses(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrolledCoursesViewModel)instance;
             return that.Courses;
         }
-        private void set_102_EnrolledCoursesViewModel_Courses(object instance, object Value)
+        private void set_101_EnrolledCoursesViewModel_Courses(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrolledCoursesViewModel)instance;
             that.Courses = (global::System.Collections.ObjectModel.ObservableCollection<global::Lynn.DTO.Course>)Value;
         }
-        private object get_103_Course_Id(object instance)
+        private object get_102_Course_Id(object instance)
         {
             var that = (global::Lynn.DTO.Course)instance;
             return that.Id;
         }
-        private void set_103_Course_Id(object instance, object Value)
+        private void set_102_Course_Id(object instance, object Value)
         {
             var that = (global::Lynn.DTO.Course)instance;
             that.Id = (global::System.Int32)Value;
         }
-        private object get_104_Course_CourseName(object instance)
+        private object get_103_Course_CourseName(object instance)
         {
             var that = (global::Lynn.DTO.Course)instance;
             return that.CourseName;
         }
-        private void set_104_Course_CourseName(object instance, object Value)
+        private void set_103_Course_CourseName(object instance, object Value)
         {
             var that = (global::Lynn.DTO.Course)instance;
             that.CourseName = (global::System.String)Value;
         }
-        private object get_105_Course_TeachingLanguage(object instance)
+        private object get_104_Course_TeachingLanguage(object instance)
         {
             var that = (global::Lynn.DTO.Course)instance;
             return that.TeachingLanguage;
         }
-        private void set_105_Course_TeachingLanguage(object instance, object Value)
+        private void set_104_Course_TeachingLanguage(object instance, object Value)
         {
             var that = (global::Lynn.DTO.Course)instance;
             that.TeachingLanguage = (global::Lynn.DTO.LanguageDto)Value;
         }
-        private object get_106_Course_LearningLanguage(object instance)
+        private object get_105_Course_LearningLanguage(object instance)
         {
             var that = (global::Lynn.DTO.Course)instance;
             return that.LearningLanguage;
         }
-        private void set_106_Course_LearningLanguage(object instance, object Value)
+        private void set_105_Course_LearningLanguage(object instance, object Value)
         {
             var that = (global::Lynn.DTO.Course)instance;
             that.LearningLanguage = (global::Lynn.DTO.LanguageDto)Value;
         }
-        private object get_107_Course_Level(object instance)
+        private object get_106_Course_Level(object instance)
         {
             var that = (global::Lynn.DTO.Course)instance;
             return that.Level;
         }
-        private void set_107_Course_Level(object instance, object Value)
+        private void set_106_Course_Level(object instance, object Value)
         {
             var that = (global::Lynn.DTO.Course)instance;
             that.Level = (global::Lynn.DTO.CourseLevelDto)Value;
         }
-        private object get_108_Course_Editor(object instance)
+        private object get_107_Course_Editor(object instance)
         {
             var that = (global::Lynn.DTO.Course)instance;
             return that.Editor;
         }
-        private void set_108_Course_Editor(object instance, object Value)
+        private void set_107_Course_Editor(object instance, object Value)
         {
             var that = (global::Lynn.DTO.Course)instance;
             that.Editor = (global::System.String)Value;
         }
-        private object get_109_Course_Details(object instance)
+        private object get_108_Course_Details(object instance)
         {
             var that = (global::Lynn.DTO.Course)instance;
             return that.Details;
         }
-        private void set_109_Course_Details(object instance, object Value)
+        private void set_108_Course_Details(object instance, object Value)
         {
             var that = (global::Lynn.DTO.Course)instance;
             that.Details = (global::System.String)Value;
         }
-        private object get_110_EnrollInCourseViewModel_SearchCourseByName_Click(object instance)
+        private object get_109_EnrollInCourseViewModel_SearchCourseByName_Click(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             return that.SearchCourseByName_Click;
         }
-        private void set_110_EnrollInCourseViewModel_SearchCourseByName_Click(object instance, object Value)
+        private void set_109_EnrollInCourseViewModel_SearchCourseByName_Click(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             that.SearchCourseByName_Click = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_111_EnrollInCourseViewModel_SearchCourseByLanguage_Click(object instance)
+        private object get_110_EnrollInCourseViewModel_SearchCourseByLanguage_Click(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             return that.SearchCourseByLanguage_Click;
         }
-        private void set_111_EnrollInCourseViewModel_SearchCourseByLanguage_Click(object instance, object Value)
+        private void set_110_EnrollInCourseViewModel_SearchCourseByLanguage_Click(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             that.SearchCourseByLanguage_Click = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_112_EnrollInCourseViewModel_Courses(object instance)
+        private object get_111_EnrollInCourseViewModel_Courses(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             return that.Courses;
         }
-        private void set_112_EnrollInCourseViewModel_Courses(object instance, object Value)
+        private void set_111_EnrollInCourseViewModel_Courses(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             that.Courses = (global::System.Collections.ObjectModel.ObservableCollection<global::Lynn.DTO.Course>)Value;
         }
-        private object get_113_EnrollInCourseViewModel_Languages(object instance)
+        private object get_112_EnrollInCourseViewModel_Languages(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             return that.Languages;
         }
-        private void set_113_EnrollInCourseViewModel_Languages(object instance, object Value)
+        private void set_112_EnrollInCourseViewModel_Languages(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             that.Languages = (global::System.Collections.ObjectModel.ObservableCollection<global::Lynn.DTO.Language>)Value;
         }
-        private object get_114_EnrollInCourseViewModel_CourseName(object instance)
+        private object get_113_EnrollInCourseViewModel_CourseName(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             return that.CourseName;
         }
-        private void set_114_EnrollInCourseViewModel_CourseName(object instance, object Value)
+        private void set_113_EnrollInCourseViewModel_CourseName(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             that.CourseName = (global::System.String)Value;
         }
-        private object get_115_EnrollInCourseViewModel_KnownLanguage(object instance)
+        private object get_114_EnrollInCourseViewModel_KnownLanguage(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             return that.KnownLanguage;
         }
-        private void set_115_EnrollInCourseViewModel_KnownLanguage(object instance, object Value)
+        private void set_114_EnrollInCourseViewModel_KnownLanguage(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             that.KnownLanguage = (global::Lynn.DTO.Language)Value;
         }
-        private object get_116_EnrollInCourseViewModel_LearningLanguage(object instance)
+        private object get_115_EnrollInCourseViewModel_LearningLanguage(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             return that.LearningLanguage;
         }
-        private void set_116_EnrollInCourseViewModel_LearningLanguage(object instance, object Value)
+        private void set_115_EnrollInCourseViewModel_LearningLanguage(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.EnrollInCourseViewModel)instance;
             that.LearningLanguage = (global::Lynn.DTO.Language)Value;
         }
-        private object get_117_GrammarChooseOneExerciseView_ViewModel(object instance)
+        private object get_116_GrammarChooseOneExerciseView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.GrammarChooseOneExerciseView)instance;
             return that.ViewModel;
         }
-        private object get_118_LearnExpressionsViewModel_Test(object instance)
+        private object get_117_LearnExpressionsViewModel_Test(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             return that.Test;
         }
-        private void set_118_LearnExpressionsViewModel_Test(object instance, object Value)
+        private void set_117_LearnExpressionsViewModel_Test(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             that.Test = (global::Lynn.DTO.Test)Value;
         }
-        private object get_119_LearnExpressionsViewModel_LoggedInUser(object instance)
+        private object get_118_LearnExpressionsViewModel_LoggedInUser(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             return that.LoggedInUser;
         }
-        private void set_119_LearnExpressionsViewModel_LoggedInUser(object instance, object Value)
+        private void set_118_LearnExpressionsViewModel_LoggedInUser(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             that.LoggedInUser = (global::Lynn.DTO.User)Value;
         }
-        private object get_120_LearnExpressionsViewModel_VocabularyExercises(object instance)
+        private object get_119_LearnExpressionsViewModel_VocabularyExercises(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             return that.VocabularyExercises;
         }
-        private void set_120_LearnExpressionsViewModel_VocabularyExercises(object instance, object Value)
+        private void set_119_LearnExpressionsViewModel_VocabularyExercises(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             that.VocabularyExercises = (global::System.Collections.ObjectModel.ObservableCollection<global::Lynn.DTO.VocabularyExercise>)Value;
         }
-        private object get_121_LearnExpressionsViewModel_CurrentExercise(object instance)
+        private object get_120_LearnExpressionsViewModel_CurrentExercise(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             return that.CurrentExercise;
         }
-        private void set_121_LearnExpressionsViewModel_CurrentExercise(object instance, object Value)
+        private void set_120_LearnExpressionsViewModel_CurrentExercise(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnExpressionsViewModel)instance;
             that.CurrentExercise = (global::Lynn.DTO.VocabularyExercise)Value;
         }
-        private object get_122_LearningPage_ViewModel(object instance)
+        private object get_121_LearningPage_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.LearningPage)instance;
             return that.ViewModel;
         }
-        private object get_123_LearnRulesViewModel_Test(object instance)
+        private object get_122_LearnRulesViewModel_Test(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             return that.Test;
         }
-        private void set_123_LearnRulesViewModel_Test(object instance, object Value)
+        private void set_122_LearnRulesViewModel_Test(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             that.Test = (global::Lynn.DTO.Test)Value;
         }
-        private object get_124_LearnRulesViewModel_LoggedInUser(object instance)
+        private object get_123_LearnRulesViewModel_LoggedInUser(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             return that.LoggedInUser;
         }
-        private void set_124_LearnRulesViewModel_LoggedInUser(object instance, object Value)
+        private void set_123_LearnRulesViewModel_LoggedInUser(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             that.LoggedInUser = (global::Lynn.DTO.User)Value;
         }
-        private object get_125_LearnRulesViewModel_Rules(object instance)
+        private object get_124_LearnRulesViewModel_Rules(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             return that.Rules;
         }
-        private void set_125_LearnRulesViewModel_Rules(object instance, object Value)
+        private void set_124_LearnRulesViewModel_Rules(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             that.Rules = (global::System.Collections.ObjectModel.ObservableCollection<global::Lynn.DTO.RuleDto>)Value;
         }
-        private object get_126_RuleDto_Id(object instance)
+        private object get_125_RuleDto_Id(object instance)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             return that.Id;
         }
-        private void set_126_RuleDto_Id(object instance, object Value)
+        private void set_125_RuleDto_Id(object instance, object Value)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             that.Id = (global::System.Int32)Value;
         }
-        private object get_127_RuleDto_TestId(object instance)
+        private object get_126_RuleDto_TestId(object instance)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             return that.TestId;
         }
-        private void set_127_RuleDto_TestId(object instance, object Value)
+        private void set_126_RuleDto_TestId(object instance, object Value)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             that.TestId = (global::System.Int32)Value;
         }
-        private object get_128_RuleDto_Name(object instance)
+        private object get_127_RuleDto_Name(object instance)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             return that.Name;
         }
-        private void set_128_RuleDto_Name(object instance, object Value)
+        private void set_127_RuleDto_Name(object instance, object Value)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_129_RuleDto_Explanation(object instance)
+        private object get_128_RuleDto_Explanation(object instance)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             return that.Explanation;
         }
-        private void set_129_RuleDto_Explanation(object instance, object Value)
+        private void set_128_RuleDto_Explanation(object instance, object Value)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             that.Explanation = (global::System.String)Value;
         }
-        private object get_130_RuleDto_TranslatedExplanation(object instance)
+        private object get_129_RuleDto_TranslatedExplanation(object instance)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             return that.TranslatedExplanation;
         }
-        private void set_130_RuleDto_TranslatedExplanation(object instance, object Value)
+        private void set_129_RuleDto_TranslatedExplanation(object instance, object Value)
         {
             var that = (global::Lynn.DTO.RuleDto)instance;
             that.TranslatedExplanation = (global::System.String)Value;
         }
-        private object get_131_LearnRulesViewModel_CurrentRule(object instance)
+        private object get_130_LearnRulesViewModel_CurrentRule(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             return that.CurrentRule;
         }
-        private void set_131_LearnRulesViewModel_CurrentRule(object instance, object Value)
+        private void set_130_LearnRulesViewModel_CurrentRule(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LearnRulesViewModel)instance;
             that.CurrentRule = (global::Lynn.DTO.RuleDto)Value;
         }
-        private object get_132_LoggedInViewModel_LoggedInUser(object instance)
+        private object get_131_LoggedInViewModel_LoggedInUser(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.LoggedInViewModel)instance;
             return that.LoggedInUser;
         }
-        private void set_132_LoggedInViewModel_LoggedInUser(object instance, object Value)
+        private void set_131_LoggedInViewModel_LoggedInUser(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.LoggedInViewModel)instance;
             that.LoggedInUser = (global::Lynn.DTO.User)Value;
         }
-        private object get_133_SettingsPage_ViewModel(object instance)
+        private object get_132_SettingsPage_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.SettingsPage)instance;
             return that.ViewModel;
         }
-        private object get_134_MainViewModel_UserName(object instance)
+        private object get_133_MainViewModel_UserName(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             return that.UserName;
         }
-        private void set_134_MainViewModel_UserName(object instance, object Value)
+        private void set_133_MainViewModel_UserName(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             that.UserName = (global::System.String)Value;
         }
-        private object get_135_MainViewModel_Password(object instance)
+        private object get_134_MainViewModel_Password(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             return that.Password;
         }
-        private void set_135_MainViewModel_Password(object instance, object Value)
+        private void set_134_MainViewModel_Password(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             that.Password = (global::System.String)Value;
         }
-        private object get_136_MainViewModel_LoginSuccess(object instance)
+        private object get_135_MainViewModel_LoginSuccess(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             return that.LoginSuccess;
         }
-        private void set_136_MainViewModel_LoginSuccess(object instance, object Value)
+        private void set_135_MainViewModel_LoginSuccess(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             that.LoginSuccess = (global::System.Boolean)Value;
         }
-        private object get_137_MainViewModel_LogIn_Click(object instance)
+        private object get_136_MainViewModel_LogIn_Click(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             return that.LogIn_Click;
         }
-        private void set_137_MainViewModel_LogIn_Click(object instance, object Value)
+        private void set_136_MainViewModel_LogIn_Click(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.MainViewModel)instance;
             that.LogIn_Click = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_138_PictureExerciseView_ViewModel(object instance)
+        private object get_137_PictureExerciseView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.PictureExerciseView)instance;
             return that.ViewModel;
         }
-        private object get_139_RegistrationViewModel_UserName(object instance)
+        private object get_138_RegistrationViewModel_UserName(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.UserName;
         }
-        private void set_139_RegistrationViewModel_UserName(object instance, object Value)
+        private void set_138_RegistrationViewModel_UserName(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.UserName = (global::System.String)Value;
         }
-        private object get_140_RegistrationViewModel_Email(object instance)
+        private object get_139_RegistrationViewModel_Email(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.Email;
         }
-        private void set_140_RegistrationViewModel_Email(object instance, object Value)
+        private void set_139_RegistrationViewModel_Email(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.Email = (global::System.String)Value;
         }
-        private object get_141_RegistrationViewModel_Password(object instance)
+        private object get_140_RegistrationViewModel_Password(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.Password;
         }
-        private void set_141_RegistrationViewModel_Password(object instance, object Value)
+        private void set_140_RegistrationViewModel_Password(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.Password = (global::System.String)Value;
         }
-        private object get_142_RegistrationViewModel_ConfirmPassword(object instance)
+        private object get_141_RegistrationViewModel_ConfirmPassword(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.ConfirmPassword;
         }
-        private void set_142_RegistrationViewModel_ConfirmPassword(object instance, object Value)
+        private void set_141_RegistrationViewModel_ConfirmPassword(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.ConfirmPassword = (global::System.String)Value;
         }
-        private object get_143_RegistrationViewModel_ErrorMessage(object instance)
+        private object get_142_RegistrationViewModel_ErrorMessage(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.ErrorMessage;
         }
-        private void set_143_RegistrationViewModel_ErrorMessage(object instance, object Value)
+        private void set_142_RegistrationViewModel_ErrorMessage(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.ErrorMessage = (global::System.String)Value;
         }
-        private object get_144_RegistrationViewModel_RegistrationSuccess(object instance)
+        private object get_143_RegistrationViewModel_RegistrationSuccess(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.RegistrationSuccess;
         }
-        private void set_144_RegistrationViewModel_RegistrationSuccess(object instance, object Value)
+        private void set_143_RegistrationViewModel_RegistrationSuccess(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.RegistrationSuccess = (global::System.Boolean)Value;
         }
-        private object get_145_RegistrationViewModel_Register_Click(object instance)
+        private object get_144_RegistrationViewModel_Register_Click(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             return that.Register_Click;
         }
-        private void set_145_RegistrationViewModel_Register_Click(object instance, object Value)
+        private void set_144_RegistrationViewModel_Register_Click(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.RegistrationViewModel)instance;
             that.Register_Click = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_146_EnumToBooleanConverter_EnumType(object instance)
+        private object get_145_EnumToBooleanConverter_EnumType(object instance)
         {
             var that = (global::Lynn.Client.Helpers.EnumToBooleanConverter)instance;
             return that.EnumType;
         }
-        private void set_146_EnumToBooleanConverter_EnumType(object instance, object Value)
+        private void set_145_EnumToBooleanConverter_EnumType(object instance, object Value)
         {
             var that = (global::Lynn.Client.Helpers.EnumToBooleanConverter)instance;
             that.EnumType = (global::System.Type)Value;
         }
-        private object get_147_TestsViewModel_Course(object instance)
+        private object get_146_TestsViewModel_Course(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.Course;
         }
-        private void set_147_TestsViewModel_Course(object instance, object Value)
+        private void set_146_TestsViewModel_Course(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.Course = (global::Lynn.DTO.Course)Value;
         }
-        private object get_148_TestsViewModel_LoggedInUser(object instance)
+        private object get_147_TestsViewModel_LoggedInUser(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.LoggedInUser;
         }
-        private void set_148_TestsViewModel_LoggedInUser(object instance, object Value)
+        private void set_147_TestsViewModel_LoggedInUser(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.LoggedInUser = (global::Lynn.DTO.User)Value;
         }
-        private object get_149_TestsViewModel_Enrollment(object instance)
+        private object get_148_TestsViewModel_Enrollment(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.Enrollment;
         }
-        private void set_149_TestsViewModel_Enrollment(object instance, object Value)
+        private void set_148_TestsViewModel_Enrollment(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.Enrollment = (global::Lynn.DTO.Enrollment)Value;
         }
-        private object get_150_TestsViewModel_Tests(object instance)
+        private object get_149_TestsViewModel_Tests(object instance)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             return that.Tests;
         }
-        private void set_150_TestsViewModel_Tests(object instance, object Value)
+        private void set_149_TestsViewModel_Tests(object instance, object Value)
         {
             var that = (global::Lynn.Client.ViewModels.TestsViewModel)instance;
             that.Tests = (global::System.Collections.ObjectModel.ObservableCollection<global::Lynn.Client.Models.TestPresenter>)Value;
         }
-        private object get_151_TranslationExerciseView_ViewModel(object instance)
+        private object get_150_TranslationExerciseView_ViewModel(object instance)
         {
             var that = (global::Lynn.Client.Views.TranslationExerciseView)instance;
             return that.ViewModel;
@@ -3533,346 +3522,340 @@ namespace Lynn.Client.Lynn_Client_XamlTypeInfo
                 xamlMember.Getter = get_94_EditVocabularyExerciseViewModel_DeleteExercise_Click;
                 xamlMember.Setter = set_94_EditVocabularyExerciseViewModel_DeleteExercise_Click;
                 break;
-            case "Lynn.Client.ViewModels.EditVocabularyExerciseViewModel.SelectPicture_Click":
-                userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EditVocabularyExerciseViewModel");
-                xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "SelectPicture_Click", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_95_EditVocabularyExerciseViewModel_SelectPicture_Click;
-                xamlMember.Setter = set_95_EditVocabularyExerciseViewModel_SelectPicture_Click;
-                break;
             case "Lynn.Client.ViewModels.EditVocabularyExerciseViewModel.Saving":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EditVocabularyExerciseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Saving", "Boolean");
-                xamlMember.Getter = get_96_EditVocabularyExerciseViewModel_Saving;
-                xamlMember.Setter = set_96_EditVocabularyExerciseViewModel_Saving;
+                xamlMember.Getter = get_95_EditVocabularyExerciseViewModel_Saving;
+                xamlMember.Setter = set_95_EditVocabularyExerciseViewModel_Saving;
                 break;
             case "Lynn.Client.ViewModels.EditVocabularyExerciseViewModel.Saved":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EditVocabularyExerciseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Saved", "Boolean");
-                xamlMember.Getter = get_97_EditVocabularyExerciseViewModel_Saved;
-                xamlMember.Setter = set_97_EditVocabularyExerciseViewModel_Saved;
+                xamlMember.Getter = get_96_EditVocabularyExerciseViewModel_Saved;
+                xamlMember.Setter = set_96_EditVocabularyExerciseViewModel_Saved;
                 break;
             case "Lynn.Client.ViewModels.EditVocabularyExerciseViewModel.NotSaved":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EditVocabularyExerciseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "NotSaved", "Boolean");
-                xamlMember.Getter = get_98_EditVocabularyExerciseViewModel_NotSaved;
-                xamlMember.Setter = set_98_EditVocabularyExerciseViewModel_NotSaved;
+                xamlMember.Getter = get_97_EditVocabularyExerciseViewModel_NotSaved;
+                xamlMember.Setter = set_97_EditVocabularyExerciseViewModel_NotSaved;
                 break;
             case "Lynn.Client.ViewModels.EditVocabularyExerciseViewModel.Exercise":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EditVocabularyExerciseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Exercise", "Lynn.DTO.VocabularyExercise");
-                xamlMember.Getter = get_99_EditVocabularyExerciseViewModel_Exercise;
-                xamlMember.Setter = set_99_EditVocabularyExerciseViewModel_Exercise;
+                xamlMember.Getter = get_98_EditVocabularyExerciseViewModel_Exercise;
+                xamlMember.Setter = set_98_EditVocabularyExerciseViewModel_Exercise;
                 break;
             case "Lynn.Client.ViewModels.EditVocabularyExerciseViewModel.LearningLanguage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EditVocabularyExerciseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LearningLanguage", "String");
-                xamlMember.Getter = get_100_EditVocabularyExerciseViewModel_LearningLanguage;
-                xamlMember.Setter = set_100_EditVocabularyExerciseViewModel_LearningLanguage;
+                xamlMember.Getter = get_99_EditVocabularyExerciseViewModel_LearningLanguage;
+                xamlMember.Setter = set_99_EditVocabularyExerciseViewModel_LearningLanguage;
                 break;
             case "Lynn.Client.ViewModels.EditVocabularyExerciseViewModel.TeachingLanguage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EditVocabularyExerciseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "TeachingLanguage", "String");
-                xamlMember.Getter = get_101_EditVocabularyExerciseViewModel_TeachingLanguage;
-                xamlMember.Setter = set_101_EditVocabularyExerciseViewModel_TeachingLanguage;
+                xamlMember.Getter = get_100_EditVocabularyExerciseViewModel_TeachingLanguage;
+                xamlMember.Setter = set_100_EditVocabularyExerciseViewModel_TeachingLanguage;
                 break;
             case "Lynn.Client.ViewModels.EnrolledCoursesViewModel.Courses":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrolledCoursesViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Courses", "System.Collections.ObjectModel.ObservableCollection`1<Lynn.DTO.Course>");
-                xamlMember.Getter = get_102_EnrolledCoursesViewModel_Courses;
-                xamlMember.Setter = set_102_EnrolledCoursesViewModel_Courses;
+                xamlMember.Getter = get_101_EnrolledCoursesViewModel_Courses;
+                xamlMember.Setter = set_101_EnrolledCoursesViewModel_Courses;
                 break;
             case "Lynn.DTO.Course.Id":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.Course");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Id", "Int32");
-                xamlMember.Getter = get_103_Course_Id;
-                xamlMember.Setter = set_103_Course_Id;
+                xamlMember.Getter = get_102_Course_Id;
+                xamlMember.Setter = set_102_Course_Id;
                 break;
             case "Lynn.DTO.Course.CourseName":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.Course");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "CourseName", "String");
-                xamlMember.Getter = get_104_Course_CourseName;
-                xamlMember.Setter = set_104_Course_CourseName;
+                xamlMember.Getter = get_103_Course_CourseName;
+                xamlMember.Setter = set_103_Course_CourseName;
                 break;
             case "Lynn.DTO.Course.TeachingLanguage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.Course");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "TeachingLanguage", "Lynn.DTO.LanguageDto");
-                xamlMember.Getter = get_105_Course_TeachingLanguage;
-                xamlMember.Setter = set_105_Course_TeachingLanguage;
+                xamlMember.Getter = get_104_Course_TeachingLanguage;
+                xamlMember.Setter = set_104_Course_TeachingLanguage;
                 break;
             case "Lynn.DTO.Course.LearningLanguage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.Course");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LearningLanguage", "Lynn.DTO.LanguageDto");
-                xamlMember.Getter = get_106_Course_LearningLanguage;
-                xamlMember.Setter = set_106_Course_LearningLanguage;
+                xamlMember.Getter = get_105_Course_LearningLanguage;
+                xamlMember.Setter = set_105_Course_LearningLanguage;
                 break;
             case "Lynn.DTO.Course.Level":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.Course");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Level", "Lynn.DTO.CourseLevelDto");
-                xamlMember.Getter = get_107_Course_Level;
-                xamlMember.Setter = set_107_Course_Level;
+                xamlMember.Getter = get_106_Course_Level;
+                xamlMember.Setter = set_106_Course_Level;
                 break;
             case "Lynn.DTO.Course.Editor":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.Course");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Editor", "String");
-                xamlMember.Getter = get_108_Course_Editor;
-                xamlMember.Setter = set_108_Course_Editor;
+                xamlMember.Getter = get_107_Course_Editor;
+                xamlMember.Setter = set_107_Course_Editor;
                 break;
             case "Lynn.DTO.Course.Details":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.Course");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Details", "String");
-                xamlMember.Getter = get_109_Course_Details;
-                xamlMember.Setter = set_109_Course_Details;
+                xamlMember.Getter = get_108_Course_Details;
+                xamlMember.Setter = set_108_Course_Details;
                 break;
             case "Lynn.Client.ViewModels.EnrollInCourseViewModel.SearchCourseByName_Click":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrollInCourseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "SearchCourseByName_Click", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_110_EnrollInCourseViewModel_SearchCourseByName_Click;
-                xamlMember.Setter = set_110_EnrollInCourseViewModel_SearchCourseByName_Click;
+                xamlMember.Getter = get_109_EnrollInCourseViewModel_SearchCourseByName_Click;
+                xamlMember.Setter = set_109_EnrollInCourseViewModel_SearchCourseByName_Click;
                 break;
             case "Lynn.Client.ViewModels.EnrollInCourseViewModel.SearchCourseByLanguage_Click":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrollInCourseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "SearchCourseByLanguage_Click", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_111_EnrollInCourseViewModel_SearchCourseByLanguage_Click;
-                xamlMember.Setter = set_111_EnrollInCourseViewModel_SearchCourseByLanguage_Click;
+                xamlMember.Getter = get_110_EnrollInCourseViewModel_SearchCourseByLanguage_Click;
+                xamlMember.Setter = set_110_EnrollInCourseViewModel_SearchCourseByLanguage_Click;
                 break;
             case "Lynn.Client.ViewModels.EnrollInCourseViewModel.Courses":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrollInCourseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Courses", "System.Collections.ObjectModel.ObservableCollection`1<Lynn.DTO.Course>");
-                xamlMember.Getter = get_112_EnrollInCourseViewModel_Courses;
-                xamlMember.Setter = set_112_EnrollInCourseViewModel_Courses;
+                xamlMember.Getter = get_111_EnrollInCourseViewModel_Courses;
+                xamlMember.Setter = set_111_EnrollInCourseViewModel_Courses;
                 break;
             case "Lynn.Client.ViewModels.EnrollInCourseViewModel.Languages":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrollInCourseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Languages", "System.Collections.ObjectModel.ObservableCollection`1<Lynn.DTO.Language>");
-                xamlMember.Getter = get_113_EnrollInCourseViewModel_Languages;
-                xamlMember.Setter = set_113_EnrollInCourseViewModel_Languages;
+                xamlMember.Getter = get_112_EnrollInCourseViewModel_Languages;
+                xamlMember.Setter = set_112_EnrollInCourseViewModel_Languages;
                 break;
             case "Lynn.Client.ViewModels.EnrollInCourseViewModel.CourseName":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrollInCourseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "CourseName", "String");
-                xamlMember.Getter = get_114_EnrollInCourseViewModel_CourseName;
-                xamlMember.Setter = set_114_EnrollInCourseViewModel_CourseName;
+                xamlMember.Getter = get_113_EnrollInCourseViewModel_CourseName;
+                xamlMember.Setter = set_113_EnrollInCourseViewModel_CourseName;
                 break;
             case "Lynn.Client.ViewModels.EnrollInCourseViewModel.KnownLanguage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrollInCourseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "KnownLanguage", "Lynn.DTO.Language");
-                xamlMember.Getter = get_115_EnrollInCourseViewModel_KnownLanguage;
-                xamlMember.Setter = set_115_EnrollInCourseViewModel_KnownLanguage;
+                xamlMember.Getter = get_114_EnrollInCourseViewModel_KnownLanguage;
+                xamlMember.Setter = set_114_EnrollInCourseViewModel_KnownLanguage;
                 break;
             case "Lynn.Client.ViewModels.EnrollInCourseViewModel.LearningLanguage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.EnrollInCourseViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LearningLanguage", "Lynn.DTO.Language");
-                xamlMember.Getter = get_116_EnrollInCourseViewModel_LearningLanguage;
-                xamlMember.Setter = set_116_EnrollInCourseViewModel_LearningLanguage;
+                xamlMember.Getter = get_115_EnrollInCourseViewModel_LearningLanguage;
+                xamlMember.Setter = set_115_EnrollInCourseViewModel_LearningLanguage;
                 break;
             case "Lynn.Client.Views.GrammarChooseOneExerciseView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.GrammarChooseOneExerciseView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.GrammarChooseOneExerciseViewModel");
-                xamlMember.Getter = get_117_GrammarChooseOneExerciseView_ViewModel;
+                xamlMember.Getter = get_116_GrammarChooseOneExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.ViewModels.LearnExpressionsViewModel.Test":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnExpressionsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Test", "Lynn.DTO.Test");
-                xamlMember.Getter = get_118_LearnExpressionsViewModel_Test;
-                xamlMember.Setter = set_118_LearnExpressionsViewModel_Test;
+                xamlMember.Getter = get_117_LearnExpressionsViewModel_Test;
+                xamlMember.Setter = set_117_LearnExpressionsViewModel_Test;
                 break;
             case "Lynn.Client.ViewModels.LearnExpressionsViewModel.LoggedInUser":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnExpressionsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LoggedInUser", "Lynn.DTO.User");
-                xamlMember.Getter = get_119_LearnExpressionsViewModel_LoggedInUser;
-                xamlMember.Setter = set_119_LearnExpressionsViewModel_LoggedInUser;
+                xamlMember.Getter = get_118_LearnExpressionsViewModel_LoggedInUser;
+                xamlMember.Setter = set_118_LearnExpressionsViewModel_LoggedInUser;
                 break;
             case "Lynn.Client.ViewModels.LearnExpressionsViewModel.VocabularyExercises":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnExpressionsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "VocabularyExercises", "System.Collections.ObjectModel.ObservableCollection`1<Lynn.DTO.VocabularyExercise>");
-                xamlMember.Getter = get_120_LearnExpressionsViewModel_VocabularyExercises;
-                xamlMember.Setter = set_120_LearnExpressionsViewModel_VocabularyExercises;
+                xamlMember.Getter = get_119_LearnExpressionsViewModel_VocabularyExercises;
+                xamlMember.Setter = set_119_LearnExpressionsViewModel_VocabularyExercises;
                 break;
             case "Lynn.Client.ViewModels.LearnExpressionsViewModel.CurrentExercise":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnExpressionsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "CurrentExercise", "Lynn.DTO.VocabularyExercise");
-                xamlMember.Getter = get_121_LearnExpressionsViewModel_CurrentExercise;
-                xamlMember.Setter = set_121_LearnExpressionsViewModel_CurrentExercise;
+                xamlMember.Getter = get_120_LearnExpressionsViewModel_CurrentExercise;
+                xamlMember.Setter = set_120_LearnExpressionsViewModel_CurrentExercise;
                 break;
             case "Lynn.Client.Views.LearningPage.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.LearningPage");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.LearningViewModel");
-                xamlMember.Getter = get_122_LearningPage_ViewModel;
+                xamlMember.Getter = get_121_LearningPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.ViewModels.LearnRulesViewModel.Test":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnRulesViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Test", "Lynn.DTO.Test");
-                xamlMember.Getter = get_123_LearnRulesViewModel_Test;
-                xamlMember.Setter = set_123_LearnRulesViewModel_Test;
+                xamlMember.Getter = get_122_LearnRulesViewModel_Test;
+                xamlMember.Setter = set_122_LearnRulesViewModel_Test;
                 break;
             case "Lynn.Client.ViewModels.LearnRulesViewModel.LoggedInUser":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnRulesViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LoggedInUser", "Lynn.DTO.User");
-                xamlMember.Getter = get_124_LearnRulesViewModel_LoggedInUser;
-                xamlMember.Setter = set_124_LearnRulesViewModel_LoggedInUser;
+                xamlMember.Getter = get_123_LearnRulesViewModel_LoggedInUser;
+                xamlMember.Setter = set_123_LearnRulesViewModel_LoggedInUser;
                 break;
             case "Lynn.Client.ViewModels.LearnRulesViewModel.Rules":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnRulesViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Rules", "System.Collections.ObjectModel.ObservableCollection`1<Lynn.DTO.RuleDto>");
-                xamlMember.Getter = get_125_LearnRulesViewModel_Rules;
-                xamlMember.Setter = set_125_LearnRulesViewModel_Rules;
+                xamlMember.Getter = get_124_LearnRulesViewModel_Rules;
+                xamlMember.Setter = set_124_LearnRulesViewModel_Rules;
                 break;
             case "Lynn.DTO.RuleDto.Id":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.RuleDto");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Id", "Int32");
-                xamlMember.Getter = get_126_RuleDto_Id;
-                xamlMember.Setter = set_126_RuleDto_Id;
+                xamlMember.Getter = get_125_RuleDto_Id;
+                xamlMember.Setter = set_125_RuleDto_Id;
                 break;
             case "Lynn.DTO.RuleDto.TestId":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.RuleDto");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "TestId", "Int32");
-                xamlMember.Getter = get_127_RuleDto_TestId;
-                xamlMember.Setter = set_127_RuleDto_TestId;
+                xamlMember.Getter = get_126_RuleDto_TestId;
+                xamlMember.Setter = set_126_RuleDto_TestId;
                 break;
             case "Lynn.DTO.RuleDto.Name":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.RuleDto");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_128_RuleDto_Name;
-                xamlMember.Setter = set_128_RuleDto_Name;
+                xamlMember.Getter = get_127_RuleDto_Name;
+                xamlMember.Setter = set_127_RuleDto_Name;
                 break;
             case "Lynn.DTO.RuleDto.Explanation":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.RuleDto");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Explanation", "String");
-                xamlMember.Getter = get_129_RuleDto_Explanation;
-                xamlMember.Setter = set_129_RuleDto_Explanation;
+                xamlMember.Getter = get_128_RuleDto_Explanation;
+                xamlMember.Setter = set_128_RuleDto_Explanation;
                 break;
             case "Lynn.DTO.RuleDto.TranslatedExplanation":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.DTO.RuleDto");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "TranslatedExplanation", "String");
-                xamlMember.Getter = get_130_RuleDto_TranslatedExplanation;
-                xamlMember.Setter = set_130_RuleDto_TranslatedExplanation;
+                xamlMember.Getter = get_129_RuleDto_TranslatedExplanation;
+                xamlMember.Setter = set_129_RuleDto_TranslatedExplanation;
                 break;
             case "Lynn.Client.ViewModels.LearnRulesViewModel.CurrentRule":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LearnRulesViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "CurrentRule", "Lynn.DTO.RuleDto");
-                xamlMember.Getter = get_131_LearnRulesViewModel_CurrentRule;
-                xamlMember.Setter = set_131_LearnRulesViewModel_CurrentRule;
+                xamlMember.Getter = get_130_LearnRulesViewModel_CurrentRule;
+                xamlMember.Setter = set_130_LearnRulesViewModel_CurrentRule;
                 break;
             case "Lynn.Client.ViewModels.LoggedInViewModel.LoggedInUser":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.LoggedInViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LoggedInUser", "Lynn.DTO.User");
-                xamlMember.Getter = get_132_LoggedInViewModel_LoggedInUser;
-                xamlMember.Setter = set_132_LoggedInViewModel_LoggedInUser;
+                xamlMember.Getter = get_131_LoggedInViewModel_LoggedInUser;
+                xamlMember.Setter = set_131_LoggedInViewModel_LoggedInUser;
                 break;
             case "Lynn.Client.Views.SettingsPage.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.SettingsPage");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.SettingsViewModel");
-                xamlMember.Getter = get_133_SettingsPage_ViewModel;
+                xamlMember.Getter = get_132_SettingsPage_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.ViewModels.MainViewModel.UserName":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.MainViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "UserName", "String");
-                xamlMember.Getter = get_134_MainViewModel_UserName;
-                xamlMember.Setter = set_134_MainViewModel_UserName;
+                xamlMember.Getter = get_133_MainViewModel_UserName;
+                xamlMember.Setter = set_133_MainViewModel_UserName;
                 break;
             case "Lynn.Client.ViewModels.MainViewModel.Password":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.MainViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_135_MainViewModel_Password;
-                xamlMember.Setter = set_135_MainViewModel_Password;
+                xamlMember.Getter = get_134_MainViewModel_Password;
+                xamlMember.Setter = set_134_MainViewModel_Password;
                 break;
             case "Lynn.Client.ViewModels.MainViewModel.LoginSuccess":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.MainViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LoginSuccess", "Boolean");
-                xamlMember.Getter = get_136_MainViewModel_LoginSuccess;
-                xamlMember.Setter = set_136_MainViewModel_LoginSuccess;
+                xamlMember.Getter = get_135_MainViewModel_LoginSuccess;
+                xamlMember.Setter = set_135_MainViewModel_LoginSuccess;
                 break;
             case "Lynn.Client.ViewModels.MainViewModel.LogIn_Click":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.MainViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LogIn_Click", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_137_MainViewModel_LogIn_Click;
-                xamlMember.Setter = set_137_MainViewModel_LogIn_Click;
+                xamlMember.Getter = get_136_MainViewModel_LogIn_Click;
+                xamlMember.Setter = set_136_MainViewModel_LogIn_Click;
                 break;
             case "Lynn.Client.Views.PictureExerciseView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.PictureExerciseView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.PictureExerciseViewModel");
-                xamlMember.Getter = get_138_PictureExerciseView_ViewModel;
+                xamlMember.Getter = get_137_PictureExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.UserName":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "UserName", "String");
-                xamlMember.Getter = get_139_RegistrationViewModel_UserName;
-                xamlMember.Setter = set_139_RegistrationViewModel_UserName;
+                xamlMember.Getter = get_138_RegistrationViewModel_UserName;
+                xamlMember.Setter = set_138_RegistrationViewModel_UserName;
                 break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.Email":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Email", "String");
-                xamlMember.Getter = get_140_RegistrationViewModel_Email;
-                xamlMember.Setter = set_140_RegistrationViewModel_Email;
+                xamlMember.Getter = get_139_RegistrationViewModel_Email;
+                xamlMember.Setter = set_139_RegistrationViewModel_Email;
                 break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.Password":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_141_RegistrationViewModel_Password;
-                xamlMember.Setter = set_141_RegistrationViewModel_Password;
+                xamlMember.Getter = get_140_RegistrationViewModel_Password;
+                xamlMember.Setter = set_140_RegistrationViewModel_Password;
                 break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.ConfirmPassword":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ConfirmPassword", "String");
-                xamlMember.Getter = get_142_RegistrationViewModel_ConfirmPassword;
-                xamlMember.Setter = set_142_RegistrationViewModel_ConfirmPassword;
+                xamlMember.Getter = get_141_RegistrationViewModel_ConfirmPassword;
+                xamlMember.Setter = set_141_RegistrationViewModel_ConfirmPassword;
                 break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.ErrorMessage":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ErrorMessage", "String");
-                xamlMember.Getter = get_143_RegistrationViewModel_ErrorMessage;
-                xamlMember.Setter = set_143_RegistrationViewModel_ErrorMessage;
+                xamlMember.Getter = get_142_RegistrationViewModel_ErrorMessage;
+                xamlMember.Setter = set_142_RegistrationViewModel_ErrorMessage;
                 break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.RegistrationSuccess":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "RegistrationSuccess", "Boolean");
-                xamlMember.Getter = get_144_RegistrationViewModel_RegistrationSuccess;
-                xamlMember.Setter = set_144_RegistrationViewModel_RegistrationSuccess;
+                xamlMember.Getter = get_143_RegistrationViewModel_RegistrationSuccess;
+                xamlMember.Setter = set_143_RegistrationViewModel_RegistrationSuccess;
                 break;
             case "Lynn.Client.ViewModels.RegistrationViewModel.Register_Click":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.RegistrationViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Register_Click", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_145_RegistrationViewModel_Register_Click;
-                xamlMember.Setter = set_145_RegistrationViewModel_Register_Click;
+                xamlMember.Getter = get_144_RegistrationViewModel_Register_Click;
+                xamlMember.Setter = set_144_RegistrationViewModel_Register_Click;
                 break;
             case "Lynn.Client.Helpers.EnumToBooleanConverter.EnumType":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Helpers.EnumToBooleanConverter");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "EnumType", "System.Type");
-                xamlMember.Getter = get_146_EnumToBooleanConverter_EnumType;
-                xamlMember.Setter = set_146_EnumToBooleanConverter_EnumType;
+                xamlMember.Getter = get_145_EnumToBooleanConverter_EnumType;
+                xamlMember.Setter = set_145_EnumToBooleanConverter_EnumType;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.Course":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Course", "Lynn.DTO.Course");
-                xamlMember.Getter = get_147_TestsViewModel_Course;
-                xamlMember.Setter = set_147_TestsViewModel_Course;
+                xamlMember.Getter = get_146_TestsViewModel_Course;
+                xamlMember.Setter = set_146_TestsViewModel_Course;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.LoggedInUser":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "LoggedInUser", "Lynn.DTO.User");
-                xamlMember.Getter = get_148_TestsViewModel_LoggedInUser;
-                xamlMember.Setter = set_148_TestsViewModel_LoggedInUser;
+                xamlMember.Getter = get_147_TestsViewModel_LoggedInUser;
+                xamlMember.Setter = set_147_TestsViewModel_LoggedInUser;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.Enrollment":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Enrollment", "Lynn.DTO.Enrollment");
-                xamlMember.Getter = get_149_TestsViewModel_Enrollment;
-                xamlMember.Setter = set_149_TestsViewModel_Enrollment;
+                xamlMember.Getter = get_148_TestsViewModel_Enrollment;
+                xamlMember.Setter = set_148_TestsViewModel_Enrollment;
                 break;
             case "Lynn.Client.ViewModels.TestsViewModel.Tests":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.ViewModels.TestsViewModel");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "Tests", "System.Collections.ObjectModel.ObservableCollection`1<Lynn.Client.Models.TestPresenter>");
-                xamlMember.Getter = get_150_TestsViewModel_Tests;
-                xamlMember.Setter = set_150_TestsViewModel_Tests;
+                xamlMember.Getter = get_149_TestsViewModel_Tests;
+                xamlMember.Setter = set_149_TestsViewModel_Tests;
                 break;
             case "Lynn.Client.Views.TranslationExerciseView.ViewModel":
                 userType = (global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Lynn.Client.Views.TranslationExerciseView");
                 xamlMember = new global::Lynn.Client.Lynn_Client_XamlTypeInfo.XamlMember(this, "ViewModel", "Lynn.Client.ViewModels.TranslationExerciseViewModel");
-                xamlMember.Getter = get_151_TranslationExerciseView_ViewModel;
+                xamlMember.Getter = get_150_TranslationExerciseView_ViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }

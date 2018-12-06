@@ -86,7 +86,6 @@
     <RootPropertyPathName Name="TranslatedWrongAnswer2" />
     <RootPropertyPathName Name="TranslatedWrongAnswer1" />
     <RootPropertyPathName Name="TranslatedCorrectAnswer" />
-    <RootPropertyPathName Name="SelectPicture_Click" />
     <RootPropertyPathName Name="Languages" />
     <RootPropertyPathName Name="SearchCourseByLanguage_Click" />
     <RootPropertyPathName Name="KnownLanguage" />
@@ -241,7 +240,6 @@
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Width" />
       <RootProperty Name="Background" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
