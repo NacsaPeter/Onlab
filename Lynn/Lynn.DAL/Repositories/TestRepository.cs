@@ -100,6 +100,17 @@ namespace Lynn.DAL.Repositories
                 return null;
             }
 
+            var testCategory = await _context.Tests
+                .Where(t => t.CourseId == test.CourseId
+                        && t.Category == test.Category
+                        && t.Level == test.Level)
+                .SingleOrDefaultAsync();
+
+            if (testCategory != null)
+            {
+                return null;
+            }
+
             _context.Tests.Add(test);
             await _context.SaveChangesAsync();
 
@@ -152,6 +163,18 @@ namespace Lynn.DAL.Repositories
                 .SingleOrDefaultAsync();
 
             if (oldTest == null)
+            {
+                return null;
+            }
+
+            var testCategory = await _context.Tests
+                .Where(t => t.CourseId == test.CourseId
+                        && t.Category == test.Category
+                        && t.Level == test.Level
+                        && t.Id != test.Id)
+                .SingleOrDefaultAsync();
+
+            if (testCategory != null)
             {
                 return null;
             }
